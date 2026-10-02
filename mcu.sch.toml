@@ -134,10 +134,59 @@ value = "UART_DBG"
 footprint = "JST_XH_B4B-XH-A_1x04_P2.50mm_Vertical"
 fields = { desc = "console: 1 GND, 2 +3V3, 3 RX, 4 TX" }
 
+[[parts]]
+ref = "TP1"
+symbol = "TestPoint"
+value = "TP"
+footprint = "TestPoint_Pad_D1.0mm"
+at = [175.26, 20.32]
+
+[[parts]]
+ref = "TP3"
+symbol = "TestPoint"
+value = "TP"
+footprint = "TestPoint_Pad_D1.0mm"
+at = [175.26, 27.94]
+
+[[parts]]
+ref = "TP4"
+symbol = "TestPoint"
+value = "TP"
+footprint = "TestPoint_Pad_D1.0mm"
+at = [175.26, 35.56]
+
+[[parts]]
+ref = "TP5"
+symbol = "TestPoint"
+value = "TP"
+footprint = "TestPoint_Pad_D1.0mm"
+at = [175.26, 43.18]
+
+[[parts]]
+ref = "TP7"
+symbol = "TestPoint"
+value = "TP"
+footprint = "TestPoint_Pad_D1.0mm"
+at = [175.26, 58.42]
+
+[[parts]]
+ref = "TP8"
+symbol = "TestPoint"
+value = "TP"
+footprint = "TestPoint_Pad_D1.0mm"
+at = [175.26, 66.04]
+
+[[parts]]
+ref = "TP9"
+symbol = "TestPoint"
+value = "TP"
+footprint = "TestPoint_Pad_D1.0mm"
+at = [175.26, 73.66]
+
 [[nets]]
 name = "EN"
 class = "Signal"
-pins = ["U3.3", "R10.2", "C14.1", "SW1.2"]
+pins = ["U3.3", "R10.2", "C14.1", "SW1.2", "TP3.1"]
 
 [[nets]]
 name = "BOOT"
@@ -217,17 +266,17 @@ pins = ["U3.8"]
 [[nets]]
 name = "I2C_SDA"
 class = "Signal"
-pins = ["U3.12"]
+pins = ["U3.12", "TP4.1"]
 
 [[nets]]
 name = "I2C_SCL"
 class = "Signal"
-pins = ["U3.17"]
+pins = ["U3.17", "TP5.1"]
 
 [[nets]]
 name = "WDOK"
 class = "Signal"
-pins = ["U3.11"]
+pins = ["U3.11", "TP7.1"]
 
 [[nets]]
 name = "IMU_INT2"
@@ -237,12 +286,12 @@ pins = ["U3.18"]
 [[nets]]
 name = "WDI"
 class = "Signal"
-pins = ["U3.10"]
+pins = ["U3.10", "TP8.1"]
 
 [[nets]]
 name = "BRK_REL"
 class = "Signal"
-pins = ["U3.9"]
+pins = ["U3.9", "TP9.1"]
 
 [[nets]]
 name = "SPEED"
@@ -312,7 +361,7 @@ pins = ["U3.1", "U3.40", "U3.41", "C12.2", "C13.2", "C14.2", "SW1.1", "SW2.1", "
 [[nets]]
 name = "VBAT_ADC"
 class = "Analog"
-pins = ["U3.4"]
+pins = ["U3.4", "TP1.1"]
 
 [[nets]]
 name = "UART_TX"

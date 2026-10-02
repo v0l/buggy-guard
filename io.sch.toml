@@ -289,6 +289,55 @@ symbol = "MountingHole"
 at = [203.2, 25.4]
 value = "M3"
 
+[[parts]]
+ref = "TP6"
+symbol = "TestPoint"
+value = "TP"
+footprint = "TestPoint_Pad_D1.0mm"
+at = [215.9, 25.4]
+
+[[parts]]
+ref = "TP12"
+symbol = "TestPoint"
+value = "TP"
+footprint = "TestPoint_Pad_D1.0mm"
+at = [215.9, 33.02]
+
+[[parts]]
+ref = "TP13"
+symbol = "TestPoint"
+value = "TP"
+footprint = "TestPoint_Pad_D1.0mm"
+at = [215.9, 40.64]
+
+[[parts]]
+ref = "TP14"
+symbol = "TestPoint"
+value = "TP"
+footprint = "TestPoint_Pad_D1.0mm"
+at = [215.9, 48.26]
+
+[[parts]]
+ref = "TP15"
+symbol = "TestPoint"
+value = "TP"
+footprint = "TestPoint_Pad_D1.0mm"
+at = [215.9, 55.88]
+
+[[parts]]
+ref = "TP16"
+symbol = "TestPoint"
+value = "TP"
+footprint = "TestPoint_Pad_D1.0mm"
+at = [215.9, 63.5]
+
+[[parts]]
+ref = "TP17"
+symbol = "TestPoint"
+value = "TP"
+footprint = "TestPoint_Pad_D1.0mm"
+at = [215.9, 71.12]
+
 [[nets]]
 name = "PEDAL_5V"
 class = "Supply"
@@ -302,7 +351,7 @@ pins = ["J6.3", "R32.1"]
 [[nets]]
 name = "PEDAL_ADC"
 class = "Analog"
-pins = ["R32.2", "R33.1", "C21.1"]
+pins = ["R32.2", "R33.1", "C21.1", "TP16.1"]
 
 [[nets]]
 name = "THR_PWM"
@@ -337,7 +386,7 @@ pins = ["R38.2", "C25.1", "R39.1", "J7.3"]
 [[nets]]
 name = "THR_FB_ADC"
 class = "Analog"
-pins = ["R39.2", "R40.1"]
+pins = ["R39.2", "R40.1", "TP6.1"]
 
 [[nets]]
 name = "SENS_5V"
@@ -347,7 +396,7 @@ pins = ["F3.2", "C27.1", "J8.1", "J9.1", "J12.1", "R53.1"]
 [[nets]]
 name = "US1_TRIG"
 class = "Signal"
-pins = ["R41.1"]
+pins = ["R41.1", "TP12.1"]
 
 [[nets]]
 name = "US1_TRIG_C"
@@ -362,12 +411,12 @@ pins = ["J8.3", "R42.2"]
 [[nets]]
 name = "US1_ECHO"
 class = "Signal"
-pins = ["R42.1", "R43.1"]
+pins = ["R42.1", "R43.1", "TP13.1"]
 
 [[nets]]
 name = "US2_TRIG"
 class = "Signal"
-pins = ["R44.1"]
+pins = ["R44.1", "TP14.1"]
 
 [[nets]]
 name = "US2_TRIG_C"
@@ -382,7 +431,7 @@ pins = ["J9.3", "R45.2"]
 [[nets]]
 name = "US2_ECHO"
 class = "Signal"
-pins = ["R45.1", "R46.1"]
+pins = ["R45.1", "R46.1", "TP15.1"]
 
 [[nets]]
 name = "SPEED_C"
@@ -392,7 +441,7 @@ pins = ["J12.3", "R53.2", "R54.2"]
 [[nets]]
 name = "SPEED"
 class = "Signal"
-pins = ["R54.1", "R55.1", "C26.1"]
+pins = ["R54.1", "R55.1", "C26.1", "TP17.1"]
 
 [[nets]]
 name = "AUX1_C"

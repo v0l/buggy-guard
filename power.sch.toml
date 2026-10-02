@@ -194,6 +194,13 @@ at = [236.22, 63.5]
 value = "green"
 rotation = 90.0
 
+[[parts]]
+ref = "TP2"
+symbol = "TestPoint"
+value = "TP"
+footprint = "TestPoint_Pad_D1.0mm"
+at = [248.92, 30.48]
+
 [[nets]]
 name = "VBAT_RAW"
 class = "HV"
@@ -262,7 +269,7 @@ pins = ["R7.2", "R8.1", "C11.1"]
 [[nets]]
 name = "PWR_LED"
 class = "Signal"
-pins = ["R9.2", "D4.2"]
+pins = ["R9.2", "D4.2", "TP2.1"]
 
 [[nets]]
 name = "GND"

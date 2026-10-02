@@ -1,0 +1,22 @@
+name = "TestPoint"
+reference = "TP"
+description = "Test point, one pad to probe"
+keywords = ["test", "point", "tp"]
+footprint = "TestPoint_Pad_D1.0mm"
+footprint_filters = ["TestPoint*"]
+pin_names = "hidden"
+hide_pin_numbers = true
+
+[[graphics]]
+kind = "circle"
+center = [0, -3.048]
+radius = 0.762
+width = 0.254
+
+[[pins]]
+number = "1"
+name = "1"
+type = "passive"
+at = [0, 0]
+side = "bottom"
+length = 2.286
