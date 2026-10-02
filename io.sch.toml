@@ -343,7 +343,7 @@ value = "M3"
 
 [[nets]]
 name = "PEDAL_5V"
-class = "Power"
+class = "Supply"
 pins = ["F2.2", "J6.1"]
 
 [[nets]]
@@ -393,7 +393,7 @@ pins = ["R39.2", "R40.1"]
 
 [[nets]]
 name = "SENS_5V"
-class = "Power"
+class = "Supply"
 pins = ["F3.2", "C27.1", "J8.1", "J9.1", "J10.1", "J11.1", "J12.1", "R53.1"]
 
 [[nets]]
@@ -508,7 +508,7 @@ pins = ["R58.1", "R59.1"]
 
 [[nets]]
 name = "+3V3"
-class = "Power"
+class = "Supply"
 pins = ["R57.2", "R59.2"]
 
 [[nets]]

@@ -23,30 +23,36 @@ track_width = "0.2mm"
 clearance = "0.2mm"
 via = "std"
 description = "Fallback only"
+layers = ["F.Cu", "In2.Cu", "B.Cu"]
 
 [[netclasses]]
 name = "Signal"
 track_width = "0.2mm"
-clearance = "0.2mm"
+clearance = "0.15mm"
 via = "std"
 description = "Logic: GPIO, I2C, watchdog, safety logic, sensor ports"
+neckdown = "1mm"
+layers = ["F.Cu", "In2.Cu", "B.Cu"]
 
 [[netclasses]]
 name = "Ground"
-track_width = "0.4mm"
+track_width = "0.25mm"
 clearance = "0.2mm"
 via = "std"
 description = "GND, carried by the In1 plane"
+neckdown = "1mm"
+layers = ["F.Cu", "B.Cu"]
 
 [[netclasses]]
 name = "Power"
 track_width = "0.5mm"
-clearance = "0.25mm"
+clearance = "0.2mm"
 current = "1A"
 max_temp_rise = "10C"
 via = "std"
 description = "5V and 3V3 rails, sensor and pedal supplies"
 layers = ["F.Cu", "B.Cu"]
+neckdown = "1mm"
 
 [[netclasses]]
 name = "Analog"
@@ -54,14 +60,17 @@ description = "Throttle in and out, ADC sense dividers, buck feedback and ripple
 track_width = "0.2mm"
 clearance = "0.25mm"
 via = "std"
+neckdown = "1mm"
+layers = ["F.Cu", "In2.Cu", "B.Cu"]
 
 [[netclasses]]
 name = "USB"
 description = "USB full speed D+/D-"
 track_width = "0.3mm"
-clearance = "0.2mm"
+clearance = "0.15mm"
 via = "std"
-layers = ["F.Cu"]
+layers = ["F.Cu", "In2.Cu", "B.Cu"]
+neckdown = "1mm"
 
 [[netclasses]]
 name = "HV"
@@ -80,3 +89,13 @@ clearance = "0.5mm"
 current = "1.5A"
 via = "std"
 layers = ["F.Cu"]
+
+[[netclasses]]
+name = "Supply"
+description = "Low current rails: 3V3, USB VBUS, sensor and pedal feeds"
+track_width = "0.3mm"
+clearance = "0.15mm"
+current = "0.5A"
+neckdown = "1mm"
+via = "std"
+layers = ["F.Cu", "In2.Cu", "B.Cu"]

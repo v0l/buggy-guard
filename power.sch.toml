@@ -246,12 +246,12 @@ pins = ["L1.2", "R4.1", "C5.2", "C7.1", "C8.1", "D3.1", "U2.1", "U2.3", "C9.1"]
 
 [[nets]]
 name = "VBUS"
-class = "Power"
+class = "Supply"
 pins = ["D3.2"]
 
 [[nets]]
 name = "+3V3"
-class = "Power"
+class = "Supply"
 pins = ["U2.5", "C10.1", "R9.1"]
 
 [[nets]]

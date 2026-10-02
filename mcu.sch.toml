@@ -1,6 +1,6 @@
 name = "mcu"
 board = "buggy-guard"
-no_connect = ["U3.15", "U3.26", "U3.16", "U3.28", "U3.29", "U3.30", "U3.37", "U3.36", "J2.A8", "J2.B8"]
+no_connect = ["U3.15", "U3.26", "U3.16", "U3.28", "U3.29", "U3.30", "U3.24", "U3.25", "J2.A8", "J2.B8"]
 
 [[parts]]
 ref = "U3"
@@ -159,7 +159,7 @@ pins = ["J2.A7", "J2.B7", "U4.3", "U4.4", "U3.13"]
 [[nets]]
 name = "LED_FAULT"
 class = "Signal"
-pins = ["U3.35", "R14.1"]
+pins = ["R14.1", "U3.31"]
 
 [[nets]]
 name = "LED_FAULT_K"
@@ -169,7 +169,7 @@ pins = ["R14.2", "D5.2"]
 [[nets]]
 name = "BUZZ"
 class = "Signal"
-pins = ["U3.34", "R15.1"]
+pins = ["R15.1", "U3.20"]
 
 [[nets]]
 name = "BUZZ_G"
@@ -184,12 +184,12 @@ pins = ["Q1.3", "BZ1.2", "D6.2"]
 [[nets]]
 name = "PEDAL_ADC"
 class = "Analog"
-pins = ["U3.39"]
+pins = ["U3.7"]
 
 [[nets]]
 name = "THR_FB_ADC"
 class = "Analog"
-pins = ["U3.4"]
+pins = ["U3.6"]
 
 [[nets]]
 name = "ESTOP_ADC"
@@ -199,12 +199,12 @@ pins = ["U3.5"]
 [[nets]]
 name = "THR_PWM"
 class = "Signal"
-pins = ["U3.6"]
+pins = ["U3.19"]
 
 [[nets]]
 name = "ARM"
 class = "Signal"
-pins = ["U3.7"]
+pins = ["U3.8"]
 
 [[nets]]
 name = "I2C_SDA"
@@ -219,86 +219,86 @@ pins = ["U3.17"]
 [[nets]]
 name = "WDOK"
 class = "Signal"
-pins = ["U3.18"]
+pins = ["U3.11"]
 
 [[nets]]
 name = "IMU_INT2"
 class = "Signal"
-pins = ["U3.19"]
+pins = ["U3.18"]
 
 [[nets]]
 name = "WDI"
 class = "Signal"
-pins = ["U3.20"]
+pins = ["U3.10"]
 
 [[nets]]
 name = "BRK_REL"
 class = "Signal"
-pins = ["U3.21"]
+pins = ["U3.9"]
 
 [[nets]]
 name = "SPEED"
 class = "Signal"
-pins = ["U3.22"]
+pins = ["U3.21"]
 
 [[nets]]
 name = "US1_TRIG"
 class = "Signal"
-pins = ["U3.8"]
+pins = ["U3.39"]
 
 [[nets]]
 name = "US1_ECHO"
 class = "Signal"
-pins = ["U3.9"]
+pins = ["U3.38"]
 
 [[nets]]
 name = "US2_TRIG"
 class = "Signal"
-pins = ["U3.10"]
+pins = ["U3.37"]
 
 [[nets]]
 name = "US2_ECHO"
 class = "Signal"
-pins = ["U3.11"]
+pins = ["U3.36"]
 
 [[nets]]
 name = "US3_TRIG"
 class = "Signal"
-pins = ["U3.23"]
+pins = ["U3.35"]
 
 [[nets]]
 name = "US3_ECHO"
 class = "Signal"
-pins = ["U3.31"]
+pins = ["U3.34"]
 
 [[nets]]
 name = "US4_TRIG"
 class = "Signal"
-pins = ["U3.32"]
+pins = ["U3.33"]
 
 [[nets]]
 name = "US4_ECHO"
 class = "Signal"
-pins = ["U3.33"]
+pins = ["U3.32"]
 
 [[nets]]
 name = "AUX1"
 class = "Signal"
-pins = ["U3.24"]
+pins = ["U3.22"]
 
 [[nets]]
 name = "AUX2"
 class = "Signal"
-pins = ["U3.25"]
+pins = ["U3.23"]
 
 [[nets]]
 name = "+3V3"
-class = "Power"
+class = "Supply"
 pins = ["U3.2", "C12.1", "C13.1", "R10.1", "R11.1"]
 
 [[nets]]
 name = "VBUS"
-class = "Power"
+class = "Supply"
 pins = ["J2.A4", "J2.A9", "U4.5"]
 
 [[nets]]
@@ -314,4 +314,4 @@ pins = ["U3.1", "U3.40", "U3.41", "C12.2", "C13.2", "C14.2", "SW1.1", "SW2.1", "
 [[nets]]
 name = "VBAT_ADC"
 class = "Analog"
-pins = ["U3.38"]
+pins = ["U3.4"]
