@@ -165,7 +165,7 @@ rotation = 90.0
 ref = "R42"
 symbol = "R"
 at = [129.54, 88.9]
-value = "10k"
+value = "15k"
 rotation = 90.0
 
 [[parts]]
@@ -191,7 +191,7 @@ rotation = 90.0
 ref = "R45"
 symbol = "R"
 at = [129.54, 114.3]
-value = "10k"
+value = "15k"
 rotation = 90.0
 
 [[parts]]
@@ -217,7 +217,7 @@ rotation = 90.0
 ref = "R48"
 symbol = "R"
 at = [129.54, 139.7]
-value = "10k"
+value = "15k"
 rotation = 90.0
 
 [[parts]]
@@ -243,7 +243,7 @@ rotation = 90.0
 ref = "R51"
 symbol = "R"
 at = [129.54, 165.1]
-value = "10k"
+value = "15k"
 rotation = 90.0
 
 [[parts]]
