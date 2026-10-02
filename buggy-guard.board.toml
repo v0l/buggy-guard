@@ -1,22 +1,18 @@
 name = "buggy-guard"
 description = "Safety controller for a 48 V kids buggy: ESP32-S3 gates a sine wave ESC through throttle clamp, e-brake and ignition cut, with a hardware watchdog and latched impact kill"
 fab = "jlcpcb"
-
 [outline]
 size = [100.0, 80.0]
 corner_radius = "2"
-
 [stackup]
 preset = "JLC04161H-7628"
 finish = "ENIG"
 mask_color = "black"
 silk_color = "white"
-
 [[vias]]
 name = "std"
 drill = "0.3mm"
 diameter = "0.6mm"
-
 [[netclasses]]
 name = "Default"
 track_width = "0.2mm"
@@ -24,7 +20,6 @@ clearance = "0.2mm"
 via = "std"
 description = "Fallback only"
 layers = ["F.Cu", "In2.Cu", "B.Cu"]
-
 [[netclasses]]
 name = "Signal"
 track_width = "0.2mm"
@@ -33,7 +28,6 @@ via = "std"
 description = "Logic: GPIO, I2C, watchdog, safety logic, sensor ports"
 neckdown = "1mm"
 layers = ["F.Cu", "In2.Cu", "B.Cu"]
-
 [[netclasses]]
 name = "Ground"
 track_width = "0.25mm"
@@ -42,7 +36,6 @@ via = "std"
 description = "GND, carried by the In1 plane"
 neckdown = "1mm"
 layers = ["F.Cu", "B.Cu"]
-
 [[netclasses]]
 name = "Power"
 track_width = "0.5mm"
@@ -53,7 +46,6 @@ via = "std"
 description = "5V and 3V3 rails, sensor and pedal supplies"
 layers = ["F.Cu", "B.Cu"]
 neckdown = "1mm"
-
 [[netclasses]]
 name = "Analog"
 description = "Throttle in and out, ADC sense dividers, buck feedback and ripple injection"
@@ -62,7 +54,6 @@ clearance = "0.25mm"
 via = "std"
 neckdown = "1mm"
 layers = ["F.Cu", "In2.Cu", "B.Cu"]
-
 [[netclasses]]
 name = "USB"
 description = "USB full speed D+/D-"
@@ -71,7 +62,6 @@ clearance = "0.15mm"
 via = "std"
 layers = ["F.Cu", "In2.Cu", "B.Cu"]
 neckdown = "1mm"
-
 [[netclasses]]
 name = "HV"
 description = "48 V battery side: keyed battery input, ignition, e-stop loop, buck input"
@@ -80,7 +70,6 @@ clearance = "0.5mm"
 current = "1A"
 via = "std"
 layers = ["F.Cu", "B.Cu"]
-
 [[netclasses]]
 name = "Switch"
 description = "Buck switch node, short and on top only"
@@ -89,13 +78,11 @@ clearance = "0.5mm"
 current = "1.5A"
 via = "std"
 layers = ["F.Cu"]
-
 [[netclasses]]
 name = "Supply"
 description = "Low current rails: 3V3, USB VBUS, sensor and pedal feeds"
 track_width = "0.3mm"
 clearance = "0.15mm"
-current = "0.5A"
 neckdown = "1mm"
 via = "std"
 layers = ["F.Cu", "In2.Cu", "B.Cu"]
