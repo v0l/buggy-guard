@@ -568,8 +568,8 @@ label = { at = [41.1, 51.5], rotation = 90.0 }
 
 [[footprints]]
 ref = "F2"
-at = [32.2, 62.5]
-label = { at = [32.2, 60.67] }
+at = [34.5, 62.1]
+label = { at = [37.94, 58.95] }
 
 [[footprints]]
 ref = "R32"
@@ -602,14 +602,14 @@ label = { at = [57.93, 49.95], rotation = 90.0 }
 
 [[footprints]]
 ref = "R35"
-at = [30.25, 57.55]
+at = [30.6, 55.4]
 rotation = 180.0
-label = { at = [30.25, 58.98] }
+label = { at = [30.6, 56.8] }
 
 [[footprints]]
 ref = "C23"
-at = [26.6, 58.75]
-label = { at = [26.6, 57.32] }
+at = [30.6, 58.6]
+label = { at = [33.86, 58.6] }
 
 [[footprints]]
 ref = "C24"
@@ -652,13 +652,13 @@ label = { at = [59.25, 19.57] }
 
 [[footprints]]
 ref = "F3"
-at = [27.6, 62.1]
-label = { at = [27.6, 60.27] }
+at = [26.6, 62.1]
+label = { at = [28.1, 58.94] }
 
 [[footprints]]
 ref = "C27"
-at = [45.5, 32.5]
-label = { at = [45.5, 33.9] }
+at = [30.2, 62.1]
+label = { at = [30.75, 60.4] }
 
 [[footprints]]
 ref = "R41"
@@ -1939,16 +1939,6 @@ net = "BUZZ_N"
 layer = "B.Cu"
 points = [[77.2, 59.1], [70.7, 52.6], [70.7, 41.25]]
 
-[[tracks]]
-net = "PEDAL_5V"
-layer = "In2.Cu"
-points = [[31.7, 74.05], [33.15, 72.6], [33.15, 65.7]]
-
-[[tracks]]
-net = "PEDAL_5V"
-layer = "F.Cu"
-points = [[33.15, 65.7], [33.15, 63.35]]
-
 [[vias]]
 net = "UVLO"
 at = [32.95, 18.55]
@@ -2317,11 +2307,6 @@ via = "std"
 [[vias]]
 net = "+5V"
 at = [31.25, 66.55]
-via = "std"
-
-[[vias]]
-net = "PEDAL_5V"
-at = [33.15, 65.7]
 via = "std"
 
 [[tracks]]
@@ -2760,6 +2745,44 @@ via = "std"
 
 # agentee route SENS_5V
 
+
+# agentee route SENS_5V PEDAL_5V
+
+[[tracks]]
+net = "PEDAL_5V"
+layer = "In2.Cu"
+points = [[31.7, 74.05], [31.7, 67.7]]
+
+[[tracks]]
+net = "PEDAL_5V"
+layer = "F.Cu"
+points = [[31.7, 67.7], [34.35, 65.05], [34.35, 62.95]]
+
+[[vias]]
+net = "PEDAL_5V"
+at = [31.7, 67.7]
+via = "std"
+
+# agentee route SENS_5V
+
+
+# agentee route SENS_5V
+
+[[tracks]]
+net = "SENS_5V"
+layer = "F.Cu"
+points = [[29.0, 61.8], [28.6, 61.8]]
+
+[[tracks]]
+net = "SENS_5V"
+layer = "In2.Cu"
+points = [[41.2, 74.15], [30.0, 62.95], [29.15, 62.95]]
+
+[[tracks]]
+net = "SENS_5V"
+layer = "F.Cu"
+points = [[29.15, 62.95], [29.15, 62.55]]
+
 [[tracks]]
 net = "SENS_5V"
 layer = "F.Cu"
@@ -2782,35 +2805,10 @@ points = [[95.85, 33.7], [96.4, 33.15], [96.4, 21.35], [95.85, 20.8]]
 
 [[tracks]]
 net = "SENS_5V"
-layer = "In2.Cu"
-points = [[41.3, 74.05], [41.3, 72.55], [28.95, 60.2]]
-
-[[tracks]]
-net = "SENS_5V"
-layer = "F.Cu"
-points = [[28.8, 61.25], [28.8, 59.95]]
-
-[[tracks]]
-net = "SENS_5V"
-layer = "In2.Cu"
-points = [[28.8, 59.95], [35.0, 53.75], [35.0, 51.65]]
-
-[[tracks]]
-net = "SENS_5V"
-layer = "F.Cu"
-points = [[35.0, 51.65], [35.0, 41.65], [43.85, 32.8], [44.3, 32.8]]
-
-[[tracks]]
-net = "SENS_5V"
 layer = "B.Cu"
 points = [[42.8, 74.15], [48.45, 68.5], [54.3, 68.5], [58.6, 64.2], [94.05, 64.2]]
 
 [[vias]]
 net = "SENS_5V"
-at = [28.8, 59.95]
-via = "std"
-
-[[vias]]
-net = "SENS_5V"
-at = [35.0, 51.65]
+at = [29.15, 62.95]
 via = "std"
