@@ -2612,101 +2612,6 @@ via = "std"
 # agentee route THR_F1 GND
 
 [[tracks]]
-net = "THR_F1"
-layer = "F.Cu"
-points = [[67.7, 34.25], [67.7, 36.15]]
-
-[[tracks]]
-net = "THR_F1"
-layer = "In2.Cu"
-points = [[67.7, 36.15], [56.8, 47.05]]
-
-[[tracks]]
-net = "THR_F1"
-layer = "F.Cu"
-points = [[56.8, 47.05], [56.8, 48.75]]
-
-[[tracks]]
-net = "THR_F1"
-layer = "F.Cu"
-points = [[56.05, 49.45], [55.4, 50.1]]
-
-[[tracks]]
-net = "THR_F1"
-layer = "B.Cu"
-points = [[55.4, 50.1], [55.05, 50.45]]
-
-[[tracks]]
-net = "THR_F1"
-layer = "F.Cu"
-points = [[55.05, 50.75], [54.15, 50.75], [54.15, 50.45]]
-
-[[tracks]]
-net = "THR_F1"
-layer = "B.Cu"
-points = [[54.15, 50.45], [53.9, 50.7]]
-
-[[tracks]]
-net = "THR_F1"
-layer = "F.Cu"
-points = [[53.9, 50.7], [44.85, 50.7], [36.35, 59.2], [31.0, 59.2]]
-
-[[tracks]]
-net = "THR_F1"
-layer = "B.Cu"
-points = [[31.0, 59.2], [29.15, 61.05], [28.35, 61.05]]
-
-[[tracks]]
-net = "THR_F1"
-layer = "F.Cu"
-points = [[28.35, 61.05], [28.35, 61.5]]
-
-[[vias]]
-net = "THR_F1"
-at = [67.7, 36.15]
-via = "std"
-
-[[vias]]
-net = "THR_F1"
-at = [56.8, 47.05]
-via = "std"
-
-[[vias]]
-net = "THR_F1"
-at = [55.4, 50.1]
-via = "std"
-
-[[vias]]
-net = "THR_F1"
-at = [55.05, 50.75]
-via = "std"
-
-[[vias]]
-net = "THR_F1"
-at = [54.15, 50.45]
-via = "std"
-
-[[vias]]
-net = "THR_F1"
-at = [53.9, 50.7]
-via = "std"
-
-[[vias]]
-net = "THR_F1"
-at = [31.0, 59.2]
-via = "std"
-
-[[vias]]
-net = "THR_F1"
-at = [28.35, 61.05]
-via = "std"
-
-# agentee route THR_F2 GND
-
-
-# agentee route THR_F2 ESTOP_ADC GND
-
-[[tracks]]
 net = "GND"
 layer = "F.Cu"
 points = [[53.5, 44.25], [53.1, 44.25]]
@@ -2912,3 +2817,35 @@ points = [[26.1, 61.45], [26.1, 56.05]]
 net = "THR_F2"
 layer = "F.Cu"
 points = [[24.4, 66.35], [26.1, 64.65], [26.1, 62.35]]
+
+# agentee route THR_F1
+
+[[tracks]]
+net = "THR_F1"
+layer = "F.Cu"
+points = [[67.7, 34.25], [67.7, 36.15]]
+
+[[tracks]]
+net = "THR_F1"
+layer = "In2.Cu"
+points = [[67.7, 36.15], [56.8, 47.05]]
+
+[[tracks]]
+net = "THR_F1"
+layer = "F.Cu"
+points = [[56.8, 47.05], [56.8, 48.75]]
+
+[[tracks]]
+net = "THR_F1"
+layer = "F.Cu"
+points = [[56.05, 49.45], [49.45, 56.05], [35.1, 56.05], [33.05, 54.0], [28.95, 54.0], [28.3, 54.65], [28.3, 61.45]]
+
+[[vias]]
+net = "THR_F1"
+at = [67.7, 36.15]
+via = "std"
+
+[[vias]]
+net = "THR_F1"
+at = [56.8, 47.05]
+via = "std"
