@@ -84,20 +84,6 @@ locked = true
 label = { at = [90.96, 23.08] }
 
 [[footprints]]
-ref = "J10"
-at = [95.0, 49.0]
-rotation = 90.0
-locked = true
-label = { at = [90.46, 46.0] }
-
-[[footprints]]
-ref = "J11"
-at = [95.0, 63.5]
-rotation = 90.0
-locked = true
-label = { at = [95.53, 67.43] }
-
-[[footprints]]
 ref = "J3"
 at = [45.0, 4.0]
 rotation = 180.0
@@ -692,38 +678,6 @@ at = [81.45, 9.3]
 label = { at = [81.45, 7.87] }
 
 [[footprints]]
-ref = "R47"
-at = [90.05, 44.5]
-label = { at = [90.05, 42.8] }
-
-[[footprints]]
-ref = "R48"
-at = [90.55, 38.35]
-label = { at = [90.55, 36.92] }
-
-[[footprints]]
-ref = "R49"
-at = [84.8, 9.35]
-label = { at = [84.8, 7.92] }
-
-[[footprints]]
-ref = "R50"
-at = [89.1, 58.95]
-rotation = 270.0
-label = { at = [90.53, 58.95], rotation = 90.0 }
-
-[[footprints]]
-ref = "R51"
-at = [89.45, 54.9]
-label = { at = [89.45, 53.47] }
-
-[[footprints]]
-ref = "R52"
-at = [86.3, 43.7]
-rotation = 180.0
-label = { at = [86.3, 45.13] }
-
-[[footprints]]
 ref = "R53"
 at = [46.25, 71.2]
 label = { at = [46.25, 69.77] }
@@ -772,6 +726,11 @@ label = { at = [78.8, 45.18] }
 ref = "R12"
 at = [74.8, 70.5]
 rotation = 270.0
+locked = true
+
+[[footprints]]
+ref = "J14"
+at = [82.0, 75.0]
 locked = true
 
 [[zones]]
@@ -1426,29 +1385,9 @@ layer = "F.Cu"
 points = [[70.55, 35.9], [69.9, 35.25], [69.9, 34.25]]
 
 [[tracks]]
-net = "US3_ECHO"
-layer = "F.Cu"
-points = [[86.0, 18.85], [84.25, 17.1], [84.25, 9.8]]
-
-[[tracks]]
 net = "I2C_SCL"
 layer = "F.Cu"
 points = [[43.75, 5.3], [44.2, 4.85], [57.1, 4.85], [58.95, 6.7]]
-
-[[tracks]]
-net = "US2_TRIG"
-layer = "F.Cu"
-points = [[87.5, 15.75], [89.3, 17.55], [89.3, 31.45]]
-
-[[tracks]]
-net = "US3_ECHO"
-layer = "F.Cu"
-points = [[87.5, 19.65], [87.8, 19.65], [88.85, 20.7], [88.85, 37.3], [89.45, 37.9]]
-
-[[tracks]]
-net = "US4_ECHO"
-layer = "F.Cu"
-points = [[87.5, 22.1], [88.35, 22.95], [88.35, 42.3], [87.4, 43.25]]
 
 [[tracks]]
 net = "BRK_REL"
@@ -1491,11 +1430,6 @@ layer = "F.Cu"
 points = [[87.5, 13.8], [90.5, 10.8], [90.5, 9.25]]
 
 [[tracks]]
-net = "US2_ECHO"
-layer = "F.Cu"
-points = [[86.0, 16.3], [85.65, 15.95], [85.65, 10.65], [86.8, 9.5]]
-
-[[tracks]]
 net = "BUZZ"
 layer = "F.Cu"
 points = [[76.95, 30.1], [76.8, 30.25], [76.8, 30.55]]
@@ -1529,36 +1463,6 @@ points = [[81.5, 30.1], [82.05, 30.65], [82.05, 41.25], [79.95, 43.35]]
 net = "LED_FAULT"
 layer = "F.Cu"
 points = [[87.5, 23.35], [87.8, 23.65], [87.8, 28.75], [85.95, 30.6], [85.95, 40.1], [86.15, 40.3]]
-
-[[tracks]]
-net = "US3_TRIG"
-layer = "F.Cu"
-points = [[87.5, 18.3], [88.0, 18.8]]
-
-[[tracks]]
-net = "US3_TRIG"
-layer = "In2.Cu"
-points = [[88.0, 18.8], [87.5, 19.3], [87.5, 42.6], [88.3, 43.4]]
-
-[[tracks]]
-net = "US3_TRIG"
-layer = "F.Cu"
-points = [[88.3, 43.4], [88.95, 44.05]]
-
-[[tracks]]
-net = "US4_TRIG"
-layer = "F.Cu"
-points = [[87.5, 20.85], [88.1, 20.85]]
-
-[[tracks]]
-net = "US4_TRIG"
-layer = "B.Cu"
-points = [[88.1, 20.85], [89.4, 22.15], [90.95, 22.15]]
-
-[[tracks]]
-net = "US4_TRIG"
-layer = "F.Cu"
-points = [[90.95, 22.15], [90.5, 22.6], [90.5, 42.65], [89.95, 43.2], [89.95, 54.0], [89.45, 54.5], [89.45, 57.75]]
 
 [[tracks]]
 net = "BOOT"
@@ -1616,11 +1520,6 @@ layer = "F.Cu"
 points = [[53.2, 32.65], [53.65, 32.2], [55.5, 32.2], [55.95, 32.65]]
 
 [[tracks]]
-net = "US2_TRIG_C"
-layer = "F.Cu"
-points = [[94.05, 31.85], [91.6, 31.85]]
-
-[[tracks]]
 net = "SPEED_C"
 layer = "F.Cu"
 points = [[46.85, 74.05], [46.85, 71.65]]
@@ -1631,39 +1530,14 @@ layer = "F.Cu"
 points = [[84.5, 41.2], [82.4, 43.3]]
 
 [[tracks]]
-net = "US3_TRIG_C"
-layer = "F.Cu"
-points = [[94.1, 46.2], [92.75, 44.85], [91.25, 44.85]]
-
-[[tracks]]
 net = "SAFE"
 layer = "F.Cu"
 points = [[38.2, 45.35], [39.3, 46.45], [42.65, 46.45], [43.3, 45.8]]
 
 [[tracks]]
-net = "US4_ECHO_C"
-layer = "F.Cu"
-points = [[94.1, 58.2], [91.15, 55.25], [90.65, 55.25]]
-
-[[tracks]]
-net = "US4_TRIG_C"
-layer = "F.Cu"
-points = [[94.1, 60.7], [93.45, 60.05], [89.55, 60.05]]
-
-[[tracks]]
-net = "US2_ECHO"
-layer = "F.Cu"
-points = [[86.7, 8.7], [86.45, 8.45], [81.5, 8.45], [81.0, 8.95]]
-
-[[tracks]]
 net = "WDOK"
 layer = "F.Cu"
 points = [[52.45, 43.35], [52.45, 39.8], [51.8, 39.15], [51.8, 39.0], [50.85, 38.05]]
-
-[[tracks]]
-net = "US3_ECHO_C"
-layer = "F.Cu"
-points = [[94.6, 43.2], [91.65, 40.25], [91.65, 38.8]]
 
 [[tracks]]
 net = "US1_ECHO_C"
@@ -1686,24 +1560,9 @@ layer = "F.Cu"
 points = [[47.45, 70.85], [54.25, 64.05], [55.05, 64.05]]
 
 [[tracks]]
-net = "US4_ECHO"
-layer = "F.Cu"
-points = [[87.4, 44.15], [88.35, 45.1], [88.35, 54.45]]
-
-[[tracks]]
 net = "US1_TRIG_C"
 layer = "F.Cu"
 points = [[94.6, 16.7], [91.5, 13.6], [91.5, 8.3], [89.65, 6.45], [88.95, 6.45]]
-
-[[tracks]]
-net = "US2_ECHO_C"
-layer = "In2.Cu"
-points = [[94.6, 28.7], [89.0, 23.1], [89.0, 9.9]]
-
-[[tracks]]
-net = "US2_ECHO_C"
-layer = "F.Cu"
-points = [[89.0, 9.9], [89.0, 9.5]]
 
 [[tracks]]
 net = "AUX1_C"
@@ -2001,26 +1860,6 @@ at = [77.85, 39.9]
 via = "std"
 
 [[vias]]
-net = "US3_TRIG"
-at = [88.0, 18.8]
-via = "std"
-
-[[vias]]
-net = "US3_TRIG"
-at = [88.3, 43.4]
-via = "std"
-
-[[vias]]
-net = "US4_TRIG"
-at = [88.1, 20.85]
-via = "std"
-
-[[vias]]
-net = "US4_TRIG"
-at = [90.95, 22.15]
-via = "std"
-
-[[vias]]
 net = "BOOT"
 at = [86.55, 29.05]
 via = "std"
@@ -2033,11 +1872,6 @@ via = "std"
 [[vias]]
 net = "AUX1"
 at = [63.7, 46.05]
-via = "std"
-
-[[vias]]
-net = "US2_ECHO_C"
-at = [89.0, 9.9]
 via = "std"
 
 [[vias]]
@@ -2343,46 +2177,6 @@ layer = "F.Cu"
 points = [[22.8, 74.15], [27.6, 69.35], [33.25, 69.35], [37.9, 64.7], [37.9, 63.1]]
 
 [[tracks]]
-net = "SENS_5V"
-layer = "F.Cu"
-points = [[31.8, 60.3], [31.05, 60.3]]
-
-[[tracks]]
-net = "SENS_5V"
-layer = "In2.Cu"
-points = [[31.05, 60.3], [29.9, 59.15]]
-
-[[tracks]]
-net = "SENS_5V"
-layer = "F.Cu"
-points = [[29.9, 59.15], [29.9, 58.7]]
-
-[[tracks]]
-net = "SENS_5V"
-layer = "F.Cu"
-points = [[42.7, 74.05], [45.15, 71.6]]
-
-[[tracks]]
-net = "SENS_5V"
-layer = "F.Cu"
-points = [[95.85, 62.7], [96.4, 62.15], [96.4, 50.35], [95.85, 49.8]]
-
-[[tracks]]
-net = "SENS_5V"
-layer = "F.Cu"
-points = [[95.85, 48.2], [96.4, 47.65], [96.4, 35.85], [95.85, 35.3]]
-
-[[tracks]]
-net = "SENS_5V"
-layer = "F.Cu"
-points = [[95.85, 33.7], [96.4, 33.15], [96.4, 21.35], [95.85, 20.8]]
-
-[[tracks]]
-net = "SENS_5V"
-layer = "In2.Cu"
-points = [[41.3, 74.05], [31.2, 63.95], [31.2, 60.55]]
-
-[[tracks]]
 net = "PEDAL_5V"
 layer = "B.Cu"
 points = [[31.2, 74.05], [31.2, 67.45], [32.7, 65.95], [32.7, 56.55]]
@@ -2391,21 +2185,6 @@ points = [[31.2, 74.05], [31.2, 67.45], [32.7, 65.95], [32.7, 56.55]]
 net = "PEDAL_5V"
 layer = "F.Cu"
 points = [[32.7, 56.55], [32.7, 56.15]]
-
-[[tracks]]
-net = "SENS_5V"
-layer = "B.Cu"
-points = [[42.8, 74.15], [47.75, 69.2], [89.05, 69.2], [94.05, 64.2]]
-
-[[vias]]
-net = "SENS_5V"
-at = [31.05, 60.3]
-via = "std"
-
-[[vias]]
-net = "SENS_5V"
-at = [29.9, 59.15]
-via = "std"
 
 [[vias]]
 net = "PEDAL_5V"
@@ -2848,4 +2627,112 @@ via = "std"
 [[vias]]
 net = "THR_F1"
 at = [56.8, 47.05]
+via = "std"
+
+# agentee route US2_TRIG US2_ECHO
+
+[[tracks]]
+net = "US2_ECHO"
+layer = "F.Cu"
+points = [[86.0, 21.4], [85.65, 21.05], [85.65, 10.7], [85.85, 10.5], [85.85, 10.4], [86.8, 9.45]]
+
+[[tracks]]
+net = "US2_ECHO"
+layer = "F.Cu"
+points = [[85.6, 10.8], [82.15, 10.8], [81.0, 9.65]]
+
+[[tracks]]
+net = "US2_TRIG"
+layer = "F.Cu"
+points = [[87.5, 20.85], [89.3, 22.65], [89.3, 31.45]]
+
+# agentee route US2_TRIG_C US2_ECHO_C
+
+[[tracks]]
+net = "US2_ECHO_C"
+layer = "In2.Cu"
+points = [[94.6, 28.7], [89.0, 23.1], [89.0, 9.9]]
+
+[[tracks]]
+net = "US2_ECHO_C"
+layer = "F.Cu"
+points = [[89.0, 9.9], [89.0, 9.5]]
+
+[[tracks]]
+net = "US2_TRIG_C"
+layer = "F.Cu"
+points = [[94.05, 31.85], [91.6, 31.85]]
+
+[[vias]]
+net = "US2_ECHO_C"
+at = [89.0, 9.9]
+via = "std"
+
+# agentee route UART_TX UART_RX
+
+[[tracks]]
+net = "UART_TX"
+layer = "F.Cu"
+points = [[87.5, 15.75], [97.05, 25.3], [97.05, 66.85], [89.8, 74.1]]
+
+[[tracks]]
+net = "UART_RX"
+layer = "F.Cu"
+points = [[87.5, 17.0], [89.9, 19.4], [89.9, 22.2]]
+
+[[tracks]]
+net = "UART_RX"
+layer = "B.Cu"
+points = [[89.9, 22.2], [87.3, 24.8], [87.3, 74.1]]
+
+[[vias]]
+net = "UART_RX"
+at = [89.9, 22.2]
+via = "std"
+
+# agentee route SENS_5V
+
+[[tracks]]
+net = "SENS_5V"
+layer = "F.Cu"
+points = [[31.85, 59.9], [30.6, 58.65]]
+
+[[tracks]]
+net = "SENS_5V"
+layer = "F.Cu"
+points = [[45.05, 70.85], [44.3, 70.1]]
+
+[[tracks]]
+net = "SENS_5V"
+layer = "In2.Cu"
+points = [[44.3, 70.1], [35.6, 61.4]]
+
+[[tracks]]
+net = "SENS_5V"
+layer = "F.Cu"
+points = [[35.6, 61.4], [33.0, 61.4]]
+
+[[tracks]]
+net = "SENS_5V"
+layer = "F.Cu"
+points = [[42.7, 74.05], [45.15, 71.6]]
+
+[[tracks]]
+net = "SENS_5V"
+layer = "In2.Cu"
+points = [[95.85, 33.7], [96.4, 33.15], [96.4, 21.35], [95.85, 20.8]]
+
+[[tracks]]
+net = "SENS_5V"
+layer = "In2.Cu"
+points = [[40.45, 66.05], [52.95, 66.05], [80.9, 38.1], [91.15, 38.1], [94.05, 35.2]]
+
+[[vias]]
+net = "SENS_5V"
+at = [44.3, 70.1]
+via = "std"
+
+[[vias]]
+net = "SENS_5V"
+at = [35.6, 61.4]
 via = "std"
