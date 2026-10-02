@@ -3,7 +3,7 @@ name = "Fuse_Littelfuse-NANO2-451_453"
 description = "Littelfuse NANO2 https://www.littelfuse.com/~/media/electronics/datasheets/fuses/littelfuse_fuse_451_453_datasheet.pdf.pdf"
 tags = ["Fuse", "Nano2"]
 mount = "smd"
-model = "${KICAD9_3DMODEL_DIR}/Fuse.3dshapes/Fuse_Littelfuse-NANO2-451_453.step"
+height = "2.4mm"
 
 [[pads]]
 number = "1"

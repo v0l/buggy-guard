@@ -3,7 +3,9 @@ name = "USB_C_Receptacle_HRO_TYPE-C-31-M-12"
 description = "USB Type-C receptacle for USB 2.0 and PD, http://www.krhro.com/uploads/soft/180320/1-1P320120243.pdf"
 tags = ["usb", "usb-c", "2.0", "pd"]
 mount = "smd"
-model = "${KICAD9_3DMODEL_DIR}/Connector_USB.3dshapes/USB_C_Receptacle_HRO_TYPE-C-31-M-12.step"
+model = "3dmodels/USB_C_Receptacle_HRO_TYPE-C-31-M-12.step"
+model_offset = [-4.47, -1.66, -7.9]
+model_rotate = [0.0, 0.0, 0.0]
 
 [[pads]]
 kind = "npth"
