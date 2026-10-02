@@ -65,7 +65,7 @@ sees it. The kill is latched in firmware until the pedal is at zero and the fob 
 |---|---|---|
 | U1 | LM5164 | TI LM5164DDAR |
 | U2 | AP2112K-3.3 | Diodes AP2112K-3.3TRG1 |
-| U3 | ESP32-S3-WROOM-1U-N16R8 | 16 MB flash, 8 MB PSRAM, u.FL antenna (the module has no PCB antenna) |
+| U3 | ESP32-S3-WROOM-1U-N16R8 | 16 MB flash, 8 MB PSRAM. The -1U has a U.FL socket on the module and no PCB antenna |
 | U5 | TPS3430 | TI TPS3430WDRCR, window watchdog with a separate WDO |
 | U6 | LSM6DS3TR-C | ST, 16 g accelerometer for the impact latch |
 | U7, U8 | 74AHCT1G08, 74AHCT1G00 | AHCT so 3.3 V is a valid high |
@@ -97,6 +97,14 @@ sees it. The kill is latched in firmware until the pedal is at zero and the fob 
   bottom-left pins without crossing the 5 V cluster.
 - F3, C27 and F2 are in a line above U9 with F3's body vertical; the sensor 5 V filter cap has to
   be within a few mm of F3.2 or the ultrasonic echo lines pick up noise.
+- U3's u.FL socket is on the -x side of the module, so the antenna pigtail exits toward the left
+  (inboard). Leave that space clear and keep the coax away from the buck and the ignition wiring.
+- The two 3D models in `3dmodels/` are the vendor ESP32 STEP (from the datasheet link) and a
+  community HRO USB-C STEP, neither of which exists in the KiCad library. Their `model_offset`
+  and `model_rotate` were derived from the measured bounding boxes, not by eye: the ESP sits at
+  z 0..3.2 with no offset in z, the USB-C needs `rotate = [90, 0, 0]` because it was exported
+  lying on its side. `agentee check` cannot catch a bad transform, so verify in the 3D view
+  or by walking the STEP vertices.
 
 ## Connectors
 
@@ -111,6 +119,21 @@ sees it. The kill is latched in firmware until the pedal is at zero and the fob 
 | J12 | JST XH 3 way | 1 SENS_5V, 2 GND, 3 wheel hall signal |
 | J13 | JST XH 3 way | 1 AUX1, 2 AUX2 (to +3V3, switch to ground), 3 GND |
 | J3 | JST SH 4 way | 1 GND, 2 +3V3, 3 SDA, 4 SCL |
+| J14 | JST XH 4 way | 1 GND, 2 +3V3, 3 RX (into the MCU), 4 TX (out of it). A console without USB |
+
+Two ultrasonic ports, not four: J8 front, J9 rear. Four ports left no spare GPIO, and with
+ESP-NOW gating reverse there is nothing useful a rear pair of corners would add over one
+rear-centre sensor. That freed TXD0/RXD0 for the J14 console header and left IO42, IO47 and IO48
+still unused.
+
+## Test access
+
+17 pads on the bottom side, all 1.0 mm, listed in `fab/testpoints.csv`: VBAT_ADC, PWR_LED, EN,
+I2C_SDA, I2C_SCL, THR_FB_ADC, WDOK, WDI, BRK_REL, SAFE, KILL, US1/US2 trigger and echo,
+PEDAL_ADC, SPEED and IGN_PD. +3V3, +5V and GND are reached through their plane pads.
+
+Not probed: VBAT_F, VBUS and IGN_G. The autorouter found no path for a bottom pad next to those
+three nets, and they are reachable from a probe on the top side or at the connector.
 
 ## Firmware contract
 
@@ -140,3 +163,7 @@ The hardware is the safety net; the firmware only ever removes throttle. It must
 - No fob PCB yet: the ESP-12F is meant to be the handheld remote, speaking ESP-NOW.
 - The board has no fiducials; JLCPCB adds them for assembly panels, but add three if the board
   is to be assembled bare.
+- The ESP32-S3-WROOM-1U carries a U.FL socket on the module itself (datasheet section 10.2), so the
+  antenna is a pigtail plugging into the module, not a board net. Mount the board with the u.FL end
+  of the module pointing wherever the pigtail can reach, and keep the pigtail short and away from
+  the buck switch node and the ignition wiring.

@@ -3109,7 +3109,7 @@ via = "std"
 [[graphics]]
 kind = "text"
 layer = "F.SilkS"
-at = [75,32.4,]
+at = [75.0, 32.4]
 text = "EN"
 size = 1.2
 locked = true
