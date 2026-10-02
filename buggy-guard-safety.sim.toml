@@ -1,0 +1,52 @@
+name = "buggy-guard-safety"
+kind = "logic"
+schematic = "buggy-guard"
+description = "Watchdog-fail safety: when WDOK falls (watchdog timeout or a latched IMU impact) SAFE must go low and KILL high, and the throttle must stay shunted when WDOK returns."
+duration = "4us"
+ignore = ["J1","J2","J3","J4","J5","J6","J7","J8","J9","J12","J13","J14","U1","U2","U3","U4","U5","U6","U9","Q1","Q2","Q3","Q4","Q5","BZ1","D1","D2","D3","D4","D5","D6","D7","D8","D9","F1","F2","F3","L1","SW1","SW2","TP1","TP2","TP3","TP4","TP5","TP6","TP7","TP8","TP9","TP10","TP11","TP12","TP13","TP14","TP15","TP16","TP17","TP19","H1","H2","H3","H4"]
+record = ["ARM", "WDOK", "BRK_REL", "SAFE", "KILL"]
+on_violation = "keep"
+
+# U5 (TPS3430) is ignored, so the watchdog WDO node has no driver and its open-drain WDO cannot
+# be modelled without a real WDI stimulus. WDOK is driven directly instead.
+
+# BRK_REL carries a 100k pull-down (R23) and the sim treats a rail resistor as a driver, so it
+# cannot also take a stimulus: it sits at its pull-down for the run.
+
+# ARM carries a 100k pull-down (R22) and is the gate's own input pin, so it is also left to the
+# pull-down: the vehicle is disarmed for the whole run, which is the idle state worth proving.
+
+# The watchdog node toggling, as if fed and then starved.
+[[stimulus]]
+net = "WDOK"
+steps = [["0ns", 1], ["1500ns", 0], ["2500ns", 1]]
+
+# --- WDOK falls at 1.5 us: this is a watchdog timeout or a latched impact. Whatever ARM and
+# BRK_REL are doing, SAFE must be low and KILL high, so the throttle is shunted and the brake
+# and ignition are cut.
+[[expect]]
+net = "SAFE"
+at = "1600ns"
+value = 0
+
+[[expect]]
+net = "KILL"
+at = "1600ns"
+value = 1
+
+# --- WDOK comes back at 2.5 us. ARM is still floating (its driver, the ESP32, is not modelled),
+# so the latch must stay killed rather than passing throttle on a watchdog that merely blipped.
+[[expect]]
+net = "SAFE"
+at = "2600ns"
+value = 0
+
+[[expect]]
+net = "KILL"
+at = "2600ns"
+value = 1
+
+[[expect]]
+net = "KILL"
+at = "3900ns"
+value = 1

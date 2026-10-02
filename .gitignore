@@ -1,0 +1,5 @@
+# simulation results: regenerate with `agente sim NAME`, the maps are large
+*.result.json
+*.s4p
+*.s2p
+*.vcd
