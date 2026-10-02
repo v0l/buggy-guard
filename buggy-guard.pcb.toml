@@ -101,6 +101,7 @@ ref = "J3"
 at = [45.0, 4.0]
 rotation = 180.0
 locked = true
+label = { at = [50.11, 4.0] }
 
 [[footprints]]
 ref = "U3"
@@ -312,7 +313,7 @@ locked = true
 
 [[footprints]]
 ref = "J2"
-at = [66.5, 75.8]
+at = [66.5, 75.0]
 locked = true
 label = { at = [73.03, 75.24] }
 
@@ -395,7 +396,7 @@ label = { at = [69.1, 7.52] }
 [[footprints]]
 ref = "R10"
 at = [76.0, 9.4]
-label = { at = [76.0, 7.97] }
+label = { at = [78.46, 8.4], rotation = 90.0 }
 
 [[footprints]]
 ref = "C14"
@@ -412,7 +413,7 @@ label = { at = [82.1, 42.18] }
 ref = "R13"
 at = [72.6, 72.6]
 rotation = 270.0
-label = { at = [74.03, 72.6], rotation = 90.0 }
+label = { at = [75.09, 72.85] }
 
 [[footprints]]
 ref = "R14"
@@ -436,7 +437,7 @@ label = { at = [75.75, 42.38] }
 ref = "R16"
 at = [74.85, 44.8]
 rotation = 270.0
-label = { at = [76.28, 44.8], rotation = 90.0 }
+label = { at = [73.85, 47.26] }
 
 [[footprints]]
 ref = "Q1"
@@ -470,7 +471,7 @@ label = { at = [48.77, 45.05], rotation = 90.0 }
 ref = "C16"
 at = [46.75, 40.9]
 rotation = 180.0
-label = { at = [46.75, 42.33] }
+label = { at = [43.49, 40.9] }
 
 [[footprints]]
 ref = "C17"
@@ -1270,26 +1271,6 @@ layer = "F.Cu"
 points = [[49.65, 38.35], [49.5, 38.5], [49.5, 39.0875]]
 
 [[tracks]]
-net = "CC1"
-layer = "F.Cu"
-points = [[65.3, 72.45], [65.3, 72.65], [66.7, 74.05], [71.25, 74.05], [71.75, 73.55], [71.75, 71.4], [73.2, 69.95], [74.35, 69.95]]
-
-[[tracks]]
-net = "CC2"
-layer = "F.Cu"
-points = [[68.35, 71.05], [68.35, 70.65]]
-
-[[tracks]]
-net = "CC2"
-layer = "In2.Cu"
-points = [[68.35, 70.65], [68.7, 71.0], [73.0, 71.0]]
-
-[[tracks]]
-net = "CC2"
-layer = "F.Cu"
-points = [[73.0, 71.0], [73.0, 71.45]]
-
-[[tracks]]
 net = "WDOK"
 layer = "F.Cu"
 points = [[57.2, 44.85], [55.75, 43.4], [51.1, 43.4], [50.6, 43.9]]
@@ -1960,31 +1941,6 @@ layer = "B.Cu"
 points = [[77.2, 59.1], [70.7, 52.6], [70.7, 41.25]]
 
 [[tracks]]
-net = "VBUS"
-layer = "F.Cu"
-points = [[64.2, 71.05], [64.2, 67.75]]
-
-[[tracks]]
-net = "VBUS"
-layer = "In2.Cu"
-points = [[64.2, 67.75], [65.3, 66.65]]
-
-[[tracks]]
-net = "VBUS"
-layer = "F.Cu"
-points = [[65.3, 66.65], [64.8, 66.15]]
-
-[[tracks]]
-net = "VBUS"
-layer = "F.Cu"
-points = [[63.95, 67.6], [60.25, 67.6]]
-
-[[tracks]]
-net = "SENS_5V"
-layer = "F.Cu"
-points = [[42.7, 74.05], [45.15, 71.6]]
-
-[[tracks]]
 net = "PEDAL_5V"
 layer = "In2.Cu"
 points = [[31.7, 74.05], [33.15, 72.6], [33.15, 65.7]]
@@ -1996,28 +1952,8 @@ points = [[33.15, 65.7], [33.15, 63.35]]
 
 [[tracks]]
 net = "SENS_5V"
-layer = "F.Cu"
-points = [[95.85, 62.7], [96.4, 62.15], [96.4, 50.35], [95.85, 49.8]]
-
-[[tracks]]
-net = "SENS_5V"
-layer = "F.Cu"
-points = [[95.85, 48.2], [96.4, 47.65], [96.4, 35.85], [95.85, 35.3]]
-
-[[tracks]]
-net = "SENS_5V"
-layer = "F.Cu"
-points = [[95.85, 33.7], [96.4, 33.15], [96.4, 21.35], [95.85, 20.8]]
-
-[[tracks]]
-net = "SENS_5V"
 layer = "In2.Cu"
 points = [[41.3, 74.05], [41.3, 72.6], [29.95, 61.25]]
-
-[[tracks]]
-net = "SENS_5V"
-layer = "F.Cu"
-points = [[29.95, 61.25], [29.6, 61.6]]
 
 [[tracks]]
 net = "SENS_5V"
@@ -2027,22 +1963,12 @@ points = [[29.95, 60.95], [28.6, 59.6], [28.6, 56.0]]
 [[tracks]]
 net = "SENS_5V"
 layer = "B.Cu"
-points = [[28.6, 56.0], [28.6, 54.85]]
-
-[[tracks]]
-net = "SENS_5V"
-layer = "F.Cu"
-points = [[28.6, 54.85], [28.75, 54.7]]
+points = [[28.6, 56.0], [28.6, 54.85], [28.75, 54.7]]
 
 [[tracks]]
 net = "SENS_5V"
 layer = "B.Cu"
 points = [[28.75, 54.7], [28.75, 37.35]]
-
-[[tracks]]
-net = "SENS_5V"
-layer = "F.Cu"
-points = [[28.75, 37.35], [19.4, 28.0]]
 
 [[tracks]]
 net = "SENS_5V"
@@ -2157,16 +2083,6 @@ via = "std"
 [[vias]]
 net = "I2C_SDA"
 at = [49.65, 38.35]
-via = "std"
-
-[[vias]]
-net = "CC2"
-at = [68.35, 70.65]
-via = "std"
-
-[[vias]]
-net = "CC2"
-at = [73.0, 71.0]
 via = "std"
 
 [[vias]]
@@ -2430,16 +2346,6 @@ at = [31.25, 66.55]
 via = "std"
 
 [[vias]]
-net = "VBUS"
-at = [64.2, 67.75]
-via = "std"
-
-[[vias]]
-net = "VBUS"
-at = [65.3, 66.65]
-via = "std"
-
-[[vias]]
 net = "PEDAL_5V"
 at = [33.15, 65.7]
 via = "std"
@@ -2456,25 +2362,10 @@ via = "std"
 
 [[vias]]
 net = "SENS_5V"
-at = [28.6, 54.85]
-via = "std"
-
-[[vias]]
-net = "SENS_5V"
-at = [28.75, 54.7]
-via = "std"
-
-[[vias]]
-net = "SENS_5V"
 at = [28.75, 37.35]
 via = "std"
 
 # agentee tie
-
-[[tracks]]
-net = "GND"
-layer = "F.Cu"
-points = [[46.5, 6.0], [47.1718, 6.6718]]
 
 [[tracks]]
 net = "+3V3"
@@ -2482,79 +2373,9 @@ layer = "F.Cu"
 points = [[45.5, 6.0], [45.9975, 7.201]]
 
 [[tracks]]
-net = "GND"
-layer = "F.Cu"
-points = [[69.25, 11.59], [68.4368, 10.7768]]
-
-[[tracks]]
 net = "+3V3"
 layer = "F.Cu"
 points = [[69.25, 12.86], [68.1413, 12.4008]]
-
-[[tracks]]
-net = "GND"
-layer = "F.Cu"
-points = [[86.75, 11.59], [87.0944, 10.7585]]
-
-[[tracks]]
-net = "GND"
-layer = "F.Cu"
-points = [[76.5, 19.31], [74.2726, 17.0826]]
-
-[[tracks]]
-net = "GND"
-layer = "F.Cu"
-points = [[30.5, 13.0], [30.5, 14.6]]
-
-[[tracks]]
-net = "GND"
-layer = "F.Cu"
-points = [[23.2, 20.0], [25.75, 20.0]]
-
-[[tracks]]
-net = "GND"
-layer = "F.Cu"
-points = [[31.0, 19.475], [31.0, 20.425]]
-
-[[tracks]]
-net = "GND"
-layer = "F.Cu"
-points = [[37.0, 17.0], [37.0, 15.05]]
-
-[[tracks]]
-net = "GND"
-layer = "F.Cu"
-points = [[23.0, 60.0], [24.2374, 61.2374]]
-
-[[tracks]]
-net = "GND"
-layer = "F.Cu"
-points = [[26.0625, 47.95], [25.3907, 48.6218]]
-
-[[tracks]]
-net = "GND"
-layer = "F.Cu"
-points = [[23.525, 67.905], [22.8532, 68.5768]]
-
-[[tracks]]
-net = "GND"
-layer = "F.Cu"
-points = [[28.475, 67.905], [29.825, 67.905]]
-
-[[tracks]]
-net = "GND"
-layer = "F.Cu"
-points = [[48.8375, 39.25], [47.8375, 39.25]]
-
-[[tracks]]
-net = "GND"
-layer = "F.Cu"
-points = [[48.8375, 39.75], [47.1875, 39.75]]
-
-[[tracks]]
-net = "GND"
-layer = "F.Cu"
-points = [[50.0, 40.9125], [50.0, 41.6125]]
 
 [[tracks]]
 net = "+3V3"
@@ -2562,44 +2383,9 @@ layer = "F.Cu"
 points = [[51.1625, 40.75], [51.8092, 41.0179]]
 
 [[tracks]]
-net = "GND"
-layer = "F.Cu"
-points = [[15.0, 64.825], [15.0, 65.625]]
-
-[[tracks]]
-net = "GND"
-layer = "F.Cu"
-points = [[17.5, 64.775], [16.4375, 64.3349]]
-
-[[tracks]]
-net = "GND"
-layer = "F.Cu"
-points = [[56.225, 30.5], [55.425, 30.5]]
-
-[[tracks]]
 net = "+3V3"
 layer = "F.Cu"
 points = [[60.5, 27.775], [60.5, 28.625]]
-
-[[tracks]]
-net = "GND"
-layer = "F.Cu"
-points = [[60.5, 26.225], [60.5, 25.375]]
-
-[[tracks]]
-net = "GND"
-layer = "F.Cu"
-points = [[53.475, 26.0], [54.049, 24.6142]]
-
-[[tracks]]
-net = "GND"
-layer = "F.Cu"
-points = [[53.475, 29.0], [54.425, 29.0]]
-
-[[tracks]]
-net = "GND"
-layer = "F.Cu"
-points = [[55.8625, 27.0], [56.925, 26.5599]]
 
 [[tracks]]
 net = "+3V3"
@@ -2607,54 +2393,9 @@ layer = "F.Cu"
 points = [[58.1375, 26.05], [58.7739, 25.4136]]
 
 [[tracks]]
-net = "GND"
-layer = "F.Cu"
-points = [[51.2125, 33.0], [50.4125, 33.0]]
-
-[[tracks]]
 net = "+3V3"
 layer = "F.Cu"
 points = [[54.675, 33.0], [53.925, 33.0]]
-
-[[tracks]]
-net = "GND"
-layer = "F.Cu"
-points = [[71.85, 35.1], [71.4482, 34.1299]]
-
-[[tracks]]
-net = "GND"
-layer = "F.Cu"
-points = [[78.15, 35.1], [79.351, 34.6025]]
-
-[[tracks]]
-net = "GND"
-layer = "F.Cu"
-points = [[35.0, 22.825], [35.0, 23.575]]
-
-[[tracks]]
-net = "GND"
-layer = "F.Cu"
-points = [[40.0, 22.825], [38.9747, 23.8503]]
-
-[[tracks]]
-net = "GND"
-layer = "F.Cu"
-points = [[63.25, 71.755], [62.95, 71.755], [62.95, 71.2]]
-
-[[tracks]]
-net = "GND"
-layer = "F.Cu"
-points = [[69.75, 71.755], [71.1289, 70.3761]]
-
-[[tracks]]
-net = "GND"
-layer = "F.Cu"
-points = [[61.8625, 66.0], [60.8125, 66.0]]
-
-[[tracks]]
-net = "GND"
-layer = "F.Cu"
-points = [[57.525, 39.0], [58.0553, 39.5303]]
 
 [[tracks]]
 net = "+3V3"
@@ -2669,49 +2410,9 @@ width = 0.28
 points = [[60.475, 37.0], [60.97, 36.505]]
 
 [[tracks]]
-net = "GND"
-layer = "F.Cu"
-points = [[58.75, 36.45], [58.2419, 36.2395]]
-
-[[tracks]]
-net = "GND"
-layer = "F.Cu"
-points = [[57.8625, 45.95], [57.8625, 46.95]]
-
-[[tracks]]
-net = "GND"
-layer = "F.Cu"
-points = [[54.1375, 44.05], [53.0875, 44.05]]
-
-[[tracks]]
-net = "GND"
-layer = "F.Cu"
-points = [[38.375, 13.35], [39.1603, 13.0247]]
-
-[[tracks]]
-net = "GND"
-layer = "F.Cu"
-points = [[61.475, 17.15], [60.725, 17.15]]
-
-[[tracks]]
-net = "GND"
-layer = "F.Cu"
-points = [[73.025, 9.4], [73.825, 9.4]]
-
-[[tracks]]
 net = "+3V3"
 layer = "F.Cu"
 points = [[66.725, 9.05], [67.5565, 9.3944]]
-
-[[tracks]]
-net = "GND"
-layer = "F.Cu"
-points = [[65.175, 9.05], [64.325, 9.05]]
-
-[[tracks]]
-net = "GND"
-layer = "F.Cu"
-points = [[69.875, 8.95], [71.307, 8.3568]]
 
 [[tracks]]
 net = "+3V3"
@@ -2719,39 +2420,9 @@ layer = "F.Cu"
 points = [[75.175, 9.4], [74.5386, 8.7636]]
 
 [[tracks]]
-net = "GND"
-layer = "F.Cu"
-points = [[77.675, 6.45], [78.475, 6.45]]
-
-[[tracks]]
 net = "+3V3"
 layer = "F.Cu"
 points = [[82.925, 40.75], [83.725, 40.75]]
-
-[[tracks]]
-net = "GND"
-layer = "F.Cu"
-points = [[72.6, 73.425], [72.6, 74.225]]
-
-[[tracks]]
-net = "GND"
-layer = "F.Cu"
-points = [[83.8875, 43.75], [84.6875, 43.75]]
-
-[[tracks]]
-net = "GND"
-layer = "F.Cu"
-points = [[74.85, 45.625], [75.4623, 47.1032]]
-
-[[tracks]]
-net = "GND"
-layer = "F.Cu"
-points = [[72.9875, 41.35], [73.6593, 40.6782]]
-
-[[tracks]]
-net = "GND"
-layer = "F.Cu"
-points = [[59.375, 35.1], [60.225, 35.1]]
 
 [[tracks]]
 net = "+3V3"
@@ -2769,19 +2440,9 @@ layer = "F.Cu"
 points = [[47.525, 40.9], [47.9268, 41.8701]]
 
 [[tracks]]
-net = "GND"
-layer = "F.Cu"
-points = [[45.975, 40.9], [45.175, 40.9]]
-
-[[tracks]]
 net = "+3V3"
 layer = "F.Cu"
 points = [[52.525, 38.6], [51.4643, 37.5393]]
-
-[[tracks]]
-net = "GND"
-layer = "F.Cu"
-points = [[54.075, 38.6], [54.075, 39.45]]
 
 [[tracks]]
 net = "+3V3"
@@ -2794,121 +2455,6 @@ layer = "F.Cu"
 points = [[59.4, 5.325], [59.4, 4.525]]
 
 [[tracks]]
-net = "GND"
-layer = "F.Cu"
-points = [[63.325, 44.1], [63.9968, 43.4282]]
-
-[[tracks]]
-net = "GND"
-layer = "F.Cu"
-points = [[66.325, 38.45], [65.9806, 39.2815]]
-
-[[tracks]]
-net = "GND"
-layer = "F.Cu"
-points = [[52.525, 47.45], [51.725, 47.45]]
-
-[[tracks]]
-net = "GND"
-layer = "F.Cu"
-points = [[66.35, 45.225], [66.35, 46.025]]
-
-[[tracks]]
-net = "GND"
-layer = "F.Cu"
-points = [[45.325, 45.45], [46.075, 45.45]]
-
-[[tracks]]
-net = "GND"
-layer = "F.Cu"
-points = [[36.1625, 41.9], [35.3625, 41.9]]
-
-[[tracks]]
-net = "GND"
-layer = "F.Cu"
-points = [[22.875, 48.75], [23.675, 48.75]]
-
-[[tracks]]
-net = "GND"
-layer = "F.Cu"
-points = [[37.15, 60.5125], [36.4782, 59.8407]]
-
-[[tracks]]
-net = "GND"
-layer = "F.Cu"
-points = [[37.4, 50.5625], [36.7282, 49.8907]]
-
-[[tracks]]
-net = "GND"
-layer = "F.Cu"
-points = [[63.075, 15.65], [63.8603, 15.3247]]
-
-[[tracks]]
-net = "GND"
-layer = "F.Cu"
-points = [[61.525, 21.95], [60.6935, 22.2944]]
-
-[[tracks]]
-net = "GND"
-layer = "F.Cu"
-points = [[56.5, 50.725], [56.5, 51.525]]
-
-[[tracks]]
-net = "GND"
-layer = "F.Cu"
-points = [[27.375, 58.75], [29.275, 58.75]]
-
-[[tracks]]
-net = "GND"
-layer = "F.Cu"
-points = [[32.125, 65.85], [32.4694, 65.0185]]
-
-[[tracks]]
-net = "GND"
-layer = "F.Cu"
-points = [[19.875, 66.8], [19.0897, 67.1253]]
-
-[[tracks]]
-net = "GND"
-layer = "F.Cu"
-points = [[28.075, 51.35], [27.225, 51.35]]
-
-[[tracks]]
-net = "GND"
-layer = "F.Cu"
-points = [[60.075, 21.0], [60.4194, 20.1685]]
-
-[[tracks]]
-net = "GND"
-layer = "F.Cu"
-points = [[19.1, 29.125], [19.1, 29.975]]
-
-[[tracks]]
-net = "GND"
-layer = "F.Cu"
-points = [[85.325, 6.35], [85.9614, 6.9864]]
-
-[[tracks]]
-net = "GND"
-layer = "F.Cu"
-points = [[82.275, 9.3], [83.025, 9.3]]
-
-[[tracks]]
-net = "GND"
-layer = "F.Cu"
-points = [[85.625, 9.35], [85.0318, 10.782]]
-
-[[tracks]]
-net = "GND"
-layer = "F.Cu"
-points = [[61.375, 29.35], [60.125, 29.35]]
-
-[[tracks]]
-net = "GND"
-layer = "F.Cu"
-points = [[79.675, 42.25], [80.5065, 41.9056]]
-
-[[tracks]]
 net = "+3V3"
 layer = "F.Cu"
 points = [[67.425, 31.55], [67.8077, 30.6261]]
@@ -2918,24 +2464,9 @@ net = "+3V3"
 layer = "F.Cu"
 points = [[77.975, 43.75], [77.125, 43.75]]
 
-[[tracks]]
-net = "GND"
-layer = "F.Cu"
-points = [[74.8, 71.325], [74.8, 72.125]]
-
-[[vias]]
-net = "GND"
-at = [47.1718, 6.6718]
-via = "std"
-
 [[vias]]
 net = "+3V3"
 at = [45.9975, 7.201]
-via = "std"
-
-[[vias]]
-net = "GND"
-at = [68.4368, 10.7768]
 via = "std"
 
 [[vias]]
@@ -2944,88 +2475,8 @@ at = [68.1413, 12.4008]
 via = "std"
 
 [[vias]]
-net = "GND"
-at = [87.0944, 10.7585]
-via = "std"
-
-[[vias]]
-net = "GND"
-at = [74.2726, 17.0826]
-via = "std"
-
-[[vias]]
-net = "GND"
-at = [30.5, 14.6]
-via = "std"
-
-[[vias]]
-net = "GND"
-at = [25.75, 20.0]
-via = "std"
-
-[[vias]]
-net = "GND"
-at = [31.0, 20.425]
-via = "std"
-
-[[vias]]
-net = "GND"
-at = [37.0, 15.05]
-via = "std"
-
-[[vias]]
-net = "GND"
-at = [24.2374, 61.2374]
-via = "std"
-
-[[vias]]
-net = "GND"
-at = [25.3907, 48.6218]
-via = "std"
-
-[[vias]]
-net = "GND"
-at = [22.8532, 68.5768]
-via = "std"
-
-[[vias]]
-net = "GND"
-at = [29.825, 67.905]
-via = "std"
-
-[[vias]]
-net = "GND"
-at = [47.8375, 39.25]
-via = "std"
-
-[[vias]]
-net = "GND"
-at = [47.1875, 39.75]
-via = "std"
-
-[[vias]]
-net = "GND"
-at = [50.0, 41.6125]
-via = "std"
-
-[[vias]]
 net = "+3V3"
 at = [51.8092, 41.0179]
-via = "std"
-
-[[vias]]
-net = "GND"
-at = [15.0, 65.625]
-via = "std"
-
-[[vias]]
-net = "GND"
-at = [16.4375, 64.3349]
-via = "std"
-
-[[vias]]
-net = "GND"
-at = [55.425, 30.5]
 via = "std"
 
 [[vias]]
@@ -3034,78 +2485,13 @@ at = [60.5, 28.625]
 via = "std"
 
 [[vias]]
-net = "GND"
-at = [60.5, 25.375]
-via = "std"
-
-[[vias]]
-net = "GND"
-at = [54.049, 24.6142]
-via = "std"
-
-[[vias]]
-net = "GND"
-at = [54.425, 29.0]
-via = "std"
-
-[[vias]]
-net = "GND"
-at = [56.925, 26.5599]
-via = "std"
-
-[[vias]]
 net = "+3V3"
 at = [58.7739, 25.4136]
 via = "std"
 
 [[vias]]
-net = "GND"
-at = [50.4125, 33.0]
-via = "std"
-
-[[vias]]
 net = "+3V3"
 at = [53.925, 33.0]
-via = "std"
-
-[[vias]]
-net = "GND"
-at = [71.4482, 34.1299]
-via = "std"
-
-[[vias]]
-net = "GND"
-at = [79.351, 34.6025]
-via = "std"
-
-[[vias]]
-net = "GND"
-at = [35.0, 23.575]
-via = "std"
-
-[[vias]]
-net = "GND"
-at = [38.9747, 23.8503]
-via = "std"
-
-[[vias]]
-net = "GND"
-at = [62.95, 71.2]
-via = "std"
-
-[[vias]]
-net = "GND"
-at = [71.1289, 70.3761]
-via = "std"
-
-[[vias]]
-net = "GND"
-at = [60.8125, 66.0]
-via = "std"
-
-[[vias]]
-net = "GND"
-at = [58.0553, 39.5303]
 via = "std"
 
 [[vias]]
@@ -3119,48 +2505,8 @@ at = [60.97, 36.505]
 via = "std"
 
 [[vias]]
-net = "GND"
-at = [58.2419, 36.2395]
-via = "std"
-
-[[vias]]
-net = "GND"
-at = [57.8625, 46.95]
-via = "std"
-
-[[vias]]
-net = "GND"
-at = [53.0875, 44.05]
-via = "std"
-
-[[vias]]
-net = "GND"
-at = [39.1603, 13.0247]
-via = "std"
-
-[[vias]]
-net = "GND"
-at = [60.725, 17.15]
-via = "std"
-
-[[vias]]
-net = "GND"
-at = [73.825, 9.4]
-via = "std"
-
-[[vias]]
 net = "+3V3"
 at = [67.5565, 9.3944]
-via = "std"
-
-[[vias]]
-net = "GND"
-at = [64.325, 9.05]
-via = "std"
-
-[[vias]]
-net = "GND"
-at = [71.307, 8.3568]
 via = "std"
 
 [[vias]]
@@ -3169,38 +2515,8 @@ at = [74.5386, 8.7636]
 via = "std"
 
 [[vias]]
-net = "GND"
-at = [78.475, 6.45]
-via = "std"
-
-[[vias]]
 net = "+3V3"
 at = [83.725, 40.75]
-via = "std"
-
-[[vias]]
-net = "GND"
-at = [72.6, 74.225]
-via = "std"
-
-[[vias]]
-net = "GND"
-at = [84.6875, 43.75]
-via = "std"
-
-[[vias]]
-net = "GND"
-at = [75.4623, 47.1032]
-via = "std"
-
-[[vias]]
-net = "GND"
-at = [73.6593, 40.6782]
-via = "std"
-
-[[vias]]
-net = "GND"
-at = [60.225, 35.1]
 via = "std"
 
 [[vias]]
@@ -3219,18 +2535,8 @@ at = [47.9268, 41.8701]
 via = "std"
 
 [[vias]]
-net = "GND"
-at = [45.175, 40.9]
-via = "std"
-
-[[vias]]
 net = "+3V3"
 at = [51.4643, 37.5393]
-via = "std"
-
-[[vias]]
-net = "GND"
-at = [54.075, 39.45]
 via = "std"
 
 [[vias]]
@@ -3244,121 +2550,6 @@ at = [59.4, 4.525]
 via = "std"
 
 [[vias]]
-net = "GND"
-at = [63.9968, 43.4282]
-via = "std"
-
-[[vias]]
-net = "GND"
-at = [65.9806, 39.2815]
-via = "std"
-
-[[vias]]
-net = "GND"
-at = [51.725, 47.45]
-via = "std"
-
-[[vias]]
-net = "GND"
-at = [66.35, 46.025]
-via = "std"
-
-[[vias]]
-net = "GND"
-at = [46.075, 45.45]
-via = "std"
-
-[[vias]]
-net = "GND"
-at = [35.3625, 41.9]
-via = "std"
-
-[[vias]]
-net = "GND"
-at = [23.675, 48.75]
-via = "std"
-
-[[vias]]
-net = "GND"
-at = [36.4782, 59.8407]
-via = "std"
-
-[[vias]]
-net = "GND"
-at = [36.7282, 49.8907]
-via = "std"
-
-[[vias]]
-net = "GND"
-at = [63.8603, 15.3247]
-via = "std"
-
-[[vias]]
-net = "GND"
-at = [60.6935, 22.2944]
-via = "std"
-
-[[vias]]
-net = "GND"
-at = [56.5, 51.525]
-via = "std"
-
-[[vias]]
-net = "GND"
-at = [29.275, 58.75]
-via = "std"
-
-[[vias]]
-net = "GND"
-at = [32.4694, 65.0185]
-via = "std"
-
-[[vias]]
-net = "GND"
-at = [19.0897, 67.1253]
-via = "std"
-
-[[vias]]
-net = "GND"
-at = [27.225, 51.35]
-via = "std"
-
-[[vias]]
-net = "GND"
-at = [60.4194, 20.1685]
-via = "std"
-
-[[vias]]
-net = "GND"
-at = [19.1, 29.975]
-via = "std"
-
-[[vias]]
-net = "GND"
-at = [85.9614, 6.9864]
-via = "std"
-
-[[vias]]
-net = "GND"
-at = [83.025, 9.3]
-via = "std"
-
-[[vias]]
-net = "GND"
-at = [85.0318, 10.782]
-via = "std"
-
-[[vias]]
-net = "GND"
-at = [60.125, 29.35]
-via = "std"
-
-[[vias]]
-net = "GND"
-at = [80.5065, 41.9056]
-via = "std"
-
-[[vias]]
 net = "+3V3"
 at = [67.8077, 30.6261]
 via = "std"
@@ -3367,13 +2558,6 @@ via = "std"
 net = "+3V3"
 at = [77.125, 43.75]
 via = "std"
-
-[[vias]]
-net = "GND"
-at = [74.8, 72.125]
-via = "std"
-
-# agentee route GND +3V3
 
 [[tracks]]
 net = "+3V3"
@@ -3390,3 +2574,192 @@ points = [[57.525, 37.0], [57.525, 36.85]]
 net = "+3V3"
 layer = "F.Cu"
 points = [[67.9, 9.25], [67.8, 9.25]]
+
+# agentee route GND
+
+[[tracks]]
+net = "GND"
+layer = "F.Cu"
+points = [[63.45, 15.45], [63.85, 15.45]]
+
+[[tracks]]
+net = "GND"
+layer = "B.Cu"
+points = [[63.85, 15.45], [60.5, 15.45], [60.0, 15.95], [60.0, 16.55], [60.6, 17.15]]
+
+[[tracks]]
+net = "GND"
+layer = "F.Cu"
+points = [[60.6, 17.15], [61.1, 17.15]]
+
+[[tracks]]
+net = "GND"
+layer = "F.Cu"
+points = [[52.95, 26.75], [52.55, 26.75]]
+
+[[tracks]]
+net = "GND"
+layer = "B.Cu"
+points = [[52.55, 26.75], [53.9, 28.1], [54.65, 28.1]]
+
+[[tracks]]
+net = "GND"
+layer = "F.Cu"
+points = [[54.65, 28.1], [54.65, 27.7], [55.2, 27.15]]
+
+[[tracks]]
+net = "GND"
+layer = "F.Cu"
+points = [[27.0, 59.15], [26.45, 59.7]]
+
+[[tracks]]
+net = "GND"
+layer = "B.Cu"
+points = [[26.45, 59.7], [26.45, 53.15]]
+
+[[tracks]]
+net = "GND"
+layer = "F.Cu"
+points = [[26.45, 53.15], [27.8, 51.8]]
+
+[[tracks]]
+net = "GND"
+layer = "F.Cu"
+points = [[86.45, 11.15], [86.45, 10.75]]
+
+[[tracks]]
+net = "GND"
+layer = "B.Cu"
+points = [[86.45, 10.75], [85.85, 10.15], [85.25, 10.15]]
+
+[[tracks]]
+net = "GND"
+layer = "F.Cu"
+points = [[85.25, 10.15], [85.25, 9.7]]
+
+[[tracks]]
+net = "GND"
+layer = "F.Cu"
+points = [[66.0, 45.6], [66.0, 46.0]]
+
+[[tracks]]
+net = "GND"
+layer = "B.Cu"
+points = [[66.0, 46.0], [65.25, 46.75], [63.0, 46.75]]
+
+[[tracks]]
+net = "GND"
+layer = "F.Cu"
+points = [[63.0, 46.75], [63.0, 44.5]]
+
+[[vias]]
+net = "GND"
+at = [63.85, 15.45]
+via = "std"
+
+[[vias]]
+net = "GND"
+at = [60.6, 17.15]
+via = "std"
+
+[[vias]]
+net = "GND"
+at = [52.55, 26.75]
+via = "std"
+
+[[vias]]
+net = "GND"
+at = [54.65, 28.1]
+via = "std"
+
+[[vias]]
+net = "GND"
+at = [26.45, 59.7]
+via = "std"
+
+[[vias]]
+net = "GND"
+at = [26.45, 53.15]
+via = "std"
+
+[[vias]]
+net = "GND"
+at = [86.45, 10.75]
+via = "std"
+
+[[vias]]
+net = "GND"
+at = [85.25, 10.15]
+via = "std"
+
+[[vias]]
+net = "GND"
+at = [66.0, 46.0]
+via = "std"
+
+[[vias]]
+net = "GND"
+at = [63.0, 46.75]
+via = "std"
+
+# agentee route VBUS CC1 CC2
+
+[[tracks]]
+net = "VBUS"
+layer = "F.Cu"
+points = [[64.2, 70.25], [64.2, 67.75]]
+
+[[tracks]]
+net = "VBUS"
+layer = "In2.Cu"
+points = [[64.2, 67.75], [65.3, 66.65]]
+
+[[tracks]]
+net = "VBUS"
+layer = "F.Cu"
+points = [[65.3, 66.65], [64.8, 66.15]]
+
+[[tracks]]
+net = "VBUS"
+layer = "F.Cu"
+points = [[63.95, 67.6], [60.25, 67.6]]
+
+[[tracks]]
+net = "CC1"
+layer = "F.Cu"
+points = [[65.3, 71.65], [65.3, 71.85], [66.7, 73.25], [71.25, 73.25], [71.8, 72.7], [71.8, 71.35], [73.2, 69.95], [74.35, 69.95]]
+
+[[tracks]]
+net = "CC2"
+layer = "F.Cu"
+points = [[68.35, 70.25], [68.35, 70.05], [68.55, 69.85], [71.85, 69.85]]
+
+[[tracks]]
+net = "CC2"
+layer = "In2.Cu"
+points = [[71.85, 69.85], [73.0, 71.0]]
+
+[[tracks]]
+net = "CC2"
+layer = "F.Cu"
+points = [[73.0, 71.0], [73.0, 71.45]]
+
+[[vias]]
+net = "VBUS"
+at = [64.2, 67.75]
+via = "std"
+
+[[vias]]
+net = "VBUS"
+at = [65.3, 66.65]
+via = "std"
+
+[[vias]]
+net = "CC2"
+at = [71.85, 69.85]
+via = "std"
+
+[[vias]]
+net = "CC2"
+at = [73.0, 71.0]
+via = "std"
