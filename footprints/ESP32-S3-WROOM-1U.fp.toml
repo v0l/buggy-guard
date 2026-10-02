@@ -4,7 +4,7 @@ description = "2.4 GHz Wi-Fi and Bluetooth module  https://www.espressif.com/sit
 tags = ["2.4", "GHz", "Wi-Fi", "and", "Bluetooth", "module"]
 mount = "smd"
 model = "3dmodels/ESP32-S3-WROOM-1U.step"
-model_offset = [-9.0, -9.38, 0.9]
+model_offset = [-9.0, -9.6, 0.0]
 model_rotate = [0.0, 0.0, 0.0]
 
 [[pads]]
