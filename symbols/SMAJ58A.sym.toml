@@ -1,0 +1,39 @@
+# imported from KiCad Diode:SMAJ58A
+name = "SMAJ58A"
+reference = "D"
+description = "400W unidirectional Transient Voltage Suppressor, 58.0Vr, SMA(DO-214AC)"
+datasheet = "https://www.littelfuse.com/media?resourcetype=datasheets&itemid=75e32973-b177-4ee3-a0ff-cedaf1abdb93&filename=smaj-datasheet"
+keywords = ["unidirectional", "diode", "TVS", "voltage", "suppressor"]
+footprint = "D_SMA"
+footprint_filters = ["D*SMA*"]
+pin_names = "hidden"
+pin_name_offset = 1.016
+hide_pin_numbers = true
+
+[[graphics]]
+kind = "polyline"
+points = [[-0.762, -1.27], [-1.27, -1.27], [-1.27, 1.27]]
+width = 0.254
+
+[[graphics]]
+kind = "polygon"
+points = [[1.27, -1.27], [1.27, 1.27], [-1.27, 0.0]]
+width = 0.254
+
+[[pins]]
+number = "1"
+name = "A1"
+type = "passive"
+at = [-3.81, 0.0]
+side = "left"
+length = 2.54
+unit = 1
+
+[[pins]]
+number = "2"
+name = "A2"
+type = "passive"
+at = [3.81, 0.0]
+side = "right"
+length = 2.54
+unit = 1

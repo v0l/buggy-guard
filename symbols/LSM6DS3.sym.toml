@@ -1,0 +1,144 @@
+# imported from KiCad Sensor_Motion:LSM6DS3
+name = "LSM6DS3"
+reference = "U"
+description = "I2C/SPI, iNEMO inertial module: always-on 3D accelerometer and 3D gyroscope"
+datasheet = "https://www.st.com/resource/en/datasheet/lsm6ds3tr-c.pdf"
+keywords = ["Accelerometer", "Gyroscope", "MEMS"]
+footprint = "LGA-14_3x2.5mm_P0.5mm_LayoutBorder3x4y"
+footprint_filters = ["LGA*3x2.5mm*P0.5mm*LayoutBorder3x4y*"]
+
+[[graphics]]
+kind = "rect"
+start = [-12.7, -12.7]
+end = [12.7, 12.7]
+width = 0.254
+fill = "background"
+
+[[pins]]
+number = "1"
+name = "SDO/SA0"
+type = "bidirectional"
+at = [-15.24, -7.62]
+side = "left"
+length = 2.54
+unit = 1
+
+[[pins]]
+number = "2"
+name = "SDX"
+type = "bidirectional"
+at = [-15.24, -5.08]
+side = "left"
+length = 2.54
+unit = 1
+
+[[pins]]
+number = "3"
+name = "SCX"
+type = "input"
+at = [-15.24, -2.54]
+side = "left"
+length = 2.54
+unit = 1
+
+[[pins]]
+number = "14"
+name = "SDA"
+type = "bidirectional"
+at = [-15.24, 2.54]
+side = "left"
+length = 2.54
+unit = 1
+
+[[pins]]
+number = "13"
+name = "SCL"
+type = "input"
+at = [-15.24, 5.08]
+side = "left"
+length = 2.54
+unit = 1
+
+[[pins]]
+number = "12"
+name = "CS"
+type = "input"
+at = [-15.24, 7.62]
+side = "left"
+length = 2.54
+unit = 1
+
+[[pins]]
+number = "5"
+name = "VDDIO"
+type = "power_in"
+at = [0.0, -15.24]
+side = "top"
+length = 2.54
+unit = 1
+
+[[pins]]
+number = "6"
+name = "GND"
+type = "power_in"
+at = [0.0, 15.24]
+side = "bottom"
+length = 2.54
+unit = 1
+
+[[pins]]
+number = "7"
+name = "GND"
+type = "passive"
+at = [0.0, 15.24]
+side = "bottom"
+length = 2.54
+unit = 1
+hidden = true
+
+[[pins]]
+number = "8"
+name = "VDD"
+type = "power_in"
+at = [2.54, -15.24]
+side = "top"
+length = 2.54
+unit = 1
+
+[[pins]]
+number = "11"
+name = "NC"
+type = "no_connect"
+at = [12.7, 2.54]
+side = "right"
+length = 3.81
+unit = 1
+hidden = true
+
+[[pins]]
+number = "10"
+name = "NC"
+type = "no_connect"
+at = [12.7, 5.08]
+side = "right"
+length = 3.81
+unit = 1
+hidden = true
+
+[[pins]]
+number = "4"
+name = "INT1"
+type = "output"
+at = [15.24, -7.62]
+side = "right"
+length = 2.54
+unit = 1
+
+[[pins]]
+number = "9"
+name = "INT2"
+type = "output"
+at = [15.24, -5.08]
+side = "right"
+length = 2.54
+unit = 1

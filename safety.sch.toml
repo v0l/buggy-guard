@@ -1,0 +1,335 @@
+name = "safety"
+board = "buggy-guard"
+no_connect = ["U5.4", "U5.9", "U6.10", "U6.11"]
+
+[[parts]]
+ref = "U5"
+symbol = "TPS3430WDRC"
+at = [30.48, 45.72]
+value = "TPS3430"
+fields = { mpn = "TI TPS3430WDRCR" }
+
+[[parts]]
+ref = "C15"
+symbol = "C"
+at = [10.16, 38.1]
+value = "100n"
+
+[[parts]]
+ref = "R17"
+symbol = "R"
+at = [12.7, 55.88]
+value = "10k"
+
+[[parts]]
+ref = "R18"
+symbol = "R"
+at = [55.88, 33.02]
+value = "10k"
+
+[[parts]]
+ref = "U6"
+symbol = "LSM6DS3"
+at = [33.02, 104.14]
+value = "LSM6DS3TR-C"
+fields = { mpn = "ST LSM6DS3TR-C" }
+
+[[parts]]
+ref = "C16"
+symbol = "C"
+at = [10.16, 93.98]
+value = "100n"
+
+[[parts]]
+ref = "C17"
+symbol = "C"
+at = [17.78, 93.98]
+value = "100n"
+
+[[parts]]
+ref = "R19"
+symbol = "R"
+at = [58.42, 96.52]
+value = "1k"
+rotation = 90.0
+
+[[parts]]
+ref = "R20"
+symbol = "R"
+at = [66.04, 111.76]
+value = "4.7k"
+
+[[parts]]
+ref = "R21"
+symbol = "R"
+at = [73.66, 111.76]
+value = "4.7k"
+
+[[parts]]
+ref = "J3"
+symbol = "Conn_01x04"
+at = [88.9, 127.0]
+value = "QWIIC"
+footprint = "JST_SH_SM04B-SRSS-TB_1x04-1MP_P1.00mm_Horizontal"
+mirror = true
+
+[[parts]]
+ref = "U7"
+symbol = "74AHCT1G08"
+at = [99.06, 45.72]
+value = "74AHCT1G08"
+fields = { mpn = "TI SN74AHCT1G08DBVR" }
+
+[[parts]]
+ref = "C18"
+symbol = "C"
+at = [86.36, 25.4]
+value = "100n"
+
+[[parts]]
+ref = "R22"
+symbol = "R"
+at = [83.82000000000001, 58.42]
+value = "100k"
+
+[[parts]]
+ref = "U8"
+symbol = "74AHCT1G00"
+at = [132.08, 48.26]
+value = "74AHCT1G00"
+fields = { mpn = "TI SN74AHCT1G00DBVR" }
+
+[[parts]]
+ref = "C19"
+symbol = "C"
+at = [119.38, 25.4]
+value = "100n"
+
+[[parts]]
+ref = "R23"
+symbol = "R"
+at = [119.38, 63.5]
+value = "100k"
+
+[[parts]]
+ref = "R24"
+symbol = "R"
+at = [114.3, 66.04]
+value = "100k"
+
+[[parts]]
+ref = "R26"
+symbol = "R"
+at = [116.84, 81.28]
+value = "1k"
+
+[[parts]]
+ref = "D7"
+symbol = "LED"
+at = [116.84, 93.98]
+value = "green"
+rotation = 90.0
+
+[[parts]]
+ref = "Q2"
+symbol = "DMN10H220L"
+at = [167.64000000000001, 66.04]
+value = "DMN10H220L"
+
+[[parts]]
+ref = "R27"
+symbol = "R"
+at = [170.18, 50.8]
+value = "33k"
+
+[[parts]]
+ref = "Q3"
+symbol = "Q_PMOS_GDS"
+at = [182.88, 30.48]
+value = "IRFR9120N"
+fields = { mpn = "Infineon IRFR9120NTRPBF" }
+
+[[parts]]
+ref = "R28"
+symbol = "R"
+at = [167.64000000000001, 25.4]
+value = "10k"
+
+[[parts]]
+ref = "D8"
+symbol = "D_Zener"
+at = [157.48, 25.4]
+value = "BZT52C15"
+rotation = 90.0
+
+[[parts]]
+ref = "D9"
+symbol = "D"
+at = [203.2, 40.64]
+value = "S1D"
+rotation = 90.0
+
+[[parts]]
+ref = "R29"
+symbol = "R"
+at = [213.36, 40.64]
+value = "100k"
+
+[[parts]]
+ref = "J4"
+symbol = "Screw_Terminal_01x04"
+at = [228.6, 20.32]
+value = "ESTOP_IGN"
+mirror = true
+
+[[parts]]
+ref = "R30"
+symbol = "R"
+at = [198.12, 63.5]
+value = "200k"
+
+[[parts]]
+ref = "R31"
+symbol = "R"
+at = [198.12, 76.2]
+value = "10k"
+
+[[parts]]
+ref = "C20"
+symbol = "C"
+at = [208.28, 76.2]
+value = "100n"
+
+[[parts]]
+ref = "Q4"
+symbol = "2N7002"
+at = [167.64000000000001, 99.06]
+value = "2N7002"
+
+[[parts]]
+ref = "J5"
+symbol = "Conn_01x02"
+at = [190.5, 93.98]
+value = "BRAKE"
+mirror = true
+
+[[parts]]
+ref = "Q5"
+symbol = "2N7002"
+at = [167.64000000000001, 119.38]
+value = "2N7002"
+
+[[nets]]
+name = "+3V3"
+class = "Power"
+pins = ["U5.1", "U5.10", "C15.1", "R17.1", "U5.6", "R18.1", "U6.5", "U6.8", "U6.12", "C16.1", "C17.1", "R20.1", "R21.1", "J3.2"]
+
+[[nets]]
+name = "+5V"
+class = "Power"
+pins = ["U7.5", "U8.5", "C18.1", "C19.1"]
+
+[[nets]]
+name = "CWD"
+class = "Signal"
+pins = ["U5.2", "R17.2"]
+
+[[nets]]
+name = "WDI"
+class = "Signal"
+pins = ["U5.7"]
+
+[[nets]]
+name = "WDOK"
+class = "Signal"
+pins = ["U5.8", "R18.2", "R19.2", "U7.2"]
+
+[[nets]]
+name = "IMU_INT1"
+class = "Signal"
+pins = ["U6.4", "R19.1"]
+
+[[nets]]
+name = "IMU_INT2"
+class = "Signal"
+pins = ["U6.9"]
+
+[[nets]]
+name = "I2C_SDA"
+class = "Signal"
+pins = ["U6.14", "R20.2", "J3.3"]
+
+[[nets]]
+name = "I2C_SCL"
+class = "Signal"
+pins = ["U6.13", "R21.2", "J3.4"]
+
+[[nets]]
+name = "ARM"
+class = "Signal"
+pins = ["U7.1", "R22.1"]
+
+[[nets]]
+name = "SAFE"
+class = "Signal"
+pins = ["U7.4", "U8.1", "R24.1", "R26.1", "Q2.1"]
+
+[[nets]]
+name = "BRK_REL"
+class = "Signal"
+pins = ["U8.2", "R23.1"]
+
+[[nets]]
+name = "KILL"
+class = "Signal"
+pins = ["U8.4", "Q4.1", "Q5.1"]
+
+[[nets]]
+name = "SAFE_LED"
+class = "Signal"
+pins = ["R26.2", "D7.2"]
+
+[[nets]]
+name = "VIN"
+class = "HV"
+pins = ["J4.1"]
+
+[[nets]]
+name = "ESTOP_RET"
+class = "HV"
+pins = ["J4.2", "Q3.3", "R28.1", "D8.1", "R30.1"]
+
+[[nets]]
+name = "IGN_G"
+class = "HV"
+pins = ["Q3.1", "R28.2", "D8.2", "R27.2"]
+
+[[nets]]
+name = "IGN_PD"
+class = "HV"
+pins = ["R27.1", "Q2.3"]
+
+[[nets]]
+name = "IGN_OUT"
+class = "HV"
+pins = ["Q3.2", "D9.1", "R29.1", "J4.3"]
+
+[[nets]]
+name = "ESTOP_ADC"
+class = "Analog"
+pins = ["R30.2", "R31.1", "C20.1"]
+
+[[nets]]
+name = "BRAKE_OUT"
+class = "Signal"
+pins = ["Q4.3", "J5.1"]
+
+[[nets]]
+name = "THR_OUT"
+class = "Analog"
+pins = ["Q5.3"]
+
+[[nets]]
+name = "GND"
+class = "Ground"
+pins = ["U5.5", "U5.11", "C15.2", "U5.3", "U6.1", "U6.2", "U6.3", "U6.6", "U6.7", "C16.2", "C17.2", "J3.1", "U7.3", "C18.2", "R22.2", "U8.3", "C19.2", "R23.2", "R24.2", "D7.1", "Q2.2", "D9.2", "R29.2", "J4.4", "R31.2", "C20.2", "Q4.2", "J5.2", "Q5.2"]

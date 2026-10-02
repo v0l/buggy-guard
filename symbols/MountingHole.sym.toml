@@ -1,0 +1,14 @@
+# imported from KiCad Mechanical:MountingHole
+name = "MountingHole"
+reference = "H"
+description = "Mounting Hole without connection"
+keywords = ["mounting", "hole"]
+footprint = "MountingHole_3.2mm_M3"
+footprint_filters = ["MountingHole*"]
+pin_name_offset = 1.016
+
+[[graphics]]
+kind = "circle"
+center = [0.0, 0.0]
+radius = 1.27
+width = 1.27

@@ -1,0 +1,258 @@
+# imported from KiCad Inductor_SMD:L_Bourns_SRR1260
+name = "L_Bourns_SRR1260"
+description = "Bourns SRR1260 series SMD inductor http://www.bourns.com/docs/Product-Datasheets/SRR1260.pdf"
+tags = ["Bourns", "SRR1260", "SMD", "inductor"]
+mount = "smd"
+model = "${KICAD9_3DMODEL_DIR}/Inductor_SMD.3dshapes/L_Bourns_SRR1260.step"
+
+[[pads]]
+number = "1"
+kind = "smd"
+shape = "rect"
+at = [-4.85, 0.0]
+size = [2.9, 5.4]
+layers = ["F.Cu", "F.Mask", "F.Paste"]
+
+[[pads]]
+number = "2"
+kind = "smd"
+shape = "rect"
+at = [4.85, 0.0]
+size = [2.9, 5.4]
+layers = ["F.Cu", "F.Mask", "F.Paste"]
+
+[[graphics]]
+kind = "text"
+layer = "F.SilkS"
+at = [0.0, -7.25]
+text = "${REFERENCE}"
+size = 1.0
+
+[[graphics]]
+kind = "text"
+layer = "F.Fab"
+at = [0.0, 7.4]
+text = "${VALUE}"
+size = 1.0
+
+[[graphics]]
+kind = "line"
+layer = "F.SilkS"
+start = [-6.4, -5.75]
+end = [-6.4, -3.0]
+width = 0.15
+
+[[graphics]]
+kind = "line"
+layer = "F.SilkS"
+start = [-6.4, 3.0]
+end = [-6.4, 5.75]
+width = 0.15
+
+[[graphics]]
+kind = "line"
+layer = "F.SilkS"
+start = [-5.75, -6.4]
+end = [5.75, -6.4]
+width = 0.15
+
+[[graphics]]
+kind = "line"
+layer = "F.SilkS"
+start = [5.75, 6.4]
+end = [-5.75, 6.4]
+width = 0.15
+
+[[graphics]]
+kind = "line"
+layer = "F.SilkS"
+start = [6.4, -5.75]
+end = [6.4, -3.0]
+width = 0.15
+
+[[graphics]]
+kind = "line"
+layer = "F.SilkS"
+start = [6.4, 3.0]
+end = [6.4, 5.75]
+width = 0.15
+
+[[graphics]]
+kind = "arc"
+layer = "F.SilkS"
+start = [-6.4, -5.75]
+mid = [-6.209619, -6.209619]
+end = [-5.75, -6.4]
+width = 0.15
+
+[[graphics]]
+kind = "arc"
+layer = "F.SilkS"
+start = [-5.75, 6.4]
+mid = [-6.209619, 6.209619]
+end = [-6.4, 5.75]
+width = 0.15
+
+[[graphics]]
+kind = "arc"
+layer = "F.SilkS"
+start = [5.75, -6.4]
+mid = [6.209619, -6.209619]
+end = [6.4, -5.75]
+width = 0.15
+
+[[graphics]]
+kind = "arc"
+layer = "F.SilkS"
+start = [6.4, 5.75]
+mid = [6.209619, 6.209619]
+end = [5.75, 6.4]
+width = 0.15
+
+[[graphics]]
+kind = "line"
+layer = "F.CrtYd"
+start = [-6.5, 5.75]
+end = [-6.5, -5.75]
+width = 0.05
+
+[[graphics]]
+kind = "line"
+layer = "F.CrtYd"
+start = [-5.75, -6.5]
+end = [5.75, -6.5]
+width = 0.05
+
+[[graphics]]
+kind = "line"
+layer = "F.CrtYd"
+start = [5.75, 6.5]
+end = [-5.75, 6.5]
+width = 0.05
+
+[[graphics]]
+kind = "line"
+layer = "F.CrtYd"
+start = [6.5, -5.75]
+end = [6.5, 5.75]
+width = 0.05
+
+[[graphics]]
+kind = "arc"
+layer = "F.CrtYd"
+start = [-6.5, -5.75]
+mid = [-6.28033, -6.28033]
+end = [-5.75, -6.5]
+width = 0.05
+
+[[graphics]]
+kind = "arc"
+layer = "F.CrtYd"
+start = [-5.75, 6.5]
+mid = [-6.28033, 6.28033]
+end = [-6.5, 5.75]
+width = 0.05
+
+[[graphics]]
+kind = "arc"
+layer = "F.CrtYd"
+start = [5.75, -6.5]
+mid = [6.28033, -6.28033]
+end = [6.5, -5.75]
+width = 0.05
+
+[[graphics]]
+kind = "arc"
+layer = "F.CrtYd"
+start = [6.5, 5.75]
+mid = [6.28033, 6.28033]
+end = [5.75, 6.5]
+width = 0.05
+
+[[graphics]]
+kind = "line"
+layer = "F.Fab"
+start = [-6.25, -5.75]
+end = [-6.25, 5.75]
+width = 0.1
+
+[[graphics]]
+kind = "line"
+layer = "F.Fab"
+start = [-5.75, -6.25]
+end = [5.75, -6.25]
+width = 0.1
+
+[[graphics]]
+kind = "line"
+layer = "F.Fab"
+start = [-4.0, 2.0]
+end = [-4.0, -2.0]
+width = 0.1
+
+[[graphics]]
+kind = "line"
+layer = "F.Fab"
+start = [4.0, -2.0]
+end = [4.0, 2.0]
+width = 0.1
+
+[[graphics]]
+kind = "line"
+layer = "F.Fab"
+start = [5.75, 6.25]
+end = [-5.75, 6.25]
+width = 0.1
+
+[[graphics]]
+kind = "line"
+layer = "F.Fab"
+start = [6.25, -5.75]
+end = [6.25, 5.75]
+width = 0.1
+
+[[graphics]]
+kind = "arc"
+layer = "F.Fab"
+start = [-6.25, -5.75]
+mid = [-6.103553, -6.103553]
+end = [-5.75, -6.25]
+width = 0.1
+
+[[graphics]]
+kind = "arc"
+layer = "F.Fab"
+start = [-5.75, 6.25]
+mid = [-6.103553, 6.103553]
+end = [-6.25, 5.75]
+width = 0.1
+
+[[graphics]]
+kind = "arc"
+layer = "F.Fab"
+start = [5.75, -6.25]
+mid = [6.103553, -6.103553]
+end = [6.25, -5.75]
+width = 0.1
+
+[[graphics]]
+kind = "arc"
+layer = "F.Fab"
+start = [6.25, 5.75]
+mid = [6.103553, 6.103553]
+end = [5.75, 6.25]
+width = 0.1
+
+[[graphics]]
+kind = "circle"
+layer = "F.Fab"
+center = [0.0, 0.0]
+radius = 5.6
+width = 0.1
+
+[[graphics]]
+kind = "text"
+layer = "F.Fab"
+at = [0.0, 0.0]
+text = "${REFERENCE}"
+size = 1.0

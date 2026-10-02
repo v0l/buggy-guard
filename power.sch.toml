@@ -1,0 +1,270 @@
+name = "power"
+board = "buggy-guard"
+no_connect = ["U1.6"]
+
+[[parts]]
+ref = "J1"
+symbol = "Screw_Terminal_01x02"
+at = [10.16, 40.64]
+value = "BATT"
+fields = { desc = "Keyed battery in, 48 V nominal" }
+
+[[parts]]
+ref = "F1"
+symbol = "Fuse"
+at = [22.86, 38.1]
+value = "1A"
+fields = { mpn = "Littelfuse 0451001.MRL" }
+rotation = 90.0
+
+[[parts]]
+ref = "D1"
+symbol = "D"
+at = [35.56, 38.1]
+value = "S1D"
+fields = { mpn = "S1D, 200 V 1 A, reverse polarity" }
+
+[[parts]]
+ref = "D2"
+symbol = "SMAJ58A"
+at = [45.72, 48.26]
+value = "SMAJ58A"
+rotation = 90.0
+
+[[parts]]
+ref = "C1"
+symbol = "C_Polarized"
+at = [55.88, 48.26]
+value = "47u/100V"
+fields = { mpn = "Panasonic EEE-FK2A470P or equal" }
+
+[[parts]]
+ref = "C2"
+symbol = "C"
+at = [63.5, 48.26]
+value = "2.2u/100V"
+footprint = "C_1210_3225Metric"
+fields = { mpn = "X7S 100 V" }
+
+[[parts]]
+ref = "C3"
+symbol = "C"
+at = [71.12, 48.26]
+value = "2.2u/100V"
+footprint = "C_1210_3225Metric"
+fields = { mpn = "X7S 100 V" }
+
+[[parts]]
+ref = "R1"
+symbol = "R"
+at = [81.28, 40.64]
+value = "1M"
+
+[[parts]]
+ref = "R2"
+symbol = "R"
+at = [81.28, 55.88]
+value = "82k"
+
+[[parts]]
+ref = "U1"
+symbol = "LM5164DDA"
+at = [109.22, 45.72]
+value = "LM5164"
+fields = { mpn = "TI LM5164DDAR" }
+
+[[parts]]
+ref = "R3"
+symbol = "R"
+at = [96.52, 66.04]
+value = "41.2k"
+
+[[parts]]
+ref = "C4"
+symbol = "C"
+at = [132.08, 30.48]
+value = "2.2n/50V"
+
+[[parts]]
+ref = "L1"
+symbol = "L"
+at = [147.32, 38.1]
+value = "47u"
+fields = { mpn = "Bourns SRR1260-470M" }
+rotation = 90.0
+
+[[parts]]
+ref = "R4"
+symbol = "R"
+at = [160.02, 53.34]
+value = "100k"
+
+[[parts]]
+ref = "R5"
+symbol = "R"
+at = [160.02, 68.58]
+value = "31.6k"
+
+[[parts]]
+ref = "R6"
+symbol = "R"
+at = [134.62, 53.34]
+value = "200k"
+
+[[parts]]
+ref = "C5"
+symbol = "C"
+at = [144.78, 63.5]
+value = "3.3n"
+
+[[parts]]
+ref = "C6"
+symbol = "C"
+at = [134.62, 73.66]
+value = "330p"
+fields = { dielectric = "C0G" }
+
+[[parts]]
+ref = "C7"
+symbol = "C"
+at = [172.72, 50.8]
+value = "22u/16V"
+footprint = "C_1206_3216Metric"
+
+[[parts]]
+ref = "C8"
+symbol = "C"
+at = [180.34, 50.8]
+value = "22u/16V"
+footprint = "C_1206_3216Metric"
+
+[[parts]]
+ref = "D3"
+symbol = "SS14"
+at = [195.58, 30.48]
+value = "SS14"
+
+[[parts]]
+ref = "U2"
+symbol = "AP2112K-3.3"
+at = [210.82, 48.26]
+value = "AP2112K-3.3"
+fields = { mpn = "Diodes AP2112K-3.3TRG1" }
+
+[[parts]]
+ref = "C9"
+symbol = "C"
+at = [195.58, 55.88]
+value = "1u"
+
+[[parts]]
+ref = "C10"
+symbol = "C"
+at = [226.06, 55.88]
+value = "10u"
+
+[[parts]]
+ref = "R7"
+symbol = "R"
+at = [22.86, 73.66]
+value = "200k"
+
+[[parts]]
+ref = "R8"
+symbol = "R"
+at = [22.86, 86.36]
+value = "10k"
+
+[[parts]]
+ref = "C11"
+symbol = "C"
+at = [33.02, 86.36]
+value = "100n"
+
+[[parts]]
+ref = "R9"
+symbol = "R"
+at = [236.22, 48.26]
+value = "1k"
+
+[[parts]]
+ref = "D4"
+symbol = "LED"
+at = [236.22, 63.5]
+value = "green"
+rotation = 90.0
+
+[[nets]]
+name = "VBAT_RAW"
+class = "HV"
+pins = ["J1.1", "F1.1"]
+
+[[nets]]
+name = "VBAT_F"
+class = "HV"
+pins = ["F1.2", "D1.2"]
+
+[[nets]]
+name = "VIN"
+class = "HV"
+pins = ["D1.1", "D2.1", "C1.1", "C2.1", "C3.1", "R1.1", "U1.2", "R7.1"]
+
+[[nets]]
+name = "UVLO"
+class = "Analog"
+pins = ["R1.2", "R2.1", "U1.3"]
+
+[[nets]]
+name = "RON"
+class = "Analog"
+pins = ["U1.4", "R3.1"]
+
+[[nets]]
+name = "BST"
+class = "Signal"
+pins = ["U1.7", "C4.1"]
+
+[[nets]]
+name = "SW"
+class = "Switch"
+pins = ["U1.8", "C4.2", "L1.1", "R6.1"]
+
+[[nets]]
+name = "RINJ"
+class = "Analog"
+pins = ["R6.2", "C5.1", "C6.1"]
+
+[[nets]]
+name = "FB"
+class = "Analog"
+pins = ["U1.5", "R4.2", "R5.1", "C6.2"]
+
+[[nets]]
+name = "+5V"
+class = "Power"
+pins = ["L1.2", "R4.1", "C5.2", "C7.1", "C8.1", "D3.1", "U2.1", "U2.3", "C9.1"]
+
+[[nets]]
+name = "VBUS"
+class = "Power"
+pins = ["D3.2"]
+
+[[nets]]
+name = "+3V3"
+class = "Power"
+pins = ["U2.5", "C10.1", "R9.1"]
+
+[[nets]]
+name = "VBAT_ADC"
+class = "Analog"
+pins = ["R7.2", "R8.1", "C11.1"]
+
+[[nets]]
+name = "PWR_LED"
+class = "Signal"
+pins = ["R9.2", "D4.2"]
+
+[[nets]]
+name = "GND"
+class = "Ground"
+pins = ["J1.2", "D2.2", "C1.2", "C2.2", "C3.2", "R2.2", "U1.1", "U1.9", "R3.2", "R5.2", "C7.2", "C8.2", "U2.2", "C9.2", "C10.2", "R8.2", "C11.2", "D4.1"]

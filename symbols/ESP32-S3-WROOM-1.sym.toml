@@ -1,0 +1,398 @@
+# imported from KiCad RF_Module:ESP32-S3-WROOM-1
+name = "ESP32-S3-WROOM-1"
+reference = "U"
+description = "RF Module, ESP32-S3 SoC, Wi-Fi 802.11b/g/n, Bluetooth, BLE, 32-bit, 3.3V, onboard antenna, SMD"
+datasheet = "https://www.espressif.com/sites/default/files/documentation/esp32-s3-wroom-1_wroom-1u_datasheet_en.pdf"
+keywords = ["RF", "Radio", "BT", "ESP", "ESP32-S3", "Espressif", "onboard", "PCB", "antenna"]
+footprint = "ESP32-S3-WROOM-1U"
+footprint_filters = ["ESP32?S3?WROOM?1*"]
+
+[[graphics]]
+kind = "rect"
+start = [-12.7, -25.4]
+end = [12.7, 25.4]
+width = 0.254
+fill = "background"
+
+[[graphics]]
+kind = "text"
+at = [5.08, -2.54]
+text = "PSRAM"
+size = 1.27
+rotation = 90.0
+anchor = "center"
+
+[[graphics]]
+kind = "polyline"
+points = [[7.62, 1.27], [6.35, 1.27], [6.35, -6.35], [7.62, -6.35]]
+
+[[pins]]
+number = "3"
+name = "EN"
+type = "input"
+at = [-15.24, -22.86]
+side = "left"
+length = 2.54
+unit = 1
+
+[[pins]]
+number = "27"
+name = "IO0"
+type = "bidirectional"
+at = [-15.24, -17.78]
+side = "left"
+length = 2.54
+unit = 1
+
+[[pins]]
+number = "39"
+name = "IO1"
+type = "bidirectional"
+at = [-15.24, -15.24]
+side = "left"
+length = 2.54
+unit = 1
+
+[[pins]]
+number = "38"
+name = "IO2"
+type = "bidirectional"
+at = [-15.24, -12.7]
+side = "left"
+length = 2.54
+unit = 1
+
+[[pins]]
+number = "15"
+name = "IO3"
+type = "bidirectional"
+at = [-15.24, -10.16]
+side = "left"
+length = 2.54
+unit = 1
+
+[[pins]]
+number = "4"
+name = "IO4"
+type = "bidirectional"
+at = [-15.24, -7.62]
+side = "left"
+length = 2.54
+unit = 1
+
+[[pins]]
+number = "5"
+name = "IO5"
+type = "bidirectional"
+at = [-15.24, -5.08]
+side = "left"
+length = 2.54
+unit = 1
+
+[[pins]]
+number = "6"
+name = "IO6"
+type = "bidirectional"
+at = [-15.24, -2.54]
+side = "left"
+length = 2.54
+unit = 1
+
+[[pins]]
+number = "7"
+name = "IO7"
+type = "bidirectional"
+at = [-15.24, 0.0]
+side = "left"
+length = 2.54
+unit = 1
+
+[[pins]]
+number = "12"
+name = "IO8"
+type = "bidirectional"
+at = [-15.24, 2.54]
+side = "left"
+length = 2.54
+unit = 1
+
+[[pins]]
+number = "17"
+name = "IO9"
+type = "bidirectional"
+at = [-15.24, 5.08]
+side = "left"
+length = 2.54
+unit = 1
+
+[[pins]]
+number = "18"
+name = "IO10"
+type = "bidirectional"
+at = [-15.24, 7.62]
+side = "left"
+length = 2.54
+unit = 1
+
+[[pins]]
+number = "19"
+name = "IO11"
+type = "bidirectional"
+at = [-15.24, 10.16]
+side = "left"
+length = 2.54
+unit = 1
+
+[[pins]]
+number = "20"
+name = "IO12"
+type = "bidirectional"
+at = [-15.24, 12.7]
+side = "left"
+length = 2.54
+unit = 1
+
+[[pins]]
+number = "21"
+name = "IO13"
+type = "bidirectional"
+at = [-15.24, 15.24]
+side = "left"
+length = 2.54
+unit = 1
+
+[[pins]]
+number = "22"
+name = "IO14"
+type = "bidirectional"
+at = [-15.24, 17.78]
+side = "left"
+length = 2.54
+unit = 1
+
+[[pins]]
+number = "8"
+name = "IO15"
+type = "bidirectional"
+at = [-15.24, 20.32]
+side = "left"
+length = 2.54
+unit = 1
+
+[[pins]]
+number = "9"
+name = "IO16"
+type = "bidirectional"
+at = [-15.24, 22.86]
+side = "left"
+length = 2.54
+unit = 1
+
+[[pins]]
+number = "2"
+name = "3V3"
+type = "power_in"
+at = [0.0, -27.94]
+side = "top"
+length = 2.54
+unit = 1
+
+[[pins]]
+number = "1"
+name = "GND"
+type = "power_in"
+at = [0.0, 27.94]
+side = "bottom"
+length = 2.54
+unit = 1
+
+[[pins]]
+number = "40"
+name = "GND"
+type = "passive"
+at = [0.0, 27.94]
+side = "bottom"
+length = 2.54
+unit = 1
+hidden = true
+
+[[pins]]
+number = "41"
+name = "GND"
+type = "passive"
+at = [0.0, 27.94]
+side = "bottom"
+length = 2.54
+unit = 1
+hidden = true
+
+[[pins]]
+number = "37"
+name = "TXD0"
+type = "bidirectional"
+at = [15.24, -22.86]
+side = "right"
+length = 2.54
+unit = 1
+
+[[pins]]
+number = "36"
+name = "RXD0"
+type = "bidirectional"
+at = [15.24, -20.32]
+side = "right"
+length = 2.54
+unit = 1
+
+[[pins]]
+number = "10"
+name = "IO17"
+type = "bidirectional"
+at = [15.24, -17.78]
+side = "right"
+length = 2.54
+unit = 1
+
+[[pins]]
+number = "11"
+name = "IO18"
+type = "bidirectional"
+at = [15.24, -15.24]
+side = "right"
+length = 2.54
+unit = 1
+
+[[pins]]
+number = "13"
+name = "USB_D-"
+type = "bidirectional"
+at = [15.24, -12.7]
+side = "right"
+length = 2.54
+unit = 1
+
+[[pins]]
+number = "14"
+name = "USB_D+"
+type = "bidirectional"
+at = [15.24, -10.16]
+side = "right"
+length = 2.54
+unit = 1
+
+[[pins]]
+number = "23"
+name = "IO21"
+type = "bidirectional"
+at = [15.24, -7.62]
+side = "right"
+length = 2.54
+unit = 1
+
+[[pins]]
+number = "28"
+name = "IO35"
+type = "bidirectional"
+at = [15.24, -5.08]
+side = "right"
+length = 2.54
+unit = 1
+
+[[pins]]
+number = "29"
+name = "IO36"
+type = "bidirectional"
+at = [15.24, -2.54]
+side = "right"
+length = 2.54
+unit = 1
+
+[[pins]]
+number = "30"
+name = "IO37"
+type = "bidirectional"
+at = [15.24, 0.0]
+side = "right"
+length = 2.54
+unit = 1
+
+[[pins]]
+number = "31"
+name = "IO38"
+type = "bidirectional"
+at = [15.24, 2.54]
+side = "right"
+length = 2.54
+unit = 1
+
+[[pins]]
+number = "32"
+name = "IO39"
+type = "bidirectional"
+at = [15.24, 5.08]
+side = "right"
+length = 2.54
+unit = 1
+
+[[pins]]
+number = "33"
+name = "IO40"
+type = "bidirectional"
+at = [15.24, 7.62]
+side = "right"
+length = 2.54
+unit = 1
+
+[[pins]]
+number = "34"
+name = "IO41"
+type = "bidirectional"
+at = [15.24, 10.16]
+side = "right"
+length = 2.54
+unit = 1
+
+[[pins]]
+number = "35"
+name = "IO42"
+type = "bidirectional"
+at = [15.24, 12.7]
+side = "right"
+length = 2.54
+unit = 1
+
+[[pins]]
+number = "26"
+name = "IO45"
+type = "bidirectional"
+at = [15.24, 15.24]
+side = "right"
+length = 2.54
+unit = 1
+
+[[pins]]
+number = "16"
+name = "IO46"
+type = "bidirectional"
+at = [15.24, 17.78]
+side = "right"
+length = 2.54
+unit = 1
+
+[[pins]]
+number = "24"
+name = "IO47"
+type = "bidirectional"
+at = [15.24, 20.32]
+side = "right"
+length = 2.54
+unit = 1
+
+[[pins]]
+number = "25"
+name = "IO48"
+type = "bidirectional"
+at = [15.24, 22.86]
+side = "right"
+length = 2.54
+unit = 1

@@ -1,0 +1,527 @@
+name = "io"
+board = "buggy-guard"
+no_connect = ["J7.1"]
+
+[[parts]]
+ref = "F2"
+symbol = "Polyfuse"
+at = [20.32, 30.48]
+value = "100mA"
+rotation = 90.0
+fields = { mpn = "Bourns MF-USMF010-2 or equal" }
+
+[[parts]]
+ref = "J6"
+symbol = "Conn_01x03"
+at = [7.62, 45.72]
+value = "PEDAL"
+mirror = true
+
+[[parts]]
+ref = "R32"
+symbol = "R"
+at = [30.48, 50.8]
+value = "10k"
+rotation = 90.0
+
+[[parts]]
+ref = "R33"
+symbol = "R"
+at = [40.64, 58.42]
+value = "15k"
+
+[[parts]]
+ref = "C21"
+symbol = "C"
+at = [48.26, 58.42]
+value = "100n"
+
+[[parts]]
+ref = "R34"
+symbol = "R"
+at = [66.04, 30.48]
+value = "10k"
+rotation = 90.0
+
+[[parts]]
+ref = "C22"
+symbol = "C"
+at = [73.66, 38.1]
+value = "100n"
+
+[[parts]]
+ref = "R35"
+symbol = "R"
+at = [81.28, 30.48]
+value = "10k"
+rotation = 90.0
+
+[[parts]]
+ref = "C23"
+symbol = "C"
+at = [88.9, 38.1]
+value = "100n"
+
+[[parts]]
+ref = "U9"
+symbol = "MCP6002-xSN"
+at = [104.14, 33.02]
+value = "MCP6002"
+fields = { mpn = "Microchip MCP6002T-I/SN" }
+
+[[parts]]
+ref = "U9"
+symbol = "MCP6002-xSN"
+unit = 2
+at = [104.14, 63.5]
+value = "MCP6002"
+
+[[parts]]
+ref = "U9"
+symbol = "MCP6002-xSN"
+unit = 3
+at = [127.0, 63.5]
+value = "MCP6002"
+
+[[parts]]
+ref = "C24"
+symbol = "C"
+at = [137.16, 63.5]
+value = "100n"
+
+[[parts]]
+ref = "R36"
+symbol = "R"
+at = [96.52, 50.8]
+value = "20k"
+
+[[parts]]
+ref = "R37"
+symbol = "R"
+at = [109.22, 45.72]
+value = "10k"
+rotation = 90.0
+
+[[parts]]
+ref = "R38"
+symbol = "R"
+at = [124.46000000000001, 33.02]
+value = "470"
+rotation = 90.0
+
+[[parts]]
+ref = "C25"
+symbol = "C"
+at = [134.62, 40.64]
+value = "10n"
+
+[[parts]]
+ref = "R39"
+symbol = "R"
+at = [142.24, 45.72]
+value = "10k"
+rotation = 90.0
+
+[[parts]]
+ref = "R40"
+symbol = "R"
+at = [152.4, 53.34]
+value = "15k"
+
+[[parts]]
+ref = "J7"
+symbol = "Conn_01x03"
+at = [160.02, 30.48]
+value = "ESC_THR"
+
+[[parts]]
+ref = "F3"
+symbol = "Polyfuse"
+at = [20.32, 83.82000000000001]
+value = "200mA"
+rotation = 90.0
+fields = { mpn = "Bourns MF-MSMF020-2 or equal" }
+
+[[parts]]
+ref = "C27"
+symbol = "C"
+at = [33.02, 91.44]
+value = "10u"
+
+[[parts]]
+ref = "J8"
+symbol = "Conn_01x04"
+at = [160.02, 86.36]
+value = "US1"
+
+[[parts]]
+ref = "R41"
+symbol = "R"
+at = [129.54, 81.28]
+value = "100"
+rotation = 90.0
+
+[[parts]]
+ref = "R42"
+symbol = "R"
+at = [129.54, 88.9]
+value = "10k"
+rotation = 90.0
+
+[[parts]]
+ref = "R43"
+symbol = "R"
+at = [119.38, 96.52]
+value = "20k"
+
+[[parts]]
+ref = "J9"
+symbol = "Conn_01x04"
+at = [160.02, 111.76]
+value = "US2"
+
+[[parts]]
+ref = "R44"
+symbol = "R"
+at = [129.54, 106.68]
+value = "100"
+rotation = 90.0
+
+[[parts]]
+ref = "R45"
+symbol = "R"
+at = [129.54, 114.3]
+value = "10k"
+rotation = 90.0
+
+[[parts]]
+ref = "R46"
+symbol = "R"
+at = [119.38, 121.92]
+value = "20k"
+
+[[parts]]
+ref = "J10"
+symbol = "Conn_01x04"
+at = [160.02, 137.16]
+value = "US3"
+
+[[parts]]
+ref = "R47"
+symbol = "R"
+at = [129.54, 132.08]
+value = "100"
+rotation = 90.0
+
+[[parts]]
+ref = "R48"
+symbol = "R"
+at = [129.54, 139.7]
+value = "10k"
+rotation = 90.0
+
+[[parts]]
+ref = "R49"
+symbol = "R"
+at = [119.38, 147.32]
+value = "20k"
+
+[[parts]]
+ref = "J11"
+symbol = "Conn_01x04"
+at = [160.02, 162.56]
+value = "US4"
+
+[[parts]]
+ref = "R50"
+symbol = "R"
+at = [129.54, 157.48]
+value = "100"
+rotation = 90.0
+
+[[parts]]
+ref = "R51"
+symbol = "R"
+at = [129.54, 165.1]
+value = "10k"
+rotation = 90.0
+
+[[parts]]
+ref = "R52"
+symbol = "R"
+at = [119.38, 172.72]
+value = "20k"
+
+[[parts]]
+ref = "J12"
+symbol = "Conn_01x03"
+at = [66.04, 116.84]
+value = "SPEED"
+mirror = true
+
+[[parts]]
+ref = "R53"
+symbol = "R"
+at = [81.28, 104.14]
+value = "10k"
+
+[[parts]]
+ref = "R54"
+symbol = "R"
+at = [88.9, 116.84]
+value = "10k"
+rotation = 90.0
+
+[[parts]]
+ref = "R55"
+symbol = "R"
+at = [99.06, 124.46000000000001]
+value = "20k"
+
+[[parts]]
+ref = "C26"
+symbol = "C"
+at = [106.68, 124.46000000000001]
+value = "1n"
+
+[[parts]]
+ref = "J13"
+symbol = "Conn_01x03"
+at = [7.62, 139.7]
+value = "AUX"
+mirror = true
+
+[[parts]]
+ref = "R56"
+symbol = "R"
+at = [25.4, 137.16]
+value = "1k"
+rotation = 90.0
+
+[[parts]]
+ref = "R57"
+symbol = "R"
+at = [35.56, 129.54]
+value = "10k"
+
+[[parts]]
+ref = "R58"
+symbol = "R"
+at = [25.4, 144.78]
+value = "1k"
+rotation = 90.0
+
+[[parts]]
+ref = "R59"
+symbol = "R"
+at = [43.18, 129.54]
+value = "10k"
+
+[[parts]]
+ref = "H1"
+symbol = "MountingHole"
+at = [180.34, 25.4]
+value = "M3"
+
+[[parts]]
+ref = "H2"
+symbol = "MountingHole"
+at = [187.96, 25.4]
+value = "M3"
+
+[[parts]]
+ref = "H3"
+symbol = "MountingHole"
+at = [195.58, 25.4]
+value = "M3"
+
+[[parts]]
+ref = "H4"
+symbol = "MountingHole"
+at = [203.2, 25.4]
+value = "M3"
+
+[[nets]]
+name = "PEDAL_5V"
+class = "Power"
+pins = ["F2.2", "J6.1"]
+
+[[nets]]
+name = "PEDAL_SIG"
+class = "Analog"
+pins = ["J6.3", "R32.1"]
+
+[[nets]]
+name = "PEDAL_ADC"
+class = "Analog"
+pins = ["R32.2", "R33.1", "C21.1"]
+
+[[nets]]
+name = "THR_PWM"
+class = "Signal"
+pins = ["R34.1"]
+
+[[nets]]
+name = "THR_F1"
+class = "Analog"
+pins = ["R34.2", "C22.1", "R35.1"]
+
+[[nets]]
+name = "THR_F2"
+class = "Analog"
+pins = ["R35.2", "C23.1", "U9.3"]
+
+[[nets]]
+name = "THR_NEG"
+class = "Analog"
+pins = ["U9.2", "R36.1", "R37.1"]
+
+[[nets]]
+name = "THR_AMP"
+class = "Analog"
+pins = ["U9.1", "R37.2", "R38.1"]
+
+[[nets]]
+name = "THR_OUT"
+class = "Analog"
+pins = ["R38.2", "C25.1", "R39.1", "J7.3"]
+
+[[nets]]
+name = "THR_FB_ADC"
+class = "Analog"
+pins = ["R39.2", "R40.1"]
+
+[[nets]]
+name = "SENS_5V"
+class = "Power"
+pins = ["F3.2", "C27.1", "J8.1", "J9.1", "J10.1", "J11.1", "J12.1", "R53.1"]
+
+[[nets]]
+name = "US1_TRIG"
+class = "Signal"
+pins = ["R41.1"]
+
+[[nets]]
+name = "US1_TRIG_C"
+class = "Signal"
+pins = ["R41.2", "J8.2"]
+
+[[nets]]
+name = "US1_ECHO_C"
+class = "Signal"
+pins = ["J8.3", "R42.2"]
+
+[[nets]]
+name = "US1_ECHO"
+class = "Signal"
+pins = ["R42.1", "R43.1"]
+
+[[nets]]
+name = "US2_TRIG"
+class = "Signal"
+pins = ["R44.1"]
+
+[[nets]]
+name = "US2_TRIG_C"
+class = "Signal"
+pins = ["R44.2", "J9.2"]
+
+[[nets]]
+name = "US2_ECHO_C"
+class = "Signal"
+pins = ["J9.3", "R45.2"]
+
+[[nets]]
+name = "US2_ECHO"
+class = "Signal"
+pins = ["R45.1", "R46.1"]
+
+[[nets]]
+name = "US3_TRIG"
+class = "Signal"
+pins = ["R47.1"]
+
+[[nets]]
+name = "US3_TRIG_C"
+class = "Signal"
+pins = ["R47.2", "J10.2"]
+
+[[nets]]
+name = "US3_ECHO_C"
+class = "Signal"
+pins = ["J10.3", "R48.2"]
+
+[[nets]]
+name = "US3_ECHO"
+class = "Signal"
+pins = ["R48.1", "R49.1"]
+
+[[nets]]
+name = "US4_TRIG"
+class = "Signal"
+pins = ["R50.1"]
+
+[[nets]]
+name = "US4_TRIG_C"
+class = "Signal"
+pins = ["R50.2", "J11.2"]
+
+[[nets]]
+name = "US4_ECHO_C"
+class = "Signal"
+pins = ["J11.3", "R51.2"]
+
+[[nets]]
+name = "US4_ECHO"
+class = "Signal"
+pins = ["R51.1", "R52.1"]
+
+[[nets]]
+name = "SPEED_C"
+class = "Signal"
+pins = ["J12.3", "R53.2", "R54.2"]
+
+[[nets]]
+name = "SPEED"
+class = "Signal"
+pins = ["R54.1", "R55.1", "C26.1"]
+
+[[nets]]
+name = "AUX1_C"
+class = "Signal"
+pins = ["J13.1", "R56.2"]
+
+[[nets]]
+name = "AUX1"
+class = "Signal"
+pins = ["R56.1", "R57.1"]
+
+[[nets]]
+name = "AUX2_C"
+class = "Signal"
+pins = ["J13.2", "R58.2"]
+
+[[nets]]
+name = "AUX2"
+class = "Signal"
+pins = ["R58.1", "R59.1"]
+
+[[nets]]
+name = "+3V3"
+class = "Power"
+pins = ["R57.2", "R59.2"]
+
+[[nets]]
+name = "+5V"
+class = "Power"
+pins = ["F2.1", "F3.1", "U9.8", "C24.1"]
+
+[[nets]]
+name = "U9B_OUT"
+class = "Analog"
+pins = ["U9.6", "U9.7"]
+
+[[nets]]
+name = "GND"
+class = "Ground"
+pins = ["J6.2", "R33.2", "C21.2", "C22.2", "C23.2", "U9.5", "U9.4", "C24.2", "R36.2", "C25.2", "R40.2", "J7.2", "C27.2", "J8.4", "J9.4", "J10.4", "J11.4", "R43.2", "R46.2", "R49.2", "R52.2", "J12.2", "R55.2", "C26.2", "J13.3"]

@@ -1,0 +1,87 @@
+# imported from KiCad Buzzer_Beeper:Buzzer_12x9.5RM7.6
+name = "Buzzer_12x9.5RM7.6"
+description = "Generic Buzzer, D12mm height 9.5mm with RM7.6mm"
+tags = ["buzzer"]
+mount = "tht"
+model = "${KICAD9_3DMODEL_DIR}/Buzzer_Beeper.3dshapes/Buzzer_12x9.5RM7.6.step"
+
+[[pads]]
+number = "1"
+kind = "tht"
+shape = "rect"
+at = [0.0, 0.0]
+size = [2.0, 2.0]
+drill = 1.0
+layers = ["*.Cu", "*.Mask"]
+
+[[pads]]
+number = "2"
+kind = "tht"
+shape = "circle"
+at = [7.6, 0.0]
+size = [2.0, 2.0]
+drill = 1.0
+layers = ["*.Cu", "*.Mask"]
+
+[[graphics]]
+kind = "text"
+layer = "F.SilkS"
+at = [3.8, -7.2]
+text = "${REFERENCE}"
+size = 1.0
+
+[[graphics]]
+kind = "text"
+layer = "F.Fab"
+at = [3.8, 7.4]
+text = "${VALUE}"
+size = 1.0
+
+[[graphics]]
+kind = "circle"
+layer = "F.SilkS"
+center = [3.8, 0.0]
+radius = 6.1
+width = 0.15
+
+[[graphics]]
+kind = "circle"
+layer = "F.CrtYd"
+center = [3.8, 0.0]
+radius = 6.25
+width = 0.05
+
+[[graphics]]
+kind = "circle"
+layer = "F.Fab"
+center = [3.8, 0.0]
+radius = 1.0
+width = 0.1
+
+[[graphics]]
+kind = "circle"
+layer = "F.Fab"
+center = [3.8, 0.0]
+radius = 6.0
+width = 0.1
+
+[[graphics]]
+kind = "text"
+layer = "F.SilkS"
+at = [-0.01, -2.54]
+text = "+"
+size = 1.0
+
+[[graphics]]
+kind = "text"
+layer = "F.Fab"
+at = [3.8, -4.0]
+text = "${REFERENCE}"
+size = 1.0
+
+[[graphics]]
+kind = "text"
+layer = "F.Fab"
+at = [-0.01, -2.54]
+text = "+"
+size = 1.0

@@ -1,0 +1,45 @@
+# imported from KiCad Device:Buzzer
+name = "Buzzer"
+reference = "BZ"
+description = "Buzzer, polarized"
+keywords = ["quartz", "resonator", "ceramic"]
+footprint = "Buzzer_12x9.5RM7.6"
+footprint_filters = ["*Buzzer*"]
+pin_names = "hidden"
+pin_name_offset = 0.0254
+
+[[graphics]]
+kind = "polyline"
+points = [[-1.651, -1.905], [-1.143, -1.905]]
+
+[[graphics]]
+kind = "polyline"
+points = [[-1.397, -2.159], [-1.397, -1.651]]
+
+[[graphics]]
+kind = "arc"
+start = [0.0, -3.175]
+mid = [3.1612, 0.0]
+end = [0.0, 3.175]
+
+[[graphics]]
+kind = "polyline"
+points = [[0.0, -3.175], [0.0, 3.175]]
+
+[[pins]]
+number = "1"
+name = "+"
+type = "passive"
+at = [-2.54, -2.54]
+side = "left"
+length = 2.54
+unit = 1
+
+[[pins]]
+number = "2"
+name = "-"
+type = "passive"
+at = [-2.54, 2.54]
+side = "left"
+length = 2.54
+unit = 1

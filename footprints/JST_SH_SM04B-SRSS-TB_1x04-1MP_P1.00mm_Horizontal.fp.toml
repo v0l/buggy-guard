@@ -1,0 +1,168 @@
+# imported from KiCad Connector_JST:JST_SH_SM04B-SRSS-TB_1x04-1MP_P1.00mm_Horizontal
+name = "JST_SH_SM04B-SRSS-TB_1x04-1MP_P1.00mm_Horizontal"
+description = "JST SH series connector, SM04B-SRSS-TB (http://www.jst-mfg.com/product/pdf/eng/eSH.pdf), generated with kicad-footprint-generator"
+tags = ["connector", "JST", "SH", "horizontal"]
+mount = "smd"
+model = "${KICAD9_3DMODEL_DIR}/Connector_JST.3dshapes/JST_SH_SM04B-SRSS-TB_1x04-1MP_P1.00mm_Horizontal.step"
+
+[[pads]]
+number = "1"
+kind = "smd"
+shape = "roundrect"
+at = [-1.5, -2.0]
+size = [0.6, 1.55]
+roundrect_ratio = 0.25
+layers = ["F.Cu", "F.Mask", "F.Paste"]
+count = 4
+pitch = [1.0, 0.0]
+
+[[pads]]
+number = "MP"
+kind = "smd"
+shape = "roundrect"
+at = [-2.8, 1.875]
+size = [1.2, 1.8]
+roundrect_ratio = 0.208333
+layers = ["F.Cu", "F.Mask", "F.Paste"]
+
+[[pads]]
+number = "MP"
+kind = "smd"
+shape = "roundrect"
+at = [2.8, 1.875]
+size = [1.2, 1.8]
+roundrect_ratio = 0.208333
+layers = ["F.Cu", "F.Mask", "F.Paste"]
+
+[[graphics]]
+kind = "text"
+layer = "F.SilkS"
+at = [0.0, -3.98]
+text = "${REFERENCE}"
+size = 1.0
+
+[[graphics]]
+kind = "text"
+layer = "F.Fab"
+at = [0.0, 3.98]
+text = "${VALUE}"
+size = 1.0
+
+[[graphics]]
+kind = "line"
+layer = "F.SilkS"
+start = [-3.11, -1.785]
+end = [-2.06, -1.785]
+width = 0.15
+
+[[graphics]]
+kind = "line"
+layer = "F.SilkS"
+start = [-3.11, 0.715]
+end = [-3.11, -1.785]
+width = 0.15
+
+[[graphics]]
+kind = "line"
+layer = "F.SilkS"
+start = [-2.06, -1.785]
+end = [-2.06, -2.775]
+width = 0.15
+
+[[graphics]]
+kind = "line"
+layer = "F.SilkS"
+start = [-1.94, 2.685]
+end = [1.94, 2.685]
+width = 0.15
+
+[[graphics]]
+kind = "line"
+layer = "F.SilkS"
+start = [3.11, -1.785]
+end = [2.06, -1.785]
+width = 0.15
+
+[[graphics]]
+kind = "line"
+layer = "F.SilkS"
+start = [3.11, 0.715]
+end = [3.11, -1.785]
+width = 0.15
+
+[[graphics]]
+kind = "line"
+layer = "F.CrtYd"
+start = [-3.9, -3.28]
+end = [-3.9, 3.28]
+width = 0.05
+
+[[graphics]]
+kind = "line"
+layer = "F.CrtYd"
+start = [-3.9, 3.28]
+end = [3.9, 3.28]
+width = 0.05
+
+[[graphics]]
+kind = "line"
+layer = "F.CrtYd"
+start = [3.9, -3.28]
+end = [-3.9, -3.28]
+width = 0.05
+
+[[graphics]]
+kind = "line"
+layer = "F.CrtYd"
+start = [3.9, 3.28]
+end = [3.9, -3.28]
+width = 0.05
+
+[[graphics]]
+kind = "line"
+layer = "F.Fab"
+start = [-3.0, -1.675]
+end = [-3.0, 2.575]
+width = 0.1
+
+[[graphics]]
+kind = "line"
+layer = "F.Fab"
+start = [-3.0, -1.675]
+end = [3.0, -1.675]
+width = 0.1
+
+[[graphics]]
+kind = "line"
+layer = "F.Fab"
+start = [-3.0, 2.575]
+end = [3.0, 2.575]
+width = 0.1
+
+[[graphics]]
+kind = "line"
+layer = "F.Fab"
+start = [-2.0, -1.675]
+end = [-1.5, -0.967893]
+width = 0.1
+
+[[graphics]]
+kind = "line"
+layer = "F.Fab"
+start = [-1.5, -0.967893]
+end = [-1.0, -1.675]
+width = 0.1
+
+[[graphics]]
+kind = "line"
+layer = "F.Fab"
+start = [3.0, -1.675]
+end = [3.0, 2.575]
+width = 0.1
+
+[[graphics]]
+kind = "text"
+layer = "F.Fab"
+at = [0.0, 0.0]
+text = "${REFERENCE}"
+size = 1.0

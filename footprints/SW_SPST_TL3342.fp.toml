@@ -1,0 +1,374 @@
+# imported from KiCad Button_Switch_SMD:SW_SPST_TL3342
+name = "SW_SPST_TL3342"
+description = "Low-profile SMD Tactile Switch, https://www.e-switch.com/system/asset/product_line/data_sheet/165/TL3342.pdf"
+tags = ["SPST", "Tactile", "Switch"]
+mount = "smd"
+model = "${KICAD9_3DMODEL_DIR}/Button_Switch_SMD.3dshapes/SW_SPST_TL3342.step"
+
+[[pads]]
+number = "1"
+kind = "smd"
+shape = "rect"
+at = [-3.15, -1.9]
+size = [1.7, 1.0]
+layers = ["F.Cu", "F.Mask", "F.Paste"]
+
+[[pads]]
+number = "1"
+kind = "smd"
+shape = "rect"
+at = [3.15, -1.9]
+size = [1.7, 1.0]
+layers = ["F.Cu", "F.Mask", "F.Paste"]
+
+[[pads]]
+number = "2"
+kind = "smd"
+shape = "rect"
+at = [-3.15, 1.9]
+size = [1.7, 1.0]
+layers = ["F.Cu", "F.Mask", "F.Paste"]
+
+[[pads]]
+number = "2"
+kind = "smd"
+shape = "rect"
+at = [3.15, 1.9]
+size = [1.7, 1.0]
+layers = ["F.Cu", "F.Mask", "F.Paste"]
+
+[[graphics]]
+kind = "text"
+layer = "F.SilkS"
+at = [0.0, -3.75]
+text = "${REFERENCE}"
+size = 1.0
+
+[[graphics]]
+kind = "text"
+layer = "F.Fab"
+at = [0.0, 3.75]
+text = "${VALUE}"
+size = 1.0
+
+[[graphics]]
+kind = "line"
+layer = "F.SilkS"
+start = [-2.75, -1.0]
+end = [-2.75, 1.0]
+width = 0.15
+
+[[graphics]]
+kind = "line"
+layer = "F.SilkS"
+start = [-1.7, -2.3]
+end = [-1.25, -2.75]
+width = 0.15
+
+[[graphics]]
+kind = "line"
+layer = "F.SilkS"
+start = [-1.7, 2.3]
+end = [-1.25, 2.75]
+width = 0.15
+
+[[graphics]]
+kind = "line"
+layer = "F.SilkS"
+start = [-1.25, -2.75]
+end = [1.25, -2.75]
+width = 0.15
+
+[[graphics]]
+kind = "line"
+layer = "F.SilkS"
+start = [-1.25, 2.75]
+end = [1.25, 2.75]
+width = 0.15
+
+[[graphics]]
+kind = "line"
+layer = "F.SilkS"
+start = [1.7, -2.3]
+end = [1.25, -2.75]
+width = 0.15
+
+[[graphics]]
+kind = "line"
+layer = "F.SilkS"
+start = [1.7, 2.3]
+end = [1.25, 2.75]
+width = 0.15
+
+[[graphics]]
+kind = "line"
+layer = "F.SilkS"
+start = [2.75, -1.0]
+end = [2.75, 1.0]
+width = 0.15
+
+[[graphics]]
+kind = "line"
+layer = "F.CrtYd"
+start = [-4.25, -3.0]
+end = [4.25, -3.0]
+width = 0.05
+
+[[graphics]]
+kind = "line"
+layer = "F.CrtYd"
+start = [-4.25, 3.0]
+end = [-4.25, -3.0]
+width = 0.05
+
+[[graphics]]
+kind = "line"
+layer = "F.CrtYd"
+start = [4.25, -3.0]
+end = [4.25, 3.0]
+width = 0.05
+
+[[graphics]]
+kind = "line"
+layer = "F.CrtYd"
+start = [4.25, 3.0]
+end = [-4.25, 3.0]
+width = 0.05
+
+[[graphics]]
+kind = "line"
+layer = "F.Fab"
+start = [-3.2, -2.1]
+end = [-3.2, -1.6]
+width = 0.1
+
+[[graphics]]
+kind = "line"
+layer = "F.Fab"
+start = [-3.2, -1.6]
+end = [-2.2, -1.6]
+width = 0.1
+
+[[graphics]]
+kind = "line"
+layer = "F.Fab"
+start = [-3.2, 1.6]
+end = [-2.2, 1.6]
+width = 0.1
+
+[[graphics]]
+kind = "line"
+layer = "F.Fab"
+start = [-3.2, 2.1]
+end = [-3.2, 1.6]
+width = 0.1
+
+[[graphics]]
+kind = "line"
+layer = "F.Fab"
+start = [-2.7, -2.1]
+end = [-2.7, -1.6]
+width = 0.1
+
+[[graphics]]
+kind = "line"
+layer = "F.Fab"
+start = [-2.7, 2.1]
+end = [-2.7, 1.6]
+width = 0.1
+
+[[graphics]]
+kind = "line"
+layer = "F.Fab"
+start = [-2.6, -1.2]
+end = [-2.6, 1.2]
+width = 0.1
+
+[[graphics]]
+kind = "line"
+layer = "F.Fab"
+start = [-2.6, 1.2]
+end = [-1.2, 2.6]
+width = 0.1
+
+[[graphics]]
+kind = "line"
+layer = "F.Fab"
+start = [-2.0, -1.0]
+end = [-1.0, -2.0]
+width = 0.1
+
+[[graphics]]
+kind = "line"
+layer = "F.Fab"
+start = [-2.0, 1.0]
+end = [-2.0, -1.0]
+width = 0.1
+
+[[graphics]]
+kind = "line"
+layer = "F.Fab"
+start = [-1.7, -2.1]
+end = [-3.2, -2.1]
+width = 0.1
+
+[[graphics]]
+kind = "line"
+layer = "F.Fab"
+start = [-1.7, 2.1]
+end = [-3.2, 2.1]
+width = 0.1
+
+[[graphics]]
+kind = "line"
+layer = "F.Fab"
+start = [-1.2, -2.6]
+end = [-2.6, -1.2]
+width = 0.1
+
+[[graphics]]
+kind = "line"
+layer = "F.Fab"
+start = [-1.2, 2.6]
+end = [1.2, 2.6]
+width = 0.1
+
+[[graphics]]
+kind = "line"
+layer = "F.Fab"
+start = [-1.0, -2.0]
+end = [1.0, -2.0]
+width = 0.1
+
+[[graphics]]
+kind = "line"
+layer = "F.Fab"
+start = [-1.0, 2.0]
+end = [-2.0, 1.0]
+width = 0.1
+
+[[graphics]]
+kind = "line"
+layer = "F.Fab"
+start = [1.0, -2.0]
+end = [2.0, -1.0]
+width = 0.1
+
+[[graphics]]
+kind = "line"
+layer = "F.Fab"
+start = [1.0, 2.0]
+end = [-1.0, 2.0]
+width = 0.1
+
+[[graphics]]
+kind = "line"
+layer = "F.Fab"
+start = [1.2, -2.6]
+end = [-1.2, -2.6]
+width = 0.1
+
+[[graphics]]
+kind = "line"
+layer = "F.Fab"
+start = [1.2, 2.6]
+end = [2.6, 1.2]
+width = 0.1
+
+[[graphics]]
+kind = "line"
+layer = "F.Fab"
+start = [1.7, -2.1]
+end = [3.2, -2.1]
+width = 0.1
+
+[[graphics]]
+kind = "line"
+layer = "F.Fab"
+start = [1.7, 2.1]
+end = [3.2, 2.1]
+width = 0.1
+
+[[graphics]]
+kind = "line"
+layer = "F.Fab"
+start = [2.0, -1.0]
+end = [2.0, 1.0]
+width = 0.1
+
+[[graphics]]
+kind = "line"
+layer = "F.Fab"
+start = [2.0, 1.0]
+end = [1.0, 2.0]
+width = 0.1
+
+[[graphics]]
+kind = "line"
+layer = "F.Fab"
+start = [2.6, -1.2]
+end = [1.2, -2.6]
+width = 0.1
+
+[[graphics]]
+kind = "line"
+layer = "F.Fab"
+start = [2.6, 1.2]
+end = [2.6, -1.2]
+width = 0.1
+
+[[graphics]]
+kind = "line"
+layer = "F.Fab"
+start = [2.7, -2.1]
+end = [2.7, -1.6]
+width = 0.1
+
+[[graphics]]
+kind = "line"
+layer = "F.Fab"
+start = [2.7, 2.1]
+end = [2.7, 1.6]
+width = 0.1
+
+[[graphics]]
+kind = "line"
+layer = "F.Fab"
+start = [3.2, -2.1]
+end = [3.2, -1.6]
+width = 0.1
+
+[[graphics]]
+kind = "line"
+layer = "F.Fab"
+start = [3.2, -1.6]
+end = [2.2, -1.6]
+width = 0.1
+
+[[graphics]]
+kind = "line"
+layer = "F.Fab"
+start = [3.2, 1.6]
+end = [2.2, 1.6]
+width = 0.1
+
+[[graphics]]
+kind = "line"
+layer = "F.Fab"
+start = [3.2, 2.1]
+end = [3.2, 1.6]
+width = 0.1
+
+[[graphics]]
+kind = "circle"
+layer = "F.Fab"
+center = [0.0, 0.0]
+radius = 1.0
+width = 0.1
+
+[[graphics]]
+kind = "text"
+layer = "F.Fab"
+at = [0.0, -3.75]
+text = "${REFERENCE}"
+size = 1.0

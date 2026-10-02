@@ -1,0 +1,317 @@
+name = "mcu"
+board = "buggy-guard"
+no_connect = ["U3.15", "U3.26", "U3.16", "U3.28", "U3.29", "U3.30", "U3.37", "U3.36", "J2.A8", "J2.B8"]
+
+[[parts]]
+ref = "U3"
+symbol = "ESP32-S3-WROOM-1"
+at = [76.2, 63.5]
+value = "ESP32-S3-WROOM-1U-N16R8"
+fields = { mpn = "Espressif ESP32-S3-WROOM-1U-N16R8" }
+
+[[parts]]
+ref = "C12"
+symbol = "C"
+at = [40.64, 22.86]
+value = "10u"
+
+[[parts]]
+ref = "C13"
+symbol = "C"
+at = [48.26, 22.86]
+value = "100n"
+
+[[parts]]
+ref = "R10"
+symbol = "R"
+at = [25.4, 40.64]
+value = "10k"
+
+[[parts]]
+ref = "C14"
+symbol = "C"
+at = [25.4, 58.42]
+value = "1u"
+
+[[parts]]
+ref = "SW1"
+symbol = "SW_Push"
+at = [12.7, 50.8]
+value = "EN"
+rotation = 90.0
+
+[[parts]]
+ref = "R11"
+symbol = "R"
+at = [35.56, 76.2]
+value = "10k"
+
+[[parts]]
+ref = "SW2"
+symbol = "SW_Push"
+at = [25.4, 88.9]
+value = "BOOT"
+rotation = 90.0
+
+[[parts]]
+ref = "J2"
+symbol = "USB_C_Receptacle_USB2.0_16P"
+at = [160.02, 40.64]
+value = "USB-C"
+mirror = true
+
+[[parts]]
+ref = "R12"
+symbol = "R"
+at = [139.7, 22.86]
+value = "5.1k"
+
+[[parts]]
+ref = "R13"
+symbol = "R"
+at = [132.08, 22.86]
+value = "5.1k"
+
+[[parts]]
+ref = "U4"
+symbol = "USBLC6-2SC6"
+at = [132.08, 55.88]
+value = "USBLC6-2SC6"
+
+[[parts]]
+ref = "R14"
+symbol = "R"
+at = [129.54, 93.98]
+value = "1k"
+rotation = 90.0
+
+[[parts]]
+ref = "D5"
+symbol = "LED"
+at = [142.24, 93.98]
+value = "red"
+rotation = 180.0
+
+[[parts]]
+ref = "R15"
+symbol = "R"
+at = [129.54, 111.76]
+value = "100"
+rotation = 90.0
+
+[[parts]]
+ref = "R16"
+symbol = "R"
+at = [137.16, 119.38]
+value = "100k"
+
+[[parts]]
+ref = "Q1"
+symbol = "AO3400A"
+at = [147.32, 111.76]
+value = "AO3400A"
+
+[[parts]]
+ref = "BZ1"
+symbol = "Buzzer"
+at = [152.4, 96.52]
+value = "5V"
+fields = { mpn = "12x9.5 mm 5 V magnetic, e.g. CUI CEM-1205C" }
+
+[[parts]]
+ref = "D6"
+symbol = "D"
+at = [162.56, 99.06]
+value = "1N4148W"
+footprint = "D_SOD-123"
+rotation = 90.0
+
+[[nets]]
+name = "EN"
+class = "Signal"
+pins = ["U3.3", "R10.2", "C14.1", "SW1.2"]
+
+[[nets]]
+name = "BOOT"
+class = "Signal"
+pins = ["U3.27", "R11.2", "SW2.2"]
+
+[[nets]]
+name = "CC1"
+class = "Signal"
+pins = ["J2.A5", "R12.1"]
+
+[[nets]]
+name = "CC2"
+class = "Signal"
+pins = ["J2.B5", "R13.1"]
+
+[[nets]]
+name = "USB_DP"
+class = "USB"
+pins = ["J2.A6", "J2.B6", "U4.1", "U4.6", "U3.14"]
+
+[[nets]]
+name = "USB_DN"
+class = "USB"
+pins = ["J2.A7", "J2.B7", "U4.3", "U4.4", "U3.13"]
+
+[[nets]]
+name = "LED_FAULT"
+class = "Signal"
+pins = ["U3.35", "R14.1"]
+
+[[nets]]
+name = "LED_FAULT_K"
+class = "Signal"
+pins = ["R14.2", "D5.2"]
+
+[[nets]]
+name = "BUZZ"
+class = "Signal"
+pins = ["U3.34", "R15.1"]
+
+[[nets]]
+name = "BUZZ_G"
+class = "Signal"
+pins = ["R15.2", "R16.1", "Q1.1"]
+
+[[nets]]
+name = "BUZZ_N"
+class = "Power"
+pins = ["Q1.3", "BZ1.2", "D6.2"]
+
+[[nets]]
+name = "PEDAL_ADC"
+class = "Analog"
+pins = ["U3.39"]
+
+[[nets]]
+name = "THR_FB_ADC"
+class = "Analog"
+pins = ["U3.4"]
+
+[[nets]]
+name = "ESTOP_ADC"
+class = "Analog"
+pins = ["U3.5"]
+
+[[nets]]
+name = "THR_PWM"
+class = "Signal"
+pins = ["U3.6"]
+
+[[nets]]
+name = "ARM"
+class = "Signal"
+pins = ["U3.7"]
+
+[[nets]]
+name = "I2C_SDA"
+class = "Signal"
+pins = ["U3.12"]
+
+[[nets]]
+name = "I2C_SCL"
+class = "Signal"
+pins = ["U3.17"]
+
+[[nets]]
+name = "WDOK"
+class = "Signal"
+pins = ["U3.18"]
+
+[[nets]]
+name = "IMU_INT2"
+class = "Signal"
+pins = ["U3.19"]
+
+[[nets]]
+name = "WDI"
+class = "Signal"
+pins = ["U3.20"]
+
+[[nets]]
+name = "BRK_REL"
+class = "Signal"
+pins = ["U3.21"]
+
+[[nets]]
+name = "SPEED"
+class = "Signal"
+pins = ["U3.22"]
+
+[[nets]]
+name = "US1_TRIG"
+class = "Signal"
+pins = ["U3.8"]
+
+[[nets]]
+name = "US1_ECHO"
+class = "Signal"
+pins = ["U3.9"]
+
+[[nets]]
+name = "US2_TRIG"
+class = "Signal"
+pins = ["U3.10"]
+
+[[nets]]
+name = "US2_ECHO"
+class = "Signal"
+pins = ["U3.11"]
+
+[[nets]]
+name = "US3_TRIG"
+class = "Signal"
+pins = ["U3.23"]
+
+[[nets]]
+name = "US3_ECHO"
+class = "Signal"
+pins = ["U3.31"]
+
+[[nets]]
+name = "US4_TRIG"
+class = "Signal"
+pins = ["U3.32"]
+
+[[nets]]
+name = "US4_ECHO"
+class = "Signal"
+pins = ["U3.33"]
+
+[[nets]]
+name = "AUX1"
+class = "Signal"
+pins = ["U3.24"]
+
+[[nets]]
+name = "AUX2"
+class = "Signal"
+pins = ["U3.25"]
+
+[[nets]]
+name = "+3V3"
+class = "Power"
+pins = ["U3.2", "C12.1", "C13.1", "R10.1", "R11.1"]
+
+[[nets]]
+name = "VBUS"
+class = "Power"
+pins = ["J2.A4", "J2.A9", "U4.5"]
+
+[[nets]]
+name = "+5V"
+class = "Power"
+pins = ["BZ1.1", "D6.1"]
+
+[[nets]]
+name = "GND"
+class = "Ground"
+pins = ["U3.1", "U3.40", "U3.41", "C12.2", "C13.2", "C14.2", "SW1.1", "SW2.1", "J2.A1", "J2.A12", "J2.S1", "R12.2", "R13.2", "U4.2", "D5.1", "R16.2", "Q1.2"]
+
+[[nets]]
+name = "VBAT_ADC"
+class = "Analog"
+pins = ["U3.38"]

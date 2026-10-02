@@ -1,0 +1,116 @@
+# imported from KiCad Power_Supervisor:TPS3430WDRC
+name = "TPS3430WDRC"
+reference = "U"
+description = "Window watchdog timer with programmable reset delay"
+datasheet = "https://www.ti.com/lit/gpn/TPS3430"
+keywords = ["watchdog", "supervisor"]
+footprint = "VSON-10-1EP_3x3mm_P0.5mm_EP1.65x2.4mm"
+footprint_filters = ["*VSON*1EP*3x3mm*P0.5mm*"]
+
+[[graphics]]
+kind = "rect"
+start = [-7.62, -10.16]
+end = [7.62, 10.16]
+width = 0.254
+fill = "background"
+
+[[pins]]
+number = "11"
+name = "GND"
+type = "passive"
+at = [0.0, 12.7]
+side = "bottom"
+length = 2.54
+unit = 1
+hidden = true
+
+[[pins]]
+number = "10"
+name = "VDD2"
+type = "power_in"
+at = [2.54, -12.7]
+side = "top"
+length = 2.54
+unit = 1
+
+[[pins]]
+number = "7"
+name = "WDI"
+type = "input"
+at = [-10.16, -7.62]
+side = "left"
+length = 2.54
+unit = 1
+
+[[pins]]
+number = "4"
+name = "CRST"
+type = "passive"
+at = [-10.16, -2.54]
+side = "left"
+length = 2.54
+unit = 1
+
+[[pins]]
+number = "2"
+name = "CWD"
+type = "passive"
+at = [-10.16, 0.0]
+side = "left"
+length = 2.54
+unit = 1
+
+[[pins]]
+number = "3"
+name = "SET0"
+type = "input"
+at = [-10.16, 2.54]
+side = "left"
+length = 2.54
+unit = 1
+
+[[pins]]
+number = "6"
+name = "SET1"
+type = "input"
+at = [-10.16, 5.08]
+side = "left"
+length = 2.54
+unit = 1
+
+[[pins]]
+number = "9"
+name = "NC"
+type = "no_connect"
+at = [-7.62, 7.62]
+side = "left"
+length = 2.54
+unit = 1
+hidden = true
+
+[[pins]]
+number = "1"
+name = "VDD1"
+type = "power_in"
+at = [0.0, -12.7]
+side = "top"
+length = 2.54
+unit = 1
+
+[[pins]]
+number = "5"
+name = "GND"
+type = "power_in"
+at = [0.0, 12.7]
+side = "bottom"
+length = 2.54
+unit = 1
+
+[[pins]]
+number = "8"
+name = "~{WDO}"
+type = "open_collector"
+at = [10.16, 0.0]
+side = "right"
+length = 2.54
+unit = 1

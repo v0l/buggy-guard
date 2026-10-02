@@ -1,0 +1,82 @@
+name = "buggy-guard"
+description = "Safety controller for a 48 V kids buggy: ESP32-S3 gates a sine wave ESC through throttle clamp, e-brake and ignition cut, with a hardware watchdog and latched impact kill"
+fab = "jlcpcb"
+
+[outline]
+size = [90.0, 65.0]
+corner_radius = "2"
+
+[stackup]
+preset = "JLC04161H-7628"
+finish = "ENIG"
+mask_color = "black"
+silk_color = "white"
+
+[[vias]]
+name = "std"
+drill = "0.3mm"
+diameter = "0.6mm"
+
+[[netclasses]]
+name = "Default"
+track_width = "0.2mm"
+clearance = "0.2mm"
+via = "std"
+description = "Fallback only"
+
+[[netclasses]]
+name = "Signal"
+track_width = "0.2mm"
+clearance = "0.2mm"
+via = "std"
+description = "Logic: GPIO, I2C, watchdog, safety logic, sensor ports"
+
+[[netclasses]]
+name = "Ground"
+track_width = "0.4mm"
+clearance = "0.2mm"
+via = "std"
+description = "GND, carried by the In1 plane"
+
+[[netclasses]]
+name = "Power"
+track_width = "0.5mm"
+clearance = "0.25mm"
+current = "1A"
+max_temp_rise = "10C"
+via = "std"
+description = "5V and 3V3 rails, sensor and pedal supplies"
+layers = ["F.Cu", "B.Cu"]
+
+[[netclasses]]
+name = "Analog"
+description = "Throttle in and out, ADC sense dividers, buck feedback and ripple injection"
+track_width = "0.2mm"
+clearance = "0.25mm"
+via = "std"
+
+[[netclasses]]
+name = "USB"
+description = "USB full speed D+/D-"
+track_width = "0.3mm"
+clearance = "0.2mm"
+via = "std"
+layers = ["F.Cu"]
+
+[[netclasses]]
+name = "HV"
+description = "48 V battery side: keyed battery input, ignition, e-stop loop, buck input"
+track_width = "0.6mm"
+clearance = "0.5mm"
+current = "1A"
+via = "std"
+layers = ["F.Cu", "B.Cu"]
+
+[[netclasses]]
+name = "Switch"
+description = "Buck switch node, short and on top only"
+track_width = "0.8mm"
+clearance = "0.5mm"
+current = "1.5A"
+via = "std"
+layers = ["F.Cu"]

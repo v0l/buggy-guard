@@ -1,0 +1,197 @@
+# imported from KiCad Package_TO_SOT_SMD:TO-252-2
+name = "TO-252-2"
+description = "TO-252/DPAK SMD package, http://www.infineon.com/cms/en/product/packages/PG-TO252/PG-TO252-3-1/"
+tags = ["DPAK", "TO-252", "DPAK-3", "TO-252-3", "SOT-428"]
+mount = "smd"
+model = "${KICAD9_3DMODEL_DIR}/Package_TO_SOT_SMD.3dshapes/TO-252-2.step"
+
+[[pads]]
+kind = "smd"
+shape = "roundrect"
+at = [-0.415, -1.525]
+size = [3.05, 2.75]
+roundrect_ratio = 0.090909
+layers = ["F.Paste"]
+
+[[pads]]
+kind = "smd"
+shape = "roundrect"
+at = [-0.415, 1.525]
+size = [3.05, 2.75]
+roundrect_ratio = 0.090909
+layers = ["F.Paste"]
+
+[[pads]]
+kind = "smd"
+shape = "roundrect"
+at = [2.935, -1.525]
+size = [3.05, 2.75]
+roundrect_ratio = 0.090909
+layers = ["F.Paste"]
+
+[[pads]]
+kind = "smd"
+shape = "roundrect"
+at = [2.935, 1.525]
+size = [3.05, 2.75]
+roundrect_ratio = 0.090909
+layers = ["F.Paste"]
+
+[[pads]]
+number = "1"
+kind = "smd"
+shape = "roundrect"
+at = [-5.04, -2.28]
+size = [2.2, 1.2]
+roundrect_ratio = 0.208333
+layers = ["F.Cu", "F.Mask", "F.Paste"]
+
+[[pads]]
+number = "2"
+kind = "smd"
+shape = "roundrect"
+at = [1.26, 0.0]
+size = [6.4, 5.8]
+roundrect_ratio = 0.043103
+layers = ["F.Cu", "F.Mask"]
+
+[[pads]]
+number = "3"
+kind = "smd"
+shape = "roundrect"
+at = [-5.04, 2.28]
+size = [2.2, 1.2]
+roundrect_ratio = 0.208333
+layers = ["F.Cu", "F.Mask", "F.Paste"]
+
+[[graphics]]
+kind = "text"
+layer = "F.SilkS"
+at = [0.0, -4.5]
+text = "${REFERENCE}"
+size = 1.0
+
+[[graphics]]
+kind = "text"
+layer = "F.Fab"
+at = [0.0, 4.5]
+text = "${VALUE}"
+size = 1.0
+
+[[graphics]]
+kind = "line"
+layer = "F.SilkS"
+start = [-3.31, -3.45]
+end = [-3.31, -3.18]
+width = 0.15
+
+[[graphics]]
+kind = "line"
+layer = "F.SilkS"
+start = [-3.31, 3.45]
+end = [-3.31, 3.18]
+width = 0.15
+
+[[graphics]]
+kind = "line"
+layer = "F.SilkS"
+start = [3.11, -3.45]
+end = [-3.31, -3.45]
+width = 0.15
+
+[[graphics]]
+kind = "line"
+layer = "F.SilkS"
+start = [3.11, 3.45]
+end = [-3.31, 3.45]
+width = 0.15
+
+[[graphics]]
+kind = "polygon"
+layer = "F.SilkS"
+points = [[-5.04, -3.14], [-5.38, -3.61], [-4.7, -3.61]]
+width = 0.15
+fill = "solid"
+
+[[graphics]]
+kind = "rect"
+layer = "F.CrtYd"
+start = [-6.39, -3.5]
+end = [4.71, 3.5]
+width = 0.05
+
+[[graphics]]
+kind = "line"
+layer = "F.Fab"
+start = [-5.81, -2.655]
+end = [-5.81, -1.905]
+width = 0.1
+
+[[graphics]]
+kind = "line"
+layer = "F.Fab"
+start = [-5.81, -1.905]
+end = [-3.11, -1.905]
+width = 0.1
+
+[[graphics]]
+kind = "line"
+layer = "F.Fab"
+start = [-5.81, 1.905]
+end = [-5.81, 2.655]
+width = 0.1
+
+[[graphics]]
+kind = "line"
+layer = "F.Fab"
+start = [-5.81, 2.655]
+end = [-3.11, 2.655]
+width = 0.1
+
+[[graphics]]
+kind = "line"
+layer = "F.Fab"
+start = [-3.11, 1.905]
+end = [-5.81, 1.905]
+width = 0.1
+
+[[graphics]]
+kind = "line"
+layer = "F.Fab"
+start = [-2.705, -2.655]
+end = [-5.81, -2.655]
+width = 0.1
+
+[[graphics]]
+kind = "line"
+layer = "F.Fab"
+start = [3.11, -2.7]
+end = [4.11, -2.7]
+width = 0.1
+
+[[graphics]]
+kind = "line"
+layer = "F.Fab"
+start = [4.11, -2.7]
+end = [4.11, 2.7]
+width = 0.1
+
+[[graphics]]
+kind = "line"
+layer = "F.Fab"
+start = [4.11, 2.7]
+end = [3.11, 2.7]
+width = 0.1
+
+[[graphics]]
+kind = "polygon"
+layer = "F.Fab"
+points = [[3.11, -3.25], [3.11, 3.25], [-3.11, 3.25], [-3.11, -2.25], [-2.11, -3.25]]
+width = 0.1
+
+[[graphics]]
+kind = "text"
+layer = "F.Fab"
+at = [0.0, 0.0]
+text = "${REFERENCE}"
+size = 1.0
