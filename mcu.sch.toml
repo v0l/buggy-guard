@@ -126,6 +126,14 @@ value = "1N4148W"
 footprint = "D_SOD-123"
 rotation = 90.0
 
+[[parts]]
+ref = "J14"
+symbol = "Conn_01x04"
+at = [11.43, 20.32]
+value = "UART_DBG"
+footprint = "JST_XH_B4B-XH-A_1x04_P2.50mm_Vertical"
+fields = { desc = "console: 1 GND, 2 +3V3, 3 RX, 4 TX" }
+
 [[nets]]
 name = "EN"
 class = "Signal"
@@ -254,12 +262,12 @@ pins = ["U3.38"]
 [[nets]]
 name = "US2_TRIG"
 class = "Signal"
-pins = ["U3.37"]
+pins = ["U3.33"]
 
 [[nets]]
 name = "US2_ECHO"
 class = "Signal"
-pins = ["U3.36"]
+pins = ["U3.32"]
 
 [[nets]]
 name = "US3_TRIG"
@@ -270,16 +278,6 @@ pins = ["U3.35"]
 name = "US3_ECHO"
 class = "Signal"
 pins = ["U3.34"]
-
-[[nets]]
-name = "US4_TRIG"
-class = "Signal"
-pins = ["U3.33"]
-
-[[nets]]
-name = "US4_ECHO"
-class = "Signal"
-pins = ["U3.32"]
 
 [[nets]]
 name = "AUX1"
@@ -294,7 +292,7 @@ pins = ["U3.23"]
 [[nets]]
 name = "+3V3"
 class = "Supply"
-pins = ["U3.2", "C12.1", "C13.1", "R10.1", "R11.1"]
+pins = ["U3.2", "C12.1", "C13.1", "R10.1", "R11.1", "J14.2"]
 
 [[nets]]
 name = "VBUS"
@@ -309,9 +307,21 @@ pins = ["BZ1.1", "D6.1"]
 [[nets]]
 name = "GND"
 class = "Ground"
-pins = ["U3.1", "U3.40", "U3.41", "C12.2", "C13.2", "C14.2", "SW1.1", "SW2.1", "J2.A1", "J2.A12", "J2.S1", "R12.2", "R13.2", "U4.2", "D5.1", "R16.2", "Q1.2"]
+pins = ["U3.1", "U3.40", "U3.41", "C12.2", "C13.2", "C14.2", "SW1.1", "SW2.1", "J2.A1", "J2.A12", "J2.S1", "R12.2", "R13.2", "U4.2", "D5.1", "R16.2", "Q1.2", "J14.1"]
 
 [[nets]]
 name = "VBAT_ADC"
 class = "Analog"
 pins = ["U3.4"]
+
+[[nets]]
+name = "UART_TX"
+class = "Signal"
+style = "label"
+pins = ["J14.4", "U3.37"]
+
+[[nets]]
+name = "UART_RX"
+class = "Signal"
+style = "label"
+pins = ["J14.3", "U3.36"]
