@@ -135,6 +135,61 @@ PEDAL_ADC, SPEED and IGN_PD. +3V3, +5V and GND are reached through their plane p
 Not probed: VBAT_F, VBUS and IGN_G. The autorouter found no path for a bottom pad next to those
 three nets, and they are reachable from a probe on the top side or at the connector.
 
+## Simulations
+
+Three, all in `*.sim.toml`. `agentee sim NAME` regenerates each; the result files are not in
+git because the DC one is 98 MB.
+
+### `buggy-guard-dc`, resistive DC drop
+
+50 V at F1.1, grounds at J1.2 and J4.4, 500 mA into the ESP32's 3V3 pad, 20 mA into the LDO
+output, 2 mA into the IMU, and 300 mA out of the ignition lock line through Q3 (linked at 50 mohm).
+Inductor DCR is the SRR1260's 170 mohm, the reverse diode 400 mohm.
+
+| reading | value |
+|---|---|
+| 3V3 at the ESP32 pad | 3.295 V from a 3.3 V rail, 5 mV drop |
+| ignition lock line | 22 mV drop at 300 mA |
+| peak current density | 127 A/mm2 on the In2.Cu 3V3 plane under the ESP32 |
+
+The +3V3 plane and its vias carry the WiFi burst without a measurable drop. The peak density is
+the ESP32's own pad current funnelling into the plane, which is what the thermal run then heats.
+
+### `buggy-guard-thermal`, steady state
+
+40 C ambient (a buggy in summer sun), 12 W/m2K on both faces, 0.9 W into the buck, 0.75 W into the
+ESP32, 0.15 W into the buzzer and 0.02 W into the ignition FET.
+
+| reading | value |
+|---|---|
+| board peak | 70.5 C, under U1 |
+| U1 junction | 111 C (0.9 W x 45 C/W onto the pad temperature) |
+| U3 junction | 93.5 C |
+| buzzer pads | 60.3 C |
+| ignition FET | 48.3 C |
+
+Both junctions are the number to watch. The buck is the hot spot because it dissipates in a small
+area with only the ground pad to lose heat through, and 111 C is above the LM5164's 125 C limit
+only by a small margin at 40 C ambient. That number is an estimate from a fitted theta-jc, not a
+measurement, and it assumes the pad ties into the ground plane well. If the real thing runs hot,
+the fix is copper under U1 rather than a bigger inductor.
+
+### `buggy-guard-safety`, logic
+
+The watchdog-fail case: WDOK falls at 1.5 us, as it would on a watchdog timeout or a latched IMU
+impact, then returns at 2.5 us. U7 and U8 are built by the sim from their real 74AHCT1G08 and
+74AHCT1G00 values.
+
+Five assertions, all passing, no contention: SAFE low and KILL high once WDOK falls, and KILL
+still high after WDOK returns. The waveform shows SAFE and KILL following within 12 ns of the
+gate delay.
+
+This sim does not cover the armed path. ARM and BRK_REL have no driver in the netlist: the ESP32
+that drives them is ignored, and the 100k pull-downs (R22, R23) are not modelled as logic
+drivers, so those nets float at z until a gate input drives them. Testing the full truth table
+needs the ESP32 modelled as a real driver on those pins, or two new stimulus nets in the
+schematic for the firmware's outputs.
+
 ## Firmware contract
 
 The hardware is the safety net; the firmware only ever removes throttle. It must:
