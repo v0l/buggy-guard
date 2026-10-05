@@ -16,7 +16,7 @@ The schematic is split into four sheets (`buggy-guard.sch.toml` lists `power`, `
 
 | stage | part | notes |
 |---|---|---|
-| battery in | J1, F1 (1 A), D1 (reverse), D2 (SMAJ58A TVS), C1/C2/C3 | 1.2 A fuse as fitted; D2 clamps at 93.6 V against the LM5164's 100 V rating |
+| battery in | J1, F1 (1 A), D1 (reverse), D2 (SMAJ58A TVS), C1/C2/C3 | D2 clamps at 93.6 V against the LM5164's 100 V rating |
 | buck | U1 LM5164DDA, 47 uH, RON 41.2k (300 kHz), RFB 100k/31.6k | 5 V from about 20 V (UVLO divider R1/R2) up. Ripple injection type 3: R6 200k, C5 3.3 nF, C6 330 pF |
 | LDO | U2 AP2112K-3.3, C9/C10 | 3V3 for the ESP32, IMU and gates |
 | USB | J2, U4 USBLC6, R12/R13 5.1k, D3 SS14 | USB-C for flashing only; VBUS is ORed into +5V through D3 so it cannot drive the battery |
@@ -26,8 +26,9 @@ Peak input current is about 0.1 A (WiFi bursts), well inside the fuse.
 ### Throttle path
 
 J6 PEDAL is a Hall throttle on its own 5 V through F2 (100 mA PTC). The signal goes to the ADC
-through a 10k/15k divider (0.4 x) and drives an MCP6002 gain-of-1.5 filter (R36 20k, R37 10k)
-after a two-pole 20 kHz PWM filter (R34/R35 10k, C22/C23 100 nF). The op-amp output goes to
+through a 10k/15k divider (0.6 x, 5 V reads 3.0 V). The throttle the ESC sees is generated, not
+passed through: THR_PWM goes through a two-pole 20 kHz filter (R34/R35 10k, C22/C23 100 nF) into
+an MCP6002 gain-of-1.5 stage (R36 20k, R37 10k). The op-amp output goes to
 J7 ESC_THR through 470 R; the divider R39/R40 takes it back to an ADC so the firmware can see
 what the ESC sees. Q5 (2N7002) shorts the throttle output to ground whenever KILL is high, so a
 stuck PWM or a hung output stage still lands on zero throttle.
@@ -35,27 +36,37 @@ stuck PWM or a hung output stage still lands on zero throttle.
 ### Safety logic
 
 ```
-SAFE = ARM AND WDOK
-KILL = NOT (SAFE AND NOT BRK_REL)
+WD_LATCH = cleared while WDOK is low, set on an ARM rising edge
+SAFE = ARM AND WD_LATCH
+KILL = NOT (SAFE AND BRK_REL)
 ```
+
+BRK_REL is active high: R23 holds it low, so the brake is applied and the throttle shunted
+until the firmware drives it high.
 
 | net | from | to |
 |---|---|---|
-| WDOK | TPS3430 WDO (open-drain, 10k pull-up), LSM6DS3 INT1 through R19 1k, 74AHCT1G08 pin 2 | U7 (ARM AND) |
-| ARM | ESP32-S3 IO15, 100k pull-down R22 | U7 pin 1 |
+| WDOK | TPS3430 WDO (open-drain, 10k pull-up), LSM6DS3 INT1 through R19 1k | U10 74LVC1G74 CLR, ESP32-S3 IO18 |
+| WD_LATCH | U10 Q (D and PRE tied to +3V3) | U7 pin 2 |
+| ARM | ESP32-S3 IO15, 100k pull-down R22 | U7 pin 1, U10 CLK |
 | SAFE | U7 out, 100k pull-down R24 | U8 NAND pin 1, Q2 gate, green LED D7 |
 | KILL | U8 out | Q4 gate (e-brake), Q5 gate (throttle shunt) |
 | IGN_G | Q2 (DMN10H220L) drain | Q3 IRFR9120N gate via R27 33k, D8 BZT52C15 clamp, R28 10k to source |
 
-Q3 switches the ESC's power-lock wire between J4.1 (VIN) and J4.3 (IGN_OUT). J4.2 (ESTOP_RET) is
-the e-stop loop: opening it floats the Q3 source, R28 pulls the gate up and the lock drops. The
+Q3 switches the ESC's power-lock wire, J4.1 (IGN_OUT). Its source is fed from VIN through the
+normally closed e-stop loop on J15 (J15.1 VIN, J15.2 ESTOP_RET): opening it floats the Q3 source, R28 pulls the gate up and the lock drops. The
 firmware sees the e-stop as a divider R30/R31 on ESTOP_ADC.
 
-The TPS3430 runs with SET0 = 0, SET1 = 1, CWD = 10k pull-up, which is a 7.7 ms to 165 ms window
-(10k: 7.65 ms max short, 165.8 ms min long). The ESP must toggle IO12 at about 100 ms. A firmware
-hang, an infinite loop with interrupts off, or a crashed task stops WDOK within 165 ms. The
-watchdog never resets the ESP: it only drops SAFE, so flashing over USB is not disturbed. The IMU
-is configured with INT1 as an open-drain wake-up interrupt (PP_OD set in CTRL3_C); on an impact
+The TPS3430 runs with SET0 = 0, SET1 = 1, CWD = 10k pull-up, which gives a guaranteed window of
+10.35 ms (tWDL max) to 165.8 ms (tWDU min). The ESP must give WDI (IO17) a falling edge about
+every 100 ms. A firmware
+hang, an infinite loop with interrupts off, or a crashed task stops WDOK within 165 ms. WDO only
+holds low for tRST (200 ms, CRST open) and then lets go, and a hung ESP still holds ARM high and
+keeps LEDC running THR_PWM, so U10 latches the fault: once WDOK has gone low, SAFE stays low until
+the firmware drives ARM low and high again with WDOK high. The watchdog never resets the ESP: it only drops SAFE, so flashing over USB is not disturbed. The IMU
+is configured with INT1 as an open-drain, active-low, latched wake-up interrupt (PP_OD and
+H_LACTIVE set in CTRL3_C, LIR set in TAP_CFG). INT1 powers up as a push-pull output driven low,
+so WDOK sits at about 0.3 V through R19 until the firmware has done this. On an impact
 above the threshold it pulls WDOK low itself and the throttle is dead before the firmware even
 sees it. The kill is latched in firmware until the pedal is at zero and the fob resets.
 
@@ -69,13 +80,14 @@ sees it. The kill is latched in firmware until the pedal is at zero and the fob 
 | U5 | TPS3430 | TI TPS3430WDRCR, window watchdog with a separate WDO |
 | U6 | LSM6DS3TR-C | ST, 16 g accelerometer for the impact latch |
 | U7, U8 | 74AHCT1G08, 74AHCT1G00 | AHCT so 3.3 V is a valid high |
-| U9 | MCP6002T | throttle filter amplifier, unit 3 unused (tied as a follower) |
+| U10 | 74LVC1G74 | TI SN74LVC1G74DCUR, on +3V3, latches a WDOK fault until ARM is re-asserted |
+| U9 | MCP6002T | throttle filter amplifier, unit B unused (tied as a grounded follower) |
 | Q2 | DMN10H220L | ignition low-side driver, 100 V |
 | Q3 | IRFR9120N | ignition power-lock switch, 100 V PFET in DPAK |
 | Q4, Q5 | 2N7002 | e-brake and throttle shunt |
 | D2 | SMAJ58A | 58 V standoff TVS |
 | F1 | 0451 series 1 A | Littelfuse 0451001.MRL |
-| F2, F3 | MF-100MA, MF-200MA | Bourns resettable PTCs for the pedal and sensor 5 V |
+| F2, F3 | MF-NSMF010/30X-2, MF-NSMF020-2 | Bourns 1206 resettable PTCs for the pedal and sensor 5 V |
 | BZ1 | 12x9.5 mm magnetic 5 V | CUI CEM-1205C or equal |
 
 ## Board
@@ -91,8 +103,19 @@ sees it. The kill is latched in firmware until the pedal is at zero and the fob 
 
 ## Layout notes for whoever places it
 
-- U3's escape corridors (left, bottom and right of the module) are keepouts in `[place]`. Do not
-  put 0603s inside them: the auto-placer will, and WDI/WDOK/ARM then have nowhere to go.
+- Placed and routed by the layout engine (`agentee layout`, seed 2). Only the holes, the
+  connectors, BZ1 and the buck block (F1, D1, D2, C1-C8, R1-R6, U1, L1) are locked. The engine
+  has no switch-loop term yet, and every unlocked run stretched SW to 24-34 mm. Locked, it is 11 mm.
+- Connectors sit along the edges by job: 48 V on the left (J1 battery, J15 e-stop, J4 ESC lock),
+  then along the bottom the ESC plugs (J7, J5, J12), the rider inputs (J6, J13) and service
+  (J2 USB, J14 UART). Sonar is on the right, I2C on top. Each one carries a silk label with its
+  ref and job instead of the bare ref. The `[place]` keepouts are the strips under those labels.
+- `agentee layout` drops every `[[graphics]]` item, so after a rerun put the connector and
+  button labels back from git.
+- U10 and C28 were added after the engine run: placed with `agentee place --keep-placed`, their
+  nets routed with `agentee route`. U7.3 ties to GND through a via beside the pad.
+- The refs of C20, R17, R18, R23 and U10 are hidden because the silk pass found no clear spot.
+- H1-H4 are plated M3 holes on no net, so board GND never bonds to the frame. They have no silk.
 - The USB-C connector sits on the bottom edge so the D+/D- pair runs to U4 and then to the ESP's
   bottom-left pins without crossing the 5 V cluster.
 - F3, C27 and F2 are in a line above U9 with F3's body vertical; the sensor 5 V filter cap has to
@@ -108,15 +131,20 @@ sees it. The kill is latched in firmware until the pedal is at zero and the fob 
 
 ## Connectors
 
+The installer's guide is `docs/INSTALL.md`, with the wiring diagram `docs/wiring.svg`. The
+diagram is drawn by `python3 docs/wiring.py`; its connector positions are copied from the
+layout, so rerun it after moving a connector.
+
 | ref | fits | pinout |
 |---|---|---|
 | J1 | 2 way 5.08 terminal | 1 BATT+, 2 GND |
-| J4 | 4 way 5.08 terminal | 1 VIN (keyed), 2 e-stop return, 3 IGN_OUT to ESC lock, 4 GND |
+| J4 | 2 way 5.08 terminal | 1 IGN_OUT to ESC lock, 2 GND |
+| J15 | JST XH 2 way | 1 VIN, 2 e-stop return (NC button loop, 48 V) |
 | J6 | JST XH 3 way | 1 +5V, 2 GND, 3 pedal signal |
 | J7 | JST XH 3 way | 1 +5V (unused, ESC supplies its own), 2 GND, 3 throttle out |
 | J5 | JST XH 2 way | 1 e-brake (active low), 2 GND |
 | J8..J11 | JST XH 4 way | 1 SENS_5V, 2 TRIG, 3 ECHO, 4 GND, one per ultrasonic sensor |
-| J12 | JST XH 3 way | 1 SENS_5V, 2 GND, 3 wheel hall signal |
+| J12 | JST XH 3 way | 1 SENS_5V, 2 GND, 3 wheel hall signal (R53 4.7k pull-up, R54/R55 10k/20k divider: an open-collector high reads 2.9 V, above the ESP's 2.48 V VIH even on USB power) |
 | J13 | JST XH 3 way | 1 AUX1, 2 AUX2 (to +3V3, switch to ground), 3 GND |
 | J3 | JST SH 4 way | 1 GND, 2 +3V3, 3 SDA, 4 SCL |
 | J14 | JST XH 4 way | 1 GND, 2 +3V3, 3 RX (into the MCU), 4 TX (out of it). A console without USB |
@@ -142,15 +170,15 @@ git because the DC one is 98 MB.
 
 ### `buggy-guard-dc`, resistive DC drop
 
-50 V at F1.1, grounds at J1.2 and J4.4, 500 mA into the ESP32's 3V3 pad, 20 mA into the LDO
+50 V at F1.1, grounds at J1.2 and J4.2, the e-stop loop J15 linked at 50 mohm, 500 mA into the ESP32's 3V3 pad, 20 mA into the LDO
 output, 2 mA into the IMU, and 300 mA out of the ignition lock line through Q3 (linked at 50 mohm).
-Inductor DCR is the SRR1260's 170 mohm, the reverse diode 400 mohm.
+Inductor DCR is the SRR1260's 170 mohm, the reverse diode 400 mohm, the fuse 95 mohm.
 
 | reading | value |
 |---|---|
 | 3V3 at the ESP32 pad | 3.295 V from a 3.3 V rail, 5 mV drop |
-| ignition lock line | 22 mV drop at 300 mA |
-| peak current density | 127 A/mm2 on the In2.Cu 3V3 plane under the ESP32 |
+| ignition lock line | 49.79 V at J4.1, 210 mV below the supply at 300 mA, 120 mV of it across D1 |
+| peak current density | 121 A/mm2 on the In2.Cu 3V3 plane under the ESP32 |
 
 The +3V3 plane and its vias carry the WiFi burst without a measurable drop. The peak density is
 the ESP32's own pad current funnelling into the plane, which is what the thermal run then heats.
@@ -162,11 +190,11 @@ ESP32, 0.15 W into the buzzer and 0.02 W into the ignition FET.
 
 | reading | value |
 |---|---|
-| board peak | 70.5 C, under U1 |
-| U1 junction | 111 C (0.9 W x 45 C/W onto the pad temperature) |
-| U3 junction | 93.5 C |
-| buzzer pads | 60.3 C |
-| ignition FET | 48.3 C |
+| board peak | 73.0 C, under U1 |
+| U1 junction | 113.5 C (0.9 W x 45 C/W onto the pad temperature) |
+| U3 junction | 94.8 C |
+| buzzer pads | 56.5 C |
+| ignition FET | 50.5 C |
 
 Both junctions are the number to watch. The buck is the hot spot because it dissipates in a small
 area with only the ground pad to lose heat through, and 111 C is above the LM5164's 125 C limit
@@ -176,34 +204,37 @@ the fix is copper under U1 rather than a bigger inductor.
 
 ### `buggy-guard-safety`, logic
 
-The watchdog-fail case: WDOK falls at 1.5 us, as it would on a watchdog timeout or a latched IMU
-impact, then returns at 2.5 us. U7 and U8 are built by the sim from their real 74AHCT1G08 and
-74AHCT1G00 values.
+The full truth table. ARM, BRK_REL and WDOK are driven as the ESP32 and the watchdog would
+drive them, the rails are driven as constants, and every resistor is ignored (the sim joins nets
+through resistors, and the FB divider would otherwise short +5V to GND). U7, U8 and U10 are
+built from their real 74AHCT1G08, 74AHCT1G00 and 74LVC1G74 values.
 
-Five assertions, all passing, no contention: SAFE low and KILL high once WDOK falls, and KILL
-still high after WDOK returns. The waveform shows SAFE and KILL following within 12 ns of the
-gate delay.
-
-This sim does not cover the armed path. ARM and BRK_REL have no driver in the netlist: the ESP32
-that drives them is ignored, and the 100k pull-downs (R22, R23) are not modelled as logic
-drivers, so those nets float at z until a gate input drives them. Testing the full truth table
-needs the ESP32 modelled as a real driver on those pins, or two new stimulus nets in the
-schematic for the firmware's outputs.
+Fourteen assertions, all passing, no contention or timing violations: disarmed at power up,
+armed with the brake held, armed and released (the only KILL low state), a WDOK fault, the fault
+staying latched after WDOK returns while ARM is still high, a re-arm on a fresh ARM edge, and no
+re-arm from an ARM edge during a fault. With U7.2 wired straight to WDOK, as before U10, four of
+them fail.
 
 ## Firmware contract
 
 The hardware is the safety net; the firmware only ever removes throttle. It must:
 
-1. Feed WDI every 100 ms (7.7 to 165 ms window).
+1. Feed WDI every 100 ms (10.35 to 165.8 ms window).
 2. Hold ARM low until the fob heartbeat is present, the pedal is at zero, the battery is above the
-   UVLO and no impact is latched. Release ARM only when it wants to move.
-3. Hold BRK_REL low (brake released) only while armed.
+   UVLO and no impact is latched. Raise ARM only when it wants to move, and only once WDOK (IO18)
+   reads high: the rising edge is what sets U10, so ARM must go low and high again after any fault.
+3. Drive BRK_REL high (brake released) only while armed.
 4. Latch on impact: on any IMU wake-up above the threshold, drop ARM immediately, then brake and
    cut ignition once speed is near zero. Re-arm only when the pedal has been at zero for a second
    and the fob reset is pressed.
 5. Compare the commanded throttle (PWM) against THR_FB_ADC and cut power if they disagree by more
    than about 100 mV.
 6. Cap speed from the hall input and slow to a stop before applying the collision-avoidance cut.
+7. Never command more than 4.2 V on THR_OUT. The Fardriver ND72240 treats its high throttle
+   threshold plus 0.6 V as a broken throttle, and the stage can reach 4.95 V.
+8. Keep BRK_REL low for a while after raising ARM. Arming is what powers the ESC through the lock
+   wire, and it has to boot before it sees throttle. Start at 2 s; the ND72240's boot time is
+   not measured.
 
 ## Still to do
 

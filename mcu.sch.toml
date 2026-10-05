@@ -1,6 +1,6 @@
 name = "mcu"
 board = "buggy-guard"
-no_connect = ["U3.15", "U3.26", "U3.16", "U3.28", "U3.29", "U3.30", "U3.24", "U3.25", "J2.A8", "J2.B8"]
+no_connect = ["U3.15", "U3.26", "U3.16", "U3.28", "U3.29", "U3.30", "U3.24", "U3.25", "J2.A8", "J2.B8", "U3.34", "U3.35"]
 
 [[parts]]
 ref = "U3"
@@ -317,16 +317,6 @@ pins = ["U3.33"]
 name = "US2_ECHO"
 class = "Signal"
 pins = ["U3.32"]
-
-[[nets]]
-name = "US3_TRIG"
-class = "Signal"
-pins = ["U3.35"]
-
-[[nets]]
-name = "US3_ECHO"
-class = "Signal"
-pins = ["U3.34"]
 
 [[nets]]
 name = "AUX1"

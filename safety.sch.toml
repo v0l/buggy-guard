@@ -1,6 +1,6 @@
 name = "safety"
 board = "buggy-guard"
-no_connect = ["U5.4", "U5.9", "U6.10", "U6.11"]
+no_connect = ["U5.4", "U5.9", "U6.10", "U6.11", "U10.3"]
 
 [[parts]]
 ref = "U5"
@@ -176,13 +176,6 @@ at = [213.36, 40.64]
 value = "100k"
 
 [[parts]]
-ref = "J4"
-symbol = "Screw_Terminal_01x04"
-at = [228.6, 20.32]
-value = "ESTOP_IGN"
-mirror = true
-
-[[parts]]
 ref = "R30"
 symbol = "R"
 at = [198.12, 63.5]
@@ -240,10 +233,39 @@ value = "TP"
 footprint = "TestPoint_Pad_D1.0mm"
 at = [241.3, 43.18]
 
+[[parts]]
+ref = "J4"
+symbol = "Screw_Terminal_01x02"
+at = [228.6, 20.32]
+value = "ESC_LOCK"
+mirror = true
+fields = { desc = "ESC power-lock wire and its ground" }
+
+[[parts]]
+ref = "J15"
+symbol = "Conn_01x02"
+at = [228.6, 35.56]
+value = "ESTOP"
+mirror = true
+fields = { desc = "NC e-stop button loop, 48 V" }
+
+[[parts]]
+ref = "U10"
+symbol = "74LVC1G74"
+at = [66.04, 66.04]
+value = "74LVC1G74"
+fields = { mpn = "TI SN74LVC1G74DCUR" }
+
+[[parts]]
+ref = "C28"
+symbol = "C"
+at = [53.34, 66.04]
+value = "100n"
+
 [[nets]]
 name = "+3V3"
 class = "Supply"
-pins = ["U5.1", "U5.10", "C15.1", "R17.1", "U5.6", "R18.1", "U6.5", "U6.8", "U6.12", "C16.1", "C17.1", "R20.1", "R21.1", "J3.2"]
+pins = ["U5.1", "U5.10", "C15.1", "R17.1", "U5.6", "R18.1", "U6.5", "U6.8", "U6.12", "C16.1", "C17.1", "R20.1", "R21.1", "J3.2", "U10.8", "U10.7", "U10.2", "C28.1"]
 
 [[nets]]
 name = "+5V"
@@ -263,7 +285,7 @@ pins = ["U5.7"]
 [[nets]]
 name = "WDOK"
 class = "Signal"
-pins = ["U5.8", "R18.2", "R19.2", "U7.2"]
+pins = ["U5.8", "R18.2", "R19.2", "U10.6"]
 
 [[nets]]
 name = "IMU_INT1"
@@ -288,7 +310,7 @@ pins = ["U6.13", "R21.2", "J3.4"]
 [[nets]]
 name = "ARM"
 class = "Signal"
-pins = ["U7.1", "R22.1"]
+pins = ["U7.1", "R22.1", "U10.1"]
 
 [[nets]]
 name = "SAFE"
@@ -313,12 +335,12 @@ pins = ["R26.2", "D7.2"]
 [[nets]]
 name = "VIN"
 class = "HV"
-pins = ["J4.1"]
+pins = ["J15.1"]
 
 [[nets]]
 name = "ESTOP_RET"
 class = "HV"
-pins = ["J4.2", "Q3.3", "R28.1", "D8.1", "R30.1"]
+pins = ["Q3.3", "R28.1", "D8.1", "R30.1", "J15.2"]
 
 [[nets]]
 name = "IGN_G"
@@ -333,7 +355,7 @@ pins = ["R27.1", "Q2.3", "TP19.1"]
 [[nets]]
 name = "IGN_OUT"
 class = "HV"
-pins = ["Q3.2", "D9.1", "R29.1", "J4.3"]
+pins = ["Q3.2", "D9.1", "R29.1", "J4.1"]
 
 [[nets]]
 name = "ESTOP_ADC"
@@ -353,4 +375,9 @@ pins = ["Q5.3"]
 [[nets]]
 name = "GND"
 class = "Ground"
-pins = ["U5.5", "U5.11", "C15.2", "U5.3", "U6.1", "U6.2", "U6.3", "U6.6", "U6.7", "C16.2", "C17.2", "J3.1", "U7.3", "C18.2", "R22.2", "U8.3", "C19.2", "R23.2", "R24.2", "D7.1", "Q2.2", "D9.2", "R29.2", "J4.4", "R31.2", "C20.2", "Q4.2", "J5.2", "Q5.2"]
+pins = ["U5.5", "U5.11", "C15.2", "U5.3", "U6.1", "U6.2", "U6.3", "U6.6", "U6.7", "C16.2", "C17.2", "J3.1", "U7.3", "C18.2", "R22.2", "U8.3", "C19.2", "R23.2", "R24.2", "D7.1", "Q2.2", "D9.2", "R29.2", "R31.2", "C20.2", "Q4.2", "J5.2", "Q5.2", "J4.2", "U10.4", "C28.2"]
+
+[[nets]]
+name = "WD_LATCH"
+class = "Signal"
+pins = ["U10.5", "U7.2"]

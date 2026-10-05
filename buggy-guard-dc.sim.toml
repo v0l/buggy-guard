@@ -12,7 +12,7 @@ pad = "J1.2"
 voltage = "0V"
 
 [[supplies]]
-pad = "J4.4"
+pad = "J4.2"
 voltage = "0V"
 
 [[supplies]]
@@ -39,7 +39,7 @@ current = "2mA"
 return = "U6.6"
 
 [[loads]]
-pad = "J4.3"
+pad = "J4.1"
 current = "300mA"
 return = "J4.2"
 
@@ -48,6 +48,12 @@ ref = "Q3"
 resistance = "50mohm"
 a = "2"
 b = "3"
+
+[[links]]
+ref = "J15"
+resistance = "50mohm"
+a = "1"
+b = "2"
 
 [[links]]
 ref = "L1"
@@ -68,3 +74,7 @@ resistance = "0.05ohm"
 [[links]]
 ref = "F3"
 resistance = "0.05ohm"
+
+[[links]]
+ref = "F1"
+resistance = "0.095ohm"

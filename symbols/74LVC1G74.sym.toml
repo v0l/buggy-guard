@@ -1,0 +1,89 @@
+# imported from KiCad 74xGxx:74AUP1G74
+name = "74LVC1G74"
+reference = "U"
+description = "Single D Flip-Flop, Low-Voltage CMOS"
+datasheet = "https://www.ti.com/lit/ds/symlink/sn74lvc1g74.pdf"
+footprint = "VSSOP-8_2.3x2mm_P0.5mm"
+keywords = ["Single", "D", "Flip-Flop", "D", "CMOS"]
+footprint_filters = ["SSOP*", "VSSOP*"]
+pin_name_offset = 1.016
+
+[[graphics]]
+kind = "rect"
+start = [-7.62, -7.62]
+end = [7.62, 7.62]
+width = 0.254
+fill = "background"
+
+[[pins]]
+number = "2"
+name = "D"
+type = "input"
+at = [-12.7, -5.08]
+side = "left"
+length = 5.08
+unit = 1
+
+[[pins]]
+number = "1"
+name = "C"
+type = "input"
+at = [-12.7, 5.08]
+side = "left"
+length = 5.08
+unit = 1
+shape = "clock"
+
+[[pins]]
+number = "7"
+name = "~{PRE}"
+type = "input"
+at = [-2.54, -12.7]
+side = "top"
+length = 5.08
+unit = 1
+
+[[pins]]
+number = "6"
+name = "~{CLR}"
+type = "input"
+at = [-2.54, 12.7]
+side = "bottom"
+length = 5.08
+unit = 1
+
+[[pins]]
+number = "8"
+name = "VCC"
+type = "power_in"
+at = [2.54, -12.7]
+side = "top"
+length = 5.08
+unit = 1
+
+[[pins]]
+number = "4"
+name = "GND"
+type = "power_in"
+at = [2.54, 12.7]
+side = "bottom"
+length = 5.08
+unit = 1
+
+[[pins]]
+number = "5"
+name = "Q"
+type = "output"
+at = [12.7, -5.08]
+side = "right"
+length = 5.08
+unit = 1
+
+[[pins]]
+number = "3"
+name = "~{Q}"
+type = "output"
+at = [12.7, 5.08]
+side = "right"
+length = 5.08
+unit = 1
