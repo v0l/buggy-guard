@@ -7,14 +7,14 @@ ref = "J1"
 symbol = "Screw_Terminal_01x02"
 at = [10.16, 40.64]
 value = "BATT"
-fields = { desc = "Keyed battery in, 48 V nominal" }
+fields = { mfr = "Phoenix Contact", mpn = "1715721", desc = "Keyed battery in, 48 V nominal" }
 
 [[parts]]
 ref = "F1"
 symbol = "Fuse"
 at = [22.86, 38.1]
 value = "1A"
-fields = { mpn = "Littelfuse 0451001.MRL" }
+fields = { mfr = "Littelfuse", mpn = "0451001.MRL" }
 rotation = 90.0
 
 [[parts]]
@@ -22,7 +22,7 @@ ref = "D1"
 symbol = "D"
 at = [35.56, 38.1]
 value = "S1D"
-fields = { mpn = "S1D, 200 V 1 A, reverse polarity" }
+fields = { mfr = "Diodes Inc", mpn = "S1D-13-F" }
 
 [[parts]]
 ref = "D2"
@@ -30,13 +30,14 @@ symbol = "SMAJ58A"
 at = [45.72, 48.26]
 value = "SMAJ58A"
 rotation = 90.0
+fields = { mfr = "Littelfuse", mpn = "SMAJ58A" }
 
 [[parts]]
 ref = "C1"
 symbol = "C_Polarized"
 at = [55.88, 48.26]
 value = "47u/100V"
-fields = { mpn = "Panasonic EEE-FK2A470P or equal" }
+fields = { mfr = "Nichicon", mpn = "UUX2A470MNL1GS" }
 
 [[parts]]
 ref = "C2"
@@ -44,7 +45,7 @@ symbol = "C"
 at = [63.5, 48.26]
 value = "2.2u/100V"
 footprint = "C_1210_3225Metric"
-fields = { mpn = "X7S 100 V" }
+fields = { mfr = "Murata", mpn = "GRM32ER72A225KA35L" }
 
 [[parts]]
 ref = "C3"
@@ -52,45 +53,49 @@ symbol = "C"
 at = [71.12, 48.26]
 value = "2.2u/100V"
 footprint = "C_1210_3225Metric"
-fields = { mpn = "X7S 100 V" }
+fields = { mfr = "Murata", mpn = "GRM32ER72A225KA35L" }
 
 [[parts]]
 ref = "R1"
 symbol = "R"
 at = [81.28, 40.64]
 value = "1M"
+fields = { mfr = "Yageo", mpn = "RC0603FR-071ML" }
 
 [[parts]]
 ref = "R2"
 symbol = "R"
 at = [81.28, 55.88]
 value = "82k"
+fields = { mfr = "Yageo", mpn = "RC0603FR-0782KL" }
 
 [[parts]]
 ref = "U1"
 symbol = "LM5164DDA"
 at = [109.22, 45.72]
 value = "LM5164"
-fields = { mpn = "TI LM5164DDAR" }
+fields = { mfr = "Texas Instruments", mpn = "LM5164DDAR" }
 
 [[parts]]
 ref = "R3"
 symbol = "R"
 at = [96.52, 66.04]
 value = "41.2k"
+fields = { mfr = "Yageo", mpn = "RC0603FR-0741K2L" }
 
 [[parts]]
 ref = "C4"
 symbol = "C"
 at = [132.08, 30.48]
 value = "2.2n/50V"
+fields = { mfr = "Samsung Electro-Mechanics", mpn = "CL10B222KB8NNNC" }
 
 [[parts]]
 ref = "L1"
 symbol = "L"
 at = [147.32, 38.1]
 value = "47u"
-fields = { mpn = "Bourns SRR1260-470M" }
+fields = { mfr = "Bourns", mpn = "SRR1260-470M" }
 rotation = 90.0
 
 [[parts]]
@@ -98,31 +103,35 @@ ref = "R4"
 symbol = "R"
 at = [160.02, 53.34]
 value = "100k"
+fields = { mfr = "Yageo", mpn = "RC0603FR-07100KL" }
 
 [[parts]]
 ref = "R5"
 symbol = "R"
 at = [160.02, 68.58]
 value = "31.6k"
+fields = { mfr = "Yageo", mpn = "RC0603FR-0731K6L" }
 
 [[parts]]
 ref = "R6"
 symbol = "R"
 at = [134.62, 53.34]
 value = "200k"
+fields = { mfr = "Yageo", mpn = "RC0603FR-07200KL" }
 
 [[parts]]
 ref = "C5"
 symbol = "C"
 at = [144.78, 63.5]
 value = "3.3n"
+fields = { mfr = "Samsung Electro-Mechanics", mpn = "CL10B332KB8NNNC" }
 
 [[parts]]
 ref = "C6"
 symbol = "C"
 at = [134.62, 73.66]
 value = "330p"
-fields = { dielectric = "C0G" }
+fields = { mfr = "Samsung Electro-Mechanics", mpn = "CL10C331JB8NNNC", dielectric = "C0G" }
 
 [[parts]]
 ref = "C7"
@@ -130,6 +139,7 @@ symbol = "C"
 at = [172.72, 50.8]
 value = "22u/16V"
 footprint = "C_1206_3216Metric"
+fields = { mfr = "Murata", mpn = "GRM31CR61C226KE15L" }
 
 [[parts]]
 ref = "C8"
@@ -137,55 +147,63 @@ symbol = "C"
 at = [180.34, 50.8]
 value = "22u/16V"
 footprint = "C_1206_3216Metric"
+fields = { mfr = "Murata", mpn = "GRM31CR61C226KE15L" }
 
 [[parts]]
 ref = "D3"
 symbol = "SS14"
 at = [195.58, 30.48]
 value = "SS14"
+fields = { mfr = "onsemi", mpn = "SS14" }
 
 [[parts]]
 ref = "U2"
 symbol = "AP2112K-3.3"
 at = [210.82, 48.26]
 value = "AP2112K-3.3"
-fields = { mpn = "Diodes AP2112K-3.3TRG1" }
+fields = { mfr = "Diodes Inc", mpn = "AP2112K-3.3TRG1" }
 
 [[parts]]
 ref = "C9"
 symbol = "C"
 at = [195.58, 55.88]
 value = "1u"
+fields = { mfr = "Samsung Electro-Mechanics", mpn = "CL10A105KB8NNNC" }
 
 [[parts]]
 ref = "C10"
 symbol = "C"
 at = [226.06, 55.88]
 value = "10u"
+fields = { mfr = "Samsung Electro-Mechanics", mpn = "CL10A106KP8NNNC" }
 
 [[parts]]
 ref = "R7"
 symbol = "R"
 at = [22.86, 73.66]
 value = "200k"
+fields = { mfr = "Yageo", mpn = "RC0603FR-07200KL" }
 
 [[parts]]
 ref = "R8"
 symbol = "R"
 at = [22.86, 86.36]
 value = "10k"
+fields = { mfr = "Yageo", mpn = "RC0603FR-0710KL" }
 
 [[parts]]
 ref = "C11"
 symbol = "C"
 at = [33.02, 86.36]
 value = "100n"
+fields = { mfr = "Samsung Electro-Mechanics", mpn = "CL10B104KB8NNNC" }
 
 [[parts]]
 ref = "R9"
 symbol = "R"
 at = [236.22, 48.26]
 value = "1k"
+fields = { mfr = "Yageo", mpn = "RC0603FR-071KL" }
 
 [[parts]]
 ref = "D4"
@@ -193,6 +211,7 @@ symbol = "LED"
 at = [236.22, 63.5]
 value = "green"
 rotation = 90.0
+fields = { mfr = "Lite-On", mpn = "LTST-C191KGKT" }
 
 [[parts]]
 ref = "TP2"

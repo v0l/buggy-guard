@@ -8,7 +8,7 @@ symbol = "Polyfuse"
 at = [20.32, 30.48]
 value = "100mA"
 rotation = 90.0
-fields = { mpn = "Bourns MF-NSMF010/30X-2 or equal" }
+fields = { mfr = "Bourns", mpn = "MF-NSMF010/30X-2" }
 
 [[parts]]
 ref = "J6"
@@ -16,6 +16,7 @@ symbol = "Conn_01x03"
 at = [7.62, 45.72]
 value = "PEDAL"
 mirror = true
+fields = { mfr = "JST", mpn = "B3B-XH-A(LF)(SN)" }
 
 [[parts]]
 ref = "R32"
@@ -23,18 +24,21 @@ symbol = "R"
 at = [30.48, 50.8]
 value = "10k"
 rotation = 90.0
+fields = { mfr = "Yageo", mpn = "RC0603FR-0710KL" }
 
 [[parts]]
 ref = "R33"
 symbol = "R"
 at = [40.64, 58.42]
 value = "15k"
+fields = { mfr = "Yageo", mpn = "RC0603FR-0715KL" }
 
 [[parts]]
 ref = "C21"
 symbol = "C"
 at = [48.26, 58.42]
 value = "100n"
+fields = { mfr = "Samsung Electro-Mechanics", mpn = "CL10B104KB8NNNC" }
 
 [[parts]]
 ref = "R34"
@@ -42,12 +46,14 @@ symbol = "R"
 at = [66.04, 30.48]
 value = "10k"
 rotation = 90.0
+fields = { mfr = "Yageo", mpn = "RC0603FR-0710KL" }
 
 [[parts]]
 ref = "C22"
 symbol = "C"
 at = [73.66, 38.1]
 value = "100n"
+fields = { mfr = "Samsung Electro-Mechanics", mpn = "CL10B104KB8NNNC" }
 
 [[parts]]
 ref = "R35"
@@ -55,19 +61,21 @@ symbol = "R"
 at = [81.28, 30.48]
 value = "10k"
 rotation = 90.0
+fields = { mfr = "Yageo", mpn = "RC0603FR-0710KL" }
 
 [[parts]]
 ref = "C23"
 symbol = "C"
 at = [88.9, 38.1]
 value = "100n"
+fields = { mfr = "Samsung Electro-Mechanics", mpn = "CL10B104KB8NNNC" }
 
 [[parts]]
 ref = "U9"
 symbol = "MCP6002-xSN"
 at = [104.14, 33.02]
 value = "MCP6002"
-fields = { mpn = "Microchip MCP6002T-I/SN" }
+fields = { mfr = "Microchip", mpn = "MCP6002T-I/SN" }
 
 [[parts]]
 ref = "U9"
@@ -88,12 +96,14 @@ ref = "C24"
 symbol = "C"
 at = [137.16, 63.5]
 value = "100n"
+fields = { mfr = "Samsung Electro-Mechanics", mpn = "CL10B104KB8NNNC" }
 
 [[parts]]
 ref = "R36"
 symbol = "R"
 at = [96.52, 50.8]
 value = "20k"
+fields = { mfr = "Yageo", mpn = "RC0603FR-0720KL" }
 
 [[parts]]
 ref = "R37"
@@ -101,6 +111,7 @@ symbol = "R"
 at = [109.22, 45.72]
 value = "10k"
 rotation = 90.0
+fields = { mfr = "Yageo", mpn = "RC0603FR-0710KL" }
 
 [[parts]]
 ref = "R38"
@@ -108,12 +119,14 @@ symbol = "R"
 at = [124.46000000000001, 33.02]
 value = "470"
 rotation = 90.0
+fields = { mfr = "Yageo", mpn = "RC0603FR-07470RL" }
 
 [[parts]]
 ref = "C25"
 symbol = "C"
 at = [134.62, 40.64]
 value = "10n"
+fields = { mfr = "Samsung Electro-Mechanics", mpn = "CL10B103KB8NNNC" }
 
 [[parts]]
 ref = "R39"
@@ -121,18 +134,21 @@ symbol = "R"
 at = [142.24, 45.72]
 value = "10k"
 rotation = 90.0
+fields = { mfr = "Yageo", mpn = "RC0603FR-0710KL" }
 
 [[parts]]
 ref = "R40"
 symbol = "R"
 at = [152.4, 53.34]
 value = "15k"
+fields = { mfr = "Yageo", mpn = "RC0603FR-0715KL" }
 
 [[parts]]
 ref = "J7"
 symbol = "Conn_01x03"
 at = [160.02, 30.48]
 value = "ESC_THR"
+fields = { mfr = "JST", mpn = "B3B-XH-A(LF)(SN)" }
 
 [[parts]]
 ref = "F3"
@@ -140,19 +156,21 @@ symbol = "Polyfuse"
 at = [20.32, 83.82000000000001]
 value = "200mA"
 rotation = 90.0
-fields = { mpn = "Bourns MF-NSMF020-2 or equal" }
+fields = { mfr = "Bourns", mpn = "MF-NSMF020-2" }
 
 [[parts]]
 ref = "C27"
 symbol = "C"
 at = [33.02, 91.44]
 value = "10u"
+fields = { mfr = "Samsung Electro-Mechanics", mpn = "CL10A106KP8NNNC" }
 
 [[parts]]
 ref = "J8"
 symbol = "Conn_01x04"
 at = [160.02, 86.36]
 value = "US1"
+fields = { mfr = "JST", mpn = "B4B-XH-A(LF)(SN)" }
 
 [[parts]]
 ref = "R41"
@@ -160,6 +178,7 @@ symbol = "R"
 at = [129.54, 81.28]
 value = "1k"
 rotation = 90.0
+fields = { mfr = "Yageo", mpn = "RC0603FR-071KL" }
 
 [[parts]]
 ref = "R42"
@@ -167,18 +186,21 @@ symbol = "R"
 at = [129.54, 88.9]
 value = "15k"
 rotation = 90.0
+fields = { mfr = "Yageo", mpn = "RC0603FR-0715KL" }
 
 [[parts]]
 ref = "R43"
 symbol = "R"
 at = [119.38, 96.52]
 value = "20k"
+fields = { mfr = "Yageo", mpn = "RC0603FR-0720KL" }
 
 [[parts]]
 ref = "J9"
 symbol = "Conn_01x04"
 at = [160.02, 111.76]
 value = "US2"
+fields = { mfr = "JST", mpn = "B4B-XH-A(LF)(SN)" }
 
 [[parts]]
 ref = "R44"
@@ -186,6 +208,7 @@ symbol = "R"
 at = [129.54, 106.68]
 value = "1k"
 rotation = 90.0
+fields = { mfr = "Yageo", mpn = "RC0603FR-071KL" }
 
 [[parts]]
 ref = "R45"
@@ -193,12 +216,14 @@ symbol = "R"
 at = [129.54, 114.3]
 value = "15k"
 rotation = 90.0
+fields = { mfr = "Yageo", mpn = "RC0603FR-0715KL" }
 
 [[parts]]
 ref = "R46"
 symbol = "R"
 at = [119.38, 121.92]
 value = "20k"
+fields = { mfr = "Yageo", mpn = "RC0603FR-0720KL" }
 
 [[parts]]
 ref = "J12"
@@ -206,12 +231,14 @@ symbol = "Conn_01x03"
 at = [66.04, 116.84]
 value = "SPEED"
 mirror = true
+fields = { mfr = "JST", mpn = "B3B-XH-A(LF)(SN)" }
 
 [[parts]]
 ref = "R53"
 symbol = "R"
 at = [81.28, 104.14]
 value = "4.7k"
+fields = { mfr = "Yageo", mpn = "RC0603FR-074K7L" }
 
 [[parts]]
 ref = "R54"
@@ -219,18 +246,21 @@ symbol = "R"
 at = [88.9, 116.84]
 value = "10k"
 rotation = 90.0
+fields = { mfr = "Yageo", mpn = "RC0603FR-0710KL" }
 
 [[parts]]
 ref = "R55"
 symbol = "R"
 at = [99.06, 124.46000000000001]
 value = "20k"
+fields = { mfr = "Yageo", mpn = "RC0603FR-0720KL" }
 
 [[parts]]
 ref = "C26"
 symbol = "C"
 at = [106.68, 124.46000000000001]
 value = "1n"
+fields = { mfr = "Samsung Electro-Mechanics", mpn = "CL10B102KB8NNNC" }
 
 [[parts]]
 ref = "J13"
@@ -238,6 +268,7 @@ symbol = "Conn_01x03"
 at = [7.62, 139.7]
 value = "AUX"
 mirror = true
+fields = { mfr = "JST", mpn = "B3B-XH-A(LF)(SN)" }
 
 [[parts]]
 ref = "R56"
@@ -245,12 +276,14 @@ symbol = "R"
 at = [25.4, 137.16]
 value = "1k"
 rotation = 90.0
+fields = { mfr = "Yageo", mpn = "RC0603FR-071KL" }
 
 [[parts]]
 ref = "R57"
 symbol = "R"
 at = [35.56, 129.54]
 value = "10k"
+fields = { mfr = "Yageo", mpn = "RC0603FR-0710KL" }
 
 [[parts]]
 ref = "R58"
@@ -258,12 +291,14 @@ symbol = "R"
 at = [25.4, 144.78]
 value = "1k"
 rotation = 90.0
+fields = { mfr = "Yageo", mpn = "RC0603FR-071KL" }
 
 [[parts]]
 ref = "R59"
 symbol = "R"
 at = [43.18, 129.54]
 value = "10k"
+fields = { mfr = "Yageo", mpn = "RC0603FR-0710KL" }
 
 [[parts]]
 ref = "H1"

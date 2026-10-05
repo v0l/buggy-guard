@@ -88,7 +88,16 @@ sees it. The kill is latched in firmware until the pedal is at zero and the fob 
 | D2 | SMAJ58A | 58 V standoff TVS |
 | F1 | 0451 series 1 A | Littelfuse 0451001.MRL |
 | F2, F3 | MF-NSMF010/30X-2, MF-NSMF020-2 | Bourns 1206 resettable PTCs for the pedal and sensor 5 V |
-| BZ1 | 12x9.5 mm magnetic 5 V | CUI CEM-1205C or equal |
+| BZ1 | 12x9.5 mm magnetic 5 V | Same Sky CEM-1205-IC, 7.6 mm pitch. It has its own 2.4 kHz driver, so the firmware switches BUZZ on and off and never sends it a tone. The CUI CEM-1205C first picked is discontinued |
+| C1 | 47 uF 100 V | Nichicon UUX2A470MNL1GS, 10 x 10 mm SMD |
+| Q1 | DMN3404L | Diodes DMN3404L-7, buzzer low-side switch, 82 mohm at 3 V gate; same SOT-23 pinout as the AO3400A |
+| J2 | USB-C | HRO TYPE-C-31-M-12, from LCSC (C165948). Mouser does not stock it |
+
+Every part carries `mfr` and `mpn` fields. `python3 docs/order_bom.py N` writes
+`docs/bom-order.csv` for N boards: Mouser's BOM import reads the manufacturer part number and
+quantity columns. 0603 resistors and capacitors are rounded up to 10, each small semiconductor
+and PTC gets one spare for hand assembly, and the U.FL antenna, XH housings and crimps are added
+at the end.
 
 ## Board
 
@@ -303,7 +312,55 @@ The hardware is the safety net; the firmware only ever removes throttle. It must
    wire, and it has to boot before it sees throttle. Start at 2 s; the ND72240's boot time is
    not measured.
 
+## Pendant
+
+The handheld remote is a separate board in the same project: `pendant.board.toml`,
+`pendant.sch.toml` and `pendant.pcb.toml`, fab package in `fab-pendant/`. It is a 60 x 66 mm
+2 layer JLC board with GND poured on both sides. It talks ESP-NOW to the buggy and is the "fob"
+in the firmware contract above.
+
+| block | parts | notes |
+|---|---|---|
+| radio | U1 ESP32-C3-MINI-1-N4 | antenna at the top edge, top right, so the hand holding the bottom does not cover it; copper keepout under it on both layers |
+| charging | J1 USB-C, U4 USBLC6, U2 MCP73831-2 (4.2 V), R3 4.7k | 213 mA charge, red D2 while charging |
+| power path | D1 B5819W from VBUS, Q1 AO3401A from the cell | Microchip AN1149 load sharing: runs from USB when plugged in, the cell is never charged and loaded at once |
+| 3V3 | U3 AP2112K-3.3, SW1 slide switch on its EN | off means only the charger and the 4.5 uA battery divider draw from the cell |
+| display | J3, Waveshare 1.3inch OLED Module (C), SH1107 128x64 | plugs straight into a 1x07 2.54 mm socket, header centred on the board |
+| controls | SW2 START/STOP, SW3 SPEED, 12 mm tactile | SPEED is on GPIO9: hold it while powering on for download mode |
+| sound | BZ1 Murata PKLCS1212E4001 piezo, bottom side | driven differentially from two pins through 100 R each, 6.6 V p-p |
+
+ESP32-C3 pins:
+
+| GPIO | net | notes |
+|---|---|---|
+| 0 | VBUS_SENSE | 100k/100k, high while USB is plugged in |
+| 1 | VBAT_ADC | 470k/470k with 100 nF, half the cell voltage |
+| 2 | OLED_CS | 10k pull-up, strapping pin |
+| 3 | BTN_START | 10k pull-up, deep sleep wake capable |
+| 4 | OLED_DC | |
+| 5, 10 | BUZZ_A, BUZZ_B | one LEDC channel, the second pin inverted in the GPIO matrix |
+| 6, 7 | OLED_DIN, OLED_CLK | 4.7k pull-ups so the module's I2C mode also works |
+| 8 | OLED_RST | 10k pull-up, strapping pin |
+| 9 | BTN_SPEED | 10k pull-up, BOOT strap |
+| 18, 19 | USB D-, D+ | native USB serial/JTAG for flashing |
+| 20, 21 | U0RXD, U0TXD | bottom test pads |
+
+The OLED stack: an 8.5 mm female socket on the pendant and the module's own male header put the
+module PCB about 11 mm above the board, held by M2.5 x 11 mm standoffs in its four holes (they
+are part of the J3 footprint). The module's rear 7 pin connector hangs 6 mm below it, leaving
+about 5 mm over the parts under it, which are all 0603 and SOT-23. The module ships in 4-wire SPI
+mode, which is how it is wired; moving its IM resistor to 1 selects I2C on DIN/CLK instead.
+
+The ESP32-C3, 12 mm switch, piezo and OLED 3D models are boxes drawn by
+`python3 3dmodels/make_models.py`. The vendor ESP32-C3 STEP and VRML do not mesh correctly in
+the agentee viewer.
+
 ## Still to do
+
+- Pendant: check the 7 pin order (VCC GND DIN CLK CS DC RST) against the silk on the actual
+  Waveshare module before soldering the socket, `footprints/OLED_Waveshare_1.3in_C_Socket.fp.toml`.
+- Pendant: J2 pin 1 is battery +. JST PH LiPo leads come wired both ways round; check before
+  plugging in, a reversed cell destroys U2 and U3.
 
 - Firmware has not been written. The board is the safety layer; the behaviour above is the
   contract the firmware must meet.
@@ -313,7 +370,6 @@ The hardware is the safety net; the firmware only ever removes throttle. It must
 - Check the ESC's power-lock input draws no more than about 0.3 A (some controllers charge a
   capacitor through it); Q3 is rated for 6 A so there is margin, but the value is unverified.
 - The IMU impact threshold is a firmware number (start around 2.5 g, measure on the real chassis).
-- No fob PCB yet: the ESP-12F is meant to be the handheld remote, speaking ESP-NOW.
 - The board has no fiducials; JLCPCB adds them for assembly panels, but add three if the board
   is to be assembled bare.
 - The ESP32-S3-WROOM-1U carries a U.FL socket on the module itself (datasheet section 10.2), so the

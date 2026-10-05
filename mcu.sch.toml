@@ -7,31 +7,35 @@ ref = "U3"
 symbol = "ESP32-S3-WROOM-1"
 at = [76.2, 63.5]
 value = "ESP32-S3-WROOM-1U-N16R8"
-fields = { mpn = "Espressif ESP32-S3-WROOM-1U-N16R8" }
+fields = { mfr = "Espressif", mpn = "ESP32-S3-WROOM-1U-N16R8" }
 
 [[parts]]
 ref = "C12"
 symbol = "C"
 at = [40.64, 22.86]
 value = "10u"
+fields = { mfr = "Samsung Electro-Mechanics", mpn = "CL10A106KP8NNNC" }
 
 [[parts]]
 ref = "C13"
 symbol = "C"
 at = [48.26, 22.86]
 value = "100n"
+fields = { mfr = "Samsung Electro-Mechanics", mpn = "CL10B104KB8NNNC" }
 
 [[parts]]
 ref = "R10"
 symbol = "R"
 at = [25.4, 40.64]
 value = "10k"
+fields = { mfr = "Yageo", mpn = "RC0603FR-0710KL" }
 
 [[parts]]
 ref = "C14"
 symbol = "C"
 at = [25.4, 58.42]
 value = "1u"
+fields = { mfr = "Samsung Electro-Mechanics", mpn = "CL10A105KB8NNNC" }
 
 [[parts]]
 ref = "SW1"
@@ -39,12 +43,14 @@ symbol = "SW_Push"
 at = [12.7, 50.8]
 value = "EN"
 rotation = 90.0
+fields = { mfr = "E-Switch", mpn = "TL3342F160QG" }
 
 [[parts]]
 ref = "R11"
 symbol = "R"
 at = [35.56, 76.2]
 value = "10k"
+fields = { mfr = "Yageo", mpn = "RC0603FR-0710KL" }
 
 [[parts]]
 ref = "SW2"
@@ -52,6 +58,7 @@ symbol = "SW_Push"
 at = [25.4, 88.9]
 value = "BOOT"
 rotation = 90.0
+fields = { mfr = "E-Switch", mpn = "TL3342F160QG" }
 
 [[parts]]
 ref = "J2"
@@ -59,24 +66,28 @@ symbol = "USB_C_Receptacle_USB2.0_16P"
 at = [160.02, 40.64]
 value = "USB-C"
 mirror = true
+fields = { mfr = "Korean Hroparts", mpn = "TYPE-C-31-M-12", lcsc = "C165948" }
 
 [[parts]]
 ref = "R12"
 symbol = "R"
 at = [139.7, 22.86]
 value = "5.1k"
+fields = { mfr = "Yageo", mpn = "RC0603FR-075K1L" }
 
 [[parts]]
 ref = "R13"
 symbol = "R"
 at = [132.08, 22.86]
 value = "5.1k"
+fields = { mfr = "Yageo", mpn = "RC0603FR-075K1L" }
 
 [[parts]]
 ref = "U4"
 symbol = "USBLC6-2SC6"
 at = [132.08, 55.88]
 value = "USBLC6-2SC6"
+fields = { mfr = "STMicroelectronics", mpn = "USBLC6-2SC6" }
 
 [[parts]]
 ref = "R14"
@@ -84,6 +95,7 @@ symbol = "R"
 at = [129.54, 93.98]
 value = "1k"
 rotation = 90.0
+fields = { mfr = "Yageo", mpn = "RC0603FR-071KL" }
 
 [[parts]]
 ref = "D5"
@@ -91,6 +103,7 @@ symbol = "LED"
 at = [142.24, 93.98]
 value = "red"
 rotation = 180.0
+fields = { mfr = "Lite-On", mpn = "LTST-C191KRKT" }
 
 [[parts]]
 ref = "R15"
@@ -98,25 +111,28 @@ symbol = "R"
 at = [129.54, 111.76]
 value = "100"
 rotation = 90.0
+fields = { mfr = "Yageo", mpn = "RC0603FR-07100RL" }
 
 [[parts]]
 ref = "R16"
 symbol = "R"
 at = [137.16, 119.38]
 value = "100k"
+fields = { mfr = "Yageo", mpn = "RC0603FR-07100KL" }
 
 [[parts]]
 ref = "Q1"
 symbol = "AO3400A"
 at = [147.32, 111.76]
-value = "AO3400A"
+value = "DMN3404L"
+fields = { mfr = "Diodes Inc", mpn = "DMN3404L-7" }
 
 [[parts]]
 ref = "BZ1"
 symbol = "Buzzer"
 at = [152.4, 96.52]
 value = "5V"
-fields = { mpn = "12x9.5 mm 5 V magnetic, e.g. CUI CEM-1205C" }
+fields = { mfr = "Same Sky", mpn = "CEM-1205-IC" }
 
 [[parts]]
 ref = "D6"
@@ -125,6 +141,7 @@ at = [162.56, 99.06]
 value = "1N4148W"
 footprint = "D_SOD-123"
 rotation = 90.0
+fields = { mfr = "Diodes Inc", mpn = "1N4148W-7-F" }
 
 [[parts]]
 ref = "J14"
@@ -132,7 +149,7 @@ symbol = "Conn_01x04"
 at = [11.43, 20.32]
 value = "UART_DBG"
 footprint = "JST_XH_B4B-XH-A_1x04_P2.50mm_Vertical"
-fields = { desc = "console: 1 GND, 2 +3V3, 3 RX, 4 TX" }
+fields = { mfr = "JST", mpn = "B4B-XH-A(LF)(SN)", desc = "console: 1 GND, 2 +3V3, 3 RX, 4 TX" }
 
 [[parts]]
 ref = "TP1"

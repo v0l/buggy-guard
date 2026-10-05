@@ -7,44 +7,49 @@ ref = "U5"
 symbol = "TPS3430WDRC"
 at = [30.48, 45.72]
 value = "TPS3430"
-fields = { mpn = "TI TPS3430WDRCR" }
+fields = { mfr = "Texas Instruments", mpn = "TPS3430WDRCR" }
 
 [[parts]]
 ref = "C15"
 symbol = "C"
 at = [10.16, 38.1]
 value = "100n"
+fields = { mfr = "Samsung Electro-Mechanics", mpn = "CL10B104KB8NNNC" }
 
 [[parts]]
 ref = "R17"
 symbol = "R"
 at = [12.7, 55.88]
 value = "10k"
+fields = { mfr = "Yageo", mpn = "RC0603FR-0710KL" }
 
 [[parts]]
 ref = "R18"
 symbol = "R"
 at = [55.88, 33.02]
 value = "10k"
+fields = { mfr = "Yageo", mpn = "RC0603FR-0710KL" }
 
 [[parts]]
 ref = "U6"
 symbol = "LSM6DS3"
 at = [33.02, 104.14]
 value = "LSM6DS3TR-C"
-fields = { mpn = "ST LSM6DS3TR-C" }
+fields = { mfr = "STMicroelectronics", mpn = "LSM6DS3TR-C" }
 
 [[parts]]
 ref = "C16"
 symbol = "C"
 at = [10.16, 93.98]
 value = "100n"
+fields = { mfr = "Samsung Electro-Mechanics", mpn = "CL10B104KB8NNNC" }
 
 [[parts]]
 ref = "C17"
 symbol = "C"
 at = [17.78, 93.98]
 value = "100n"
+fields = { mfr = "Samsung Electro-Mechanics", mpn = "CL10B104KB8NNNC" }
 
 [[parts]]
 ref = "R19"
@@ -52,18 +57,21 @@ symbol = "R"
 at = [58.42, 96.52]
 value = "1k"
 rotation = 90.0
+fields = { mfr = "Yageo", mpn = "RC0603FR-071KL" }
 
 [[parts]]
 ref = "R20"
 symbol = "R"
 at = [66.04, 111.76]
 value = "4.7k"
+fields = { mfr = "Yageo", mpn = "RC0603FR-074K7L" }
 
 [[parts]]
 ref = "R21"
 symbol = "R"
 at = [73.66, 111.76]
 value = "4.7k"
+fields = { mfr = "Yageo", mpn = "RC0603FR-074K7L" }
 
 [[parts]]
 ref = "J3"
@@ -72,56 +80,63 @@ at = [88.9, 127.0]
 value = "QWIIC"
 footprint = "JST_SH_SM04B-SRSS-TB_1x04-1MP_P1.00mm_Horizontal"
 mirror = true
+fields = { mfr = "JST", mpn = "SM04B-SRSS-TB(LF)(SN)" }
 
 [[parts]]
 ref = "U7"
 symbol = "74AHCT1G08"
 at = [99.06, 45.72]
 value = "74AHCT1G08"
-fields = { mpn = "TI SN74AHCT1G08DBVR" }
+fields = { mfr = "Texas Instruments", mpn = "SN74AHCT1G08DBVR" }
 
 [[parts]]
 ref = "C18"
 symbol = "C"
 at = [86.36, 25.4]
 value = "100n"
+fields = { mfr = "Samsung Electro-Mechanics", mpn = "CL10B104KB8NNNC" }
 
 [[parts]]
 ref = "R22"
 symbol = "R"
 at = [83.82000000000001, 58.42]
 value = "100k"
+fields = { mfr = "Yageo", mpn = "RC0603FR-07100KL" }
 
 [[parts]]
 ref = "U8"
 symbol = "74AHCT1G00"
 at = [132.08, 48.26]
 value = "74AHCT1G00"
-fields = { mpn = "TI SN74AHCT1G00DBVR" }
+fields = { mfr = "Texas Instruments", mpn = "SN74AHCT1G00DBVR" }
 
 [[parts]]
 ref = "C19"
 symbol = "C"
 at = [119.38, 25.4]
 value = "100n"
+fields = { mfr = "Samsung Electro-Mechanics", mpn = "CL10B104KB8NNNC" }
 
 [[parts]]
 ref = "R23"
 symbol = "R"
 at = [119.38, 63.5]
 value = "100k"
+fields = { mfr = "Yageo", mpn = "RC0603FR-07100KL" }
 
 [[parts]]
 ref = "R24"
 symbol = "R"
 at = [114.3, 66.04]
 value = "100k"
+fields = { mfr = "Yageo", mpn = "RC0603FR-07100KL" }
 
 [[parts]]
 ref = "R26"
 symbol = "R"
 at = [116.84, 81.28]
 value = "1k"
+fields = { mfr = "Yageo", mpn = "RC0603FR-071KL" }
 
 [[parts]]
 ref = "D7"
@@ -129,31 +144,35 @@ symbol = "LED"
 at = [116.84, 93.98]
 value = "green"
 rotation = 90.0
+fields = { mfr = "Lite-On", mpn = "LTST-C191KGKT" }
 
 [[parts]]
 ref = "Q2"
 symbol = "DMN10H220L"
 at = [167.64000000000001, 66.04]
 value = "DMN10H220L"
+fields = { mfr = "Diodes Inc", mpn = "DMN10H220L-7" }
 
 [[parts]]
 ref = "R27"
 symbol = "R"
 at = [170.18, 50.8]
 value = "33k"
+fields = { mfr = "Yageo", mpn = "RC0603FR-0733KL" }
 
 [[parts]]
 ref = "Q3"
 symbol = "Q_PMOS_GDS"
 at = [182.88, 30.48]
 value = "IRFR9120N"
-fields = { mpn = "Infineon IRFR9120NTRPBF" }
+fields = { mfr = "Infineon", mpn = "IRFR9120NTRPBF" }
 
 [[parts]]
 ref = "R28"
 symbol = "R"
 at = [167.64000000000001, 25.4]
 value = "10k"
+fields = { mfr = "Yageo", mpn = "RC0603FR-0710KL" }
 
 [[parts]]
 ref = "D8"
@@ -161,6 +180,7 @@ symbol = "D_Zener"
 at = [157.48, 25.4]
 value = "BZT52C15"
 rotation = 90.0
+fields = { mfr = "Diodes Inc", mpn = "BZT52C15-7-F" }
 
 [[parts]]
 ref = "D9"
@@ -168,36 +188,42 @@ symbol = "D"
 at = [203.2, 40.64]
 value = "S1D"
 rotation = 90.0
+fields = { mfr = "Diodes Inc", mpn = "S1D-13-F" }
 
 [[parts]]
 ref = "R29"
 symbol = "R"
 at = [213.36, 40.64]
 value = "100k"
+fields = { mfr = "Yageo", mpn = "RC0603FR-07100KL" }
 
 [[parts]]
 ref = "R30"
 symbol = "R"
 at = [198.12, 63.5]
 value = "200k"
+fields = { mfr = "Yageo", mpn = "RC0603FR-07200KL" }
 
 [[parts]]
 ref = "R31"
 symbol = "R"
 at = [198.12, 76.2]
 value = "10k"
+fields = { mfr = "Yageo", mpn = "RC0603FR-0710KL" }
 
 [[parts]]
 ref = "C20"
 symbol = "C"
 at = [208.28, 76.2]
 value = "100n"
+fields = { mfr = "Samsung Electro-Mechanics", mpn = "CL10B104KB8NNNC" }
 
 [[parts]]
 ref = "Q4"
 symbol = "2N7002"
 at = [167.64000000000001, 99.06]
 value = "2N7002"
+fields = { mfr = "Diodes Inc", mpn = "2N7002-7-F" }
 
 [[parts]]
 ref = "J5"
@@ -205,12 +231,14 @@ symbol = "Conn_01x02"
 at = [190.5, 93.98]
 value = "BRAKE"
 mirror = true
+fields = { mfr = "JST", mpn = "B2B-XH-A(LF)(SN)" }
 
 [[parts]]
 ref = "Q5"
 symbol = "2N7002"
 at = [167.64000000000001, 119.38]
 value = "2N7002"
+fields = { mfr = "Diodes Inc", mpn = "2N7002-7-F" }
 
 [[parts]]
 ref = "TP10"
@@ -242,7 +270,7 @@ symbol = "Screw_Terminal_01x02"
 at = [228.6, 20.32]
 value = "ESC_LOCK"
 mirror = true
-fields = { desc = "ESC power-lock wire and its ground" }
+fields = { mfr = "Phoenix Contact", mpn = "1715721", desc = "ESC power-lock wire and its ground" }
 
 [[parts]]
 ref = "J15"
@@ -250,20 +278,21 @@ symbol = "Conn_01x02"
 at = [228.6, 35.56]
 value = "ESTOP"
 mirror = true
-fields = { desc = "NC e-stop button loop, 48 V" }
+fields = { mfr = "JST", mpn = "B2B-XH-A(LF)(SN)", desc = "NC e-stop button loop, 48 V" }
 
 [[parts]]
 ref = "U10"
 symbol = "74LVC1G74"
 at = [66.04, 66.04]
 value = "74LVC1G74"
-fields = { mpn = "TI SN74LVC1G74DCUR" }
+fields = { mfr = "Texas Instruments", mpn = "SN74LVC1G74DCUR" }
 
 [[parts]]
 ref = "C28"
 symbol = "C"
 at = [53.34, 66.04]
 value = "100n"
+fields = { mfr = "Samsung Electro-Mechanics", mpn = "CL10B104KB8NNNC" }
 
 [[nets]]
 name = "+3V3"
