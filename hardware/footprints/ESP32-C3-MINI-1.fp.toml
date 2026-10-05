@@ -3,7 +3,7 @@ name = "ESP32-C3-MINI-1"
 description = "ESP32-C3-MINI-1: https://www.espressif.com/sites/default/files/documentation/esp32-c3-mini-1_datasheet_en.pdf"
 tags = ["ESP32-C3"]
 mount = "smd"
-model = "3dmodels/ESP32-C3-MINI-1.step"
+model = "https://raw.githubusercontent.com/espressif/kicad-libraries/dd76561812ab300351234ba6e0ec1295641796f0/3dmodels/espressif.3dshapes/ESP32-C3-MINI-1.STEP"
 model_offset = [-6.6, -8.37, 0.0]
 
 [[pads]]

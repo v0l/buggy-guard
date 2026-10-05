@@ -139,8 +139,10 @@ at the end.
   be within a few mm of F3.2 or the ultrasonic echo lines pick up noise.
 - U3's u.FL socket is on the -x side of the module, so the antenna pigtail exits toward the left
   (inboard). Leave that space clear and keep the coax away from the buck and the ignition wiring.
-- The two 3D models in `3dmodels/` are the vendor ESP32 STEP (from the datasheet link) and a
-  community HRO USB-C STEP, neither of which exists in the KiCad library. Their `model_offset`
+- The ESP32 STEP models load by URL from Espressif's `kicad-libraries` repository, pinned to a
+  commit, so they are not in git; agentee downloads them into its cache on first use. The HRO
+  USB-C STEP is a community model with no public copy found, so it stays in `3dmodels/`.
+  Neither exists in the KiCad library. Their `model_offset`
   and `model_rotate` were derived from the measured bounding boxes, not by eye: the ESP sits at
   z 0..3.2 with no offset in z, the USB-C needs `rotate = [90, 0, 0]` because it was exported
   lying on its side. `agentee check` cannot catch a bad transform, so verify in the 3D view
@@ -384,7 +386,7 @@ At 3.7 V the charger dissipates 0.31 W and the open-air junction is about 102 C.
 The USB socket's VBUS pins A4 and A9 are separate copper on this board: A4 feeds the charger and
 A9 the power path. Every USB-C plug joins them, so the DC run holds both at 5 V.
 
-The ESP32-C3 model is Espressif's STEP from their KiCad library. The 12 mm switch, piezo and OLED
+The ESP32-C3 model is Espressif's STEP from their KiCad library, loaded by URL. The 12 mm switch, piezo and OLED
 module models are boxes drawn by `python3 3dmodels/make_models.py`.
 
 ## Still to do

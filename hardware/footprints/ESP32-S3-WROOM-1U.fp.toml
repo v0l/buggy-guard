@@ -3,7 +3,7 @@ name = "ESP32-S3-WROOM-1U"
 description = "2.4 GHz Wi-Fi and Bluetooth module  https://www.espressif.com/sites/default/files/documentation/esp32-s3-wroom-1_wroom-1u_datasheet_en.pdf"
 tags = ["2.4", "GHz", "Wi-Fi", "and", "Bluetooth", "module"]
 mount = "smd"
-model = "3dmodels/ESP32-S3-WROOM-1U.step"
+model = "https://raw.githubusercontent.com/espressif/kicad-libraries/dd76561812ab300351234ba6e0ec1295641796f0/3dmodels/espressif.3dshapes/ESP32-S3-WROOM-1U.STEP"
 model_offset = [-9.0, -9.6, 0.0]
 model_rotate = [0.0, 0.0, 0.0]
 
