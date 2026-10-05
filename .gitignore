@@ -7,3 +7,6 @@
 # fab outputs: regenerate with agentee
 fab/
 fab-*/
+
+# 3D exports: regenerate with agentee export
+/*.step
