@@ -218,6 +218,7 @@ symbol = "TestPoint"
 value = "TP"
 footprint = "TestPoint_Pad_D1.0mm"
 at = [241.3, 20.32]
+fields = { assembly = "no" }
 
 [[parts]]
 ref = "TP11"
@@ -225,6 +226,7 @@ symbol = "TestPoint"
 value = "TP"
 footprint = "TestPoint_Pad_D1.0mm"
 at = [241.3, 27.94]
+fields = { assembly = "no" }
 
 [[parts]]
 ref = "TP19"
@@ -232,6 +234,7 @@ symbol = "TestPoint"
 value = "TP"
 footprint = "TestPoint_Pad_D1.0mm"
 at = [241.3, 43.18]
+fields = { assembly = "no" }
 
 [[parts]]
 ref = "J4"

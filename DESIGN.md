@@ -116,6 +116,13 @@ sees it. The kill is latched in firmware until the pedal is at zero and the fob 
   nets routed with `agentee route`. U7.3 ties to GND through a via beside the pad.
 - The refs of C20, R17, R18, R23 and U10 are hidden because the silk pass found no clear spot.
 - H1-H4 are plated M3 holes on no net, so board GND never bonds to the frame. They have no silk.
+- In2 is one +3V3 pour. The engine had cut 27 rail regions into it for the 48 V nets, +5V,
+  BUZZ_N and SW; every connection is carried by tracks, so they were removed.
+- The GND and +3V3 pours join through-hole pads by thermal relief (`relief_tht_only`), so the
+  connector pins solder; SMD pads and the U1 and U3 thermal pads stay solid.
+- J2's shell front sits on the board edge (0.25 mm in), so an overmoulded USB-C plug seats fully.
+- Test points are bare pads with `assembly = "no"`, so they stay off the BOM and CPL and the
+  assembly stays one-sided.
 - The USB-C connector sits on the bottom edge so the D+/D- pair runs to U4 and then to the ESP's
   bottom-left pins without crossing the 5 V cluster.
 - F3, C27 and F2 are in a line above U9 with F3's body vertical; the sensor 5 V filter cap has to
@@ -190,14 +197,14 @@ ESP32, 0.15 W into the buzzer and 0.02 W into the ignition FET.
 
 | reading | value |
 |---|---|
-| board peak | 73.0 C, under U1 |
-| U1 junction | 113.5 C (0.9 W x 45 C/W onto the pad temperature) |
+| board peak | 71.8 C, under U1 |
+| U1 junction | 112.3 C (0.9 W x 45 C/W onto the pad temperature) |
 | U3 junction | 94.8 C |
-| buzzer pads | 56.5 C |
-| ignition FET | 50.5 C |
+| buzzer pads | 58.2 C |
+| ignition FET | 49.4 C |
 
 Both junctions are the number to watch. The buck is the hot spot because it dissipates in a small
-area with only the ground pad to lose heat through, and 113.5 C leaves 36.5 C to the LM5164's
+area with only the ground pad to lose heat through, and 112.3 C leaves 37.7 C to the LM5164's
 150 C junction limit at 40 C ambient. That number is an estimate from a fitted theta-jc, not a
 measurement, and it assumes the pad ties into the ground plane well. If the real thing runs hot,
 the fix is copper under U1 rather than a bigger inductor.
@@ -209,11 +216,11 @@ seat with no air moving.
 
 | reading | value |
 |---|---|
-| board peak | 97.1 C, under U1 |
-| U1 junction | 137.6 C, 12.4 C under the 150 C limit |
+| board peak | 95.9 C, under U1 |
+| U1 junction | 136.4 C, 13.6 C under the 150 C limit |
 | U3 pads | 88.5 C |
 | U3 junction | 118.5 C |
-| buzzer pads | 79.8 C |
+| buzzer pads | 81.4 C |
 
 The buck still clears its limit, but with little margin, and 0.75 W of continuous WiFi into the
 ESP32 is pessimistic. A sealed box wants vent holes or a thermal pad from U1 to the lid.

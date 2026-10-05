@@ -140,6 +140,7 @@ symbol = "TestPoint"
 value = "TP"
 footprint = "TestPoint_Pad_D1.0mm"
 at = [175.26, 20.32]
+fields = { assembly = "no" }
 
 [[parts]]
 ref = "TP3"
@@ -147,6 +148,7 @@ symbol = "TestPoint"
 value = "TP"
 footprint = "TestPoint_Pad_D1.0mm"
 at = [175.26, 27.94]
+fields = { assembly = "no" }
 
 [[parts]]
 ref = "TP4"
@@ -154,6 +156,7 @@ symbol = "TestPoint"
 value = "TP"
 footprint = "TestPoint_Pad_D1.0mm"
 at = [175.26, 35.56]
+fields = { assembly = "no" }
 
 [[parts]]
 ref = "TP5"
@@ -161,6 +164,7 @@ symbol = "TestPoint"
 value = "TP"
 footprint = "TestPoint_Pad_D1.0mm"
 at = [175.26, 43.18]
+fields = { assembly = "no" }
 
 [[parts]]
 ref = "TP7"
@@ -168,6 +172,7 @@ symbol = "TestPoint"
 value = "TP"
 footprint = "TestPoint_Pad_D1.0mm"
 at = [175.26, 58.42]
+fields = { assembly = "no" }
 
 [[parts]]
 ref = "TP8"
@@ -175,6 +180,7 @@ symbol = "TestPoint"
 value = "TP"
 footprint = "TestPoint_Pad_D1.0mm"
 at = [175.26, 66.04]
+fields = { assembly = "no" }
 
 [[parts]]
 ref = "TP9"
@@ -182,6 +188,7 @@ symbol = "TestPoint"
 value = "TP"
 footprint = "TestPoint_Pad_D1.0mm"
 at = [175.26, 73.66]
+fields = { assembly = "no" }
 
 [[nets]]
 name = "EN"

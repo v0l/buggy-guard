@@ -200,6 +200,7 @@ symbol = "TestPoint"
 value = "TP"
 footprint = "TestPoint_Pad_D1.0mm"
 at = [248.92, 30.48]
+fields = { assembly = "no" }
 
 [[nets]]
 name = "VBAT_RAW"

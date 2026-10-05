@@ -299,6 +299,7 @@ symbol = "TestPoint"
 value = "TP"
 footprint = "TestPoint_Pad_D1.0mm"
 at = [215.9, 25.4]
+fields = { assembly = "no" }
 
 [[parts]]
 ref = "TP12"
@@ -306,6 +307,7 @@ symbol = "TestPoint"
 value = "TP"
 footprint = "TestPoint_Pad_D1.0mm"
 at = [215.9, 33.02]
+fields = { assembly = "no" }
 
 [[parts]]
 ref = "TP13"
@@ -313,6 +315,7 @@ symbol = "TestPoint"
 value = "TP"
 footprint = "TestPoint_Pad_D1.0mm"
 at = [215.9, 40.64]
+fields = { assembly = "no" }
 
 [[parts]]
 ref = "TP14"
@@ -320,6 +323,7 @@ symbol = "TestPoint"
 value = "TP"
 footprint = "TestPoint_Pad_D1.0mm"
 at = [215.9, 48.26]
+fields = { assembly = "no" }
 
 [[parts]]
 ref = "TP15"
@@ -327,6 +331,7 @@ symbol = "TestPoint"
 value = "TP"
 footprint = "TestPoint_Pad_D1.0mm"
 at = [215.9, 55.88]
+fields = { assembly = "no" }
 
 [[parts]]
 ref = "TP16"
@@ -334,6 +339,7 @@ symbol = "TestPoint"
 value = "TP"
 footprint = "TestPoint_Pad_D1.0mm"
 at = [215.9, 63.5]
+fields = { assembly = "no" }
 
 [[parts]]
 ref = "TP17"
@@ -341,6 +347,7 @@ symbol = "TestPoint"
 value = "TP"
 footprint = "TestPoint_Pad_D1.0mm"
 at = [215.9, 71.12]
+fields = { assembly = "no" }
 
 [[nets]]
 name = "PEDAL_5V"
