@@ -4,8 +4,8 @@ description = "USB Type-C receptacle for USB 2.0 and PD, http://www.krhro.com/up
 tags = ["usb", "usb-c", "2.0", "pd"]
 mount = "smd"
 model = "3dmodels/USB_C_Receptacle_HRO_TYPE-C-31-M-12.step"
-model_offset = [-4.47, 2.63, 3.21]
-model_rotate = [90.0, 0.0, 0.0]
+model_offset = [-4.47, -3.65, 0.0]
+model_rotate = [-90.0, 0.0, 0.0]
 
 [[pads]]
 kind = "npth"
