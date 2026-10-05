@@ -56,7 +56,7 @@ def main():
     rows = []
     for (mfr, mpn), g in groups.items():
         refs = sorted(g["refs"], key=natural)
-        small = mpn.startswith(("RC0603", "CL10"))
+        small = mpn.startswith(("RC0603", "GRM188"))
         source = f"LCSC {g['lcsc']}, not stocked at Mouser" if g["lcsc"] else "Mouser"
         qty = order_qty(len(refs), boards, small, spare(refs))
         rows.append([mfr, mpn, qty, len(refs), " ".join(refs), "/".join(g["values"]), source])

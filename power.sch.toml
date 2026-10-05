@@ -88,7 +88,7 @@ ref = "C4"
 symbol = "C"
 at = [132.08, 30.48]
 value = "2.2n/50V"
-fields = { mfr = "Samsung Electro-Mechanics", mpn = "CL10B222KB8NNNC" }
+fields = { mfr = "Murata", mpn = "GRM188R71H222KA01D" }
 
 [[parts]]
 ref = "L1"
@@ -124,14 +124,14 @@ ref = "C5"
 symbol = "C"
 at = [144.78, 63.5]
 value = "3.3n"
-fields = { mfr = "Samsung Electro-Mechanics", mpn = "CL10B332KB8NNNC" }
+fields = { mfr = "Murata", mpn = "GRM188R71H332KA01D" }
 
 [[parts]]
 ref = "C6"
 symbol = "C"
 at = [134.62, 73.66]
 value = "330p"
-fields = { mfr = "Samsung Electro-Mechanics", mpn = "CL10C331JB8NNNC", dielectric = "C0G" }
+fields = { mfr = "Murata", mpn = "GRM1885C1H331JA01D", dielectric = "C0G" }
 
 [[parts]]
 ref = "C7"
@@ -168,14 +168,14 @@ ref = "C9"
 symbol = "C"
 at = [195.58, 55.88]
 value = "1u"
-fields = { mfr = "Samsung Electro-Mechanics", mpn = "CL10A105KB8NNNC" }
+fields = { mfr = "Murata", mpn = "GRM188R61E105KA12D" }
 
 [[parts]]
 ref = "C10"
 symbol = "C"
 at = [226.06, 55.88]
 value = "10u"
-fields = { mfr = "Samsung Electro-Mechanics", mpn = "CL10A106KP8NNNC" }
+fields = { mfr = "Murata", mpn = "GRM188R61A106KE69D" }
 
 [[parts]]
 ref = "R7"
@@ -196,7 +196,7 @@ ref = "C11"
 symbol = "C"
 at = [33.02, 86.36]
 value = "100n"
-fields = { mfr = "Samsung Electro-Mechanics", mpn = "CL10B104KB8NNNC" }
+fields = { mfr = "Murata", mpn = "GRM188R71H104KA93D" }
 
 [[parts]]
 ref = "R9"

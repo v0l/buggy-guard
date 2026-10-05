@@ -2,15 +2,15 @@ Manufacturer,Manufacturer Part Number,Quantity,Per Board,Designators,Value,Sourc
 Same Sky,CEM-1205-IC,1,1,BZ1,5V,Mouser
 Nichicon,UUX2A470MNL1GS,1,1,C1,47u/100V,Mouser
 Murata,GRM32ER72A225KA35L,2,2,C2 C3,2.2u/100V,Mouser
-Samsung Electro-Mechanics,CL10B222KB8NNNC,10,1,C4,2.2n/50V,Mouser
-Samsung Electro-Mechanics,CL10B332KB8NNNC,10,1,C5,3.3n,Mouser
-Samsung Electro-Mechanics,CL10C331JB8NNNC,10,1,C6,330p,Mouser
+Murata,GRM188R71H222KA01D,10,1,C4,2.2n/50V,Mouser
+Murata,GRM188R71H332KA01D,10,1,C5,3.3n,Mouser
+Murata,GRM1885C1H331JA01D,10,1,C6,330p,Mouser
 Murata,GRM31CR61C226KE15L,2,2,C7 C8,22u/16V,Mouser
-Samsung Electro-Mechanics,CL10A105KB8NNNC,10,2,C9 C14,1u,Mouser
-Samsung Electro-Mechanics,CL10A106KP8NNNC,10,3,C10 C12 C27,10u,Mouser
-Samsung Electro-Mechanics,CL10B104KB8NNNC,20,13,C11 C13 C15 C16 C17 C18 C19 C20 C21 C22 C23 C24 C28,100n,Mouser
-Samsung Electro-Mechanics,CL10B103KB8NNNC,10,1,C25,10n,Mouser
-Samsung Electro-Mechanics,CL10B102KB8NNNC,10,1,C26,1n,Mouser
+Murata,GRM188R61E105KA12D,10,2,C9 C14,1u,Mouser
+Murata,GRM188R61A106KE69D,10,3,C10 C12 C27,10u,Mouser
+Murata,GRM188R71H104KA93D,20,13,C11 C13 C15 C16 C17 C18 C19 C20 C21 C22 C23 C24 C28,100n,Mouser
+Murata,GRM188R71H103KA01D,10,1,C25,10n,Mouser
+Murata,GRM188R71H102KA01D,10,1,C26,1n,Mouser
 Diodes Inc,S1D-13-F,3,2,D1 D9,S1D,Mouser
 Littelfuse,SMAJ58A,2,1,D2,SMAJ58A,Mouser
 onsemi,SS14,2,1,D3,SS14,Mouser

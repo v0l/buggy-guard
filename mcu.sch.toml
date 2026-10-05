@@ -14,14 +14,14 @@ ref = "C12"
 symbol = "C"
 at = [40.64, 22.86]
 value = "10u"
-fields = { mfr = "Samsung Electro-Mechanics", mpn = "CL10A106KP8NNNC" }
+fields = { mfr = "Murata", mpn = "GRM188R61A106KE69D" }
 
 [[parts]]
 ref = "C13"
 symbol = "C"
 at = [48.26, 22.86]
 value = "100n"
-fields = { mfr = "Samsung Electro-Mechanics", mpn = "CL10B104KB8NNNC" }
+fields = { mfr = "Murata", mpn = "GRM188R71H104KA93D" }
 
 [[parts]]
 ref = "R10"
@@ -35,7 +35,7 @@ ref = "C14"
 symbol = "C"
 at = [25.4, 58.42]
 value = "1u"
-fields = { mfr = "Samsung Electro-Mechanics", mpn = "CL10A105KB8NNNC" }
+fields = { mfr = "Murata", mpn = "GRM188R61E105KA12D" }
 
 [[parts]]
 ref = "SW1"
