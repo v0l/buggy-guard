@@ -323,13 +323,13 @@ contract above.
 
 | block | parts | notes |
 |---|---|---|
-| radio | U1 ESP32-C3-MINI-1-N4 | antenna at the top edge, top right, so the hand holding the bottom does not cover it; copper keepout under it on both layers |
+| radio | U1 ESP32-C3-MINI-1-N4 | antenna at the top edge, top right, so the hand holding the bottom does not cover it. The module sits 3.6 mm in from the right edge so it clears the rounded corner; copper keepout under the antenna and 2.7 mm to its left on all four layers |
 | charging | J1 USB-C, U4 USBLC6, U2 MCP73831-2 (4.2 V), R3 4.7k | 213 mA charge, red D2 while charging |
 | power path | D1 B5819W from VBUS, Q1 AO3401A from the cell, R5 10k | Microchip AN1149 load sharing: runs from USB when plugged in, the cell is never charged and loaded at once. R5 drains VBUS in about 50 ms on unplug, while VSYS sits a body diode below the cell |
 | 3V3 | U3 AP2112K-3.3, SW1 slide switch on its EN | off means only the charger and the battery divider (about 8 uA) draw from the cell |
 | display | J3, Waveshare 1.3inch OLED Module (C), SH1107 128x64 | soldered down on its own header, centred on the board, rear connector removed |
 | controls | SW2 START/STOP, SW3 SPEED, 12 mm tactile | SPEED is on GPIO9: hold it while powering on for download mode |
-| sound | BZ1 Murata PKLCS1212E4001 piezo, bottom side | driven differentially from two pins through 100 R each, 6.6 V p-p |
+| sound | BZ1 Murata PKLCS1212E4001 piezo, top left above the display | driven differentially from two pins through 100 R each, 6.6 V p-p |
 
 ESP32-C3 pins:
 
@@ -359,6 +359,30 @@ The cell must be a protected LiPo (with its own protection board), 250 mAh or mo
 charge stays under 1C. Nothing on the pendant stops it draining flat: the divider draws from it
 even when off, and with SW1 on the ESP runs until 3V3 browns out. Firmware should show low
 battery at 3.5 V on VBAT_ADC and go to deep sleep at 3.3 V, below which U3 cannot hold 3V3.
+
+The back of the board is kept clear for the cell: only J2, R1, R2 (under the USB socket) and the
+test pads are on it.
+
+### Pendant simulations
+
+`pendant-dc-usb`, `pendant-dc-battery`, `pendant-thermal` and `pendant-thermal-enclosed`. The DC
+runs load the LDO input with 400 mA, the ESP32 with 350 mA (a WiFi burst) and the display with
+30 mA; the USB run adds a 220 mA charge.
+
+| run | reading |
+|---|---|
+| dc-usb | VSYS 4.75 V at U3 from 5 V (D1 linked at 0.5 ohm), 3V3 3.26 V at the ESP32 pad, 40 mV below U3 |
+| dc-battery | cell at 3.5 V: VSYS 3.41 V at U3 (Q1 at 80 mohm), 3V3 3.26 V at the ESP32 |
+| thermal, 30 C, 10 W/m2K | U2 pads 94.6 C, junction about 131 C; U3 junction 82 C; U1 pads 55 C |
+| thermal enclosed, 35 C, 5 W/m2K | U2 pads 113 C, junction about 150 C; U3 junction 100 C; U1 pads 74 C |
+
+The thermal runs are the worst case: charging from 3.0 V (0.45 W in U2) while the radio runs off
+USB. U2 then sits on its thermal regulation, which cuts the charge current until the cell is up;
+U2's theta-jc of 81 C/W is an estimate, Microchip only gives theta-ja (230 C/W on minimum copper).
+At 3.7 V the charger dissipates 0.31 W and the open-air junction is about 102 C.
+
+The USB socket's VBUS pins A4 and A9 are separate copper on this board: A4 feeds the charger and
+A9 the power path. Every USB-C plug joins them, so the DC run holds both at 5 V.
 
 The ESP32-C3 model is Espressif's STEP from their KiCad library. The 12 mm switch, piezo and OLED
 module models are boxes drawn by `python3 3dmodels/make_models.py`.

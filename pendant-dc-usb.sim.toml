@@ -1,0 +1,48 @@
+name = "pendant-dc-usb"
+kind = "dc"
+layout = "pendant"
+cell = 0.05
+
+[[supplies]]
+pad = "J1.A4"
+voltage = "5V"
+
+[[supplies]]
+pad = "J1.A9"
+voltage = "5V"
+
+[[supplies]]
+pad = "J1.A1"
+voltage = "0V"
+
+[[supplies]]
+pad = "J1.A12"
+voltage = "0V"
+
+[[supplies]]
+pad = "U3.5"
+voltage = "3.3V"
+
+[[loads]]
+pad = "U2.4"
+current = "220mA"
+return = "U2.2"
+
+[[loads]]
+pad = "U3.1"
+current = "400mA"
+return = "U3.2"
+
+[[loads]]
+pad = "U1.3"
+current = "350mA"
+return = "U1.1"
+
+[[loads]]
+pad = "J3.1"
+current = "30mA"
+return = "J3.2"
+
+[[links]]
+ref = "D1"
+resistance = "0.5ohm"

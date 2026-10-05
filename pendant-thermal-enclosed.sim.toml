@@ -1,0 +1,30 @@
+name = "pendant-thermal-enclosed"
+kind = "thermal"
+layout = "pendant"
+cell = 0.2
+ambient = 35.0
+h_top = 5.0
+h_bottom = 5.0
+
+[[sources]]
+ref = "U2"
+power = "0.45W"
+theta_jc = 81.0
+pads = ["2", "3", "4"]
+
+[[sources]]
+ref = "U3"
+power = "0.2W"
+theta_jc = 96.0
+pads = ["2", "1"]
+
+[[sources]]
+ref = "U1"
+power = "0.35W"
+theta_jc = 10.0
+pads = ["49", "1", "2"]
+
+[[sources]]
+ref = "D1"
+power = "0.05W"
+theta_jc = 50.0
