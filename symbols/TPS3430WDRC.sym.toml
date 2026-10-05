@@ -37,6 +37,7 @@ unit = 1
 number = "7"
 name = "WDI"
 type = "input"
+levels = { vih = "80%", vil = "30%" }
 at = [-10.16, -7.62]
 side = "left"
 length = 2.54
@@ -114,3 +115,10 @@ at = [10.16, 0.0]
 side = "right"
 length = 2.54
 unit = 1
+
+[levels]
+supply = "VDD1"
+vih = "0.8V"
+vil = "0.25V"
+min = "-0.3V"
+max = "100%+0.3V"

@@ -530,3 +530,11 @@ side = "bottom"
 length = 2.54
 unit = 1
 hidden = true
+
+[levels]
+supply = "3V3"
+vih = "75%"
+vil = "25%"
+min = "-0.3V"
+max = "100%+0.3V"
+leakage = "50nA"

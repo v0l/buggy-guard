@@ -63,3 +63,11 @@ side = "right"
 length = 7.62
 unit = 1
 shape = "inverted"
+
+[levels]
+supply = "VCC"
+vih = "2V"
+vil = "0.8V"
+min = "-0.5V"
+max = "5.5V"
+leakage = "1uA"
