@@ -158,7 +158,7 @@ value = "US1"
 ref = "R41"
 symbol = "R"
 at = [129.54, 81.28]
-value = "100"
+value = "1k"
 rotation = 90.0
 
 [[parts]]
@@ -184,7 +184,7 @@ value = "US2"
 ref = "R44"
 symbol = "R"
 at = [129.54, 106.68]
-value = "100"
+value = "1k"
 rotation = 90.0
 
 [[parts]]

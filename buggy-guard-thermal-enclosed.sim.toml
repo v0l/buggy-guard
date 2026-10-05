@@ -1,0 +1,31 @@
+name = "buggy-guard-thermal-enclosed"
+kind = "thermal"
+layout = "buggy-guard"
+cell = 0.4
+ambient = 50.0
+h_top = 5.0
+h_bottom = 5.0
+
+[[sources]]
+ref = "U1"
+power = "0.9W"
+theta_jc = 45.0
+pads = ["9", "1"]
+
+[[sources]]
+ref = "U3"
+power = "0.75W"
+theta_jc = 40.0
+pads = ["41", "1"]
+
+[[sources]]
+ref = "Q3"
+power = "0.02W"
+theta_jc = 60.0
+pads = ["2"]
+
+[[sources]]
+ref = "BZ1"
+power = "0.15W"
+theta_jc = 0.0
+pads = ["1", "2"]

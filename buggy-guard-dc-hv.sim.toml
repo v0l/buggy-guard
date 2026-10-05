@@ -1,0 +1,42 @@
+name = "buggy-guard-dc-hv"
+kind = "dc"
+layout = "buggy-guard"
+cell = 0.05
+
+[[supplies]]
+pad = "J1.1"
+voltage = "50V"
+
+[[supplies]]
+pad = "J1.2"
+voltage = "0V"
+
+[[loads]]
+pad = "U1.2"
+current = "1A"
+return = "U1.1"
+
+[[loads]]
+pad = "J4.1"
+current = "300mA"
+return = "J1.2"
+
+[[links]]
+ref = "F1"
+resistance = "0.095ohm"
+
+[[links]]
+ref = "D1"
+resistance = "0.4ohm"
+
+[[links]]
+ref = "Q3"
+resistance = "50mohm"
+a = "2"
+b = "3"
+
+[[links]]
+ref = "J15"
+resistance = "50mohm"
+a = "1"
+b = "2"

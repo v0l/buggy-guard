@@ -1,0 +1,25 @@
+name = "buggy-guard-sw-xtalk"
+layout = "buggy-guard"
+cell = 0.1
+excite = ["SW"]
+region = [30, 3, 52, 26]
+
+[frequency]
+start = "10MHz"
+stop = "1GHz"
+points = 100
+
+[[ports]]
+name = "SW"
+pad = "U1.8"
+reference = "In1.Cu"
+
+[[ports]]
+name = "SCL"
+pad = "R21.2"
+reference = "In1.Cu"
+
+[[ports]]
+name = "VBAT_ADC"
+pad = "R7.2"
+reference = "In1.Cu"

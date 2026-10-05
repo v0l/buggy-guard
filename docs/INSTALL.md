@@ -43,9 +43,11 @@ the ESC's throttle plug before you unplug the pedal.
 
 1. **Mount the board.** Four M3 holes, 92 x 72 mm apart. Put it in a box out of the rain, away
    from the motor phase wires.
-2. **Battery.** Run two wires from the battery to J1. Take battery + from after the buggy's main
-   fuse and switch, so the board turns off with the buggy. 0.5 mm² (20 AWG) wire is enough;
-   the board draws about 0.1 A.
+2. **Battery.** Run two wires to J1 from the ESC's own battery terminals, not from the battery.
+   The board's ground also reaches the ESC through the throttle and brake plugs, so if J1 pin 2
+   went to the battery instead, motor current would share the thin signal grounds and offset
+   the throttle. Taking + at the ESC also puts it after the buggy's main fuse and switch.
+   0.5 mm² (20 AWG) wire is enough; the board draws about 0.1 A.
 3. **Power lock.** Most ESCs have a key switch with two wires: a thick one that is always at
    battery voltage, and a thin lock wire that turns the ESC on. Find them with the meter: with
    the battery connected and the key off, the lock wire reads 0 V. Unplug the battery again,

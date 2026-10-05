@@ -197,10 +197,69 @@ ESP32, 0.15 W into the buzzer and 0.02 W into the ignition FET.
 | ignition FET | 50.5 C |
 
 Both junctions are the number to watch. The buck is the hot spot because it dissipates in a small
-area with only the ground pad to lose heat through, and 111 C is above the LM5164's 125 C limit
-only by a small margin at 40 C ambient. That number is an estimate from a fitted theta-jc, not a
+area with only the ground pad to lose heat through, and 113.5 C leaves 36.5 C to the LM5164's
+150 C junction limit at 40 C ambient. That number is an estimate from a fitted theta-jc, not a
 measurement, and it assumes the pad ties into the ground plane well. If the real thing runs hot,
 the fix is copper under U1 rather than a bigger inductor.
+
+### `buggy-guard-thermal-enclosed`, sealed box
+
+The same sources at 50 C ambient with 5 W/m2K on both faces, for a board shut in a box under the
+seat with no air moving.
+
+| reading | value |
+|---|---|
+| board peak | 97.1 C, under U1 |
+| U1 junction | 137.6 C, 12.4 C under the 150 C limit |
+| U3 pads | 88.5 C |
+| U3 junction | 118.5 C |
+| buzzer pads | 79.8 C |
+
+The buck still clears its limit, but with little margin, and 0.75 W of continuous WiFi into the
+ESP32 is pessimistic. A sealed box wants vent holes or a thermal pad from U1 to the lid.
+
+### `buggy-guard-dc-5v`, +5V rail
+
+5 V held at L1.2 and 0 V at C8.2, the output caps' ground. Loads: 520 mA into the LDO, 40 mA
+through the buzzer and Q1, 15 mA per sonar port, 10 mA hall, 20 mA pedal, and the op-amp and
+gates. F2 and F3 are linked at 50 mohm, so the readings are copper only and leave out the PTCs'
+own drop.
+
+| reading | value |
+|---|---|
+| LDO input | 4.990 V, 10 mV drop at 520 mA |
+| worst sensor feed | 4.981 V at J8.1, 19 mV drop |
+| peak current density | 72 A/mm2, F.Cu at (49.6, 27.7) |
+
+### `buggy-guard-dc-hv`, 48 V path at the fuse limit
+
+50 V at J1.1 and 0 V at J1.2, 1 A into U1's VIN pin (the fuse rating, far above the buck's
+real 0.1 A) and the 300 mA ignition line out of J4.1. F1 at 95 mohm, D1 at 400 mohm, Q3 and the
+e-stop loop at 50 mohm each.
+
+| reading | value |
+|---|---|
+| U1 VIN | 49.33 V, 670 mV down, 644 mV of it across F1 and D1 |
+| ignition line | 49.28 V at J4.1 |
+| peak current density | 123 A/mm2 at a track-to-pad corner by C2.1. The bulk of the 0.6 mm track carries 62 A/mm2 |
+
+The first run peaked at 163 A/mm2 in a single via: the engine had dropped VIN onto B.Cu for
+2 mm beside D2. That jog is now on F.Cu, so the full input current never passes through a via.
+
+### `buggy-guard-sw-xtalk`, switch node coupling
+
+FDTD of the buck corner (x 30-52, y 3-26 mm) at 0.1 mm cells, 10 MHz to 1 GHz, driving U1.8
+(SW) and listening on R21.2 (I2C_SCL, which runs on In2 straight under the SW copper) and R7.2
+(VBAT_ADC, on B.Cu under it). Two minutes on the GPU.
+
+| path | worst | 48 V edge |
+|---|---|---|
+| SW to I2C_SCL | -73 dB at 1 GHz | 1.7 mV step |
+| SW to VBAT_ADC | -90 dB at 1 GHz | 0.3 mV step |
+
+The solid In1 ground between F.Cu and the inner signals shields them. Both are far under any
+logic or ADC threshold. Check warns that the R7 and R21 models are dropped: the ports sit on
+their pads, which is intended.
 
 ### `buggy-guard-safety`, logic
 

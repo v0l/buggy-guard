@@ -1,0 +1,71 @@
+name = "buggy-guard-dc-5v"
+kind = "dc"
+layout = "buggy-guard"
+cell = 0.05
+
+[[supplies]]
+pad = "L1.2"
+voltage = "5V"
+
+[[supplies]]
+pad = "C8.2"
+voltage = "0V"
+
+[[loads]]
+pad = "U2.1"
+current = "520mA"
+return = "U2.2"
+
+[[loads]]
+pad = "BZ1.1"
+current = "40mA"
+return = "BZ1.2"
+
+[[loads]]
+pad = "J8.1"
+current = "15mA"
+return = "J8.4"
+
+[[loads]]
+pad = "J9.1"
+current = "15mA"
+return = "J9.4"
+
+[[loads]]
+pad = "J12.1"
+current = "10mA"
+return = "J12.2"
+
+[[loads]]
+pad = "J6.1"
+current = "20mA"
+return = "J6.2"
+
+[[loads]]
+pad = "U9.8"
+current = "2mA"
+return = "U9.4"
+
+[[loads]]
+pad = "U7.5"
+current = "1mA"
+return = "U7.3"
+
+[[loads]]
+pad = "U8.5"
+current = "1mA"
+return = "U8.3"
+
+[[links]]
+ref = "Q1"
+resistance = "50mohm"
+a = "3"
+b = "2"
+
+[[links]]
+ref = "F2"
+resistance = "0.05ohm"
+
+[[links]]
+ref = "F3"
+resistance = "0.05ohm"

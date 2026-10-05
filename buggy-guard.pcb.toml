@@ -1070,7 +1070,7 @@ points = [[12.775, 21.225], [4.975, 29.025], [4.975, 45.775]]
 
 [[tracks]]
 net = "VIN"
-layer = "In2.Cu"
+layer = "F.Cu"
 points = [[5.0, 47.0], [4.975, 45.775]]
 
 [[tracks]]
@@ -1110,7 +1110,7 @@ points = [[31.325, 10.175], [31.625, 10.475]]
 
 [[tracks]]
 net = "VIN"
-layer = "B.Cu"
+layer = "F.Cu"
 points = [[31.625, 10.475], [32.775, 11.625], [32.775, 12.525]]
 
 [[tracks]]
@@ -2656,21 +2656,6 @@ net = "+3V3"
 layer = "F.Cu"
 width = 0.28
 points = [[49.15, 32.525], [49.29, 32.525]]
-
-[[vias]]
-net = "VIN"
-at = [4.975, 45.775]
-via = "std"
-
-[[vias]]
-net = "VIN"
-at = [31.625, 10.475]
-via = "std"
-
-[[vias]]
-net = "VIN"
-at = [32.775, 12.525]
-via = "std"
 
 [[vias]]
 net = "VIN"
