@@ -8,6 +8,14 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 SHEETS = ["power", "mcu", "safety", "io"]
 OUT = ROOT / "docs" / "bom-order.csv"
+MOUSER = ROOT / "docs" / "bom-mouser.csv"
+MOUSER_COLUMNS = [
+    "Mfr Part Number (Input)", "Manufacturer Part Number", "Mouser Part Number", "Manufacturer Name",
+    "Description", "Quantity 1", "Unit Price 1", "Quantity 2", "Unit Price 2", "Quantity 3", "Unit Price 3",
+    "Quantity 4", "Unit Price 4", "Quantity 5", "Unit Price 5", "Order Quantity", "Order Unit Price",
+    "Min./Mult.", "Availability", "Lead Time in Days", "Lifecycle", "NCNR", "RoHS", "Pb Free", "Package Type",
+    "Datasheet URL", "Product Image", "Design Risk",
+]
 
 
 def parts():
@@ -82,7 +90,23 @@ def main():
         w = csv.writer(f)
         w.writerow(["Manufacturer", "Manufacturer Part Number", "Quantity", "Per Board", "Designators", "Value", "Source"])
         w.writerows(rows + extras)
+    mouser = [r for r in rows + extras if r[6] == "Mouser"]
+    with MOUSER.open("w", newline="") as f:
+        w = csv.writer(f)
+        w.writerow(MOUSER_COLUMNS)
+        for mfr, mpn, qty, _, refs, value, _ in mouser:
+            line = dict.fromkeys(MOUSER_COLUMNS, "")
+            line.update({
+                "Mfr Part Number (Input)": mpn,
+                "Manufacturer Part Number": mpn,
+                "Manufacturer Name": mfr,
+                "Description": f"{value} {refs}",
+                "Quantity 1": qty,
+                "Order Quantity": qty,
+            })
+            w.writerow(line.values())
     print(f"{OUT.relative_to(ROOT)}: {len(rows)} board lines, {len(extras)} extras, {boards} board(s)")
+    print(f"{MOUSER.relative_to(ROOT)}: {len(mouser)} lines in Mouser's BOM template layout")
 
 
 main()

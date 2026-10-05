@@ -94,8 +94,8 @@ sees it. The kill is latched in firmware until the pedal is at zero and the fob 
 | J2 | USB-C | HRO TYPE-C-31-M-12, from LCSC (C165948). Mouser does not stock it |
 
 Every part carries `mfr` and `mpn` fields. `python3 docs/order_bom.py N` writes
-`docs/bom-order.csv` for N boards: Mouser's BOM import reads the manufacturer part number and
-quantity columns. 0603 resistors and capacitors are rounded up to 10, each small semiconductor
+`docs/bom-order.csv` for N boards, and `docs/bom-mouser.csv` in the column layout of Mouser's
+BOM import template, without J2. 0603 resistors and capacitors are rounded up to 10, each small semiconductor
 and PTC gets one spare for hand assembly, and the U.FL antenna, XH housings and crimps are added
 at the end.
 
@@ -316,8 +316,10 @@ The hardware is the safety net; the firmware only ever removes throttle. It must
 
 The handheld remote is a separate board in the same project: `pendant.board.toml`,
 `pendant.sch.toml` and `pendant.pcb.toml`, fab package in `fab-pendant/`. It is a 60 x 66 mm
-2 layer JLC board with GND poured on both sides. It talks ESP-NOW to the buggy and is the "fob"
-in the firmware contract above.
+4 layer JLC board (JLC04161H-7628, like the main board): In1 is solid GND, F, In2 and B carry
+signals with GND poured around them. 2 layers did not leave room for every ground pad around
+the ESP32-C3 to reach the pour. It talks ESP-NOW to the buggy and is the "fob" in the firmware
+contract above.
 
 | block | parts | notes |
 |---|---|---|
@@ -325,7 +327,7 @@ in the firmware contract above.
 | charging | J1 USB-C, U4 USBLC6, U2 MCP73831-2 (4.2 V), R3 4.7k | 213 mA charge, red D2 while charging |
 | power path | D1 B5819W from VBUS, Q1 AO3401A from the cell | Microchip AN1149 load sharing: runs from USB when plugged in, the cell is never charged and loaded at once |
 | 3V3 | U3 AP2112K-3.3, SW1 slide switch on its EN | off means only the charger and the 4.5 uA battery divider draw from the cell |
-| display | J3, Waveshare 1.3inch OLED Module (C), SH1107 128x64 | plugs straight into a 1x07 2.54 mm socket, header centred on the board |
+| display | J3, Waveshare 1.3inch OLED Module (C), SH1107 128x64 | soldered down on its own header, centred on the board, rear connector through a slot |
 | controls | SW2 START/STOP, SW3 SPEED, 12 mm tactile | SPEED is on GPIO9: hold it while powering on for download mode |
 | sound | BZ1 Murata PKLCS1212E4001 piezo, bottom side | driven differentially from two pins through 100 R each, 6.6 V p-p |
 
@@ -345,11 +347,14 @@ ESP32-C3 pins:
 | 18, 19 | USB D-, D+ | native USB serial/JTAG for flashing |
 | 20, 21 | U0RXD, U0TXD | bottom test pads |
 
-The OLED stack: an 8.5 mm female socket on the pendant and the module's own male header put the
-module PCB about 11 mm above the board, held by M2.5 x 11 mm standoffs in its four holes (they
-are part of the J3 footprint). The module's rear 7 pin connector hangs 6 mm below it, leaving
-about 5 mm over the parts under it, which are all 0603 and SOT-23. The module ships in 4-wire SPI
-mode, which is how it is wired; moving its IM resistor to 1 selects I2C on DIN/CLK instead.
+The OLED stack: the module's own 1x07 male header is soldered straight into J3, so its 2.5 mm
+plastic spacer sets the gap and the module PCB sits 2.5 mm above the pendant, with 2.5 mm
+spacers and M2.5 screws in its four holes (they are part of the J3 footprint). The top of the
+glass is about 5.6 mm above the board. The module's rear 7 pin connector would hang 6 mm below
+it, so it drops through a 22.5 x 9.8 mm slot in the pendant and sticks out about 1.9 mm under
+the board; the enclosure needs room for that. No parts sit under the module on the top side,
+since its own rear parts leave about 1 mm. The module ships in 4-wire SPI mode, which is how it
+is wired; moving its IM resistor to 1 selects I2C on DIN/CLK instead.
 
 The ESP32-C3, 12 mm switch, piezo and OLED 3D models are boxes drawn by
 `python3 3dmodels/make_models.py`. The vendor ESP32-C3 STEP and VRML do not mesh correctly in
@@ -357,11 +362,12 @@ the agentee viewer.
 
 ## Still to do
 
-- Pendant: check the 7 pin order (VCC GND DIN CLK CS DC RST) against the silk on the actual
-  Waveshare module before soldering the socket, `footprints/OLED_Waveshare_1.3in_C_Socket.fp.toml`.
+- Pendant: check the 7 pin order (VCC GND DIN CLK CS DC RST) and the rear connector position
+  on an actual Waveshare module before soldering it down. The slot assumes the connector sits
+  centred on the module's bottom edge, measured off Waveshare's drawing to about 1 mm,
+  `footprints/OLED_Waveshare_1.3in_C.fp.toml` and the cutout in `pendant.board.toml`.
 - Pendant: J2 pin 1 is battery +. JST PH LiPo leads come wired both ways round; check before
   plugging in, a reversed cell destroys U2 and U3.
-
 - Firmware has not been written. The board is the safety layer; the behaviour above is the
   contract the firmware must meet.
 - The e-brake output is an open-drain pull-down, correct for the low-active brake input on most
