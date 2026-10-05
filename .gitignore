@@ -3,3 +3,7 @@
 *.s4p
 *.s2p
 *.vcd
+
+# fab outputs: regenerate with agentee
+fab/
+fab-*/
