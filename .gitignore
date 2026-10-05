@@ -9,4 +9,4 @@ fab/
 fab-*/
 
 # 3D exports: regenerate with agentee export
-/*.step
+/hardware/*.step
