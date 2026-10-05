@@ -1,0 +1,59 @@
+# imported from KiCad Switch:SW_SPDT
+name = "SW_SPDT"
+reference = "SW"
+description = "Switch, single pole double throw"
+keywords = ["switch", "single-pole", "double-throw", "spdt", "ON-ON"]
+pin_names = "hidden"
+
+[[graphics]]
+kind = "circle"
+center = [-2.032, 0.0]
+radius = 0.4572
+
+[[graphics]]
+kind = "polyline"
+points = [[-1.651, -0.254], [1.651, -2.286]]
+
+[[graphics]]
+kind = "circle"
+center = [2.032, -2.54]
+radius = 0.4572
+
+[[graphics]]
+kind = "circle"
+center = [2.032, 2.54]
+radius = 0.4572
+
+[[graphics]]
+kind = "rect"
+unit = 1
+start = [-3.175, -3.81]
+end = [3.175, 3.81]
+fill = "background"
+
+[[pins]]
+number = "2"
+name = "B"
+type = "passive"
+at = [-5.08, 0.0]
+side = "left"
+length = 2.54
+unit = 1
+
+[[pins]]
+number = "1"
+name = "A"
+type = "passive"
+at = [5.08, -2.54]
+side = "right"
+length = 2.54
+unit = 1
+
+[[pins]]
+number = "3"
+name = "C"
+type = "passive"
+at = [5.08, 2.54]
+side = "right"
+length = 2.54
+unit = 1

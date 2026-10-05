@@ -1,0 +1,464 @@
+name = "pendant"
+board = "pendant"
+no_connect = ["J1.A8", "J1.B8", "U3.4", "U1.4", "U1.7", "U1.9", "U1.10", "U1.15", "U1.17", "U1.24", "U1.25", "U1.28", "U1.29", "U1.32", "U1.33", "U1.34", "U1.35"]
+
+[[parts]]
+ref = "J1"
+symbol = "USB_C_Receptacle_USB2.0_16P"
+value = "USB-C"
+at = [25.4, 49.53]
+mirror = true
+
+[[parts]]
+ref = "R1"
+symbol = "R"
+value = "5.1k"
+at = [49.53, 74.93]
+
+[[parts]]
+ref = "R2"
+symbol = "R"
+value = "5.1k"
+at = [57.15, 74.93]
+
+[[parts]]
+ref = "U4"
+symbol = "USBLC6-2SC6"
+value = "USBLC6-2SC6"
+at = [59.69, 39.37]
+
+[[parts]]
+ref = "U2"
+symbol = "MCP73831-2-OT"
+value = "MCP73831-2"
+at = [100.33, 39.37]
+fields = { mpn = "Microchip MCP73831T-2ACI/OT" }
+
+[[parts]]
+ref = "C1"
+symbol = "C"
+value = "4.7u"
+at = [82.55, 44.45]
+
+[[parts]]
+ref = "C2"
+symbol = "C"
+value = "4.7u"
+at = [124.46, 49.53]
+
+[[parts]]
+ref = "R3"
+symbol = "R"
+value = "4.7k"
+at = [111.76, 59.69]
+
+[[parts]]
+ref = "R4"
+symbol = "R"
+value = "1k"
+at = [85.09, 25.4]
+
+[[parts]]
+ref = "D2"
+symbol = "LED"
+value = "red"
+at = [95.25, 17.78]
+rotation = 180.0
+
+[[parts]]
+ref = "J2"
+symbol = "Conn_01x02"
+value = "LiPo"
+at = [139.7, 49.53]
+mirror = true
+footprint = "JST_PH_B2B-PH-K_1x02_P2.00mm_Vertical"
+
+[[parts]]
+ref = "D1"
+symbol = "D"
+value = "B5819W"
+at = [160.02, 25.4]
+footprint = "D_SOD-123"
+fields = { mpn = "B5819W, 40 V 1 A Schottky" }
+
+[[parts]]
+ref = "Q1"
+symbol = "AO3401A"
+value = "AO3401A"
+at = [160.02, 44.45]
+rotation = 270.0
+
+[[parts]]
+ref = "R5"
+symbol = "R"
+value = "10k"
+at = [175.26, 59.69]
+
+[[parts]]
+ref = "C3"
+symbol = "C"
+value = "10u"
+at = [185.42, 39.37]
+
+[[parts]]
+ref = "U3"
+symbol = "AP2112K-3.3"
+value = "AP2112K-3.3"
+at = [204.47, 39.37]
+fields = { mpn = "Diodes AP2112K-3.3TRG1" }
+
+[[parts]]
+ref = "SW1"
+symbol = "SW_SPDT"
+value = "POWER"
+at = [190.5, 69.85]
+footprint = "SW_SPDT_PCM12"
+fields = { mpn = "C&K PCM12SMTR" }
+
+[[parts]]
+ref = "C4"
+symbol = "C"
+value = "10u"
+at = [224.79, 49.53]
+
+[[parts]]
+ref = "R7"
+symbol = "R"
+value = "470k"
+at = [149.86, 85.09]
+
+[[parts]]
+ref = "R8"
+symbol = "R"
+value = "470k"
+at = [149.86, 100.33]
+
+[[parts]]
+ref = "C5"
+symbol = "C"
+value = "100n"
+at = [160.02, 100.33]
+
+[[parts]]
+ref = "R9"
+symbol = "R"
+value = "330k"
+at = [175.26, 85.09]
+
+[[parts]]
+ref = "R10"
+symbol = "R"
+value = "470k"
+at = [175.26, 100.33]
+
+[[parts]]
+ref = "U1"
+symbol = "ESP32-C3-MINI-1"
+value = "ESP32-C3-MINI-1-N4"
+at = [100.33, 149.86]
+fields = { mpn = "Espressif ESP32-C3-MINI-1-N4" }
+
+[[parts]]
+ref = "C6"
+symbol = "C"
+value = "10u"
+at = [59.69, 110.49]
+
+[[parts]]
+ref = "C7"
+symbol = "C"
+value = "100n"
+at = [68.58, 110.49]
+
+[[parts]]
+ref = "R11"
+symbol = "R"
+value = "10k"
+at = [44.45, 124.46]
+
+[[parts]]
+ref = "C8"
+symbol = "C"
+value = "1u"
+at = [44.45, 139.7]
+
+[[parts]]
+ref = "R12"
+symbol = "R"
+value = "10k"
+at = [54.61, 124.46]
+
+[[parts]]
+ref = "R13"
+symbol = "R"
+value = "10k"
+at = [149.86, 124.46]
+
+[[parts]]
+ref = "R14"
+symbol = "R"
+value = "10k"
+at = [160.02, 124.46]
+
+[[parts]]
+ref = "R15"
+symbol = "R"
+value = "10k"
+at = [64.77, 124.46]
+
+[[parts]]
+ref = "SW2"
+symbol = "SW_Push"
+value = "START/STOP"
+at = [74.93, 185.42]
+rotation = 90.0
+footprint = "SW_PUSH-12mm"
+
+[[parts]]
+ref = "SW3"
+symbol = "SW_Push"
+value = "SPEED"
+at = [175.26, 185.42]
+rotation = 90.0
+footprint = "SW_PUSH-12mm"
+
+[[parts]]
+ref = "BZ1"
+symbol = "Buzzer"
+value = "PKLCS1212E4001"
+at = [199.39, 149.86]
+footprint = "Buzzer_Murata_PKLCS1212E"
+fields = { mpn = "Murata PKLCS1212E4001-R1" }
+
+[[parts]]
+ref = "R16"
+symbol = "R"
+value = "100"
+at = [185.42, 139.7]
+rotation = 90.0
+
+[[parts]]
+ref = "R17"
+symbol = "R"
+value = "100"
+at = [185.42, 160.02]
+rotation = 90.0
+
+[[parts]]
+ref = "J3"
+symbol = "Conn_01x07"
+value = "OLED 1.3in (C)"
+at = [214.63, 115.57]
+footprint = "OLED_Waveshare_1.3in_C"
+fields = { mpn = "Waveshare 1.3inch OLED Module (C), SH1107, soldered on its 1x07 2.54 mm male header" }
+
+[[parts]]
+ref = "R18"
+symbol = "R"
+value = "4.7k"
+at = [190.5, 105.41]
+
+[[parts]]
+ref = "R19"
+symbol = "R"
+value = "4.7k"
+at = [196.85, 105.41]
+
+[[parts]]
+ref = "H1"
+symbol = "MountingHole"
+value = "M2.5"
+at = [234.95, 20.32]
+footprint = "MountingHole_2.7mm_M2.5"
+
+[[parts]]
+ref = "H2"
+symbol = "MountingHole"
+value = "M2.5"
+at = [242.57, 20.32]
+footprint = "MountingHole_2.7mm_M2.5"
+
+[[parts]]
+ref = "TP18"
+symbol = "TestPoint"
+value = "TP"
+footprint = "TestPoint_Pad_D1.0mm"
+at = [256.54, 17.78]
+
+[[parts]]
+ref = "TP20"
+symbol = "TestPoint"
+value = "TP"
+footprint = "TestPoint_Pad_D1.0mm"
+at = [256.54, 25.4]
+
+[[parts]]
+ref = "TP21"
+symbol = "TestPoint"
+value = "TP"
+footprint = "TestPoint_Pad_D1.0mm"
+at = [256.54, 33.02]
+
+[[parts]]
+ref = "TP22"
+symbol = "TestPoint"
+value = "TP"
+footprint = "TestPoint_Pad_D1.0mm"
+at = [256.54, 40.64]
+
+[[parts]]
+ref = "TP23"
+symbol = "TestPoint"
+value = "TP"
+footprint = "TestPoint_Pad_D1.0mm"
+at = [256.54, 48.26]
+
+[[nets]]
+name = "VBUS"
+class = "Power"
+style = "power"
+pins = ["J1.A4", "J1.A9", "U4.5", "U2.4", "C1.1", "R4.1", "D1.2", "Q1.1", "R5.1", "R9.1", "TP18.1"]
+
+[[nets]]
+name = "CC1"
+class = "Signal"
+pins = ["J1.A5", "R1.1"]
+
+[[nets]]
+name = "CC2"
+class = "Signal"
+pins = ["J1.B5", "R2.1"]
+
+[[nets]]
+name = "USB_DP"
+class = "USB"
+pins = ["J1.A6", "J1.B6", "U4.1", "U4.6", "U1.27"]
+
+[[nets]]
+name = "USB_DN"
+class = "USB"
+pins = ["J1.A7", "J1.B7", "U4.3", "U4.4", "U1.26"]
+
+[[nets]]
+name = "CHG_LED"
+class = "Signal"
+pins = ["R4.2", "D2.2"]
+
+[[nets]]
+name = "CHG_STAT"
+class = "Signal"
+pins = ["D2.1", "U2.1"]
+
+[[nets]]
+name = "PROG"
+class = "Analog"
+pins = ["U2.5", "R3.1"]
+
+[[nets]]
+name = "VBAT"
+class = "Power"
+style = "power"
+pins = ["U2.3", "C2.1", "J2.1", "Q1.3", "R7.1"]
+
+[[nets]]
+name = "VSYS"
+class = "Power"
+style = "power"
+pins = ["D1.1", "Q1.2", "C3.1", "U3.1", "SW1.1", "TP20.1"]
+
+[[nets]]
+name = "LDO_EN"
+class = "Signal"
+pins = ["U3.3", "SW1.2"]
+
+[[nets]]
+name = "3V3"
+class = "Power"
+style = "power"
+pins = ["U3.5", "C4.1", "U1.3", "C6.1", "C7.1", "R11.1", "R12.1", "R13.1", "R14.1", "R15.1", "R18.1", "R19.1", "J3.1"]
+
+[[nets]]
+name = "VBAT_ADC"
+class = "Analog"
+pins = ["R7.2", "R8.1", "C5.1", "U1.13"]
+
+[[nets]]
+name = "VBUS_SENSE"
+class = "Analog"
+pins = ["R9.2", "R10.1", "U1.12"]
+
+[[nets]]
+name = "EN"
+class = "Signal"
+pins = ["R11.2", "C8.1", "U1.8", "TP21.1"]
+
+[[nets]]
+name = "OLED_CS"
+class = "Signal"
+pins = ["R12.2", "U1.5", "J3.5"]
+
+[[nets]]
+name = "OLED_DC"
+class = "Signal"
+pins = ["U1.18", "J3.6"]
+
+[[nets]]
+name = "OLED_RST"
+class = "Signal"
+pins = ["R13.2", "U1.22", "J3.7"]
+
+[[nets]]
+name = "BTN_SPEED"
+class = "Signal"
+pins = ["R14.2", "SW3.2", "U1.23"]
+
+[[nets]]
+name = "BTN_START"
+class = "Signal"
+pins = ["R15.2", "SW2.2", "U1.6"]
+
+[[nets]]
+name = "BUZZ_A"
+class = "Signal"
+pins = ["U1.19", "R16.1"]
+
+[[nets]]
+name = "BUZZ_B"
+class = "Signal"
+pins = ["U1.16", "R17.1"]
+
+[[nets]]
+name = "PIEZO_A"
+class = "Signal"
+pins = ["R16.2", "BZ1.1"]
+
+[[nets]]
+name = "PIEZO_B"
+class = "Signal"
+pins = ["R17.2", "BZ1.2"]
+
+[[nets]]
+name = "OLED_DIN"
+class = "Signal"
+pins = ["U1.20", "R18.2", "J3.3"]
+
+[[nets]]
+name = "OLED_CLK"
+class = "Signal"
+pins = ["U1.21", "R19.2", "J3.4"]
+
+[[nets]]
+name = "U0TXD"
+class = "Signal"
+pins = ["U1.31", "TP22.1"]
+
+[[nets]]
+name = "U0RXD"
+class = "Signal"
+pins = ["U1.30", "TP23.1"]
+
+[[nets]]
+name = "GND"
+class = "Ground"
+style = "power"
+pins = ["J1.A1", "J1.A12", "J1.S1", "R1.2", "R2.2", "U4.2", "U2.2", "C1.2", "C2.2", "R3.2", "J2.2", "R5.2", "C3.2", "U3.2", "SW1.3", "C4.2", "R8.2", "C5.2", "R10.2", "C6.2", "C7.2", "C8.2", "SW2.1", "SW3.1", "J3.2", "U1.1", "U1.2", "U1.11", "U1.14", "U1.36", "U1.37", "U1.38", "U1.39", "U1.40", "U1.41", "U1.42", "U1.43", "U1.44", "U1.45", "U1.46", "U1.47", "U1.48", "U1.49", "U1.50", "U1.51", "U1.52", "U1.53"]

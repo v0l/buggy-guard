@@ -1,0 +1,357 @@
+# imported from KiCad /tmp/esp-kicad/footprints/Espressif.pretty/ESP32-C3-MINI-1.kicad_mod
+name = "ESP32-C3-MINI-1"
+description = "ESP32-C3-MINI-1: https://www.espressif.com/sites/default/files/documentation/esp32-c3-mini-1_datasheet_en.pdf"
+tags = ["ESP32-C3"]
+mount = "smd"
+model = "3dmodels/ESP32-C3-MINI-1.step"
+model_offset = [-6.6, -8.37, 0.0]
+
+[[pads]]
+number = "1"
+kind = "smd"
+shape = "rect"
+at = [-5.9, -1.3]
+size = [0.4, 0.8]
+rotation = 90.0
+layers = ["F.Cu", "F.Paste", "F.Mask"]
+count = 11
+pitch = [0.0, 0.8]
+
+[[pads]]
+number = "12"
+kind = "smd"
+shape = "rect"
+at = [-4.8, 7.6]
+size = [0.4, 0.8]
+layers = ["F.Cu", "F.Paste", "F.Mask"]
+count = 13
+pitch = [0.8, 0.0]
+
+[[pads]]
+number = "25"
+kind = "smd"
+shape = "rect"
+at = [5.9, 6.7]
+size = [0.4, 0.8]
+rotation = 90.0
+layers = ["F.Cu", "F.Paste", "F.Mask"]
+count = 11
+pitch = [0.0, -0.8]
+
+[[pads]]
+number = "36"
+kind = "smd"
+shape = "rect"
+at = [4.8, -2.2]
+size = [0.4, 0.8]
+layers = ["F.Cu", "F.Paste", "F.Mask"]
+count = 13
+pitch = [-0.8, 0.0]
+
+[[pads]]
+number = "49"
+kind = "smd"
+shape = "custom"
+at = [-1.975, 0.725]
+size = [0.8, 0.8]
+layers = ["F.Cu", "F.Paste", "F.Mask"]
+points = [[-0.725, 0.725], [-0.725, -0.125], [-0.125, -0.725], [0.725, -0.725], [0.725, 0.725]]
+zone_connect = "solid"
+
+[[pads]]
+number = "49"
+kind = "smd"
+shape = "rect"
+at = [-1.975, 2.7]
+size = [1.45, 1.45]
+rotation = 90.0
+layers = ["F.Cu", "F.Paste", "F.Mask"]
+zone_connect = "solid"
+
+[[pads]]
+number = "49"
+kind = "smd"
+shape = "rect"
+at = [-1.975, 4.675]
+size = [1.45, 1.45]
+rotation = 90.0
+layers = ["F.Cu", "F.Paste", "F.Mask"]
+zone_connect = "solid"
+
+[[pads]]
+number = "49"
+kind = "smd"
+shape = "rect"
+at = [0.0, 0.725]
+size = [1.45, 1.45]
+rotation = 90.0
+layers = ["F.Cu", "F.Paste", "F.Mask"]
+zone_connect = "solid"
+
+[[pads]]
+number = "49"
+kind = "smd"
+shape = "rect"
+at = [0.0, 2.7]
+size = [1.45, 1.45]
+rotation = 90.0
+layers = ["F.Cu", "F.Paste", "F.Mask"]
+zone_connect = "solid"
+
+[[pads]]
+number = "49"
+kind = "smd"
+shape = "rect"
+at = [0.0, 4.675]
+size = [1.45, 1.45]
+rotation = 90.0
+layers = ["F.Cu", "F.Paste", "F.Mask"]
+zone_connect = "solid"
+
+[[pads]]
+number = "49"
+kind = "smd"
+shape = "rect"
+at = [1.975, 0.725]
+size = [1.45, 1.45]
+rotation = 90.0
+layers = ["F.Cu", "F.Paste", "F.Mask"]
+zone_connect = "solid"
+
+[[pads]]
+number = "49"
+kind = "smd"
+shape = "rect"
+at = [1.975, 2.7]
+size = [1.45, 1.45]
+rotation = 90.0
+layers = ["F.Cu", "F.Paste", "F.Mask"]
+zone_connect = "solid"
+
+[[pads]]
+number = "49"
+kind = "smd"
+shape = "rect"
+at = [1.975, 4.675]
+size = [1.45, 1.45]
+rotation = 90.0
+layers = ["F.Cu", "F.Paste", "F.Mask"]
+zone_connect = "solid"
+
+[[pads]]
+number = "50"
+kind = "smd"
+shape = "rect"
+at = [5.95, -2.25]
+size = [0.7, 0.7]
+rotation = 90.0
+layers = ["F.Cu", "F.Paste", "F.Mask"]
+
+[[pads]]
+number = "51"
+kind = "smd"
+shape = "rect"
+at = [5.95, 7.65]
+size = [0.7, 0.7]
+rotation = 90.0
+layers = ["F.Cu", "F.Paste", "F.Mask"]
+
+[[pads]]
+number = "52"
+kind = "smd"
+shape = "rect"
+at = [-5.95, 7.65]
+size = [0.7, 0.7]
+rotation = 90.0
+layers = ["F.Cu", "F.Paste", "F.Mask"]
+
+[[pads]]
+number = "53"
+kind = "smd"
+shape = "rect"
+at = [-5.95, -2.25]
+size = [0.7, 0.7]
+rotation = 90.0
+layers = ["F.Cu", "F.Paste", "F.Mask"]
+
+[[graphics]]
+kind = "text"
+layer = "F.SilkS"
+at = [0.0, -9.5]
+text = "${REFERENCE}"
+size = 1.0
+
+[[graphics]]
+kind = "text"
+layer = "F.Fab"
+at = [0.0, 9.85]
+text = "${VALUE}"
+size = 1.0
+
+[[graphics]]
+kind = "text"
+layer = "F.SilkS"
+at = [0.0, -5.85]
+text = "Antenna Area"
+size = 1.0
+
+[[graphics]]
+kind = "text"
+layer = "F.Fab"
+at = [0.0, 2.7]
+text = "${REFERENCE}"
+size = 1.0
+
+[[graphics]]
+kind = "line"
+layer = "F.SilkS"
+start = [-6.8, 7.7]
+end = [-6.8, 8.5]
+width = 0.15
+
+[[graphics]]
+kind = "line"
+layer = "F.SilkS"
+start = [-6.8, 8.5]
+end = [-6.0, 8.5]
+width = 0.15
+
+[[graphics]]
+kind = "line"
+layer = "F.SilkS"
+start = [-6.6, -8.3]
+end = [6.6, -8.3]
+width = 0.15
+
+[[graphics]]
+kind = "line"
+layer = "F.SilkS"
+start = [-6.6, -2.9]
+end = [6.6, -2.9]
+width = 0.15
+
+[[graphics]]
+kind = "line"
+layer = "F.SilkS"
+start = [-6.6, 8.3]
+end = [-6.6, -8.3]
+width = 0.15
+
+[[graphics]]
+kind = "line"
+layer = "F.SilkS"
+start = [-5.925, -8.5]
+end = [-6.775, -8.5]
+width = 0.15
+
+[[graphics]]
+kind = "line"
+layer = "F.SilkS"
+start = [6.05, -8.5]
+end = [6.8, -8.5]
+width = 0.15
+
+[[graphics]]
+kind = "line"
+layer = "F.SilkS"
+start = [6.6, -8.3]
+end = [6.6, 8.3]
+width = 0.15
+
+[[graphics]]
+kind = "line"
+layer = "F.SilkS"
+start = [6.6, 8.3]
+end = [-6.6, 8.3]
+width = 0.15
+
+[[graphics]]
+kind = "line"
+layer = "F.SilkS"
+start = [6.8, -8.5]
+end = [6.8, -7.9]
+width = 0.15
+
+[[graphics]]
+kind = "line"
+layer = "F.SilkS"
+start = [6.8, 7.7]
+end = [6.8, 8.5]
+width = 0.15
+
+[[graphics]]
+kind = "line"
+layer = "F.SilkS"
+start = [6.8, 8.5]
+end = [6.0, 8.5]
+width = 0.15
+
+[[graphics]]
+kind = "line"
+layer = "F.CrtYd"
+start = [-6.8, -8.5]
+end = [6.8, -8.5]
+width = 0.05
+
+[[graphics]]
+kind = "line"
+layer = "F.CrtYd"
+start = [-6.8, 8.5]
+end = [-6.8, -8.5]
+width = 0.05
+
+[[graphics]]
+kind = "line"
+layer = "F.CrtYd"
+start = [6.8, -8.5]
+end = [6.8, 8.5]
+width = 0.05
+
+[[graphics]]
+kind = "line"
+layer = "F.CrtYd"
+start = [6.8, 8.5]
+end = [-6.8, 8.5]
+width = 0.05
+
+[[graphics]]
+kind = "line"
+layer = "F.Fab"
+start = [-6.6, 8.3]
+end = [-6.6, -8.3]
+width = 0.1
+
+[[graphics]]
+kind = "line"
+layer = "F.Fab"
+start = [-6.6, 8.3]
+end = [6.6, 8.3]
+width = 0.1
+
+[[graphics]]
+kind = "line"
+layer = "F.Fab"
+start = [-5.8, -2.9]
+end = [-6.6, -2.1]
+width = 0.1
+
+[[graphics]]
+kind = "line"
+layer = "F.Fab"
+start = [6.6, -8.3]
+end = [-6.6, -8.3]
+width = 0.1
+
+[[graphics]]
+kind = "line"
+layer = "F.Fab"
+start = [6.6, -2.9]
+end = [-6.6, -2.9]
+width = 0.1
+
+[[graphics]]
+kind = "line"
+layer = "F.Fab"
+start = [6.6, 8.3]
+end = [6.6, -8.3]
+width = 0.1

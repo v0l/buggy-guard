@@ -1,0 +1,140 @@
+# imported from KiCad Button_Switch_THT:SW_PUSH-12mm
+name = "SW_PUSH-12mm"
+description = "Generic SW PUSH 12mm, e.g https://sten-eswitch-13110800-production.s3.amazonaws.com/system/asset/product_line/data_sheet/143/TL1100.pdf"
+tags = ["tact", "sw", "push", "12mm"]
+mount = "tht"
+model = "3dmodels/SW_PUSH-12mm.wrl"
+
+[[pads]]
+number = "1"
+kind = "tht"
+shape = "oval"
+at = [0.0, 0.0]
+size = [3.2, 1.9]
+drill = 1.3
+layers = ["*.Cu", "*.Mask"]
+
+[[pads]]
+number = "1"
+kind = "tht"
+shape = "oval"
+at = [12.5, 0.0]
+size = [3.2, 1.9]
+drill = 1.3
+layers = ["*.Cu", "*.Mask"]
+
+[[pads]]
+number = "2"
+kind = "tht"
+shape = "oval"
+at = [0.0, 5.0]
+size = [3.2, 1.9]
+drill = 1.3
+layers = ["*.Cu", "*.Mask"]
+
+[[pads]]
+number = "2"
+kind = "tht"
+shape = "oval"
+at = [12.5, 5.0]
+size = [3.2, 1.9]
+drill = 1.3
+layers = ["*.Cu", "*.Mask"]
+
+[[graphics]]
+kind = "text"
+layer = "F.SilkS"
+at = [5.83, -5.41]
+text = "${REFERENCE}"
+size = 1.0
+
+[[graphics]]
+kind = "text"
+layer = "F.Fab"
+at = [6.37, 10.5]
+text = "${VALUE}"
+size = 1.0
+
+[[graphics]]
+kind = "line"
+layer = "F.SilkS"
+start = [0.14, -3.61]
+end = [0.14, -1.1]
+width = 0.15
+
+[[graphics]]
+kind = "line"
+layer = "F.SilkS"
+start = [0.14, -3.61]
+end = [12.36, -3.61]
+width = 0.15
+
+[[graphics]]
+kind = "line"
+layer = "F.SilkS"
+start = [0.14, 1.2]
+end = [0.14, 3.8]
+width = 0.15
+
+[[graphics]]
+kind = "line"
+layer = "F.SilkS"
+start = [0.14, 6.1]
+end = [0.14, 8.61]
+width = 0.15
+
+[[graphics]]
+kind = "line"
+layer = "F.SilkS"
+start = [12.36, -3.61]
+end = [12.36, -1.1]
+width = 0.15
+
+[[graphics]]
+kind = "line"
+layer = "F.SilkS"
+start = [12.36, 1.2]
+end = [12.36, 3.8]
+width = 0.15
+
+[[graphics]]
+kind = "line"
+layer = "F.SilkS"
+start = [12.36, 6.1]
+end = [12.36, 8.61]
+width = 0.15
+
+[[graphics]]
+kind = "line"
+layer = "F.SilkS"
+start = [12.36, 8.61]
+end = [0.14, 8.61]
+width = 0.15
+
+[[graphics]]
+kind = "circle"
+layer = "F.SilkS"
+center = [6.25, 2.5]
+radius = 3.55
+width = 0.15
+
+[[graphics]]
+kind = "rect"
+layer = "F.CrtYd"
+start = [-1.85, -4.75]
+end = [14.35, 9.75]
+width = 0.05
+
+[[graphics]]
+kind = "rect"
+layer = "F.Fab"
+start = [0.25, -3.5]
+end = [12.25, 8.5]
+width = 0.1
+
+[[graphics]]
+kind = "text"
+layer = "F.Fab"
+at = [6.25, 2.5]
+text = "${REFERENCE}"
+size = 1.0

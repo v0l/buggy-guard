@@ -1,0 +1,1504 @@
+name = "pendant"
+board = "pendant"
+schematic = "pendant"
+
+[place]
+keepouts = [[[43.5, 0.0], [60.0, 0.0], [60.0, 6.5], [43.5, 6.5]]]
+
+[[footprints]]
+ref = "U1"
+at = [52.8, 8.8]
+locked = true
+label = { at = [44.83, 10.8] , hide = true }
+
+[[footprints]]
+ref = "J3"
+at = [22.38, 20.91]
+locked = true
+
+[[footprints]]
+ref = "SW2"
+at = [14.75, 55.0]
+locked = true
+
+[[footprints]]
+ref = "SW3"
+at = [32.75, 55.0]
+locked = true
+
+[[footprints]]
+ref = "J1"
+at = [55.6, 27.2]
+rotation = 90.0
+locked = true
+label = { at = [54.04, 30.3] }
+
+[[footprints]]
+ref = "SW1"
+at = [2.35, 30.0]
+rotation = 270.0
+locked = true
+label = { at = [1.88, 24.63] }
+
+[[footprints]]
+ref = "D2"
+at = [57.6, 34.4]
+rotation = 90.0
+locked = true
+label = { at = [59.31, 34.4], rotation = 90.0 }
+
+[[footprints]]
+ref = "R4"
+at = [55.4, 34.4]
+rotation = 90.0
+locked = true
+label = { at = [53.36, 36.15] , hide = true }
+
+[[footprints]]
+ref = "J2"
+at = [4.0, 42.0]
+rotation = 90.0
+side = "bottom"
+locked = true
+
+[[footprints]]
+ref = "BZ1"
+at = [30.0, 30.0]
+side = "bottom"
+locked = true
+
+[[footprints]]
+ref = "H1"
+at = [4.0, 62.0]
+locked = true
+
+[[footprints]]
+ref = "H2"
+at = [56.0, 62.0]
+locked = true
+
+[[footprints]]
+ref = "U4"
+at = [55.2, 19.6]
+rotation = 90.0
+locked = true
+label = { at = [58.23, 19.6] }
+
+[[footprints]]
+ref = "R2"
+at = [52.6, 25.45]
+side = "bottom"
+locked = true
+label = { at = [55.36, 25.45] }
+
+[[footprints]]
+ref = "R1"
+at = [52.6, 28.45]
+side = "bottom"
+locked = true
+
+[[footprints]]
+ref = "U2"
+at = [56.4, 38.15]
+rotation = 270.0
+label = { at = [59.15, 38.15], rotation = 90.0 }
+
+[[footprints]]
+ref = "C1"
+at = [54.15, 41.35]
+rotation = 270.0
+label = { at = [55.58, 41.35], rotation = 90.0 }
+
+[[footprints]]
+ref = "C2"
+at = [52.45, 37.8]
+rotation = 270.0
+label = { at = [50.75, 37.8], rotation = 90.0 }
+
+[[footprints]]
+ref = "R3"
+at = [57.35, 41.7]
+rotation = 270.0
+label = { at = [58.78, 41.7], rotation = 90.0 }
+
+[[footprints]]
+ref = "D1"
+at = [22.8, 7.85]
+label = { at = [22.8, 5.85] }
+
+[[footprints]]
+ref = "Q1"
+at = [18.5, 9.1]
+rotation = 180.0
+label = { at = [18.5, 11.85] }
+
+[[footprints]]
+ref = "R5"
+at = [16.0, 10.4]
+rotation = 180.0
+label = { at = [16.0, 11.83] }
+
+[[footprints]]
+ref = "C3"
+at = [6.45, 25.55]
+label = { at = [6.45, 24.12] }
+
+[[footprints]]
+ref = "U3"
+at = [6.85, 29.85]
+label = { at = [6.85, 27.1] }
+
+[[footprints]]
+ref = "C4"
+at = [7.4, 32.3]
+rotation = 180.0
+label = { at = [7.4, 33.73] }
+
+[[footprints]]
+ref = "R7"
+at = [18.4, 6.65]
+label = { at = [18.4, 5.22] }
+
+[[footprints]]
+ref = "R8"
+at = [45.25, 12.6]
+rotation = 90.0
+label = { at = [41.49, 16.81] , hide = true }
+
+[[footprints]]
+ref = "C5"
+at = [52.25, 18.8]
+rotation = 90.0
+label = { at = [52.0, 21.26] }
+
+[[footprints]]
+ref = "R9"
+at = [21.55, 11.35]
+label = { at = [21.55, 9.92] }
+
+[[footprints]]
+ref = "R10"
+at = [45.25, 15.7]
+rotation = 90.0
+label = { at = [42.76, 17.2] , hide = true }
+
+[[footprints]]
+ref = "C6"
+at = [41.25, 6.45]
+rotation = 90.0
+label = { at = [39.82, 6.45], rotation = 90.0 }
+
+[[footprints]]
+ref = "C7"
+at = [45.25, 8.95]
+rotation = 90.0
+label = { at = [43.82, 8.95], rotation = 90.0 , hide = true }
+
+[[footprints]]
+ref = "R11"
+at = [42.75, 6.0]
+rotation = 270.0
+label = { at = [44.18, 6.0], rotation = 90.0 }
+
+[[footprints]]
+ref = "C8"
+at = [42.3, 9.45]
+rotation = 90.0
+label = { at = [40.87, 9.45], rotation = 90.0 , hide = true }
+
+[[footprints]]
+ref = "R12"
+at = [35.05, 11.8]
+rotation = 90.0
+label = { at = [33.62, 11.8], rotation = 90.0 }
+
+[[footprints]]
+ref = "R13"
+at = [37.45, 14.35]
+label = { at = [37.45, 12.92] }
+
+[[footprints]]
+ref = "R14"
+at = [52.85, 34.15]
+rotation = 90.0
+label = { at = [51.42, 34.15], rotation = 90.0 }
+
+[[footprints]]
+ref = "R15"
+at = [42.3, 12.5]
+rotation = 90.0
+label = { at = [40.87, 12.5], rotation = 90.0 }
+
+[[footprints]]
+ref = "R16"
+at = [38.2, 30.0]
+side = "bottom"
+locked = true
+
+[[footprints]]
+ref = "R17"
+at = [21.8, 30.0]
+side = "bottom"
+locked = true
+
+[[footprints]]
+ref = "R18"
+at = [28.05, 17.0]
+label = { at = [28.05, 15.57] }
+
+[[footprints]]
+ref = "R19"
+at = [30.65, 15.95]
+rotation = 270.0
+label = { at = [32.08, 15.95], rotation = 90.0 }
+
+[[cutouts]]
+layers = ["F.Cu", "In1.Cu", "In2.Cu", "B.Cu"]
+points = [[43.5, 0.0], [60.0, 0.0], [60.0, 6.5], [43.5, 6.5]]
+
+[[zones]]
+net = "GND"
+layers = ["F.Cu", "In1.Cu", "In2.Cu", "B.Cu"]
+pad_connection = "relief"
+relief_tht_only = true
+
+# agentee route USB_DP USB_DN VBUS VBAT VSYS 3V3 CC1 CC2 CHG_* PROG LDO_EN VBAT_ADC VBUS_SENSE EN OLED_* BTN_* BUZZ_* PIEZO_*
+
+[[graphics]]
+kind = "text"
+layer = "B.SilkS"
+at = [8.25, 42.0]
+text = "+"
+size = 1.2
+
+[[graphics]]
+kind = "text"
+layer = "B.SilkS"
+at = [8.25, 44.0]
+text = "-"
+size = 1.2
+
+# agentee route USB_DP USB_DN
+
+
+# agentee route USB_DP USB_DN
+
+
+# agentee route USB_DP USB_DN
+
+[[tracks]]
+net = "USB_DP"
+layer = "F.Cu"
+points = [[54.1, 21.4], [54.1, 24.8], [52.45, 26.45], [52.25, 26.45]]
+
+[[tracks]]
+net = "USB_DN"
+layer = "F.Cu"
+points = [[56.0, 21.4], [54.8, 22.6], [54.8, 24.85], [52.7, 26.95], [52.25, 26.95]]
+
+[[tracks]]
+net = "USB_DN"
+layer = "F.Cu"
+points = [[59.05, 14.7], [59.5, 15.15], [59.5, 17.0], [58.55, 17.95], [56.45, 17.95]]
+
+[[tracks]]
+net = "USB_DP"
+layer = "F.Cu"
+points = [[58.3, 14.1], [58.05, 14.1], [57.85, 14.3]]
+
+[[tracks]]
+net = "USB_DP"
+layer = "In2.Cu"
+points = [[57.85, 14.3], [54.85, 17.3]]
+
+[[tracks]]
+net = "USB_DP"
+layer = "F.Cu"
+points = [[54.85, 17.3], [54.35, 17.8]]
+
+[[vias]]
+net = "USB_DP"
+at = [57.85, 14.3]
+via = "std"
+
+[[vias]]
+net = "USB_DP"
+at = [54.85, 17.3]
+via = "std"
+
+# agentee route OLED_* BUZZ_* BTN_SPEED VBAT_ADC VBUS_SENSE
+
+[[tracks]]
+net = "VBAT_ADC"
+layer = "F.Cu"
+points = [[48.75, 16.8], [48.4, 17.15], [46.3, 17.15], [46.15, 17.0], [46.15, 14.35], [45.6, 13.8]]
+
+[[tracks]]
+net = "VBAT_ADC"
+layer = "F.Cu"
+points = [[48.85, 16.8], [51.35, 19.3], [51.8, 19.3]]
+
+[[tracks]]
+net = "VBUS_SENSE"
+layer = "F.Cu"
+points = [[47.85, 16.0], [47.85, 15.6]]
+
+[[tracks]]
+net = "VBUS_SENSE"
+layer = "In2.Cu"
+points = [[47.85, 15.6], [46.15, 17.3], [45.55, 17.3]]
+
+[[tracks]]
+net = "VBUS_SENSE"
+layer = "F.Cu"
+points = [[45.55, 17.3], [45.55, 16.9]]
+
+[[tracks]]
+net = "VBUS_SENSE"
+layer = "F.Cu"
+points = [[44.8, 16.25], [43.15, 16.25], [38.65, 11.75], [22.7, 11.75]]
+
+[[tracks]]
+net = "VBAT_ADC"
+layer = "F.Cu"
+points = [[44.8, 13.15], [44.1, 12.45], [41.7, 12.45], [36.15, 6.9], [19.6, 6.9]]
+
+[[tracks]]
+net = "OLED_CLK"
+layer = "F.Cu"
+points = [[55.05, 16.0], [54.55, 15.5]]
+
+[[tracks]]
+net = "OLED_CLK"
+layer = "B.Cu"
+points = [[54.55, 15.5], [53.55, 16.5], [36.85, 16.5]]
+
+[[tracks]]
+net = "OLED_CLK"
+layer = "F.Cu"
+points = [[36.85, 16.5], [31.1, 16.5]]
+
+[[tracks]]
+net = "OLED_RST"
+layer = "F.Cu"
+points = [[55.95, 16.0], [54.65, 14.7], [48.5, 14.7]]
+
+[[tracks]]
+net = "OLED_RST"
+layer = "In2.Cu"
+points = [[48.5, 14.7], [39.05, 14.7]]
+
+[[tracks]]
+net = "OLED_RST"
+layer = "F.Cu"
+points = [[39.05, 14.7], [38.65, 14.7]]
+
+[[tracks]]
+net = "OLED_DIN"
+layer = "F.Cu"
+points = [[54.25, 16.8], [53.1, 17.95], [53.1, 20.05], [52.75, 20.4], [51.75, 20.4], [49.55, 18.2], [30.1, 18.2], [29.25, 17.35]]
+
+[[tracks]]
+net = "OLED_CS"
+layer = "F.Cu"
+points = [[46.5, 10.7], [43.3, 10.7]]
+
+[[tracks]]
+net = "OLED_CS"
+layer = "In2.Cu"
+points = [[43.3, 10.7], [39.05, 10.7]]
+
+[[tracks]]
+net = "OLED_CS"
+layer = "F.Cu"
+points = [[39.05, 10.7], [35.5, 10.7]]
+
+[[tracks]]
+net = "BTN_SPEED"
+layer = "F.Cu"
+points = [[56.6, 16.8], [56.6, 17.3]]
+
+[[tracks]]
+net = "BTN_SPEED"
+layer = "In2.Cu"
+points = [[56.6, 17.3], [53.85, 20.05], [53.85, 32.3]]
+
+[[tracks]]
+net = "BTN_SPEED"
+layer = "F.Cu"
+points = [[53.85, 32.3], [53.2, 32.95]]
+
+[[tracks]]
+net = "OLED_DC"
+layer = "F.Cu"
+points = [[52.65, 16.8], [52.25, 17.2], [51.55, 17.2], [51.35, 17.4]]
+
+[[tracks]]
+net = "OLED_DC"
+layer = "In2.Cu"
+points = [[51.35, 17.4], [49.55, 19.2], [37.4, 19.2], [35.9, 20.7]]
+
+[[tracks]]
+net = "OLED_CS"
+layer = "In2.Cu"
+points = [[38.9, 10.95], [32.9, 16.95], [32.9, 20.15]]
+
+[[tracks]]
+net = "OLED_DIN"
+layer = "F.Cu"
+points = [[30.05, 18.25], [28.0, 20.3]]
+
+[[tracks]]
+net = "OLED_CLK"
+layer = "F.Cu"
+points = [[30.3, 17.15], [30.3, 17.55]]
+
+[[tracks]]
+net = "OLED_CLK"
+layer = "In2.Cu"
+points = [[30.3, 17.55], [30.3, 20.15]]
+
+[[tracks]]
+net = "OLED_RST"
+layer = "B.Cu"
+points = [[38.8, 14.85], [37.6, 14.85], [36.25, 16.2], [36.25, 19.15], [37.25, 20.15]]
+
+[[tracks]]
+net = "BTN_SPEED"
+layer = "F.Cu"
+points = [[52.5, 33.7], [48.95, 37.25], [48.95, 56.5], [46.3, 59.15]]
+
+[[vias]]
+net = "VBUS_SENSE"
+at = [47.85, 15.6]
+via = "std"
+
+[[vias]]
+net = "VBUS_SENSE"
+at = [45.55, 17.3]
+via = "std"
+
+[[vias]]
+net = "OLED_CLK"
+at = [54.55, 15.5]
+via = "std"
+
+[[vias]]
+net = "OLED_CLK"
+at = [36.85, 16.5]
+via = "std"
+
+[[vias]]
+net = "OLED_RST"
+at = [48.5, 14.7]
+via = "std"
+
+[[vias]]
+net = "OLED_RST"
+at = [39.05, 14.7]
+via = "std"
+
+[[vias]]
+net = "OLED_CS"
+at = [43.3, 10.7]
+via = "std"
+
+[[vias]]
+net = "OLED_CS"
+at = [39.05, 10.7]
+via = "std"
+
+[[vias]]
+net = "BTN_SPEED"
+at = [56.6, 17.3]
+via = "std"
+
+[[vias]]
+net = "BTN_SPEED"
+at = [53.85, 32.3]
+via = "std"
+
+[[vias]]
+net = "OLED_DC"
+at = [51.35, 17.4]
+via = "std"
+
+[[vias]]
+net = "OLED_CLK"
+at = [30.3, 17.55]
+via = "std"
+
+# agentee route VBUS VBAT VSYS 3V3
+
+[[tracks]]
+net = "VBUS"
+layer = "F.Cu"
+points = [[50.85, 24.7], [50.45, 24.7]]
+
+[[tracks]]
+net = "VBUS"
+layer = "B.Cu"
+points = [[50.45, 24.7], [50.45, 22.95], [53.9, 19.5], [55.3, 19.5]]
+
+[[tracks]]
+net = "VBUS"
+layer = "F.Cu"
+points = [[55.3, 19.5], [55.3, 19.1]]
+
+[[tracks]]
+net = "VBUS"
+layer = "F.Cu"
+points = [[50.2, 24.6], [44.25, 24.6], [38.5, 18.85], [32.05, 18.85]]
+
+[[tracks]]
+net = "VBUS"
+layer = "B.Cu"
+points = [[32.05, 18.85], [32.05, 15.65], [25.1, 8.7]]
+
+[[tracks]]
+net = "VBUS"
+layer = "F.Cu"
+points = [[25.1, 8.7], [24.8, 8.4]]
+
+[[tracks]]
+net = "VBUS"
+layer = "F.Cu"
+points = [[50.85, 29.7], [50.45, 29.7]]
+
+[[tracks]]
+net = "VBUS"
+layer = "B.Cu"
+points = [[50.45, 29.7], [50.45, 31.45], [53.95, 34.95]]
+
+[[tracks]]
+net = "VBUS"
+layer = "F.Cu"
+points = [[53.95, 34.95], [54.95, 34.95]]
+
+[[tracks]]
+net = "VSYS"
+layer = "F.Cu"
+points = [[4.5, 28.1], [5.1, 28.7]]
+
+[[tracks]]
+net = "VBAT"
+layer = "F.Cu"
+points = [[52.9, 36.75], [55.15, 36.75]]
+
+[[tracks]]
+net = "VSYS"
+layer = "F.Cu"
+points = [[20.15, 7.95], [20.7, 7.95]]
+
+[[tracks]]
+net = "VBUS"
+layer = "F.Cu"
+points = [[24.0, 8.15], [21.1, 11.05]]
+
+[[tracks]]
+net = "VBAT"
+layer = "F.Cu"
+points = [[17.3, 8.8], [17.3, 7.1]]
+
+[[tracks]]
+net = "VBAT"
+layer = "F.Cu"
+points = [[4.75, 41.45], [17.7, 28.5], [17.7, 9.2375], [17.5625, 9.1]]
+
+[[tracks]]
+net = "VBAT"
+layer = "F.Cu"
+points = [[17.8, 28.65], [20.95, 31.8], [20.95, 31.9]]
+
+[[tracks]]
+net = "VBAT"
+layer = "B.Cu"
+points = [[20.95, 31.9], [25.0, 35.95], [51.2, 35.95]]
+
+[[tracks]]
+net = "VBAT"
+layer = "F.Cu"
+points = [[51.2, 35.95], [52.0, 36.75]]
+
+[[tracks]]
+net = "VSYS"
+layer = "F.Cu"
+points = [[4.5, 27.4], [5.4, 26.5], [5.4, 26.0]]
+
+[[tracks]]
+net = "VBUS"
+layer = "F.Cu"
+points = [[18.75, 10.2], [18.45, 10.5]]
+
+[[tracks]]
+net = "VBUS"
+layer = "B.Cu"
+points = [[18.45, 10.5], [17.6, 9.65], [16.35, 9.65]]
+
+[[tracks]]
+net = "VBUS"
+layer = "F.Cu"
+points = [[16.35, 9.65], [16.65, 9.95]]
+
+[[tracks]]
+net = "VSYS"
+layer = "F.Cu"
+points = [[5.95, 25.1], [12.1, 18.95]]
+
+[[tracks]]
+net = "VSYS"
+layer = "B.Cu"
+points = [[12.1, 18.95], [19.2, 11.85], [19.2, 8.85]]
+
+[[tracks]]
+net = "VSYS"
+layer = "F.Cu"
+points = [[19.2, 8.85], [19.4375, 8.6125], [19.4375, 8.15]]
+
+[[tracks]]
+net = "VBUS"
+layer = "F.Cu"
+points = [[20.45, 10.9], [20.1, 10.55], [20.1, 10.3]]
+
+[[tracks]]
+net = "VBUS"
+layer = "F.Cu"
+points = [[55.15, 39.8], [54.6, 40.35]]
+
+[[tracks]]
+net = "VBUS"
+layer = "B.Cu"
+points = [[54.1, 35.2], [54.1, 37.5]]
+
+[[tracks]]
+net = "VBUS"
+layer = "F.Cu"
+points = [[54.1, 37.5], [55.25, 38.65]]
+
+[[vias]]
+net = "VBUS"
+at = [50.45, 24.7]
+via = "std"
+
+[[vias]]
+net = "VBUS"
+at = [55.3, 19.5]
+via = "std"
+
+[[vias]]
+net = "VBUS"
+at = [32.05, 18.85]
+via = "std"
+
+[[vias]]
+net = "VBUS"
+at = [25.1, 8.7]
+via = "std"
+
+[[vias]]
+net = "VBUS"
+at = [50.45, 29.7]
+via = "std"
+
+[[vias]]
+net = "VBUS"
+at = [53.95, 34.95]
+via = "std"
+
+[[vias]]
+net = "VBAT"
+at = [20.95, 31.9]
+via = "std"
+
+[[vias]]
+net = "VBAT"
+at = [51.2, 35.95]
+via = "std"
+
+[[vias]]
+net = "VBUS"
+at = [18.45, 10.5]
+via = "std"
+
+[[vias]]
+net = "VBUS"
+at = [16.35, 9.65]
+via = "std"
+
+[[vias]]
+net = "VSYS"
+at = [12.1, 18.95]
+via = "std"
+
+[[vias]]
+net = "VSYS"
+at = [19.2, 8.85]
+via = "std"
+
+[[vias]]
+net = "VBUS"
+at = [54.1, 37.5]
+via = "std"
+
+# agentee route CC1 CC2 CHG_* PROG LDO_EN
+
+[[tracks]]
+net = "CC2"
+layer = "F.Cu"
+points = [[50.85, 25.5], [50.45, 25.5], [50.4, 25.55]]
+
+[[tracks]]
+net = "CC2"
+layer = "B.Cu"
+points = [[50.4, 25.55], [51.15, 26.3], [52.55, 26.3], [53.05, 25.8]]
+
+[[tracks]]
+net = "CC1"
+layer = "F.Cu"
+points = [[52.25, 28.5], [52.45, 28.5], [52.8, 28.85], [52.8, 29.1]]
+
+[[tracks]]
+net = "CC1"
+layer = "B.Cu"
+points = [[52.8, 29.1], [53.1, 28.8]]
+
+[[tracks]]
+net = "CHG_STAT"
+layer = "F.Cu"
+points = [[57.25, 35.6], [57.25, 36.35]]
+
+[[tracks]]
+net = "LDO_EN"
+layer = "F.Cu"
+points = [[4.5, 30.65], [4.65, 30.8], [5.71, 30.8]]
+
+[[tracks]]
+net = "CHG_LED"
+layer = "F.Cu"
+points = [[57.15, 33.3], [55.85, 33.3]]
+
+[[tracks]]
+net = "PROG"
+layer = "F.Cu"
+points = [[57.1, 39.9], [57.1, 40.5]]
+
+[[vias]]
+net = "CC2"
+at = [50.4, 25.55]
+via = "std"
+
+[[vias]]
+net = "CC1"
+at = [52.8, 29.1]
+via = "std"
+
+# agentee tie
+
+[[tracks]]
+net = "GND"
+layer = "F.Cu"
+points = [[46.9, 7.5], [46.1222, 6.7222]]
+
+[[tracks]]
+net = "GND"
+layer = "F.Cu"
+points = [[46.9, 8.3], [46.1609, 7.9939]]
+
+[[tracks]]
+net = "GND"
+layer = "F.Cu"
+points = [[49.6, 16.4], [49.2556, 15.5685]]
+
+[[tracks]]
+net = "GND"
+layer = "F.Cu"
+points = [[57.6, 6.6], [57.6, 7.35]]
+
+[[tracks]]
+net = "GND"
+layer = "F.Cu"
+points = [[56.0, 6.6], [56.7778, 7.3778]]
+
+[[tracks]]
+net = "GND"
+layer = "F.Cu"
+points = [[55.2, 6.6], [55.5061, 7.3391]]
+
+[[tracks]]
+net = "GND"
+layer = "F.Cu"
+points = [[54.4, 6.6], [54.9549, 7.9396]]
+
+[[tracks]]
+net = "GND"
+layer = "F.Cu"
+points = [[53.6, 6.6], [54.3778, 7.3778]]
+
+[[tracks]]
+net = "GND"
+layer = "F.Cu"
+points = [[52.8, 6.6], [52.0222, 7.3778]]
+
+[[tracks]]
+net = "GND"
+layer = "F.Cu"
+points = [[50.4, 6.6], [49.6222, 7.3778]]
+
+[[tracks]]
+net = "GND"
+layer = "F.Cu"
+points = [[48.0, 6.6], [47.6939, 7.3391]]
+
+[[tracks]]
+net = "GND"
+layer = "F.Cu"
+points = [[50.825, 9.525], [50.1179, 8.8179]]
+
+[[tracks]]
+net = "GND"
+layer = "F.Cu"
+points = [[50.825, 11.5], [49.5778, 10.9834]]
+
+[[tracks]]
+net = "GND"
+layer = "F.Cu"
+points = [[50.825, 13.475], [49.725, 13.475]]
+
+[[tracks]]
+net = "GND"
+layer = "F.Cu"
+points = [[52.8, 9.525], [52.8, 8.425]]
+
+[[tracks]]
+net = "GND"
+layer = "F.Cu"
+points = [[52.8, 11.5], [53.7899, 10.5101]]
+
+[[tracks]]
+net = "GND"
+layer = "F.Cu"
+points = [[52.8, 13.475], [53.7899, 12.4851]]
+
+[[tracks]]
+net = "GND"
+layer = "F.Cu"
+points = [[58.75, 16.45], [57.9015, 17.2985]]
+
+[[tracks]]
+net = "GND"
+layer = "F.Cu"
+points = [[51.555, 30.45], [49.7072, 31.2154]]
+
+[[tracks]]
+net = "GND"
+layer = "F.Cu"
+points = [[51.555, 23.95], [49.7072, 23.1846]]
+
+[[tracks]]
+net = "GND"
+layer = "F.Cu"
+points = [[3.78, 32.25], [4.0861, 32.9891]]
+
+[[tracks]]
+net = "GND"
+layer = "B.Cu"
+points = [[51.775, 28.45], [50.325, 28.45]]
+
+[[tracks]]
+net = "GND"
+layer = "F.Cu"
+points = [[56.4, 37.0125], [56.4, 35.9625]]
+
+[[tracks]]
+net = "GND"
+layer = "F.Cu"
+points = [[54.15, 42.125], [54.15, 42.975]]
+
+[[tracks]]
+net = "GND"
+layer = "F.Cu"
+points = [[52.45, 38.575], [52.45, 39.375]]
+
+[[tracks]]
+net = "GND"
+layer = "F.Cu"
+points = [[57.35, 42.525], [57.35, 43.275]]
+
+[[tracks]]
+net = "GND"
+layer = "F.Cu"
+points = [[15.175, 10.4], [14.375, 10.4]]
+
+[[tracks]]
+net = "GND"
+layer = "F.Cu"
+points = [[7.225, 25.55], [8.075, 25.55]]
+
+[[tracks]]
+net = "GND"
+layer = "F.Cu"
+points = [[5.7125, 29.85], [4.6625, 29.85]]
+
+[[tracks]]
+net = "GND"
+layer = "F.Cu"
+points = [[6.625, 32.3], [5.825, 32.3]]
+
+[[tracks]]
+net = "GND"
+layer = "F.Cu"
+points = [[52.25, 18.025], [51.4185, 18.3694]]
+
+[[tracks]]
+net = "GND"
+layer = "F.Cu"
+points = [[45.25, 14.875], [43.8711, 13.4961]]
+
+[[tracks]]
+net = "GND"
+layer = "F.Cu"
+points = [[41.25, 5.675], [42.0815, 6.0194]]
+
+[[tracks]]
+net = "GND"
+layer = "F.Cu"
+points = [[42.3, 8.675], [41.4685, 8.3306]]
+
+[[vias]]
+net = "GND"
+at = [46.1222, 6.7222]
+via = "std"
+
+[[vias]]
+net = "GND"
+at = [46.1609, 7.9939]
+via = "std"
+
+[[vias]]
+net = "GND"
+at = [49.2556, 15.5685]
+via = "std"
+
+[[vias]]
+net = "GND"
+at = [57.6, 7.35]
+via = "std"
+
+[[vias]]
+net = "GND"
+at = [56.7778, 7.3778]
+via = "std"
+
+[[vias]]
+net = "GND"
+at = [55.5061, 7.3391]
+via = "std"
+
+[[vias]]
+net = "GND"
+at = [54.9549, 7.9396]
+via = "std"
+
+[[vias]]
+net = "GND"
+at = [54.3778, 7.3778]
+via = "std"
+
+[[vias]]
+net = "GND"
+at = [52.0222, 7.3778]
+via = "std"
+
+[[vias]]
+net = "GND"
+at = [49.6222, 7.3778]
+via = "std"
+
+[[vias]]
+net = "GND"
+at = [47.6939, 7.3391]
+via = "std"
+
+[[vias]]
+net = "GND"
+at = [50.1179, 8.8179]
+via = "std"
+
+[[vias]]
+net = "GND"
+at = [49.5778, 10.9834]
+via = "std"
+
+[[vias]]
+net = "GND"
+at = [49.725, 13.475]
+via = "std"
+
+[[vias]]
+net = "GND"
+at = [52.8, 8.425]
+via = "std"
+
+[[vias]]
+net = "GND"
+at = [53.7899, 10.5101]
+via = "std"
+
+[[vias]]
+net = "GND"
+at = [53.7899, 12.4851]
+via = "std"
+
+[[vias]]
+net = "GND"
+at = [57.9015, 17.2985]
+via = "std"
+
+[[vias]]
+net = "GND"
+at = [49.7072, 31.2154]
+via = "std"
+
+[[vias]]
+net = "GND"
+at = [49.7072, 23.1846]
+via = "std"
+
+[[vias]]
+net = "GND"
+at = [4.0861, 32.9891]
+via = "std"
+
+[[vias]]
+net = "GND"
+at = [50.325, 28.45]
+via = "std"
+
+[[vias]]
+net = "GND"
+at = [56.4, 35.9625]
+via = "std"
+
+[[vias]]
+net = "GND"
+at = [54.15, 42.975]
+via = "std"
+
+[[vias]]
+net = "GND"
+at = [52.45, 39.375]
+via = "std"
+
+[[vias]]
+net = "GND"
+at = [57.35, 43.275]
+via = "std"
+
+[[vias]]
+net = "GND"
+at = [14.375, 10.4]
+via = "std"
+
+[[vias]]
+net = "GND"
+at = [8.075, 25.55]
+via = "std"
+
+[[vias]]
+net = "GND"
+at = [4.6625, 29.85]
+via = "std"
+
+[[vias]]
+net = "GND"
+at = [5.825, 32.3]
+via = "std"
+
+[[vias]]
+net = "GND"
+at = [51.4185, 18.3694]
+via = "std"
+
+[[vias]]
+net = "GND"
+at = [43.8711, 13.4961]
+via = "std"
+
+[[vias]]
+net = "GND"
+at = [42.0815, 6.0194]
+via = "std"
+
+[[vias]]
+net = "GND"
+at = [41.4685, 8.3306]
+via = "std"
+
+# agentee testpoints 3V3 GND VBAT VSYS VBUS EN U0TXD U0RXD
+
+[[footprints]]
+ref = "TP18"
+at = [20.32, 10.16]
+side = "bottom"
+label = { at = [23.53, 10.16] }
+
+[[footprints]]
+ref = "TP20"
+at = [5.08, 25.4]
+side = "bottom"
+label = { at = [5.08, 23.43] }
+
+[[footprints]]
+ref = "TP21"
+at = [38.1, 10.16]
+side = "bottom"
+label = { at = [38.1, 8.19] }
+
+[[footprints]]
+ref = "TP22"
+at = [55.88, 10.16]
+side = "bottom"
+label = { at = [52.67, 9.41] }
+
+[[footprints]]
+ref = "TP23"
+at = [55.88, 12.7]
+side = "bottom"
+label = { at = [57.86, 11.95], rotation = 90.0 }
+
+[[tracks]]
+net = "VBUS"
+layer = "B.Cu"
+points = [[20.32, 10.16], [20.32, 9.16]]
+
+[[vias]]
+net = "VBUS"
+at = [20.32, 9.16]
+
+[[tracks]]
+net = "VSYS"
+layer = "B.Cu"
+points = [[5.08, 25.4], [5.08, 26.4]]
+
+[[vias]]
+net = "VSYS"
+at = [5.08, 26.4]
+
+[[tracks]]
+net = "U0TXD"
+layer = "B.Cu"
+points = [[55.88, 10.16], [56.83, 10.16]]
+
+[[vias]]
+net = "U0TXD"
+at = [56.83, 10.16]
+
+[[tracks]]
+net = "U0RXD"
+layer = "B.Cu"
+points = [[55.88, 12.7], [56.5518, 12.0282]]
+
+[[vias]]
+net = "U0RXD"
+at = [56.5518, 12.0282]
+
+# agentee testpoints routes
+
+[[tracks]]
+net = "VBUS"
+layer = "F.Cu"
+points = [[19.95, 9.75], [20.25, 9.45]]
+
+[[tracks]]
+net = "U0TXD"
+layer = "F.Cu"
+points = [[58.3, 10.5], [58.05, 10.25], [57.1, 10.25]]
+
+[[tracks]]
+net = "U0RXD"
+layer = "F.Cu"
+points = [[58.3, 11.7], [58.0, 12.0], [56.85, 12.0]]
+
+# agentee route BUZZ_A BUZZ_B PIEZO_A PIEZO_B
+
+[[tracks]]
+net = "BUZZ_B"
+layer = "F.Cu"
+points = [[51.05, 16.0], [50.45, 15.4]]
+
+[[tracks]]
+net = "BUZZ_B"
+layer = "B.Cu"
+points = [[50.45, 15.4], [49.15, 14.1], [44.15, 14.1], [44.1, 14.15], [39.45, 14.15], [39.4, 14.1], [37.75, 14.1], [31.15, 20.7], [31.15, 21.45], [29.55, 23.05], [28.3, 23.05], [22.9, 28.45], [22.9, 29.55]]
+
+[[tracks]]
+net = "BUZZ_A"
+layer = "F.Cu"
+points = [[53.4, 16.0], [53.35, 15.95], [53.35, 15.65]]
+
+[[tracks]]
+net = "BUZZ_A"
+layer = "In2.Cu"
+points = [[53.35, 15.65], [53.35, 17.4], [41.1, 29.65]]
+
+[[tracks]]
+net = "BUZZ_A"
+layer = "B.Cu"
+points = [[41.1, 29.65], [39.4, 29.65]]
+
+[[tracks]]
+net = "PIEZO_A"
+layer = "B.Cu"
+points = [[36.2, 29.65], [37.0, 29.65]]
+
+[[tracks]]
+net = "PIEZO_B"
+layer = "B.Cu"
+points = [[23.8, 30.8], [21.8, 30.8], [21.35, 30.35]]
+
+[[vias]]
+net = "BUZZ_B"
+at = [50.45, 15.4]
+via = "std"
+
+[[vias]]
+net = "BUZZ_A"
+at = [53.35, 15.65]
+via = "std"
+
+[[vias]]
+net = "BUZZ_A"
+at = [41.1, 29.65]
+via = "std"
+
+# agentee tie
+
+[[tracks]]
+net = "GND"
+layer = "F.Cu"
+points = [[51.555, 30.45], [49.455, 30.45]]
+
+[[tracks]]
+net = "GND"
+layer = "B.Cu"
+points = [[51.775, 28.45], [49.9734, 27.7038]]
+
+[[tracks]]
+net = "GND"
+layer = "F.Cu"
+points = [[45.25, 14.875], [44.1875, 15.3151]]
+
+[[vias]]
+net = "GND"
+at = [49.455, 30.45]
+via = "std"
+
+[[vias]]
+net = "GND"
+at = [49.9734, 27.7038]
+via = "std"
+
+[[vias]]
+net = "GND"
+at = [44.1875, 15.3151]
+via = "std"
+
+[[vias]]
+net = "GND"
+at = [44.3, 11.775]
+
+[[tracks]]
+net = "GND"
+layer = "F.Cu"
+points = [[45.25, 11.775], [44.3, 11.775]]
+
+# agentee route 3V3
+
+[[tracks]]
+net = "3V3"
+layer = "F.Cu"
+points = [[40.85, 6.85], [40.3, 6.3], [40.3, 5.15], [40.7, 4.75], [42.15, 4.75], [42.3, 4.9]]
+
+[[tracks]]
+net = "3V3"
+layer = "F.Cu"
+points = [[46.5, 9.25], [45.9, 9.25], [45.7, 9.45]]
+
+[[tracks]]
+net = "3V3"
+layer = "F.Cu"
+points = [[41.85, 13.05], [40.85, 13.05], [39.95, 12.15]]
+
+[[tracks]]
+net = "3V3"
+layer = "B.Cu"
+points = [[39.95, 12.15], [39.15, 12.95], [39.15, 13.15]]
+
+[[tracks]]
+net = "3V3"
+layer = "F.Cu"
+points = [[39.15, 13.15], [37.85, 13.15], [37.0, 14.0]]
+
+[[tracks]]
+net = "3V3"
+layer = "F.Cu"
+points = [[47.3, 9.25], [47.55, 9.25], [48.4, 10.1]]
+
+[[tracks]]
+net = "3V3"
+layer = "B.Cu"
+points = [[48.4, 10.1], [48.4, 11.6], [48.0, 12.0], [47.15, 12.0], [46.95, 11.8], [45.4, 11.8], [44.65, 12.55], [40.45, 12.55], [40.2, 12.3]]
+
+[[tracks]]
+net = "3V3"
+layer = "B.Cu"
+points = [[48.15, 9.95], [47.45, 9.25], [43.65, 9.25], [42.05, 7.65]]
+
+[[tracks]]
+net = "3V3"
+layer = "F.Cu"
+points = [[42.05, 7.65], [41.7, 7.3]]
+
+[[tracks]]
+net = "3V3"
+layer = "F.Cu"
+points = [[36.35, 13.9], [35.4, 12.95]]
+
+[[tracks]]
+net = "3V3"
+layer = "B.Cu"
+points = [[48.5, 11.75], [51.9, 11.75], [55.85, 15.7], [55.85, 18.95], [56.05, 19.15], [56.05, 19.9], [54.6, 21.35], [54.6, 33.2], [53.95, 33.85]]
+
+[[tracks]]
+net = "3V3"
+layer = "F.Cu"
+points = [[53.95, 33.85], [53.2, 34.6]]
+
+[[tracks]]
+net = "3V3"
+layer = "F.Cu"
+points = [[34.6, 12.9], [32.65, 14.85], [31.1, 14.85]]
+
+[[tracks]]
+net = "3V3"
+layer = "F.Cu"
+points = [[30.2, 15.4], [28.85, 15.4], [27.6, 16.65]]
+
+[[tracks]]
+net = "3V3"
+layer = "F.Cu"
+points = [[8.5, 29.2], [9.1, 29.8], [9.1, 31.35], [8.55, 31.9]]
+
+[[tracks]]
+net = "3V3"
+layer = "F.Cu"
+points = [[26.85, 17.35], [25.95, 17.35], [23.2, 20.1]]
+
+[[tracks]]
+net = "3V3"
+layer = "B.Cu"
+points = [[21.55, 21.75], [13.5, 29.8]]
+
+[[tracks]]
+net = "3V3"
+layer = "F.Cu"
+points = [[13.5, 29.8], [9.3, 29.8]]
+
+[[vias]]
+net = "3V3"
+at = [39.95, 12.15]
+via = "std"
+
+[[vias]]
+net = "3V3"
+at = [39.15, 13.15]
+via = "std"
+
+[[vias]]
+net = "3V3"
+at = [48.4, 10.1]
+via = "std"
+
+[[vias]]
+net = "3V3"
+at = [42.05, 7.65]
+via = "std"
+
+[[vias]]
+net = "3V3"
+at = [53.95, 33.85]
+via = "std"
+
+[[vias]]
+net = "3V3"
+at = [13.5, 29.8]
+via = "std"
+
+# agentee route EN
+
+[[tracks]]
+net = "EN"
+layer = "F.Cu"
+points = [[42.6, 9.8], [43.15, 9.25], [43.15, 7.15]]
+
+[[tracks]]
+net = "EN"
+layer = "F.Cu"
+points = [[41.85, 9.95], [41.1, 9.2], [39.35, 9.2]]
+
+[[tracks]]
+net = "EN"
+layer = "B.Cu"
+points = [[39.35, 9.2], [38.55, 10.0]]
+
+[[tracks]]
+net = "EN"
+layer = "F.Cu"
+points = [[46.5, 13.05], [46.0, 12.55]]
+
+[[tracks]]
+net = "EN"
+layer = "In2.Cu"
+points = [[46.0, 12.55], [42.65, 9.2], [39.65, 9.2]]
+
+[[vias]]
+net = "EN"
+at = [39.35, 9.2]
+via = "std"
+
+[[vias]]
+net = "EN"
+at = [46.0, 12.55]
+via = "std"
+
+# agentee route BTN_START
+
+[[tracks]]
+net = "BTN_START"
+layer = "F.Cu"
+points = [[47.3, 11.3], [47.35, 11.25], [47.65, 11.25]]
+
+[[tracks]]
+net = "BTN_START"
+layer = "B.Cu"
+points = [[47.65, 11.25], [47.5, 11.1], [43.95, 11.1], [43.5, 11.55]]
+
+[[tracks]]
+net = "BTN_START"
+layer = "F.Cu"
+points = [[43.5, 11.55], [42.75, 11.55]]
+
+[[tracks]]
+net = "BTN_START"
+layer = "In2.Cu"
+points = [[43.25, 11.7], [41.0, 13.95], [38.9, 13.95], [38.45, 14.4], [38.45, 17.7], [37.45, 18.7], [35.6, 18.7], [33.95, 20.35], [33.95, 28.65], [42.55, 37.25], [42.55, 48.4], [34.45, 56.5], [31.85, 56.5], [28.75, 59.6]]
+
+[[vias]]
+net = "BTN_START"
+at = [47.65, 11.25]
+via = "std"
+
+[[vias]]
+net = "BTN_START"
+at = [43.5, 11.55]
+via = "std"

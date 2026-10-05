@@ -1,0 +1,106 @@
+name = "OLED_Waveshare_1.3in_C"
+description = "Waveshare 1.3inch OLED Module (C) soldered down on its own 1x07 2.54 mm male header, 2.5 mm spacer, with the module's four M2.5 holes. Module 39.5 x 30 mm, header 2.41 mm from its top edge, centred. Its rear 7 pin connector is removed before fitting."
+tags = ["OLED", "SH1107", "Waveshare", "socket", "2.54mm"]
+mount = "tht"
+model = "3dmodels/OLED_Waveshare_1.3in_C.wrl"
+
+[[pads]]
+number = "1"
+kind = "tht"
+shape = "rect"
+at = [0.0, 0.0]
+size = [1.7, 1.7]
+drill = 1.0
+layers = ["*.Cu", "*.Mask"]
+
+[[pads]]
+number = "2"
+kind = "tht"
+shape = "circle"
+at = [2.54, 0.0]
+size = [1.7, 1.7]
+drill = 1.0
+layers = ["*.Cu", "*.Mask"]
+count = 6
+pitch = [2.54, 0.0]
+
+[[pads]]
+kind = "npth"
+shape = "circle"
+at = [-9.65, 0.0]
+size = [2.7, 2.7]
+drill = 2.7
+layers = ["*.Cu", "*.Mask"]
+
+[[pads]]
+kind = "npth"
+shape = "circle"
+at = [24.89, 0.0]
+size = [2.7, 2.7]
+drill = 2.7
+layers = ["*.Cu", "*.Mask"]
+
+[[pads]]
+kind = "npth"
+shape = "circle"
+at = [-9.65, 25.15]
+size = [2.7, 2.7]
+drill = 2.7
+layers = ["*.Cu", "*.Mask"]
+
+[[pads]]
+kind = "npth"
+shape = "circle"
+at = [24.89, 25.15]
+size = [2.7, 2.7]
+drill = 2.7
+layers = ["*.Cu", "*.Mask"]
+
+[[graphics]]
+kind = "text"
+layer = "F.SilkS"
+at = [7.62, -2.4]
+text = "${REFERENCE}"
+size = 1.0
+
+[[graphics]]
+kind = "text"
+layer = "F.Fab"
+at = [7.62, 12.6]
+text = "${VALUE}"
+size = 1.0
+
+[[graphics]]
+kind = "rect"
+layer = "F.Fab"
+start = [-12.1, -2.41]
+end = [27.4, 27.59]
+width = 0.1
+
+[[graphics]]
+kind = "rect"
+layer = "Dwgs.User"
+start = [-10.25, 3.9]
+end = [25.55, 21.0]
+width = 0.1
+
+[[graphics]]
+kind = "rect"
+layer = "F.SilkS"
+start = [-1.4, -1.4]
+end = [16.64, 1.4]
+width = 0.15
+
+[[graphics]]
+kind = "line"
+layer = "F.SilkS"
+start = [-1.4, 1.9]
+end = [0.0, 1.9]
+width = 0.15
+
+[[graphics]]
+kind = "rect"
+layer = "F.CrtYd"
+start = [-12.35, -2.66]
+end = [27.65, 27.84]
+width = 0.05

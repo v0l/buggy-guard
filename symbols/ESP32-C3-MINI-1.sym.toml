@@ -1,0 +1,532 @@
+# imported from KiCad /tmp/esp-kicad/symbols/Espressif.kicad_sym:ESP32-C3-MINI-1
+name = "ESP32-C3-MINI-1"
+reference = "U"
+description = "ESP32-C3-MINI-1 family is an ultra-low-power MCU-based SoC solution that supports 2.4 GHz Wi-Fi and Bluetooth®Low Energy (Bluetooth LE)."
+datasheet = "https://www.espressif.com/sites/default/files/documentation/esp32-c3-mini-1_datasheet_en.pdf"
+keywords = ["esp32-c3"]
+footprint = "ESP32-C3-MINI-1"
+
+[[graphics]]
+kind = "text"
+at = [0.0, -2.54]
+text = "ESP32-C3-MINI-1"
+size = 2.54
+anchor = "center"
+
+[[graphics]]
+kind = "rect"
+start = [-25.4, -25.4]
+end = [25.4, 25.4]
+fill = "background"
+
+[[pins]]
+number = "1"
+name = "GND"
+type = "power_in"
+at = [0.0, 27.94]
+side = "bottom"
+length = 2.54
+unit = 1
+
+[[pins]]
+number = "2"
+name = "GND"
+type = "passive"
+at = [0.0, 27.94]
+side = "bottom"
+length = 2.54
+unit = 1
+hidden = true
+
+[[pins]]
+number = "3"
+name = "3V3"
+type = "power_in"
+at = [0.0, -27.94]
+side = "top"
+length = 2.54
+unit = 1
+
+[[pins]]
+number = "4"
+name = "NC"
+type = "no_connect"
+at = [-25.4, -10.16]
+side = "left"
+length = 2.54
+unit = 1
+hidden = true
+
+[[pins]]
+number = "5"
+name = "GPIO2/ADC1_CH2"
+type = "bidirectional"
+at = [27.94, 2.54]
+side = "right"
+length = 2.54
+unit = 1
+
+[[pins]]
+number = "6"
+name = "GPIO3/ADC1_CH3"
+type = "bidirectional"
+at = [27.94, 5.08]
+side = "right"
+length = 2.54
+unit = 1
+
+[[pins]]
+number = "7"
+name = "NC"
+type = "no_connect"
+at = [-25.4, -7.62]
+side = "left"
+length = 2.54
+unit = 1
+hidden = true
+
+[[pins]]
+number = "8"
+name = "EN/CHIP_PU"
+type = "input"
+at = [-27.94, -22.86]
+side = "left"
+length = 2.54
+unit = 1
+
+[[pins]]
+number = "9"
+name = "NC"
+type = "no_connect"
+at = [-25.4, -5.08]
+side = "left"
+length = 2.54
+unit = 1
+hidden = true
+
+[[pins]]
+number = "10"
+name = "NC"
+type = "no_connect"
+at = [-25.4, -2.54]
+side = "left"
+length = 2.54
+unit = 1
+hidden = true
+
+[[pins]]
+number = "11"
+name = "GND"
+type = "passive"
+at = [0.0, 27.94]
+side = "bottom"
+length = 2.54
+unit = 1
+hidden = true
+
+[[pins]]
+number = "12"
+name = "GPIO0/ADC1_CH0/XTAL_32K_P"
+type = "bidirectional"
+at = [-27.94, -17.78]
+side = "left"
+length = 2.54
+unit = 1
+
+[[pins]]
+number = "13"
+name = "GPIO1/ADC1_CH1/XTAL_32K_N"
+type = "bidirectional"
+at = [-27.94, -15.24]
+side = "left"
+length = 2.54
+unit = 1
+
+[[pins]]
+number = "14"
+name = "GND"
+type = "passive"
+at = [0.0, 27.94]
+side = "bottom"
+length = 2.54
+unit = 1
+hidden = true
+
+[[pins]]
+number = "15"
+name = "NC"
+type = "no_connect"
+at = [-25.4, 0.0]
+side = "left"
+length = 2.54
+unit = 1
+hidden = true
+
+[[pins]]
+number = "16"
+name = "GPIO10"
+type = "bidirectional"
+at = [27.94, 22.86]
+side = "right"
+length = 2.54
+unit = 1
+
+[[pins]]
+number = "17"
+name = "NC"
+type = "no_connect"
+at = [-25.4, 2.54]
+side = "left"
+length = 2.54
+unit = 1
+hidden = true
+
+[[pins]]
+number = "18"
+name = "GPIO4/ADC1_CH4"
+type = "bidirectional"
+at = [27.94, 7.62]
+side = "right"
+length = 2.54
+unit = 1
+
+[[pins]]
+number = "19"
+name = "GPIO5/ADC2_CH0"
+type = "bidirectional"
+at = [27.94, 10.16]
+side = "right"
+length = 2.54
+unit = 1
+
+[[pins]]
+number = "20"
+name = "GPIO6"
+type = "bidirectional"
+at = [27.94, 12.7]
+side = "right"
+length = 2.54
+unit = 1
+
+[[pins]]
+number = "21"
+name = "GPIO7"
+type = "bidirectional"
+at = [27.94, 15.24]
+side = "right"
+length = 2.54
+unit = 1
+
+[[pins]]
+number = "22"
+name = "GPIO8"
+type = "bidirectional"
+at = [27.94, 17.78]
+side = "right"
+length = 2.54
+unit = 1
+
+[[pins]]
+number = "23"
+name = "GPIO9"
+type = "bidirectional"
+at = [27.94, 20.32]
+side = "right"
+length = 2.54
+unit = 1
+
+[[pins]]
+number = "24"
+name = "NC"
+type = "no_connect"
+at = [-25.4, 5.08]
+side = "left"
+length = 2.54
+unit = 1
+hidden = true
+
+[[pins]]
+number = "25"
+name = "NC"
+type = "no_connect"
+at = [-25.4, 7.62]
+side = "left"
+length = 2.54
+unit = 1
+hidden = true
+
+[[pins]]
+number = "26"
+name = "GPIO18/USB_D-"
+type = "bidirectional"
+at = [27.94, -7.62]
+side = "right"
+length = 2.54
+unit = 1
+
+[[pins]]
+number = "27"
+name = "GPIO19/USB_D+"
+type = "bidirectional"
+at = [27.94, -10.16]
+side = "right"
+length = 2.54
+unit = 1
+
+[[pins]]
+number = "28"
+name = "NC"
+type = "no_connect"
+at = [-25.4, 10.16]
+side = "left"
+length = 2.54
+unit = 1
+hidden = true
+
+[[pins]]
+number = "29"
+name = "NC"
+type = "no_connect"
+at = [-25.4, 12.7]
+side = "left"
+length = 2.54
+unit = 1
+hidden = true
+
+[[pins]]
+number = "30"
+name = "GPIO20/U0RXD"
+type = "bidirectional"
+at = [27.94, -15.24]
+side = "right"
+length = 2.54
+unit = 1
+
+[[pins]]
+number = "31"
+name = "GPIO21/U0TXD"
+type = "bidirectional"
+at = [27.94, -17.78]
+side = "right"
+length = 2.54
+unit = 1
+
+[[pins]]
+number = "32"
+name = "NC"
+type = "no_connect"
+at = [-25.4, 15.24]
+side = "left"
+length = 2.54
+unit = 1
+hidden = true
+
+[[pins]]
+number = "33"
+name = "NC"
+type = "no_connect"
+at = [-25.4, 17.78]
+side = "left"
+length = 2.54
+unit = 1
+hidden = true
+
+[[pins]]
+number = "34"
+name = "NC"
+type = "no_connect"
+at = [-25.4, 20.32]
+side = "left"
+length = 2.54
+unit = 1
+hidden = true
+
+[[pins]]
+number = "35"
+name = "NC"
+type = "no_connect"
+at = [-25.4, 22.86]
+side = "left"
+length = 2.54
+unit = 1
+hidden = true
+
+[[pins]]
+number = "36"
+name = "GND"
+type = "passive"
+at = [0.0, 27.94]
+side = "bottom"
+length = 2.54
+unit = 1
+hidden = true
+
+[[pins]]
+number = "37"
+name = "GND"
+type = "passive"
+at = [0.0, 27.94]
+side = "bottom"
+length = 2.54
+unit = 1
+hidden = true
+
+[[pins]]
+number = "38"
+name = "GND"
+type = "passive"
+at = [0.0, 27.94]
+side = "bottom"
+length = 2.54
+unit = 1
+hidden = true
+
+[[pins]]
+number = "39"
+name = "GND"
+type = "passive"
+at = [0.0, 27.94]
+side = "bottom"
+length = 2.54
+unit = 1
+hidden = true
+
+[[pins]]
+number = "40"
+name = "GND"
+type = "passive"
+at = [0.0, 27.94]
+side = "bottom"
+length = 2.54
+unit = 1
+hidden = true
+
+[[pins]]
+number = "41"
+name = "GND"
+type = "passive"
+at = [0.0, 27.94]
+side = "bottom"
+length = 2.54
+unit = 1
+hidden = true
+
+[[pins]]
+number = "42"
+name = "GND"
+type = "passive"
+at = [0.0, 27.94]
+side = "bottom"
+length = 2.54
+unit = 1
+hidden = true
+
+[[pins]]
+number = "43"
+name = "GND"
+type = "passive"
+at = [0.0, 27.94]
+side = "bottom"
+length = 2.54
+unit = 1
+hidden = true
+
+[[pins]]
+number = "44"
+name = "GND"
+type = "passive"
+at = [0.0, 27.94]
+side = "bottom"
+length = 2.54
+unit = 1
+hidden = true
+
+[[pins]]
+number = "45"
+name = "GND"
+type = "passive"
+at = [0.0, 27.94]
+side = "bottom"
+length = 2.54
+unit = 1
+hidden = true
+
+[[pins]]
+number = "46"
+name = "GND"
+type = "passive"
+at = [0.0, 27.94]
+side = "bottom"
+length = 2.54
+unit = 1
+hidden = true
+
+[[pins]]
+number = "47"
+name = "GND"
+type = "passive"
+at = [0.0, 27.94]
+side = "bottom"
+length = 2.54
+unit = 1
+hidden = true
+
+[[pins]]
+number = "48"
+name = "GND"
+type = "passive"
+at = [0.0, 27.94]
+side = "bottom"
+length = 2.54
+unit = 1
+hidden = true
+
+[[pins]]
+number = "49"
+name = "GND"
+type = "passive"
+at = [0.0, 27.94]
+side = "bottom"
+length = 2.54
+unit = 1
+hidden = true
+
+[[pins]]
+number = "50"
+name = "GND"
+type = "passive"
+at = [0.0, 27.94]
+side = "bottom"
+length = 2.54
+unit = 1
+hidden = true
+
+[[pins]]
+number = "51"
+name = "GND"
+type = "passive"
+at = [0.0, 27.94]
+side = "bottom"
+length = 2.54
+unit = 1
+hidden = true
+
+[[pins]]
+number = "52"
+name = "GND"
+type = "passive"
+at = [0.0, 27.94]
+side = "bottom"
+length = 2.54
+unit = 1
+hidden = true
+
+[[pins]]
+number = "53"
+name = "GND"
+type = "passive"
+at = [0.0, 27.94]
+side = "bottom"
+length = 2.54
+unit = 1
+hidden = true

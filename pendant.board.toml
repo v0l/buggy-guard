@@ -1,0 +1,74 @@
+name = "pendant"
+description = "Handheld remote for buggy-guard: ESP32-C3 on ESP-NOW, OLED, start/stop and speed buttons, piezo, 1S LiPo with USB-C charging"
+fab = "jlcpcb"
+
+[outline]
+size = [60.0, 66.0]
+corner_radius = "3"
+
+
+[stackup]
+preset = "JLC04161H-7628"
+finish = "ENIG"
+mask_color = "black"
+silk_color = "white"
+
+[[vias]]
+name = "std"
+drill = "0.3mm"
+diameter = "0.6mm"
+
+[[netclasses]]
+name = "Default"
+track_width = "0.2mm"
+clearance = "0.15mm"
+via = "std"
+description = "Fallback only"
+layers = ["F.Cu", "In2.Cu", "B.Cu"]
+
+[[netclasses]]
+name = "Signal"
+track_width = "0.2mm"
+clearance = "0.15mm"
+via = "std"
+neckdown = "1mm"
+description = "GPIO, I2C, buttons, piezo drive"
+layers = ["F.Cu", "In2.Cu", "B.Cu"]
+
+[[netclasses]]
+name = "Analog"
+track_width = "0.2mm"
+clearance = "0.2mm"
+via = "std"
+neckdown = "1mm"
+description = "Battery and VBUS sense dividers, charger PROG"
+layers = ["F.Cu", "In2.Cu", "B.Cu"]
+
+[[netclasses]]
+name = "Ground"
+track_width = "0.3mm"
+clearance = "0.2mm"
+via = "std"
+neckdown = "1mm"
+description = "GND, solid on In1 and poured on F, In2 and B"
+layers = ["F.Cu", "B.Cu"]
+
+[[netclasses]]
+name = "Power"
+track_width = "0.4mm"
+clearance = "0.2mm"
+current = "0.6A"
+max_temp_rise = "10C"
+via = "std"
+neckdown = "1mm"
+description = "VBUS, VBAT, VSYS and 3V3"
+layers = ["F.Cu", "B.Cu"]
+
+[[netclasses]]
+name = "USB"
+track_width = "0.3mm"
+clearance = "0.15mm"
+via = "std"
+neckdown = "1mm"
+description = "USB full speed D+/D-"
+layers = ["F.Cu", "In2.Cu", "B.Cu"]

@@ -325,9 +325,9 @@ contract above.
 |---|---|---|
 | radio | U1 ESP32-C3-MINI-1-N4 | antenna at the top edge, top right, so the hand holding the bottom does not cover it; copper keepout under it on both layers |
 | charging | J1 USB-C, U4 USBLC6, U2 MCP73831-2 (4.2 V), R3 4.7k | 213 mA charge, red D2 while charging |
-| power path | D1 B5819W from VBUS, Q1 AO3401A from the cell | Microchip AN1149 load sharing: runs from USB when plugged in, the cell is never charged and loaded at once |
-| 3V3 | U3 AP2112K-3.3, SW1 slide switch on its EN | off means only the charger and the 4.5 uA battery divider draw from the cell |
-| display | J3, Waveshare 1.3inch OLED Module (C), SH1107 128x64 | soldered down on its own header, centred on the board, rear connector through a slot |
+| power path | D1 B5819W from VBUS, Q1 AO3401A from the cell, R5 10k | Microchip AN1149 load sharing: runs from USB when plugged in, the cell is never charged and loaded at once. R5 drains VBUS in about 50 ms on unplug, while VSYS sits a body diode below the cell |
+| 3V3 | U3 AP2112K-3.3, SW1 slide switch on its EN | off means only the charger and the battery divider (about 8 uA) draw from the cell |
+| display | J3, Waveshare 1.3inch OLED Module (C), SH1107 128x64 | soldered down on its own header, centred on the board, rear connector removed |
 | controls | SW2 START/STOP, SW3 SPEED, 12 mm tactile | SPEED is on GPIO9: hold it while powering on for download mode |
 | sound | BZ1 Murata PKLCS1212E4001 piezo, bottom side | driven differentially from two pins through 100 R each, 6.6 V p-p |
 
@@ -335,7 +335,7 @@ ESP32-C3 pins:
 
 | GPIO | net | notes |
 |---|---|---|
-| 0 | VBUS_SENSE | 100k/100k, high while USB is plugged in |
+| 0 | VBUS_SENSE | 330k/470k, 2.8 to 3.1 V while USB is plugged in; read it with the internal pulls off |
 | 1 | VBAT_ADC | 470k/470k with 100 nF, half the cell voltage |
 | 2 | OLED_CS | 10k pull-up, strapping pin |
 | 3 | BTN_START | 10k pull-up, deep sleep wake capable |
@@ -350,22 +350,23 @@ ESP32-C3 pins:
 The OLED stack: the module's own 1x07 male header is soldered straight into J3, so its 2.5 mm
 plastic spacer sets the gap and the module PCB sits 2.5 mm above the pendant, with 2.5 mm
 spacers and M2.5 screws in its four holes (they are part of the J3 footprint). The top of the
-glass is about 5.6 mm above the board. The module's rear 7 pin connector would hang 6 mm below
-it, so it drops through a 22.5 x 9.8 mm slot in the pendant and sticks out about 1.9 mm under
-the board; the enclosure needs room for that. No parts sit under the module on the top side,
-since its own rear parts leave about 1 mm. The module ships in 4-wire SPI mode, which is how it
+glass is about 5.6 mm above the board. The module's rear 7 pin connector is desoldered before
+fitting; its other rear parts are about 1.5 mm tall, so no parts sit under the module on the
+pendant's top side. The module ships in 4-wire SPI mode, which is how it
 is wired; moving its IM resistor to 1 selects I2C on DIN/CLK instead.
 
-The ESP32-C3, 12 mm switch, piezo and OLED 3D models are boxes drawn by
-`python3 3dmodels/make_models.py`. The vendor ESP32-C3 STEP and VRML do not mesh correctly in
-the agentee viewer.
+The cell must be a protected LiPo (with its own protection board), 250 mAh or more so the 213 mA
+charge stays under 1C. Nothing on the pendant stops it draining flat: the divider draws from it
+even when off, and with SW1 on the ESP runs until 3V3 browns out. Firmware should show low
+battery at 3.5 V on VBAT_ADC and go to deep sleep at 3.3 V, below which U3 cannot hold 3V3.
+
+The ESP32-C3 model is Espressif's STEP from their KiCad library. The 12 mm switch, piezo and OLED
+module models are boxes drawn by `python3 3dmodels/make_models.py`.
 
 ## Still to do
 
-- Pendant: check the 7 pin order (VCC GND DIN CLK CS DC RST) and the rear connector position
-  on an actual Waveshare module before soldering it down. The slot assumes the connector sits
-  centred on the module's bottom edge, measured off Waveshare's drawing to about 1 mm,
-  `footprints/OLED_Waveshare_1.3in_C.fp.toml` and the cutout in `pendant.board.toml`.
+- Pendant: check the 7 pin order (VCC GND DIN CLK CS DC RST) on an actual Waveshare module before
+  soldering it down, `footprints/OLED_Waveshare_1.3in_C.fp.toml`.
 - Pendant: J2 pin 1 is battery +. JST PH LiPo leads come wired both ways round; check before
   plugging in, a reversed cell destroys U2 and U3.
 - Firmware has not been written. The board is the safety layer; the behaviour above is the
