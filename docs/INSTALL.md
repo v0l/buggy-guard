@@ -23,7 +23,7 @@ The names match the white print on the board. Pin 1 is marked next to each conne
 
 | Connector | Pin 1 | Pin 2 | Pin 3 | Pin 4 |
 |---|---|---|---|---|
-| J1 BATT 48V (screw terminal) | battery + | battery - | | |
+| J1 BATT 20-58V (screw terminal) | battery + | battery - | | |
 | J15 E-STOP (JST XH) | e-stop button | e-stop button | | |
 | J4 ESC LOCK (screw terminal) | ESC power lock wire | ground, usually empty | | |
 | J7 ESC THR (JST XH) | empty | ESC throttle ground | ESC throttle signal | |

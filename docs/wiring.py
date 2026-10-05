@@ -145,7 +145,7 @@ for label, x_mm, y_mm in [("EN", 66.088, 27.177), ("BOOT", 47.7, 55.95)]:
     text(x, y + 20, label, 10, fill="#fff", anchor="middle")
 
 connector(*j["J1"], 2, True)
-text(j["J1"][0] - 8, j["J1"][1] + 30, "J1 BATT 48V", 11, "bold", "#fff")
+text(j["J1"][0] - 8, j["J1"][1] + 30, "J1 BATT 20-58V", 11, "bold", "#fff")
 connector(*j["J15"], 2, True)
 text(j["J15"][0] + 14, j["J15"][1] + 4, "J15 E-STOP", 11, "bold", "#fff")
 connector(*j["J4"], 2, True)

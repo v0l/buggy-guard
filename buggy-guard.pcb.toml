@@ -3598,8 +3598,8 @@ locked = true
 [[graphics]]
 kind = "text"
 layer = "F.SilkS"
-text = "J1 BATT 48V"
-at = [7.0, 21.6]
+text = "J1 BATT 20-58V"
+at = [6.6, 22.0]
 locked = true
 
 [[graphics]]
