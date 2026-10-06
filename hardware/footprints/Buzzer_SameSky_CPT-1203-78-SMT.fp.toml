@@ -1,0 +1,210 @@
+name = "Buzzer_SameSky_CPT-1203-78-SMT"
+description = "Same Sky CPT-1203-78-SMT-TR piezo transducer, 12 x 12 x 3 mm, recommended layout https://www.sameskydevices.com/product/resource/cpt-1203-78-smt-tr.pdf"
+tags = ["Same Sky", "Buzzer", "Piezo"]
+mount = "smd"
+model = "3dmodels/Buzzer_Murata_PKLCS1212E.wrl"
+
+[[pads]]
+number = "1"
+kind = "smd"
+shape = "rect"
+at = [-5.475, 0.0]
+size = [1.45, 4.0]
+layers = ["F.Cu", "F.Mask", "F.Paste"]
+
+[[pads]]
+number = "2"
+kind = "smd"
+shape = "rect"
+at = [5.475, 0.0]
+size = [1.45, 4.0]
+layers = ["F.Cu", "F.Mask", "F.Paste"]
+
+[[graphics]]
+kind = "text"
+layer = "F.SilkS"
+at = [0.0, -7.0]
+text = "${REFERENCE}"
+size = 1.0
+
+[[graphics]]
+kind = "text"
+layer = "F.Fab"
+at = [0.0, 7.0]
+text = "${VALUE}"
+size = 1.0
+
+[[graphics]]
+kind = "line"
+layer = "F.SilkS"
+start = [-6.12, -6.12]
+end = [6.12, -6.12]
+width = 0.15
+
+[[graphics]]
+kind = "line"
+layer = "F.SilkS"
+start = [-6.12, -2.26]
+end = [-6.42, -2.26]
+width = 0.15
+
+[[graphics]]
+kind = "line"
+layer = "F.SilkS"
+start = [-6.12, -2.26]
+end = [-6.12, -6.12]
+width = 0.15
+
+[[graphics]]
+kind = "line"
+layer = "F.SilkS"
+start = [-6.12, 6.12]
+end = [-6.12, 2.26]
+width = 0.15
+
+[[graphics]]
+kind = "line"
+layer = "F.SilkS"
+start = [6.12, -6.12]
+end = [6.12, -2.26]
+width = 0.15
+
+[[graphics]]
+kind = "line"
+layer = "F.SilkS"
+start = [6.12, 2.26]
+end = [6.12, 6.12]
+width = 0.15
+
+[[graphics]]
+kind = "line"
+layer = "F.SilkS"
+start = [6.12, 6.12]
+end = [-6.12, 6.12]
+width = 0.15
+
+[[graphics]]
+kind = "line"
+layer = "F.CrtYd"
+start = [-6.45, 2.25]
+end = [-6.45, -2.25]
+width = 0.05
+
+[[graphics]]
+kind = "line"
+layer = "F.CrtYd"
+start = [-6.25, -6.25]
+end = [6.25, -6.25]
+width = 0.05
+
+[[graphics]]
+kind = "line"
+layer = "F.CrtYd"
+start = [-6.25, -2.25]
+end = [-6.45, -2.25]
+width = 0.05
+
+[[graphics]]
+kind = "line"
+layer = "F.CrtYd"
+start = [-6.25, -2.25]
+end = [-6.25, -6.25]
+width = 0.05
+
+[[graphics]]
+kind = "line"
+layer = "F.CrtYd"
+start = [-6.25, 2.25]
+end = [-6.45, 2.25]
+width = 0.05
+
+[[graphics]]
+kind = "line"
+layer = "F.CrtYd"
+start = [-6.25, 6.25]
+end = [-6.25, 2.25]
+width = 0.05
+
+[[graphics]]
+kind = "line"
+layer = "F.CrtYd"
+start = [6.25, -2.25]
+end = [6.25, -6.25]
+width = 0.05
+
+[[graphics]]
+kind = "line"
+layer = "F.CrtYd"
+start = [6.25, -2.25]
+end = [6.45, -2.25]
+width = 0.05
+
+[[graphics]]
+kind = "line"
+layer = "F.CrtYd"
+start = [6.25, 2.25]
+end = [6.45, 2.25]
+width = 0.05
+
+[[graphics]]
+kind = "line"
+layer = "F.CrtYd"
+start = [6.25, 6.25]
+end = [-6.25, 6.25]
+width = 0.05
+
+[[graphics]]
+kind = "line"
+layer = "F.CrtYd"
+start = [6.25, 6.25]
+end = [6.25, 2.25]
+width = 0.05
+
+[[graphics]]
+kind = "line"
+layer = "F.CrtYd"
+start = [6.45, 2.25]
+end = [6.45, -2.25]
+width = 0.05
+
+[[graphics]]
+kind = "line"
+layer = "F.Fab"
+start = [-6.0, -5.0]
+end = [-5.0, -6.0]
+width = 0.1
+
+[[graphics]]
+kind = "line"
+layer = "F.Fab"
+start = [-6.0, 6.0]
+end = [-6.0, -5.0]
+width = 0.1
+
+[[graphics]]
+kind = "line"
+layer = "F.Fab"
+start = [-5.0, -6.0]
+end = [6.0, -6.0]
+width = 0.1
+
+[[graphics]]
+kind = "line"
+layer = "F.Fab"
+start = [6.0, -6.0]
+end = [6.0, 6.0]
+width = 0.1
+
+[[graphics]]
+kind = "line"
+layer = "F.Fab"
+start = [6.0, 6.0]
+end = [-6.0, 6.0]
+width = 0.1
+
+[[graphics]]
+kind = "text"
+layer = "F.Fab"
+at = [0.0, 0.0]
+text = "${REFERENCE}"
+size = 1.0

@@ -7,21 +7,21 @@ ref = "U3"
 symbol = "ESP32-S3-WROOM-1"
 at = [76.2, 63.5]
 value = "ESP32-S3-WROOM-1U-N16R8"
-fields = { mfr = "Espressif", mpn = "ESP32-S3-WROOM-1U-N16R8" }
+fields = { mfr = "Espressif", mpn = "ESP32-S3-WROOM-1U-N16R8", spares = "0", buy_with = "1461530100" }
 
 [[parts]]
 ref = "C12"
 symbol = "C"
 at = [40.64, 22.86]
 value = "10u"
-fields = { mfr = "Murata", mpn = "GRM188R61A106KE69D" }
+fields = { mfr = "Kemet", mpn = "C0603C106M8PACTU" }
 
 [[parts]]
 ref = "C13"
 symbol = "C"
 at = [48.26, 22.86]
 value = "100n"
-fields = { mfr = "Murata", mpn = "GRM188R71H104KA93D" }
+fields = { mfr = "Kemet", mpn = "C0603C104K5RACTU" }
 
 [[parts]]
 ref = "R10"
@@ -35,7 +35,7 @@ ref = "C14"
 symbol = "C"
 at = [25.4, 58.42]
 value = "1u"
-fields = { mfr = "Murata", mpn = "GRM188R61E105KA12D" }
+fields = { mfr = "Kemet", mpn = "C0603C105K3PACTU" }
 
 [[parts]]
 ref = "SW1"
@@ -149,7 +149,7 @@ symbol = "Conn_01x04"
 at = [11.43, 20.32]
 value = "UART_DBG"
 footprint = "JST_XH_B4B-XH-A_1x04_P2.50mm_Vertical"
-fields = { mfr = "JST", mpn = "B4B-XH-A(LF)(SN)", desc = "console: 1 GND, 2 +3V3, 3 RX, 4 TX" }
+fields = { mfr = "JST", mpn = "B4B-XH-A(LF)(SN)", desc = "console: 1 GND, 2 +3V3, 3 RX, 4 TX", buy_with = "XHP-4, SXH-001T-P0.6 x4" }
 
 [[parts]]
 ref = "TP1"

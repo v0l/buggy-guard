@@ -14,7 +14,7 @@ ref = "C15"
 symbol = "C"
 at = [10.16, 38.1]
 value = "100n"
-fields = { mfr = "Murata", mpn = "GRM188R71H104KA93D" }
+fields = { mfr = "Kemet", mpn = "C0603C104K5RACTU" }
 
 [[parts]]
 ref = "R17"
@@ -34,22 +34,22 @@ fields = { mfr = "Yageo", mpn = "RC0603FR-0710KL" }
 ref = "U6"
 symbol = "LSM6DS3"
 at = [33.02, 104.14]
-value = "LSM6DS3TR-C"
-fields = { mfr = "STMicroelectronics", mpn = "LSM6DS3TR-C" }
+value = "LSM6DSO"
+fields = { mfr = "STMicroelectronics", mpn = "LSM6DSOTR" }
 
 [[parts]]
 ref = "C16"
 symbol = "C"
 at = [10.16, 93.98]
 value = "100n"
-fields = { mfr = "Murata", mpn = "GRM188R71H104KA93D" }
+fields = { mfr = "Kemet", mpn = "C0603C104K5RACTU" }
 
 [[parts]]
 ref = "C17"
 symbol = "C"
 at = [17.78, 93.98]
 value = "100n"
-fields = { mfr = "Murata", mpn = "GRM188R71H104KA93D" }
+fields = { mfr = "Kemet", mpn = "C0603C104K5RACTU" }
 
 [[parts]]
 ref = "R19"
@@ -94,7 +94,7 @@ ref = "C18"
 symbol = "C"
 at = [86.36, 25.4]
 value = "100n"
-fields = { mfr = "Murata", mpn = "GRM188R71H104KA93D" }
+fields = { mfr = "Kemet", mpn = "C0603C104K5RACTU" }
 
 [[parts]]
 ref = "R22"
@@ -115,7 +115,7 @@ ref = "C19"
 symbol = "C"
 at = [119.38, 25.4]
 value = "100n"
-fields = { mfr = "Murata", mpn = "GRM188R71H104KA93D" }
+fields = { mfr = "Kemet", mpn = "C0603C104K5RACTU" }
 
 [[parts]]
 ref = "R23"
@@ -216,7 +216,7 @@ ref = "C20"
 symbol = "C"
 at = [208.28, 76.2]
 value = "100n"
-fields = { mfr = "Murata", mpn = "GRM188R71H104KA93D" }
+fields = { mfr = "Kemet", mpn = "C0603C104K5RACTU" }
 
 [[parts]]
 ref = "Q4"
@@ -231,7 +231,7 @@ symbol = "Conn_01x02"
 at = [190.5, 93.98]
 value = "BRAKE"
 mirror = true
-fields = { mfr = "JST", mpn = "B2B-XH-A(LF)(SN)" }
+fields = { mfr = "JST", mpn = "B2B-XH-A(LF)(SN)", buy_with = "XHP-2, SXH-001T-P0.6 x2" }
 
 [[parts]]
 ref = "Q5"
@@ -278,7 +278,7 @@ symbol = "Conn_01x02"
 at = [228.6, 35.56]
 value = "ESTOP"
 mirror = true
-fields = { mfr = "JST", mpn = "B2B-XH-A(LF)(SN)", desc = "NC e-stop button loop, 48 V" }
+fields = { mfr = "JST", mpn = "B2B-XH-A(LF)(SN)", desc = "NC e-stop button loop, 48 V", buy_with = "XHP-2, SXH-001T-P0.6 x2" }
 
 [[parts]]
 ref = "U10"
@@ -292,7 +292,7 @@ ref = "C28"
 symbol = "C"
 at = [53.34, 66.04]
 value = "100n"
-fields = { mfr = "Murata", mpn = "GRM188R71H104KA93D" }
+fields = { mfr = "Kemet", mpn = "C0603C104K5RACTU" }
 
 [[nets]]
 name = "+3V3"

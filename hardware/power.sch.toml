@@ -45,7 +45,7 @@ symbol = "C"
 at = [63.5, 48.26]
 value = "2.2u/100V"
 footprint = "C_1210_3225Metric"
-fields = { mfr = "Murata", mpn = "GRM32ER72A225KA35L" }
+fields = { mfr = "Kemet", mpn = "C1210C225K1RACTU" }
 
 [[parts]]
 ref = "C3"
@@ -53,7 +53,7 @@ symbol = "C"
 at = [71.12, 48.26]
 value = "2.2u/100V"
 footprint = "C_1210_3225Metric"
-fields = { mfr = "Murata", mpn = "GRM32ER72A225KA35L" }
+fields = { mfr = "Kemet", mpn = "C1210C225K1RACTU" }
 
 [[parts]]
 ref = "R1"
@@ -74,7 +74,7 @@ ref = "U1"
 symbol = "LM5164DDA"
 at = [109.22, 45.72]
 value = "LM5164"
-fields = { mfr = "Texas Instruments", mpn = "LM5164DDAR" }
+fields = { mfr = "Texas Instruments", mpn = "LM5164DDAT" }
 
 [[parts]]
 ref = "R3"
@@ -88,7 +88,7 @@ ref = "C4"
 symbol = "C"
 at = [132.08, 30.48]
 value = "2.2n/50V"
-fields = { mfr = "Murata", mpn = "GRM188R71H222KA01D" }
+fields = { mfr = "Kemet", mpn = "C0603C222K5RACTU" }
 
 [[parts]]
 ref = "L1"
@@ -124,7 +124,7 @@ ref = "C5"
 symbol = "C"
 at = [144.78, 63.5]
 value = "3.3n"
-fields = { mfr = "Murata", mpn = "GRM188R71H332KA01D" }
+fields = { mfr = "Kemet", mpn = "C0603C332K5RACTU" }
 
 [[parts]]
 ref = "C6"
@@ -139,7 +139,7 @@ symbol = "C"
 at = [172.72, 50.8]
 value = "22u/16V"
 footprint = "C_1206_3216Metric"
-fields = { mfr = "Murata", mpn = "GRM31CR61C226KE15L" }
+fields = { mfr = "Samsung", mpn = "CL31A226KOHNNNE" }
 
 [[parts]]
 ref = "C8"
@@ -147,7 +147,7 @@ symbol = "C"
 at = [180.34, 50.8]
 value = "22u/16V"
 footprint = "C_1206_3216Metric"
-fields = { mfr = "Murata", mpn = "GRM31CR61C226KE15L" }
+fields = { mfr = "Samsung", mpn = "CL31A226KOHNNNE" }
 
 [[parts]]
 ref = "D3"
@@ -168,14 +168,14 @@ ref = "C9"
 symbol = "C"
 at = [195.58, 55.88]
 value = "1u"
-fields = { mfr = "Murata", mpn = "GRM188R61E105KA12D" }
+fields = { mfr = "Kemet", mpn = "C0603C105K3PACTU" }
 
 [[parts]]
 ref = "C10"
 symbol = "C"
 at = [226.06, 55.88]
 value = "10u"
-fields = { mfr = "Murata", mpn = "GRM188R61A106KE69D" }
+fields = { mfr = "Kemet", mpn = "C0603C106M8PACTU" }
 
 [[parts]]
 ref = "R7"
@@ -196,7 +196,7 @@ ref = "C11"
 symbol = "C"
 at = [33.02, 86.36]
 value = "100n"
-fields = { mfr = "Murata", mpn = "GRM188R71H104KA93D" }
+fields = { mfr = "Kemet", mpn = "C0603C104K5RACTU" }
 
 [[parts]]
 ref = "R9"

@@ -46,7 +46,7 @@ until the firmware drives it high.
 
 | net | from | to |
 |---|---|---|
-| WDOK | TPS3430 WDO (open-drain, 10k pull-up), LSM6DS3 INT1 through R19 1k | U10 74LVC1G74 CLR, ESP32-S3 IO18 |
+| WDOK | TPS3430 WDO (open-drain, 10k pull-up), LSM6DSO INT1 through R19 1k | U10 74LVC1G74 CLR, ESP32-S3 IO18 |
 | WD_LATCH | U10 Q (D and PRE tied to +3V3) | U7 pin 2 |
 | ARM | ESP32-S3 IO15, 100k pull-down R22 | U7 pin 1, U10 CLK |
 | SAFE | U7 out, 100k pull-down R24 | U8 NAND pin 1, Q2 gate, green LED D7 |
@@ -74,11 +74,11 @@ sees it. The kill is latched in firmware until the pedal is at zero and the fob 
 
 | ref | value | part |
 |---|---|---|
-| U1 | LM5164 | TI LM5164DDAR |
+| U1 | LM5164 | TI LM5164DDAT, the 250 piece reel; Mouser has none of the 2500 piece LM5164DDAR |
 | U2 | AP2112K-3.3 | Diodes AP2112K-3.3TRG1 |
 | U3 | ESP32-S3-WROOM-1U-N16R8 | 16 MB flash, 8 MB PSRAM. The -1U has a U.FL socket on the module and no PCB antenna |
 | U5 | TPS3430 | TI TPS3430WDRCR, window watchdog with a separate WDO |
-| U6 | LSM6DS3TR-C | ST, 16 g accelerometer for the impact latch |
+| U6 | LSM6DSO | ST LSM6DSOTR, 16 g accelerometer for the impact latch. Pin-compatible with the LSM6DS3TR-C first picked (pins 10/11 left open), which Farnell does not stock; its registers differ, WHO_AM_I is 0x6C |
 | U7, U8 | 74AHCT1G08, 74AHCT1G00 | AHCT so 3.3 V is a valid high |
 | U10 | 74LVC1G74 | TI SN74LVC1G74DCUR, on +3V3, latches a WDOK fault until ARM is re-asserted |
 | U9 | MCP6002T | throttle filter amplifier, unit B unused (tied as a grounded follower) |
@@ -93,11 +93,20 @@ sees it. The kill is latched in firmware until the pedal is at zero and the fob 
 | Q1 | DMN3404L | Diodes DMN3404L-7, buzzer low-side switch, 82 mohm at 3 V gate; same SOT-23 pinout as the AO3400A |
 | J2 | USB-C | HRO TYPE-C-31-M-12, from LCSC (C165948). Mouser does not stock it |
 
-Every part carries `mfr` and `mpn` fields. `python3 docs/order_bom.py N` writes
-`docs/bom-order.csv` for N boards, and `docs/bom-mouser.csv` in the column layout of Mouser's
-BOM import template, without J2. 0603 resistors and capacitors are rounded up to 10, each small semiconductor
-and PTC gets one spare for hand assembly, and the U.FL antenna, XH housings and crimps are added
-at the end.
+Every part carries `mfr` and `mpn` fields. `agentee parts buggy-guard --boards N --spares --order
+docs/` (and the same for `pendant`) prices every line at Mouser and Farnell and writes
+`docs/NAME-order.csv` with the site each line is bought from, plus `docs/NAME-mouser.csv` (Mouser's
+BOM import layout) and `docs/NAME-farnell.csv`. Each site sheet has the lines to order there on top,
+then the lines bought at the other site, then the lines that site lacks, so order the top block on
+each site. `--spares` rounds 0603 resistors and capacitors up to 10 and adds a spare to each
+diode, transistor, IC and fuse line; the radio modules carry `spares = "0"`. The U.FL antenna and
+the XH housings and crimps come from `buy_with` fields on U3 and the XH headers.
+
+Every line is stocked at Mouser or Farnell (`agentee parts buggy-guard` checks both), most at
+both. The Murata GRM188/GRM31/GRM32 capacitors first picked are End of Life or Obsolete at Mouser;
+they are Kemet C0603C (X7R 50 V and X5R), Samsung CL31 and Kemet C1210 parts of the same value,
+package, voltage and dielectric now. The 10 uF 0603 is a 20% part (C0603C106M8PACTU), the only one
+both distributors stock; a 10% one is TDK C1608X5R1A106K080AC at Mouser only.
 
 ## Board
 
@@ -325,13 +334,13 @@ contract above.
 
 | block | parts | notes |
 |---|---|---|
-| radio | U1 ESP32-C3-MINI-1-N4 | antenna at the top edge, top right, so the hand holding the bottom does not cover it. The module sits 3.6 mm in from the right edge so it clears the rounded corner; copper keepout under the antenna and 2.7 mm to its left on all four layers |
+| radio | U1 ESP32-C3-MINI-1-N4X | antenna at the top edge, top right, so the hand holding the bottom does not cover it. The module sits 3.6 mm in from the right edge so it clears the rounded corner; copper keepout under the antenna and 2.7 mm to its left on all four layers |
 | charging | J1 USB-C, U4 USBLC6, U2 MCP73831-2 (4.2 V), R3 4.7k | 213 mA charge, red D2 while charging |
-| power path | D1 B5819W from VBUS, Q1 AO3401A from the cell, R5 10k | Microchip AN1149 load sharing: runs from USB when plugged in, the cell is never charged and loaded at once. R5 drains VBUS in about 50 ms on unplug, while VSYS sits a body diode below the cell |
+| power path | D1 1N5819HW from VBUS, Q1 DMP2035U from the cell, R5 10k | Microchip AN1149 load sharing: runs from USB when plugged in, the cell is never charged and loaded at once. R5 drains VBUS in about 50 ms on unplug, while VSYS sits a body diode below the cell |
 | 3V3 | U3 AP2112K-3.3, SW1 slide switch on its EN | off means only the charger and the battery divider (about 8 uA) draw from the cell |
 | display | J3, Waveshare 1.3inch OLED Module (C), SH1107 128x64 | soldered down on its own header, centred on the board, rear connector removed |
 | controls | SW2 START/STOP, SW3 SPEED, 12 mm tactile | SPEED is on GPIO9: hold it while powering on for download mode |
-| sound | BZ1 Murata PKLCS1212E4001 piezo, top left above the display | driven differentially from two pins through 100 R each, 6.6 V p-p |
+| sound | BZ1 Same Sky CPT-1203-78-SMT-TR piezo, top left above the display | driven differentially from two pins through 100 R each, 6.6 V p-p |
 
 ESP32-C3 pins:
 
@@ -385,6 +394,15 @@ At 3.7 V the charger dissipates 0.31 W and the open-air junction is about 102 C.
 
 The USB socket's VBUS pins A4 and A9 are separate copper on this board: A4 feeds the charger and
 A9 the power path. Every USB-C plug joins them, so the DC run holds both at 5 V.
+
+Every pendant part carries `mfr` and `mpn` fields, the same Yageo, Kemet and TDK passives as the
+main board. U1 is the ESP32-C3-MINI-1-N4X, the current chip revision of the same module, which
+Mouser lists as the replacement for the -N4. BZ1 started as the Murata PKLCS1212E4001, now End of
+Life; the Same Sky CPT-1203-78 has the same 12 x 12 x 3 mm body and side terminals, 4 kHz, rated 5
+Vp-p and good to 25 Vp-p. Its footprint uses Same Sky's recommended pads, 1.45 x 4.0 mm with a 9.5
+mm gap. D1 and Q1 started as the LCSC generics B5819W and AO3401A; Diodes 1N5819HW-7-F and
+DMP2035U-7 are the same SOD-123 and SOT-23 parts with the same pinout, from a maker Mouser and
+Farnell carry. J1 is LCSC only, like the main board's J2. J3 is Waveshare SKU 18179.
 
 The ESP32-C3 model is Espressif's STEP from their KiCad library, loaded by URL. The 12 mm switch, piezo and OLED
 module models are boxes drawn by `python3 3dmodels/make_models.py`.

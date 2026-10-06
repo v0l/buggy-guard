@@ -10,55 +10,63 @@ symbol = "USB_C_Receptacle_USB2.0_16P"
 value = "USB-C"
 at = [25.4, 49.53]
 mirror = true
+fields = { mfr = "Korean Hroparts", mpn = "TYPE-C-31-M-12", lcsc = "C165948" }
 
 [[parts]]
 ref = "R1"
 symbol = "R"
 value = "5.1k"
 at = [49.53, 74.93]
+fields = { mfr = "Yageo", mpn = "RC0603FR-075K1L" }
 
 [[parts]]
 ref = "R2"
 symbol = "R"
 value = "5.1k"
 at = [57.15, 74.93]
+fields = { mfr = "Yageo", mpn = "RC0603FR-075K1L" }
 
 [[parts]]
 ref = "U4"
 symbol = "USBLC6-2SC6"
 value = "USBLC6-2SC6"
 at = [59.69, 39.37]
+fields = { mfr = "STMicroelectronics", mpn = "USBLC6-2SC6" }
 
 [[parts]]
 ref = "U2"
 symbol = "MCP73831-2-OT"
 value = "MCP73831-2"
 at = [100.33, 39.37]
-fields = { mpn = "Microchip MCP73831T-2ACI/OT" }
+fields = { mpn = "MCP73831T-2ACI/OT", mfr = "Microchip" }
 
 [[parts]]
 ref = "C1"
 symbol = "C"
 value = "4.7u"
 at = [82.55, 44.45]
+fields = { mfr = "TDK", mpn = "C1608X5R1C475K080AC" }
 
 [[parts]]
 ref = "C2"
 symbol = "C"
 value = "4.7u"
 at = [124.46, 49.53]
+fields = { mfr = "TDK", mpn = "C1608X5R1C475K080AC" }
 
 [[parts]]
 ref = "R3"
 symbol = "R"
 value = "4.7k"
 at = [111.76, 59.69]
+fields = { mfr = "Yageo", mpn = "RC0603FR-074K7L" }
 
 [[parts]]
 ref = "R4"
 symbol = "R"
 value = "1k"
 at = [85.09, 25.4]
+fields = { mfr = "Yageo", mpn = "RC0603FR-071KL" }
 
 [[parts]]
 ref = "D2"
@@ -66,6 +74,7 @@ symbol = "LED"
 value = "red"
 at = [95.25, 17.78]
 rotation = 180.0
+fields = { mfr = "Lite-On", mpn = "LTST-C191KRKT" }
 
 [[parts]]
 ref = "J2"
@@ -74,40 +83,44 @@ value = "LiPo"
 at = [139.7, 49.53]
 mirror = true
 footprint = "JST_PH_B2B-PH-K_1x02_P2.00mm_Vertical"
+fields = { mfr = "JST", mpn = "B2B-PH-K-S(LF)(SN)", desc = "protected 1S LiPo, pin 1 +" }
 
 [[parts]]
 ref = "D1"
 symbol = "D"
-value = "B5819W"
+value = "1N5819HW"
 at = [160.02, 25.4]
 footprint = "D_SOD-123"
-fields = { mpn = "B5819W, 40 V 1 A Schottky" }
+fields = { mpn = "1N5819HW-7-F", mfr = "Diodes Inc" }
 
 [[parts]]
 ref = "Q1"
 symbol = "AO3401A"
-value = "AO3401A"
+value = "DMP2035U"
 at = [160.02, 44.45]
 rotation = 270.0
+fields = { mfr = "Diodes Inc", mpn = "DMP2035U-7" }
 
 [[parts]]
 ref = "R5"
 symbol = "R"
 value = "10k"
 at = [175.26, 59.69]
+fields = { mfr = "Yageo", mpn = "RC0603FR-0710KL" }
 
 [[parts]]
 ref = "C3"
 symbol = "C"
 value = "10u"
 at = [185.42, 39.37]
+fields = { mfr = "Kemet", mpn = "C0603C106M8PACTU" }
 
 [[parts]]
 ref = "U3"
 symbol = "AP2112K-3.3"
 value = "AP2112K-3.3"
 at = [204.47, 39.37]
-fields = { mpn = "Diodes AP2112K-3.3TRG1" }
+fields = { mpn = "AP2112K-3.3TRG1", mfr = "Diodes Inc" }
 
 [[parts]]
 ref = "SW1"
@@ -115,98 +128,112 @@ symbol = "SW_SPDT"
 value = "POWER"
 at = [190.5, 69.85]
 footprint = "SW_SPDT_PCM12"
-fields = { mpn = "C&K PCM12SMTR" }
+fields = { mpn = "PCM12SMTR", mfr = "C&K" }
 
 [[parts]]
 ref = "C4"
 symbol = "C"
 value = "10u"
 at = [224.79, 49.53]
+fields = { mfr = "Kemet", mpn = "C0603C106M8PACTU" }
 
 [[parts]]
 ref = "R7"
 symbol = "R"
 value = "470k"
 at = [149.86, 85.09]
+fields = { mfr = "Yageo", mpn = "RC0603FR-07470KL" }
 
 [[parts]]
 ref = "R8"
 symbol = "R"
 value = "470k"
 at = [149.86, 100.33]
+fields = { mfr = "Yageo", mpn = "RC0603FR-07470KL" }
 
 [[parts]]
 ref = "C5"
 symbol = "C"
 value = "100n"
 at = [160.02, 100.33]
+fields = { mfr = "Kemet", mpn = "C0603C104K5RACTU" }
 
 [[parts]]
 ref = "R9"
 symbol = "R"
 value = "330k"
 at = [175.26, 85.09]
+fields = { mfr = "Yageo", mpn = "RC0603FR-07330KL" }
 
 [[parts]]
 ref = "R10"
 symbol = "R"
 value = "470k"
 at = [175.26, 100.33]
+fields = { mfr = "Yageo", mpn = "RC0603FR-07470KL" }
 
 [[parts]]
 ref = "U1"
 symbol = "ESP32-C3-MINI-1"
-value = "ESP32-C3-MINI-1-N4"
+value = "ESP32-C3-MINI-1-N4X"
 at = [100.33, 149.86]
-fields = { mpn = "Espressif ESP32-C3-MINI-1-N4" }
+fields = { mpn = "ESP32-C3-MINI-1-N4X", mfr = "Espressif", spares = "0" }
 
 [[parts]]
 ref = "C6"
 symbol = "C"
 value = "10u"
 at = [59.69, 110.49]
+fields = { mfr = "Kemet", mpn = "C0603C106M8PACTU" }
 
 [[parts]]
 ref = "C7"
 symbol = "C"
 value = "100n"
 at = [68.58, 110.49]
+fields = { mfr = "Kemet", mpn = "C0603C104K5RACTU" }
 
 [[parts]]
 ref = "R11"
 symbol = "R"
 value = "10k"
 at = [44.45, 124.46]
+fields = { mfr = "Yageo", mpn = "RC0603FR-0710KL" }
 
 [[parts]]
 ref = "C8"
 symbol = "C"
 value = "1u"
 at = [44.45, 139.7]
+fields = { mfr = "Kemet", mpn = "C0603C105K3PACTU" }
 
 [[parts]]
 ref = "R12"
 symbol = "R"
 value = "10k"
 at = [54.61, 124.46]
+fields = { mfr = "Yageo", mpn = "RC0603FR-0710KL" }
 
 [[parts]]
 ref = "R13"
 symbol = "R"
 value = "10k"
 at = [149.86, 124.46]
+fields = { mfr = "Yageo", mpn = "RC0603FR-0710KL" }
 
 [[parts]]
 ref = "R14"
 symbol = "R"
 value = "10k"
 at = [160.02, 124.46]
+fields = { mfr = "Yageo", mpn = "RC0603FR-0710KL" }
 
 [[parts]]
 ref = "R15"
 symbol = "R"
 value = "10k"
 at = [64.77, 124.46]
+fields = { mfr = "Yageo", mpn = "RC0603FR-0710KL" }
 
 [[parts]]
 ref = "SW2"
@@ -215,6 +242,7 @@ value = "START/STOP"
 at = [74.93, 185.42]
 rotation = 90.0
 footprint = "SW_PUSH-12mm"
+fields = { mfr = "E-Switch", mpn = "TL1100F160Q" }
 
 [[parts]]
 ref = "SW3"
@@ -223,14 +251,15 @@ value = "SPEED"
 at = [175.26, 185.42]
 rotation = 90.0
 footprint = "SW_PUSH-12mm"
+fields = { mfr = "E-Switch", mpn = "TL1100F160Q" }
 
 [[parts]]
 ref = "BZ1"
 symbol = "Buzzer"
-value = "PKLCS1212E4001"
+value = "CPT-1203-78"
 at = [199.39, 149.86]
-footprint = "Buzzer_Murata_PKLCS1212E"
-fields = { mpn = "Murata PKLCS1212E4001-R1" }
+footprint = "Buzzer_SameSky_CPT-1203-78-SMT"
+fields = { mpn = "CPT-1203-78-SMT-TR", mfr = "Same Sky" }
 
 [[parts]]
 ref = "R16"
@@ -238,6 +267,7 @@ symbol = "R"
 value = "100"
 at = [185.42, 139.7]
 rotation = 90.0
+fields = { mfr = "Yageo", mpn = "RC0603FR-07100RL" }
 
 [[parts]]
 ref = "R17"
@@ -245,6 +275,7 @@ symbol = "R"
 value = "100"
 at = [185.42, 160.02]
 rotation = 90.0
+fields = { mfr = "Yageo", mpn = "RC0603FR-07100RL" }
 
 [[parts]]
 ref = "J3"
@@ -252,19 +283,21 @@ symbol = "Conn_01x07"
 value = "OLED 1.3in (C)"
 at = [214.63, 115.57]
 footprint = "OLED_Waveshare_1.3in_C"
-fields = { mpn = "Waveshare 1.3inch OLED Module (C), SH1107, soldered on its 1x07 2.54 mm male header" }
+fields = { mpn = "18179", mfr = "Waveshare", desc = "1.3inch OLED Module (C), SH1107, soldered on its 1x07 2.54 mm male header" }
 
 [[parts]]
 ref = "R18"
 symbol = "R"
 value = "4.7k"
 at = [190.5, 105.41]
+fields = { mfr = "Yageo", mpn = "RC0603FR-074K7L" }
 
 [[parts]]
 ref = "R19"
 symbol = "R"
 value = "4.7k"
 at = [196.85, 105.41]
+fields = { mfr = "Yageo", mpn = "RC0603FR-074K7L" }
 
 [[parts]]
 ref = "H1"
@@ -286,6 +319,7 @@ symbol = "TestPoint"
 value = "TP"
 footprint = "TestPoint_Pad_D1.0mm"
 at = [256.54, 17.78]
+fields = { assembly = "no" }
 
 [[parts]]
 ref = "TP20"
@@ -293,6 +327,7 @@ symbol = "TestPoint"
 value = "TP"
 footprint = "TestPoint_Pad_D1.0mm"
 at = [256.54, 25.4]
+fields = { assembly = "no" }
 
 [[parts]]
 ref = "TP21"
@@ -300,6 +335,7 @@ symbol = "TestPoint"
 value = "TP"
 footprint = "TestPoint_Pad_D1.0mm"
 at = [256.54, 33.02]
+fields = { assembly = "no" }
 
 [[parts]]
 ref = "TP22"
@@ -307,6 +343,7 @@ symbol = "TestPoint"
 value = "TP"
 footprint = "TestPoint_Pad_D1.0mm"
 at = [256.54, 40.64]
+fields = { assembly = "no" }
 
 [[parts]]
 ref = "TP23"
@@ -314,6 +351,7 @@ symbol = "TestPoint"
 value = "TP"
 footprint = "TestPoint_Pad_D1.0mm"
 at = [256.54, 48.26]
+fields = { assembly = "no" }
 
 [[nets]]
 name = "VBUS"

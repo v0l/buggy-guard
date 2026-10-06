@@ -16,7 +16,7 @@ symbol = "Conn_01x03"
 at = [7.62, 45.72]
 value = "PEDAL"
 mirror = true
-fields = { mfr = "JST", mpn = "B3B-XH-A(LF)(SN)" }
+fields = { mfr = "JST", mpn = "B3B-XH-A(LF)(SN)", buy_with = "XHP-3, SXH-001T-P0.6 x3" }
 
 [[parts]]
 ref = "R32"
@@ -38,7 +38,7 @@ ref = "C21"
 symbol = "C"
 at = [48.26, 58.42]
 value = "100n"
-fields = { mfr = "Murata", mpn = "GRM188R71H104KA93D" }
+fields = { mfr = "Kemet", mpn = "C0603C104K5RACTU" }
 
 [[parts]]
 ref = "R34"
@@ -53,7 +53,7 @@ ref = "C22"
 symbol = "C"
 at = [73.66, 38.1]
 value = "100n"
-fields = { mfr = "Murata", mpn = "GRM188R71H104KA93D" }
+fields = { mfr = "Kemet", mpn = "C0603C104K5RACTU" }
 
 [[parts]]
 ref = "R35"
@@ -68,7 +68,7 @@ ref = "C23"
 symbol = "C"
 at = [88.9, 38.1]
 value = "100n"
-fields = { mfr = "Murata", mpn = "GRM188R71H104KA93D" }
+fields = { mfr = "Kemet", mpn = "C0603C104K5RACTU" }
 
 [[parts]]
 ref = "U9"
@@ -96,7 +96,7 @@ ref = "C24"
 symbol = "C"
 at = [137.16, 63.5]
 value = "100n"
-fields = { mfr = "Murata", mpn = "GRM188R71H104KA93D" }
+fields = { mfr = "Kemet", mpn = "C0603C104K5RACTU" }
 
 [[parts]]
 ref = "R36"
@@ -126,7 +126,7 @@ ref = "C25"
 symbol = "C"
 at = [134.62, 40.64]
 value = "10n"
-fields = { mfr = "Murata", mpn = "GRM188R71H103KA01D" }
+fields = { mfr = "Kemet", mpn = "C0603C103K5RACTU" }
 
 [[parts]]
 ref = "R39"
@@ -148,7 +148,7 @@ ref = "J7"
 symbol = "Conn_01x03"
 at = [160.02, 30.48]
 value = "ESC_THR"
-fields = { mfr = "JST", mpn = "B3B-XH-A(LF)(SN)" }
+fields = { mfr = "JST", mpn = "B3B-XH-A(LF)(SN)", buy_with = "XHP-3, SXH-001T-P0.6 x3" }
 
 [[parts]]
 ref = "F3"
@@ -163,14 +163,14 @@ ref = "C27"
 symbol = "C"
 at = [33.02, 91.44]
 value = "10u"
-fields = { mfr = "Murata", mpn = "GRM188R61A106KE69D" }
+fields = { mfr = "Kemet", mpn = "C0603C106M8PACTU" }
 
 [[parts]]
 ref = "J8"
 symbol = "Conn_01x04"
 at = [160.02, 86.36]
 value = "US1"
-fields = { mfr = "JST", mpn = "B4B-XH-A(LF)(SN)" }
+fields = { mfr = "JST", mpn = "B4B-XH-A(LF)(SN)", buy_with = "XHP-4, SXH-001T-P0.6 x4" }
 
 [[parts]]
 ref = "R41"
@@ -200,7 +200,7 @@ ref = "J9"
 symbol = "Conn_01x04"
 at = [160.02, 111.76]
 value = "US2"
-fields = { mfr = "JST", mpn = "B4B-XH-A(LF)(SN)" }
+fields = { mfr = "JST", mpn = "B4B-XH-A(LF)(SN)", buy_with = "XHP-4, SXH-001T-P0.6 x4" }
 
 [[parts]]
 ref = "R44"
@@ -231,7 +231,7 @@ symbol = "Conn_01x03"
 at = [66.04, 116.84]
 value = "SPEED"
 mirror = true
-fields = { mfr = "JST", mpn = "B3B-XH-A(LF)(SN)" }
+fields = { mfr = "JST", mpn = "B3B-XH-A(LF)(SN)", buy_with = "XHP-3, SXH-001T-P0.6 x3" }
 
 [[parts]]
 ref = "R53"
@@ -260,7 +260,7 @@ ref = "C26"
 symbol = "C"
 at = [106.68, 124.46000000000001]
 value = "1n"
-fields = { mfr = "Murata", mpn = "GRM188R71H102KA01D" }
+fields = { mfr = "Kemet", mpn = "C0603C102K5RACTU" }
 
 [[parts]]
 ref = "J13"
@@ -268,7 +268,7 @@ symbol = "Conn_01x03"
 at = [7.62, 139.7]
 value = "AUX"
 mirror = true
-fields = { mfr = "JST", mpn = "B3B-XH-A(LF)(SN)" }
+fields = { mfr = "JST", mpn = "B3B-XH-A(LF)(SN)", buy_with = "XHP-3, SXH-001T-P0.6 x3" }
 
 [[parts]]
 ref = "R56"
