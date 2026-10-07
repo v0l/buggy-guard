@@ -1,0 +1,195 @@
+# imported from KiCad Connector_AMASS:AMASS_XT60PW-M_1x02_P7.20mm_Horizontal
+name = "AMASS_XT60PW-M_1x02_P7.20mm_Horizontal"
+description = "Connector XT60 Horizontal PCB Female, https://www.tme.eu/Document/b13629717d44ae038681dba08d18c0b6/XT60PW-M.pdf"
+tags = ["RC", "Connector", "XT60"]
+mount = "tht"
+overhang = true
+model = "https://raw.githubusercontent.com/OpenDrone-hw/KiCad-Library/b25cbd8449a63712d0f87d8bab98fb47837c67bd/3dmodel/CONN-TH_XT60PW-M.step"
+model_offset = [3.6, 7.1, 0.0]
+model_rotate = [0.0, 0.0, 90.0]
+
+[[pads]]
+kind = "tht"
+shape = "rect"
+at = [-3.15, -6.0]
+size = [0.9, 2.0]
+drill = [0.6, 1.7]
+layers = ["*.Cu", "*.Mask"]
+
+[[pads]]
+kind = "tht"
+shape = "rect"
+at = [10.35, -6.0]
+size = [0.9, 2.0]
+drill = [0.6, 1.7]
+layers = ["*.Cu", "*.Mask"]
+
+[[pads]]
+number = "1"
+kind = "tht"
+shape = "roundrect"
+at = [0.0, 0.0]
+size = [4.1, 4.1]
+roundrect_ratio = 0.25
+drill = 2.7
+layers = ["*.Cu", "*.Mask"]
+
+[[pads]]
+number = "2"
+kind = "tht"
+shape = "circle"
+at = [7.2, 0.0]
+size = [4.1, 4.1]
+drill = 2.7
+layers = ["*.Cu", "*.Mask"]
+
+[[graphics]]
+kind = "text"
+layer = "F.SilkS"
+at = [3.6, -17.5]
+text = "${REFERENCE}"
+size = 1.0
+
+[[graphics]]
+kind = "text"
+layer = "F.Fab"
+at = [3.6, 4.0]
+text = "${VALUE}"
+size = 1.0
+
+[[graphics]]
+kind = "line"
+layer = "F.SilkS"
+start = [-4.26, -16.46]
+end = [-4.26, -2.15]
+width = 0.15
+
+[[graphics]]
+kind = "line"
+layer = "F.SilkS"
+start = [-4.26, -16.46]
+end = [11.46, -16.46]
+width = 0.15
+
+[[graphics]]
+kind = "line"
+layer = "F.SilkS"
+start = [2.31, 1.96]
+end = [6.05, 1.96]
+width = 0.15
+
+[[graphics]]
+kind = "line"
+layer = "F.SilkS"
+start = [11.46, -16.46]
+end = [11.46, -2.15]
+width = 0.15
+
+[[graphics]]
+kind = "arc"
+layer = "F.SilkS"
+start = [-2.266806, 1.372958]
+mid = [-3.727162, -0.126139]
+end = [-4.26, -2.15]
+width = 0.15
+
+[[graphics]]
+kind = "arc"
+layer = "F.SilkS"
+start = [11.46, -2.15]
+mid = [10.653852, 0.294722]
+end = [8.551648, 1.780413]
+width = 0.15
+
+[[graphics]]
+kind = "line"
+layer = "F.CrtYd"
+start = [-4.65, -16.85]
+end = [-4.65, 2.55]
+width = 0.05
+
+[[graphics]]
+kind = "line"
+layer = "F.CrtYd"
+start = [-4.65, -16.85]
+end = [11.85, -16.85]
+width = 0.05
+
+[[graphics]]
+kind = "line"
+layer = "F.CrtYd"
+start = [11.85, -16.85]
+end = [11.85, 2.55]
+width = 0.05
+
+[[graphics]]
+kind = "line"
+layer = "F.CrtYd"
+start = [11.85, 2.55]
+end = [-4.65, 2.55]
+width = 0.05
+
+[[graphics]]
+kind = "line"
+layer = "F.Fab"
+start = [-4.15, -16.35]
+end = [-4.15, -2.15]
+width = 0.1
+
+[[graphics]]
+kind = "line"
+layer = "F.Fab"
+start = [-4.15, -16.35]
+end = [11.35, -16.35]
+width = 0.1
+
+[[graphics]]
+kind = "line"
+layer = "F.Fab"
+start = [-0.15, 1.85]
+end = [7.35, 1.85]
+width = 0.1
+
+[[graphics]]
+kind = "line"
+layer = "F.Fab"
+start = [11.35, -16.35]
+end = [11.35, -2.15]
+width = 0.1
+
+[[graphics]]
+kind = "arc"
+layer = "F.Fab"
+start = [-0.15, 1.85]
+mid = [-2.978427, 0.678427]
+end = [-4.15, -2.15]
+width = 0.1
+
+[[graphics]]
+kind = "arc"
+layer = "F.Fab"
+start = [11.35, -2.15]
+mid = [10.178427, 0.678427]
+end = [7.35, 1.85]
+width = 0.1
+
+[[graphics]]
+kind = "text"
+layer = "F.SilkS"
+at = [-2.8, 3.4]
+text = "-"
+size = 1.5
+
+[[graphics]]
+kind = "text"
+layer = "F.SilkS"
+at = [9.5, 3.4]
+text = "+"
+size = 1.5
+
+[[graphics]]
+kind = "text"
+layer = "F.Fab"
+at = [3.6, -3.6]
+text = "${REFERENCE}"
+size = 1.0

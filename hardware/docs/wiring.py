@@ -93,7 +93,7 @@ for i, (c, dsh, label) in enumerate(legend):
     text(lx + 80, yy + 1, label, 13)
 
 j = {
-    "J1": mm(6.5, 12), "J15": mm(5, 47), "J4": mm(6.5, 58),
+    "J1": mm(8.4, 12.3), "J15": mm(5, 47), "J4": mm(5, 58),
     "J7": mm(11, 75), "J5": mm(22, 75), "J12": mm(31, 75), "J6": mm(42, 75),
     "J13": mm(53, 75), "J2": mm(66.5, 75), "J14": mm(82, 75),
     "J8": mm(95, 20), "J9": mm(95, 34.5), "J3": mm(45, 4),
@@ -168,8 +168,8 @@ text(j["J3"][0], j["J3"][1] + 26, "J3 I2C", 11, "bold", "#fff", "middle")
 
 MONO = [0, 70, 150]
 box(60, 160, 360, 170, "Battery, 48 V (13S, 54.6 V full)", [
-    (["+", "battery +", "J1 pin 1"], [0, 30, 190]),
-    (["-", "battery -", "J1 pin 2"], [0, 30, 190]),
+    (["+", "battery +", "J1 XT60 +"], [0, 30, 190]),
+    (["-", "battery -", "J1 XT60 -"], [0, 30, 190]),
     "",
     "Take + from after the buggy's main fuse",
     "and switch. 0.5 mm² (20 AWG) wire is plenty:",

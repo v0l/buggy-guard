@@ -23,9 +23,9 @@ The names match the white print on the board. Pin 1 is marked next to each conne
 
 | Connector | Pin 1 | Pin 2 | Pin 3 | Pin 4 |
 |---|---|---|---|---|
-| J1 BATT 20-58V (screw terminal) | battery + | battery - | | |
+| J1 BATT 20-58V (XT60) | battery - (chamfered side) | battery + | | |
 | J15 E-STOP (JST XH) | e-stop button | e-stop button | | |
-| J4 ESC LOCK (screw terminal) | ESC power lock wire | ground, usually empty | | |
+| J4 ESC LOCK (JST XH) | ESC power lock wire | ground, usually empty | | |
 | J7 ESC THR (JST XH) | empty | ESC throttle ground | ESC throttle signal | |
 | J5 BRAKE (JST XH) | ESC brake signal | ESC brake ground | | |
 | J6 PEDAL (JST XH) | pedal red (+5 V) | pedal black | pedal green (signal) | |
@@ -43,11 +43,12 @@ the ESC's throttle plug before you unplug the pedal.
 
 1. **Mount the board.** Four M3 holes, 92 x 72 mm apart. Put it in a box out of the rain, away
    from the motor phase wires.
-2. **Battery.** Run two wires to J1 from the ESC's own battery terminals, not from the battery.
-   The board's ground also reaches the ESC through the throttle and brake plugs, so if J1 pin 2
-   went to the battery instead, motor current would share the thin signal grounds and offset
+2. **Battery.** Make a lead with a female XT60 on it and run it to J1 from the ESC's own battery
+   terminals, not from the battery. The board's ground also reaches the ESC through the throttle
+   and brake plugs, so if the lead's - went to the battery instead, motor current would share the thin signal grounds and offset
    the throttle. Taking + at the ESC also puts it after the buggy's main fuse and switch.
-   0.5 mm² (20 AWG) wire is enough; the board draws about 0.1 A.
+   0.5 mm² (20 AWG) wire is enough; the board draws about 0.1 A. Cable tie the lead to the frame
+   close to the plug so vibration cannot work it out.
 3. **Power lock.** Most ESCs have a key switch with two wires: a thick one that is always at
    battery voltage, and a thin lock wire that turns the ESC on. Find them with the meter: with
    the battery connected and the key off, the lock wire reads 0 V. Unplug the battery again,

@@ -140,6 +140,10 @@ both distributors stock; a 10% one is TDK C1608X5R1A106K080AC at Mouser only.
   connector pins solder; SMD pads and the U1 and U3 thermal pads stay solid.
 - The thermal vias in the U1 and U3 pads are 0.3 mm drills on 0.6 mm pads, JLC's standard drill.
 - J2's shell front sits on the board edge (0.25 mm in), so an overmoulded USB-C plug seats fully.
+- J1 is a right angle XT60 for a battery lead that has to stay plugged in under vibration. Its
+  housing hangs 8 mm past the left edge so the plug mates outside the board; the two pins and
+  both support legs are soldered on the board. Its STEP loads by URL from OpenDrone-hw's
+  KiCad-Library, pinned to a commit, as the KiCad library has none for the XT60PW.
 - Test points are bare pads with `assembly = "no"`, so they stay off the BOM and CPL and the
   assembly stays one-sided.
 - The USB-C connector sits on the bottom edge so the D+/D- pair runs to U4 and then to the ESP's
@@ -165,8 +169,8 @@ layout, so rerun it after moving a connector.
 
 | ref | fits | pinout |
 |---|---|---|
-| J1 | 2 way 5.08 terminal | 1 BATT+, 2 GND |
-| J4 | 2 way 5.08 terminal | 1 IGN_OUT to ESC lock, 2 GND |
+| J1 | XT60 female plug (board has an Amass XT60PW-M) | 1 GND (the chamfered side), 2 BATT+ |
+| J4 | JST XH 2 way | 1 IGN_OUT to ESC lock, 2 GND |
 | J15 | JST XH 2 way | 1 VIN, 2 e-stop return (NC button loop, 48 V) |
 | J6 | JST XH 3 way | 1 +5V, 2 GND, 3 pedal signal |
 | J7 | JST XH 3 way | 1 +5V (unused, ESC supplies its own), 2 GND, 3 throttle out |
@@ -198,7 +202,7 @@ git because the DC one is 98 MB.
 
 ### `buggy-guard-dc`, resistive DC drop
 
-50 V at F1.1, grounds at J1.2 and J4.2, the e-stop loop J15 linked at 50 mohm, 500 mA into the ESP32's 3V3 pad, 20 mA into the LDO
+50 V at F1.1, grounds at J1.1 and J4.2, the e-stop loop J15 linked at 50 mohm, 500 mA into the ESP32's 3V3 pad, 20 mA into the LDO
 output, 2 mA into the IMU, and 300 mA out of the ignition lock line through Q3 (linked at 50 mohm).
 Inductor DCR is the SRR1260's 170 mohm, the reverse diode 400 mohm, the fuse 95 mohm.
 
@@ -261,7 +265,7 @@ own drop.
 
 ### `buggy-guard-dc-hv`, 48 V path at the fuse limit
 
-50 V at J1.1 and 0 V at J1.2, 1 A into U1's VIN pin (the fuse rating, far above the buck's
+50 V at J1.2 and 0 V at J1.1, 1 A into U1's VIN pin (the fuse rating, far above the buck's
 real 0.1 A) and the 300 mA ignition line out of J4.1. F1 at 95 mohm, D1 at 400 mohm, Q3 and the
 e-stop loop at 50 mohm each.
 

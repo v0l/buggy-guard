@@ -4,11 +4,11 @@ layout = "buggy-guard"
 cell = 0.05
 
 [[supplies]]
-pad = "J1.1"
+pad = "J1.2"
 voltage = "50V"
 
 [[supplies]]
-pad = "J1.2"
+pad = "J1.1"
 voltage = "0V"
 
 [[loads]]
@@ -19,7 +19,7 @@ return = "U1.1"
 [[loads]]
 pad = "J4.1"
 current = "300mA"
-return = "J1.2"
+return = "J1.1"
 
 [[links]]
 ref = "F1"

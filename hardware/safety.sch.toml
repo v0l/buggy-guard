@@ -266,11 +266,11 @@ fields = { assembly = "no" }
 
 [[parts]]
 ref = "J4"
-symbol = "Screw_Terminal_01x02"
+symbol = "Conn_01x02"
 at = [228.6, 20.32]
 value = "ESC_LOCK"
 mirror = true
-fields = { mfr = "Phoenix Contact", mpn = "1715721", desc = "ESC power-lock wire and its ground" }
+fields = { mfr = "JST", mpn = "B2B-XH-A(LF)(SN)", desc = "ESC power-lock wire and its ground", buy_with = "XHP-2, SXH-001T-P0.6 x2" }
 
 [[parts]]
 ref = "J15"
