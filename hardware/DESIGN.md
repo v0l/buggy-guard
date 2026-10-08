@@ -165,6 +165,8 @@ both distributors stock; a 10% one is TDK C1608X5R1A106K080AC at Mouser only.
 
 `buggy-guard.board.toml`: 120 x 80 mm, JLC04161H-7628 4 layer, ENIG, black mask.
 
+![Main board layout](docs/images/buggy-guard-layout.png)
+
 - F.Cu and B.Cu carry signals and power, In1.Cu is a solid ground plane, In2.Cu is a +3V3 plane.
   Every net class is confined to F.Cu/B.Cu (plus In2 for signals), so In1 is never routed through.
 - HV class (battery, ignition, e-stop loop, LOAD+) is 0.6 mm with 0.5 mm clearance, on the outer
@@ -231,6 +233,11 @@ both distributors stock; a 10% one is TDK C1608X5R1A106K080AC at Mouser only.
 The installer's guide is `docs/INSTALL.md`, with the wiring diagram `docs/wiring.svg`. The
 diagram is drawn by `python3 docs/wiring.py`; its connector positions are copied from the
 layout, so rerun it after moving a connector.
+
+`docs/render_images.sh` redraws every image under `docs/images`: the two layouts from
+`agentee render`, and the boards and the pendant case in 3D from their STEP exports through
+`docs/render_3d.py` (f3d). It needs `agentee`, `gcad` and `uv` on the path, and runs
+`wiring.py` too.
 
 | ref | fits | pinout |
 |---|---|---|
@@ -430,6 +437,8 @@ signals with GND poured around them. 2 layers did not leave room for every groun
 the ESP32-C3 to reach the pour. It talks ESP-NOW to the main board and is the "fob" in the firmware
 contract above.
 
+![Pendant layout](docs/images/pendant-layout.png)
+
 | block | parts | notes |
 |---|---|---|
 | radio | U1 ESP32-C3-MINI-1-N4X | antenna at the top edge, top right, so the hand holding the bottom does not cover it. The module sits 3.6 mm in from the right edge so it clears the rounded corner; copper keepout under the antenna and 2.7 mm to its left on all four layers |
@@ -506,6 +515,8 @@ The ESP32-C3 model is Espressif's STEP from their KiCad library, loaded by URL. 
 module models are boxes drawn by `python3 3dmodels/make_models.py`.
 
 ### Pendant enclosure
+
+![Pendant case](docs/images/pendant-case.png)
 
 The case is modelled in [gcad](https://github.com/v0l/gcad) under `enclosure/`, for PLA printed
 without supports:

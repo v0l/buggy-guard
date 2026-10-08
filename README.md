@@ -4,6 +4,12 @@ A safety and vehicle controller for 12-60 V electric scooters, kids buggies and 
 the handheld remote that drives it. It gates the ESC's throttle, brake and power lock behind a
 hardware watchdog, and talks to the ESC over CAN or serial and switches lights and a horn.
 
+![Main board](hardware/docs/images/buggy-guard-3d.png)
+
+| pendant | pendant case |
+|---|---|
+| ![Pendant board](hardware/docs/images/pendant-3d.png) | ![Pendant case](hardware/docs/images/pendant-case.png) |
+
 | directory | what is in it |
 |---|---|
 | `hardware/` | The main board and the pendant (remote): schematics, layouts, symbols, footprints, simulations and 3D models, all as [agentee](https://github.com/v0l/agentee) TOML. `hardware/DESIGN.md` explains the design, `hardware/docs/INSTALL.md` the wiring into the vehicle. |
