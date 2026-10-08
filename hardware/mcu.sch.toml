@@ -1,6 +1,6 @@
 name = "mcu"
 board = "buggy-guard"
-no_connect = ["U3.15", "U3.26", "U3.16", "U3.28", "U3.29", "U3.30", "U3.24", "U3.25", "J2.A8", "J2.B8", "U3.34", "U3.35"]
+no_connect = [ "U3.28", "U3.29", "U3.30", "J2.A8", "J2.B8"]
 
 [[parts]]
 ref = "U3"
@@ -66,7 +66,8 @@ symbol = "USB_C_Receptacle_USB2.0_16P"
 at = [160.02, 40.64]
 value = "USB-C"
 mirror = true
-fields = { mfr = "Korean Hroparts", mpn = "TYPE-C-31-M-12", lcsc = "C165948" }
+fields = { mfr = "GCT", mpn = "USB4105-GF-A" }
+footprint = "USB_C_Receptacle_GCT_USB4105-xx-A_16P_TopMnt_Horizontal"
 
 [[parts]]
 ref = "R12"
@@ -206,6 +207,34 @@ value = "TP"
 footprint = "TestPoint_Pad_D1.0mm"
 at = [175.26, 73.66]
 fields = { assembly = "no" }
+
+[[parts]]
+ref = "TP24"
+symbol = "TestPoint"
+value = "TP"
+footprint = "TestPoint_Pad_D1.0mm"
+at = [175.26, 104.14]
+
+[[parts]]
+ref = "TP25"
+symbol = "TestPoint"
+value = "TP"
+footprint = "TestPoint_Pad_D1.0mm"
+at = [175.26, 111.76]
+
+[[parts]]
+ref = "TP26"
+symbol = "TestPoint"
+value = "TP"
+footprint = "TestPoint_Pad_D1.0mm"
+at = [175.26, 119.38]
+
+[[parts]]
+ref = "TP27"
+symbol = "TestPoint"
+value = "TP"
+footprint = "TestPoint_Pad_D1.0mm"
+at = [175.26, 127.0]
 
 [[nets]]
 name = "EN"
@@ -388,3 +417,38 @@ name = "UART_RX"
 class = "Signal"
 style = "label"
 pins = ["J14.3", "U3.36"]
+
+[[nets]]
+name = "LIGHT1"
+class = "Signal"
+pins = ["U3.15"]
+
+[[nets]]
+name = "LIGHT2"
+class = "Signal"
+pins = ["U3.16"]
+
+[[nets]]
+name = "LIGHT3"
+class = "Signal"
+pins = ["U3.26"]
+
+[[nets]]
+name = "CAN_TX"
+class = "Signal"
+pins = ["U3.24", "TP24.1"]
+
+[[nets]]
+name = "CAN_RX"
+class = "Signal"
+pins = ["U3.25", "TP25.1"]
+
+[[nets]]
+name = "ESC_TX"
+class = "Signal"
+pins = ["U3.34", "TP26.1"]
+
+[[nets]]
+name = "ESC_RX"
+class = "Signal"
+pins = ["U3.35", "TP27.1"]

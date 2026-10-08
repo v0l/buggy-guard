@@ -8,7 +8,7 @@ symbol = "Conn_01x02"
 footprint = "AMASS_XT60PW-M_1x02_P7.20mm_Horizontal"
 at = [10.16, 40.64]
 value = "XT60PW-M"
-fields = { mfr = "Changzhou Amass Elec", mpn = "XT60PW-M", lcsc = "C98732", desc = "Battery in, 48 V nominal. XT60 male, pin 1 negative" }
+fields = { mfr = "Changzhou Amass Elec", mpn = "XT60PW-M", lcsc = "C98732", desc = "Battery in, 12-60 V nominal (3S-16S, 67.2 V full). XT60 male, pin 1 negative" }
 
 [[parts]]
 ref = "F1"
@@ -29,9 +29,9 @@ fields = { mfr = "Diodes Inc", mpn = "S1D-13-F" }
 ref = "D2"
 symbol = "SMAJ58A"
 at = [45.72, 48.26]
-value = "SMAJ58A"
+value = "SMAJ64A"
 rotation = 90.0
-fields = { mfr = "Littelfuse", mpn = "SMAJ58A" }
+fields = { mfr = "Littelfuse", mpn = "SMAJ64A" }
 
 [[parts]]
 ref = "C1"
@@ -67,8 +67,8 @@ fields = { mfr = "Yageo", mpn = "RC0603FR-071ML" }
 ref = "R2"
 symbol = "R"
 at = [81.28, 55.88]
-value = "82k"
-fields = { mfr = "Yageo", mpn = "RC0603FR-0782KL" }
+value = "200k"
+fields = { mfr = "Yageo", mpn = "RC0603FR-07200KL" }
 
 [[parts]]
 ref = "U1"
@@ -117,8 +117,8 @@ fields = { mfr = "Yageo", mpn = "RC0603FR-0731K6L" }
 ref = "R6"
 symbol = "R"
 at = [134.62, 53.34]
-value = "200k"
-fields = { mfr = "Yageo", mpn = "RC0603FR-07200KL" }
+value = "180k"
+fields = { mfr = "Yageo", mpn = "RC0603FR-07180KL" }
 
 [[parts]]
 ref = "C5"
@@ -182,8 +182,8 @@ fields = { mfr = "Kemet", mpn = "C0603C106M8PACTU" }
 ref = "R7"
 symbol = "R"
 at = [22.86, 73.66]
-value = "200k"
-fields = { mfr = "Yageo", mpn = "RC0603FR-07200KL" }
+value = "220k"
+fields = { mfr = "Yageo", mpn = "RC0603FR-07220KL" }
 
 [[parts]]
 ref = "R8"

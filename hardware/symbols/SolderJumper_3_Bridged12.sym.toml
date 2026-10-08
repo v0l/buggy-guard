@@ -1,0 +1,93 @@
+# imported from KiCad Jumper:SolderJumper_3_Bridged12
+name = "SolderJumper_3_Bridged12"
+reference = "JP"
+description = "3-pole Solder Jumper, pins 1+2 closed/bridged"
+keywords = ["Solder", "Jumper", "SPDT"]
+footprint = "SolderJumper-3_P1.3mm_Bridged12_RoundedPad1.0x1.5mm"
+footprint_filters = ["SolderJumper*Bridged12*"]
+pin_names = "hidden"
+
+[[graphics]]
+kind = "polyline"
+points = [[-2.54, 0.0], [-2.032, 0.0]]
+
+[[graphics]]
+kind = "polyline"
+points = [[-1.016, -1.016], [-1.016, 1.016]]
+
+[[graphics]]
+kind = "rect"
+start = [-1.016, -0.508]
+end = [-0.508, 0.508]
+fill = "solid"
+
+[[graphics]]
+kind = "arc"
+start = [-1.016, 1.016]
+mid = [-2.0276, 0.0]
+end = [-1.016, -1.016]
+
+[[graphics]]
+kind = "arc"
+start = [-1.016, 1.016]
+mid = [-2.0276, 0.0]
+end = [-1.016, -1.016]
+fill = "solid"
+
+[[graphics]]
+kind = "rect"
+start = [-0.508, -1.016]
+end = [0.508, 1.016]
+fill = "solid"
+
+[[graphics]]
+kind = "polyline"
+points = [[0.0, 1.27], [0.0, 1.016]]
+
+[[graphics]]
+kind = "arc"
+start = [1.016, -1.016]
+mid = [2.0276, 0.0]
+end = [1.016, 1.016]
+
+[[graphics]]
+kind = "arc"
+start = [1.016, -1.016]
+mid = [2.0276, 0.0]
+end = [1.016, 1.016]
+fill = "solid"
+
+[[graphics]]
+kind = "polyline"
+points = [[1.016, -1.016], [1.016, 1.016]]
+
+[[graphics]]
+kind = "polyline"
+points = [[2.54, 0.0], [2.032, 0.0]]
+
+[[pins]]
+number = "1"
+name = "A"
+type = "passive"
+at = [-5.08, 0.0]
+side = "left"
+length = 2.54
+unit = 1
+
+[[pins]]
+number = "2"
+name = "C"
+type = "passive"
+at = [0.0, 3.81]
+side = "bottom"
+length = 2.54
+unit = 1
+
+[[pins]]
+number = "3"
+name = "B"
+type = "passive"
+at = [5.08, 0.0]
+side = "right"
+length = 2.54
+unit = 1

@@ -1,0 +1,41 @@
+name = "buggy-guard-dc-lights"
+kind = "dc"
+layout = "buggy-guard"
+cell = 0.05
+
+[[supplies]]
+pad = "J1.1"
+voltage = "0V"
+
+[[loads]]
+pad = "J1.1"
+current = "2A"
+return = "J18.2"
+
+[[loads]]
+pad = "J1.1"
+current = "2A"
+return = "J18.3"
+
+[[loads]]
+pad = "J1.1"
+current = "2A"
+return = "J18.4"
+
+[[links]]
+ref = "Q6"
+resistance = "0.0235ohm"
+a = "5"
+b = "2"
+
+[[links]]
+ref = "Q7"
+resistance = "0.0235ohm"
+a = "5"
+b = "2"
+
+[[links]]
+ref = "Q8"
+resistance = "0.0235ohm"
+a = "5"
+b = "2"

@@ -1,0 +1,171 @@
+# imported from KiCad 74xx:74AHCT125
+name = "74AHCT125"
+reference = "U"
+description = "Quadruple Bus Buffer Gates With 3-State Outputs"
+datasheet = "https://www.ti.com/lit/ds/symlink/sn74ahct125.pdf"
+keywords = ["buffer", "3State"]
+footprint = "TSSOP-14_4.4x5mm_P0.65mm"
+footprint_filters = ["DIP*W7.62mm*", "SO14*", "SSOP?14*", "TSSOP?14*", "SOIC*3.9x8.7mm*P1.27mm*"]
+pin_name_offset = 1.016
+
+[[graphics]]
+kind = "polygon"
+unit = 1
+points = [[-3.81, -3.81], [-3.81, 3.81], [3.81, 0.0]]
+width = 0.254
+fill = "background"
+
+[[graphics]]
+kind = "polygon"
+unit = 2
+points = [[-3.81, -3.81], [-3.81, 3.81], [3.81, 0.0]]
+width = 0.254
+fill = "background"
+
+[[graphics]]
+kind = "polygon"
+unit = 3
+points = [[-3.81, -3.81], [-3.81, 3.81], [3.81, 0.0]]
+width = 0.254
+fill = "background"
+
+[[graphics]]
+kind = "polygon"
+unit = 4
+points = [[-3.81, -3.81], [-3.81, 3.81], [3.81, 0.0]]
+width = 0.254
+fill = "background"
+
+[[graphics]]
+kind = "rect"
+unit = 5
+start = [-5.08, -7.62]
+end = [5.08, 7.62]
+width = 0.254
+fill = "background"
+
+[[pins]]
+number = "2"
+type = "input"
+at = [-7.62, 0.0]
+side = "left"
+length = 3.81
+unit = 1
+
+[[pins]]
+number = "1"
+type = "input"
+at = [0.0, 6.35]
+side = "bottom"
+length = 4.445
+unit = 1
+shape = "inverted"
+
+[[pins]]
+number = "3"
+type = "tri_state"
+at = [7.62, 0.0]
+side = "right"
+length = 3.81
+unit = 1
+
+[[pins]]
+number = "5"
+type = "input"
+at = [-7.62, 0.0]
+side = "left"
+length = 3.81
+unit = 2
+
+[[pins]]
+number = "4"
+type = "input"
+at = [0.0, 6.35]
+side = "bottom"
+length = 4.445
+unit = 2
+shape = "inverted"
+
+[[pins]]
+number = "6"
+type = "tri_state"
+at = [7.62, 0.0]
+side = "right"
+length = 3.81
+unit = 2
+
+[[pins]]
+number = "9"
+type = "input"
+at = [-7.62, 0.0]
+side = "left"
+length = 3.81
+unit = 3
+
+[[pins]]
+number = "10"
+type = "input"
+at = [0.0, 6.35]
+side = "bottom"
+length = 4.445
+unit = 3
+shape = "inverted"
+
+[[pins]]
+number = "8"
+type = "tri_state"
+at = [7.62, 0.0]
+side = "right"
+length = 3.81
+unit = 3
+
+[[pins]]
+number = "12"
+type = "input"
+at = [-7.62, 0.0]
+side = "left"
+length = 3.81
+unit = 4
+
+[[pins]]
+number = "13"
+type = "input"
+at = [0.0, 6.35]
+side = "bottom"
+length = 4.445
+unit = 4
+shape = "inverted"
+
+[[pins]]
+number = "11"
+type = "tri_state"
+at = [7.62, 0.0]
+side = "right"
+length = 3.81
+unit = 4
+
+[[pins]]
+number = "14"
+name = "VCC"
+type = "power_in"
+at = [0.0, -12.7]
+side = "top"
+length = 5.08
+unit = 5
+
+[[pins]]
+number = "7"
+name = "GND"
+type = "power_in"
+at = [0.0, 12.7]
+side = "bottom"
+length = 5.08
+unit = 5
+
+[levels]
+supply = "VCC"
+vih = "2V"
+vil = "0.8V"
+min = "-0.5V"
+max = "5.5V"
+leakage = "1uA"

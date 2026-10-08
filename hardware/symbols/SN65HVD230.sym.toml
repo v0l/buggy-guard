@@ -1,0 +1,96 @@
+# imported from KiCad Interface_CAN_LIN:SN65HVD230
+name = "SN65HVD230"
+reference = "U"
+description = "CAN Bus Transceivers, 3.3V, 1Mbps, Low-Power capabilities, SOIC-8"
+datasheet = "http://www.ti.com/lit/ds/symlink/sn65hvd230.pdf"
+keywords = ["can", "transeiver", "ti", "low-power"]
+footprint = "SOIC-8_3.9x4.9mm_P1.27mm"
+footprint_filters = ["SOIC*3.9x4.9mm*P1.27mm*"]
+pin_name_offset = 1.016
+
+[[graphics]]
+kind = "rect"
+start = [-7.62, -5.08]
+end = [7.62, 7.62]
+width = 0.254
+fill = "background"
+
+[[pins]]
+number = "1"
+name = "D"
+type = "input"
+at = [-10.16, -2.54]
+side = "left"
+length = 2.54
+unit = 1
+
+[[pins]]
+number = "4"
+name = "R"
+type = "output"
+at = [-10.16, 0.0]
+side = "left"
+length = 2.54
+unit = 1
+
+[[pins]]
+number = "5"
+name = "Vref"
+type = "output"
+at = [-10.16, 2.54]
+side = "left"
+length = 2.54
+unit = 1
+
+[[pins]]
+number = "8"
+name = "Rs"
+type = "input"
+at = [-10.16, 5.08]
+side = "left"
+length = 2.54
+unit = 1
+
+[[pins]]
+number = "3"
+name = "VCC"
+type = "power_in"
+at = [0.0, -7.62]
+side = "top"
+length = 2.54
+unit = 1
+
+[[pins]]
+number = "2"
+name = "GND"
+type = "power_in"
+at = [0.0, 10.16]
+side = "bottom"
+length = 2.54
+unit = 1
+
+[[pins]]
+number = "7"
+name = "CANH"
+type = "bidirectional"
+at = [10.16, 0.0]
+side = "right"
+length = 2.54
+unit = 1
+
+[[pins]]
+number = "6"
+name = "CANL"
+type = "bidirectional"
+at = [10.16, 2.54]
+side = "right"
+length = 2.54
+unit = 1
+
+[levels]
+supply = "VCC"
+vih = "2V"
+vil = "0.8V"
+min = "-0.5V"
+max = "100%+0.5V"
+leakage = "30uA"

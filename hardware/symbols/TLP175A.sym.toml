@@ -1,0 +1,189 @@
+# imported from KiCad Relay_SolidState:TLP175A
+name = "TLP175A"
+reference = "U"
+description = "MOSFET Photorelay 1-Form-A, Voff 60V, Ion 100mA, SOP6"
+datasheet = "https://toshiba.semicon-storage.com/info/docget.jsp?did=13665&prodName=TLP175A"
+keywords = ["MOSFET", "Output", "Photorelay", "1-Form-A"]
+footprint = "MFSOP6-4_4.4x3.6mm_P1.27mm"
+footprint_filters = ["MFSOP6*4.4x3.6mm*P1.27mm*"]
+
+[[graphics]]
+kind = "rect"
+start = [-5.08, -3.81]
+end = [5.08, 3.81]
+width = 0.254
+fill = "background"
+
+[[graphics]]
+kind = "polyline"
+points = [[-5.08, -2.54], [-3.175, -2.54], [-3.175, 2.54], [-5.08, 2.54]]
+
+[[graphics]]
+kind = "polyline"
+points = [[-3.81, 0.635], [-2.54, 0.635]]
+
+[[graphics]]
+kind = "polygon"
+points = [[-3.175, 0.635], [-3.81, -0.635], [-2.54, -0.635]]
+
+[[graphics]]
+kind = "polyline"
+points = [[-1.905, -0.508], [-0.635, -0.508], [-1.016, -0.381], [-1.016, -0.635], [-0.635, -0.508]]
+
+[[graphics]]
+kind = "polyline"
+points = [[-1.905, 0.508], [-0.635, 0.508], [-1.016, 0.635], [-1.016, 0.381], [-0.635, 0.508]]
+
+[[graphics]]
+kind = "polyline"
+points = [[1.016, -2.159], [1.016, -0.635]]
+width = 0.2032
+
+[[graphics]]
+kind = "polyline"
+points = [[1.016, 0.635], [1.016, 2.159]]
+width = 0.2032
+
+[[graphics]]
+kind = "polyline"
+points = [[1.524, -2.286], [1.524, -2.032], [1.524, -2.032]]
+width = 0.3556
+
+[[graphics]]
+kind = "polyline"
+points = [[1.524, -1.524], [1.524, -1.27], [1.524, -1.27]]
+width = 0.3556
+
+[[graphics]]
+kind = "polyline"
+points = [[1.524, -0.762], [1.524, -0.508], [1.524, -0.508]]
+width = 0.3556
+
+[[graphics]]
+kind = "polyline"
+points = [[1.524, 0.508], [1.524, 0.762]]
+width = 0.3556
+
+[[graphics]]
+kind = "polyline"
+points = [[1.524, 1.27], [1.524, 1.524], [1.524, 1.524]]
+width = 0.3556
+
+[[graphics]]
+kind = "polyline"
+points = [[1.524, 2.032], [1.524, 2.286], [1.524, 2.286]]
+width = 0.3556
+
+[[graphics]]
+kind = "polyline"
+points = [[1.651, -2.159], [2.794, -2.159], [2.794, -2.54], [5.08, -2.54]]
+
+[[graphics]]
+kind = "polyline"
+points = [[1.651, -1.397], [2.794, -1.397], [2.794, -0.635]]
+
+[[graphics]]
+kind = "polyline"
+points = [[1.651, 0.635], [2.794, 0.635], [2.794, -0.635], [1.651, -0.635]]
+
+[[graphics]]
+kind = "polyline"
+points = [[1.651, 1.397], [2.794, 1.397], [2.794, 0.635]]
+
+[[graphics]]
+kind = "polyline"
+points = [[1.651, 2.159], [2.794, 2.159], [2.794, 2.54], [5.08, 2.54]]
+
+[[graphics]]
+kind = "polygon"
+points = [[1.778, -1.397], [2.286, -1.524], [2.286, -1.27]]
+
+[[graphics]]
+kind = "polygon"
+points = [[1.778, 1.397], [2.286, 1.27], [2.286, 1.524]]
+
+[[graphics]]
+kind = "circle"
+center = [2.794, -0.635]
+radius = 0.127
+
+[[graphics]]
+kind = "polyline"
+points = [[2.794, 0.0], [3.81, 0.0]]
+
+[[graphics]]
+kind = "circle"
+center = [2.794, 0.0]
+radius = 0.127
+
+[[graphics]]
+kind = "circle"
+center = [2.794, 0.635]
+radius = 0.127
+
+[[graphics]]
+kind = "polyline"
+points = [[3.429, -1.651], [4.191, -1.651]]
+
+[[graphics]]
+kind = "polyline"
+points = [[3.429, 1.651], [4.191, 1.651]]
+
+[[graphics]]
+kind = "circle"
+center = [3.81, -2.54]
+radius = 0.127
+
+[[graphics]]
+kind = "polygon"
+points = [[3.81, -1.651], [3.429, -0.889], [4.191, -0.889]]
+
+[[graphics]]
+kind = "circle"
+center = [3.81, 0.0]
+radius = 0.127
+
+[[graphics]]
+kind = "polygon"
+points = [[3.81, 1.651], [3.429, 0.889], [4.191, 0.889]]
+
+[[graphics]]
+kind = "polyline"
+points = [[3.81, 2.54], [3.81, -2.54]]
+
+[[graphics]]
+kind = "circle"
+center = [3.81, 2.54]
+radius = 0.127
+
+[[pins]]
+number = "1"
+type = "passive"
+at = [-7.62, -2.54]
+side = "left"
+length = 2.54
+unit = 1
+
+[[pins]]
+number = "3"
+type = "passive"
+at = [-7.62, 2.54]
+side = "left"
+length = 2.54
+unit = 1
+
+[[pins]]
+number = "6"
+type = "passive"
+at = [7.62, -2.54]
+side = "right"
+length = 2.54
+unit = 1
+
+[[pins]]
+number = "4"
+type = "passive"
+at = [7.62, 2.54]
+side = "right"
+length = 2.54
+unit = 1

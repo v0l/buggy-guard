@@ -1,0 +1,82 @@
+# imported from KiCad Power_Protection:NUP2105L
+name = "NUP2105L"
+reference = "D"
+description = "Dual Line CAN Bus Protector, 24Vrwm"
+datasheet = "https://www.onsemi.com/pub_link/Collateral/NUP2105L-D.PDF"
+keywords = ["can", "esd", "protection", "suppression", "transient"]
+footprint = "SOT-23"
+footprint_filters = ["SOT?23*"]
+pin_names = "hidden"
+
+[[graphics]]
+kind = "rect"
+start = [-4.445, -2.54]
+end = [4.445, 2.54]
+width = 0.254
+fill = "background"
+
+[[graphics]]
+kind = "polyline"
+points = [[-3.81, -1.27], [-3.175, -0.635], [-1.905, -0.635], [-1.27, 0.0]]
+
+[[graphics]]
+kind = "polyline"
+points = [[-2.54, -2.54], [-2.54, -0.635]]
+
+[[graphics]]
+kind = "polyline"
+points = [[-2.54, -0.635], [-2.54, 1.27], [2.54, 1.27], [2.54, -0.635]]
+
+[[graphics]]
+kind = "polygon"
+points = [[-2.54, -0.635], [-1.905, 0.635], [-3.175, 0.635]]
+
+[[graphics]]
+kind = "polyline"
+points = [[-2.54, -0.635], [-3.175, -1.905], [-1.905, -1.905], [-2.54, -0.635], [-2.54, -1.27]]
+
+[[graphics]]
+kind = "polyline"
+points = [[0.0, 1.27], [0.0, 2.54]]
+
+[[graphics]]
+kind = "polyline"
+points = [[1.27, -1.27], [1.905, -0.635], [2.54, -0.635], [3.175, -0.635], [3.81, 0.0]]
+
+[[graphics]]
+kind = "polyline"
+points = [[2.54, -2.54], [2.54, -0.635]]
+
+[[graphics]]
+kind = "polygon"
+points = [[2.54, -0.635], [1.905, 0.635], [3.175, 0.635]]
+
+[[graphics]]
+kind = "polygon"
+points = [[2.54, -0.635], [3.175, -1.905], [1.905, -1.905]]
+
+[[pins]]
+number = "3"
+name = "A"
+type = "passive"
+at = [0.0, 5.08]
+side = "bottom"
+length = 2.54
+
+[[pins]]
+number = "1"
+name = "K"
+type = "passive"
+at = [-2.54, -5.08]
+side = "top"
+length = 2.54
+unit = 1
+
+[[pins]]
+number = "2"
+name = "K"
+type = "passive"
+at = [2.54, -5.08]
+side = "top"
+length = 2.54
+unit = 1

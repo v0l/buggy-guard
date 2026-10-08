@@ -157,8 +157,8 @@ fields = { mfr = "Diodes Inc", mpn = "DMN10H220L-7" }
 ref = "R27"
 symbol = "R"
 at = [170.18, 50.8]
-value = "33k"
-fields = { mfr = "Yageo", mpn = "RC0603FR-0733KL" }
+value = "68k"
+fields = { mfr = "Yageo", mpn = "RC0603FR-0768KL" }
 
 [[parts]]
 ref = "Q3"
@@ -171,8 +171,8 @@ fields = { mfr = "Infineon", mpn = "IRFR9120NTRPBF" }
 ref = "R28"
 symbol = "R"
 at = [167.64000000000001, 25.4]
-value = "10k"
-fields = { mfr = "Yageo", mpn = "RC0603FR-0710KL" }
+value = "150k"
+fields = { mfr = "Yageo", mpn = "RC0603FR-07150KL" }
 
 [[parts]]
 ref = "D8"
@@ -201,8 +201,8 @@ fields = { mfr = "Yageo", mpn = "RC0603FR-07100KL" }
 ref = "R30"
 symbol = "R"
 at = [198.12, 63.5]
-value = "200k"
-fields = { mfr = "Yageo", mpn = "RC0603FR-07200KL" }
+value = "220k"
+fields = { mfr = "Yageo", mpn = "RC0603FR-07220KL" }
 
 [[parts]]
 ref = "R31"
@@ -219,19 +219,12 @@ value = "100n"
 fields = { mfr = "Kemet", mpn = "C0603C104K5RACTU" }
 
 [[parts]]
-ref = "Q4"
-symbol = "2N7002"
-at = [167.64000000000001, 99.06]
-value = "2N7002"
-fields = { mfr = "Diodes Inc", mpn = "2N7002-7-F" }
-
-[[parts]]
 ref = "J5"
 symbol = "Conn_01x02"
 at = [190.5, 93.98]
 value = "BRAKE"
 mirror = true
-fields = { mfr = "JST", mpn = "B2B-XH-A(LF)(SN)", buy_with = "XHP-2, SXH-001T-P0.6 x2" }
+fields = { mfr = "JST", mpn = "B2B-XH-A(LF)(SN)", buy_with = "XHP-2, SXH-001T-P0.6 x2", desc = "Isolated brake contacts, 60 V 100 mA: wire across the brake lever switch, either polarity" }
 
 [[parts]]
 ref = "Q5"
@@ -278,7 +271,7 @@ symbol = "Conn_01x02"
 at = [228.6, 35.56]
 value = "ESTOP"
 mirror = true
-fields = { mfr = "JST", mpn = "B2B-XH-A(LF)(SN)", desc = "NC e-stop button loop, 48 V", buy_with = "XHP-2, SXH-001T-P0.6 x2" }
+fields = { mfr = "JST", mpn = "B2B-XH-A(LF)(SN)", desc = "NC e-stop button loop, battery voltage", buy_with = "XHP-2, SXH-001T-P0.6 x2" }
 
 [[parts]]
 ref = "U10"
@@ -293,6 +286,22 @@ symbol = "C"
 at = [53.34, 66.04]
 value = "100n"
 fields = { mfr = "Kemet", mpn = "C0603C104K5RACTU" }
+
+[[parts]]
+ref = "U12"
+symbol = "TLP175A"
+at = [180.34, 99.06]
+value = "TLP175A"
+footprint = "MFSOP6-4_4.4x3.6mm_P1.27mm"
+fields = { mfr = "Toshiba", mpn = "TLP175A(TPL,E" }
+
+[[parts]]
+ref = "R25"
+symbol = "R"
+at = [175.26, 86.36]
+value = "680"
+footprint = "R_0603_1608Metric"
+fields = { mfr = "Yageo", mpn = "RC0603FR-07680RL" }
 
 [[nets]]
 name = "+3V3"
@@ -357,7 +366,7 @@ pins = ["U8.2", "R23.1"]
 [[nets]]
 name = "KILL"
 class = "Signal"
-pins = ["U8.4", "Q4.1", "Q5.1", "TP11.1"]
+pins = ["U8.4", "Q5.1", "TP11.1", "R25.1"]
 
 [[nets]]
 name = "SAFE_LED"
@@ -397,7 +406,7 @@ pins = ["R30.2", "R31.1", "C20.1"]
 [[nets]]
 name = "BRAKE_OUT"
 class = "Signal"
-pins = ["Q4.3", "J5.1"]
+pins = [ "J5.1", "U12.4"]
 
 [[nets]]
 name = "THR_OUT"
@@ -407,9 +416,19 @@ pins = ["Q5.3"]
 [[nets]]
 name = "GND"
 class = "Ground"
-pins = ["U5.5", "U5.11", "C15.2", "U5.3", "U6.1", "U6.2", "U6.3", "U6.6", "U6.7", "C16.2", "C17.2", "J3.1", "U7.3", "C18.2", "R22.2", "U8.3", "C19.2", "R23.2", "R24.2", "D7.1", "Q2.2", "D9.2", "R29.2", "R31.2", "C20.2", "Q4.2", "J5.2", "Q5.2", "J4.2", "U10.4", "C28.2"]
+pins = ["U5.5", "U5.11", "C15.2", "U5.3", "U6.1", "U6.2", "U6.3", "U6.6", "U6.7", "C16.2", "C17.2", "J3.1", "U7.3", "C18.2", "R22.2", "U8.3", "C19.2", "R23.2", "R24.2", "D7.1", "Q2.2", "D9.2", "R29.2", "R31.2", "C20.2", "Q5.2", "J4.2", "U10.4", "C28.2", "U12.3"]
 
 [[nets]]
 name = "WD_LATCH"
 class = "Signal"
 pins = ["U10.5", "U7.2"]
+
+[[nets]]
+name = "BRAKE_LED_A"
+class = "Signal"
+pins = ["R25.2", "U12.1"]
+
+[[nets]]
+name = "BRAKE_RET"
+class = "Signal"
+pins = ["U12.6", "J5.2"]

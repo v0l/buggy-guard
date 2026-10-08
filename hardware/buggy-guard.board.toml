@@ -1,8 +1,8 @@
 name = "buggy-guard"
-description = "Safety controller for a 48 V kids buggy: ESP32-S3 gates a sine wave ESC through throttle clamp, e-brake and ignition cut, with a hardware watchdog and latched impact kill"
+description = "Safety and vehicle controller for 12-60 V electric scooters, buggies and ride-on cars: ESP32-S3 gates the ESC through throttle clamp, isolated brake contact and ignition cut, with a hardware watchdog and latched impact kill, plus CAN, ESC UART and three low-side light outputs"
 fab = "jlcpcb"
 [outline]
-size = [100.0, 80.0]
+size = [120.0, 80.0]
 corner_radius = "2"
 [stackup]
 preset = "JLC04161H-7628"
@@ -64,7 +64,7 @@ layers = ["F.Cu", "In2.Cu", "B.Cu"]
 neckdown = "1mm"
 [[netclasses]]
 name = "HV"
-description = "48 V battery side: keyed battery input, ignition, e-stop loop, buck input"
+description = "Battery side, up to 67 V: battery input, ignition, e-stop loop, buck input, light outputs"
 track_width = "0.6mm"
 clearance = "0.5mm"
 current = "1A"
@@ -86,3 +86,13 @@ clearance = "0.15mm"
 neckdown = "1mm"
 via = "std"
 layers = ["F.Cu", "In2.Cu", "B.Cu"]
+
+[[netclasses]]
+name = "Load"
+description = "Low-side light and horn outputs, 2 A each, up to 67 V"
+track_width = "1mm"
+clearance = "0.5mm"
+current = "2A"
+max_temp_rise = "10C"
+via = "std"
+layers = ["F.Cu", "B.Cu"]

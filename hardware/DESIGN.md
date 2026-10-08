@@ -1,14 +1,19 @@
 # buggy-guard
 
-A safety and throttle-gating board for a 48 V kids buggy with a sine wave ESC. It sits between the
-pedal and the ESC and never lets the pedal alone drive the motor: the ESP32-S3 must keep feeding a
-hardware window watchdog, the IMU must not have latched an impact, and the remote fob must be in
-range, before a throttle signal reaches the controller. Three independent hardware paths can cut
-power, so a hung MCU, a dead MCU or a dead radio all stop the vehicle.
+A safety and vehicle controller for small electric vehicles: scooters, kids buggies and ride-on
+cars on a 12 to 60 V pack (3S to 16S, 67.2 V fully charged) with an off-the-shelf ESC. It sits
+between the throttle and the ESC and never lets the throttle alone drive the motor: the ESP32-S3
+must keep feeding a hardware window watchdog, the IMU must not have latched an impact, and the
+remote fob must be in range, before a throttle signal reaches the controller. Three independent
+hardware paths can cut power, so a hung MCU, a dead MCU or a dead radio all stop the vehicle.
 
-The schematic is split into four sheets (`buggy-guard.sch.toml` lists `power`, `mcu`, `safety`,
-`io`), the layout is `buggy-guard.pcb.toml`, and the board spec is `buggy-guard.board.toml`.
-`agentee check` is clean.
+Around that it carries what a vehicle controller needs: an isolated brake contact that works with
+low and high level brake inputs, CAN and a UART to talk to the ESC (VESC, Fardriver, Kelly), and
+three 2 A low-side outputs for lights and a horn.
+
+The schematic is split into five sheets (`buggy-guard.sch.toml` lists `power`, `mcu`, `safety`,
+`io`, `vehicle`), the layout is `buggy-guard.pcb.toml`, and the board spec is
+`buggy-guard.board.toml`. `agentee check` is clean.
 
 ## Circuit
 
@@ -16,17 +21,18 @@ The schematic is split into four sheets (`buggy-guard.sch.toml` lists `power`, `
 
 | stage | part | notes |
 |---|---|---|
-| battery in | J1, F1 (1 A), D1 (reverse), D2 (SMAJ58A TVS), C1/C2/C3 | D2 clamps at 93.6 V against the LM5164's 100 V rating |
-| buck | U1 LM5164DDA, 47 uH, RON 41.2k (300 kHz), RFB 100k/31.6k | 5 V from about 20 V (UVLO divider R1/R2) up. Ripple injection type 3: R6 200k, C5 3.3 nF, C6 330 pF |
+| battery in | J1, F1 (1 A), D1 (reverse), D2 (SMAJ64A TVS), C1/C2/C3 | D2 stands off 64 V and breaks down at 71.1 V minimum, above a full 16S pack's 67.2 V. It clamps at 103 V at its full 3.9 A rated pulse, against the LM5164's 100 V absolute maximum; C1 and the pack's own impedance keep a real transient well short of that current |
+| buck | U1 LM5164DDA, 47 uH, RON 41.2k (300 kHz), RFB 100k/31.6k | Starts at 9.0 V and stops at 8.4 V (UVLO divider R1 1M, R2 200k), so a 3S pack runs to empty. Ripple injection type 3: R6 180k, C5 3.3 nF, C6 330 pF gives 12.5 mV at FB at 9 V and 26 mV at 67 V; the LM5164 wants 12 mV at minimum input |
 | LDO | U2 AP2112K-3.3, C9/C10 | 3V3 for the ESP32, IMU and gates |
 | USB | J2, U4 USBLC6, R12/R13 5.1k, D3 SS14 | USB-C for flashing only; VBUS is ORed into +5V through D3 so it cannot drive the battery |
 
-Peak input current is about 0.1 A (WiFi bursts), well inside the fuse.
+Peak input current is about 0.1 A at 48 V (WiFi bursts) and 0.4 A at 9 V, inside the fuse.
+VBAT_ADC and ESTOP_ADC divide by 23 (220k over 10k), so a full 16S pack reads 2.92 V.
 
 ### Throttle path
 
-J6 PEDAL is a Hall throttle on its own 5 V through F2 (100 mA PTC). The signal goes to the ADC
-through a 10k/15k divider (0.6 x, 5 V reads 3.0 V). The throttle the ESC sees is generated, not
+J6 PEDAL is a Hall throttle (a pedal, a thumb or twist grip) on its own 5 V through F2 (100 mA
+PTC). The signal goes to the ADC through a 10k/15k divider (0.6 x, 5 V reads 3.0 V). The throttle the ESC sees is generated, not
 passed through: THR_PWM goes through a two-pole 20 kHz filter (R34/R35 10k, C22/C23 100 nF) into
 an MCP6002 gain-of-1.5 stage (R36 20k, R37 10k). The op-amp output goes to
 J7 ESC_THR through 470 R; the divider R39/R40 takes it back to an ADC so the firmware can see
@@ -50,12 +56,51 @@ until the firmware drives it high.
 | WD_LATCH | U10 Q (D and PRE tied to +3V3) | U7 pin 2 |
 | ARM | ESP32-S3 IO15, 100k pull-down R22 | U7 pin 1, U10 CLK |
 | SAFE | U7 out, 100k pull-down R24 | U8 NAND pin 1, Q2 gate, green LED D7 |
-| KILL | U8 out | Q4 gate (e-brake), Q5 gate (throttle shunt) |
-| IGN_G | Q2 (DMN10H220L) drain | Q3 IRFR9120N gate via R27 33k, D8 BZT52C15 clamp, R28 10k to source |
+| KILL | U8 out | U12 LED through R25 680R (brake contact), Q5 gate (throttle shunt) |
+| IGN_G | Q2 (DMN10H220L) drain | Q3 IRFR9120N gate via R27 68k, D8 BZT52C15 clamp, R28 150k to source |
 
 Q3 switches the ESC's power-lock wire, J4.1 (IGN_OUT). Its source is fed from VIN through the
 normally closed e-stop loop on J15 (J15.1 VIN, J15.2 ESTOP_RET): opening it floats the Q3 source, R28 pulls the gate up and the lock drops. The
 firmware sees the e-stop as a divider R30/R31 on ESTOP_ADC.
+
+R27 and R28 give Q3 6.2 V of gate drive at 9 V, enough for the 0.3 A lock current. From 21.8 V
+up D8 holds the gate at 15 V; at 67 V R27 drops 52 V and dissipates 40 mW, and D8 carries 0.7 mA.
+
+### Brake contact
+
+KILL lights the LED of U12, a TLP175A photorelay, through R25. Its MOSFET output is J5: two
+isolated contacts, 60 V and 100 mA, 50 ohm worst case, either polarity. Wired across the
+brake lever switch it works with both kinds of ESC brake input. A low level input has J5.1 on the
+brake wire and J5.2 on the brake ground, a high level input has J5.2 on the ESC's brake supply
+(5 or 12 V) instead. U8 drives 5.5 mA into the LED; the TLP175A needs 1 mA. Unpowered, the
+contact is open and the brake is released, as before.
+
+This replaces the 2N7002 (Q4) that pulled the brake wire to board ground, which only fitted a
+low level input.
+
+### CAN and ESC UART
+
+U11 SN65HVD230 is a 3.3 V CAN transceiver on the ESP32-S3's TWAI controller (IO47 TX, IO48 RX),
+Rs to ground for full speed. R47 holds TXD recessive while the ESP boots. D10 NUP2105L clamps
+CANH and CANL. R62 120R is the bus terminator, connected by bridging solder jumper JP1, which
+ships open. J16 is CANH, CANL, GND.
+
+The ESC UART on J17 goes through two SN74LVC1T45 translators: U14 drives TX out (IO41), U15
+brings RX in (IO42). Their B side runs from VIO, which solder jumper JP2 takes from +3V3 (1-2,
+as made) or +5V (cut 1-2, bridge 2-3). R51 and R50 keep both lines idle high with nothing
+attached; R48 and R49 (100R) limit current into a powered-down ESC. It is full duplex only; a
+Ninebot style single wire bus needs its TX and RX joined at the cable.
+
+### Light outputs
+
+Three low-side switches for lamps and a horn. IO3, IO46 and IO45 go through U13 74AHCT125 on
++5V, so Q6-Q8 (DMT10H015LFG, 100 V, 23.5 mohm at 4.5 V) get a full 5 V gate. R52, R60 and R61
+(100k) hold the buffer inputs low, which also keeps the IO45 and IO46 straps low at reset; IO45
+high would select 1.8 V flash. J18 is LOAD+, OUT1, OUT2, OUT3: each load goes from LOAD+ to its
+OUT, and D11-D13 (MBR1H100SF) clamp its flyback to LOAD+. LOAD+ can be any supply up to 60 V
+that shares the battery negative, usually the battery itself or a 12 V converter. 2 A per
+output; at that current a FET dissipates 94 mW. The load current returns through the board's
+ground to J1.
 
 The TPS3430 runs with SET0 = 0, SET1 = 1, CWD = 10k pull-up, which gives a guaranteed window of
 10.35 ms (tWDL max) to 165.8 ms (tWDU min). The ESP must give WDI (IO17) a falling edge about
@@ -82,16 +127,24 @@ sees it. The kill is latched in firmware until the pedal is at zero and the fob 
 | U7, U8 | 74AHCT1G08, 74AHCT1G00 | AHCT so 3.3 V is a valid high |
 | U10 | 74LVC1G74 | TI SN74LVC1G74DCUR, on +3V3, latches a WDOK fault until ARM is re-asserted |
 | U9 | MCP6002T | throttle filter amplifier, unit B unused (tied as a grounded follower) |
+| U11 | SN65HVD230 | TI SN65HVD230DR, 3.3 V CAN transceiver |
+| U12 | TLP175A | Toshiba TLP175A(TPL,E, 60 V 100 mA photorelay, 1 mA trigger |
+| U13 | 74AHCT125 | TI SN74AHCT125PWR, gate buffer for the light outputs |
+| U14, U15 | SN74LVC1T45 | TI SN74LVC1T45DBVR, ESC UART level translators |
 | Q2 | DMN10H220L | ignition low-side driver, 100 V |
 | Q3 | IRFR9120N | ignition power-lock switch, 100 V PFET in DPAK |
-| Q4, Q5 | 2N7002 | e-brake and throttle shunt |
-| D2 | SMAJ58A | 58 V standoff TVS |
+| Q5 | 2N7002 | throttle shunt |
+| Q6-Q8 | DMT10H015LFG | Diodes DMT10H015LFG-7, light output switches, 100 V in PowerDI3333-8. The symbol is KiCad's DMT6008LFG with the second drain pad (7) added |
+| D2 | SMAJ64A | 64 V standoff TVS |
+| D10 | NUP2105L | onsemi NUP2105LT1G, CAN bus clamp |
+| D11-D13 | MBR1H100SF | onsemi MBR1H100SFT3G, 100 V 1 A flyback diodes |
+| JP1, JP2 | solder jumpers | copper only, `assembly = "no"` keeps them off the BOM |
 | F1 | 0451 series 1 A | Littelfuse 0451001.MRL |
 | F2, F3 | MF-NSMF010/30X-2, MF-NSMF020-2 | Bourns 1206 resettable PTCs for the pedal and sensor 5 V |
 | BZ1 | 12x9.5 mm magnetic 5 V | Same Sky CEM-1205-IC, 7.6 mm pitch. It has its own 2.4 kHz driver, so the firmware switches BUZZ on and off and never sends it a tone. The CUI CEM-1205C first picked is discontinued |
 | C1 | 47 uF 100 V | Nichicon UUX2A470MNL1GS, 10 x 10 mm SMD |
 | Q1 | DMN3404L | Diodes DMN3404L-7, buzzer low-side switch, 82 mohm at 3 V gate; same SOT-23 pinout as the AO3400A |
-| J2 | USB-C | HRO TYPE-C-31-M-12, from LCSC (C165948). Mouser does not stock it |
+| J2 | USB-C | GCT USB4105-GF-A, 16 pin USB 2.0, Mouser. KiCad's footprint, with its B1/B4/B9/B12 pads dropped (they lie on A12/A9/A4/A1 and the symbol has no such pins) and A1/A12 0.02 mm shorter at the inner end, so they clear the NPTH pegs by 0.2 mm |
 
 Every part carries `mfr` and `mpn` fields. `agentee parts buggy-guard --boards N --spares --order
 docs/` (and the same for `pendant`) prices every line at Mouser and Farnell and writes
@@ -110,12 +163,12 @@ both distributors stock; a 10% one is TDK C1608X5R1A106K080AC at Mouser only.
 
 ## Board
 
-`buggy-guard.board.toml`: 100 x 80 mm, JLC04161H-7628 4 layer, ENIG, black mask.
+`buggy-guard.board.toml`: 120 x 80 mm, JLC04161H-7628 4 layer, ENIG, black mask.
 
 - F.Cu and B.Cu carry signals and power, In1.Cu is a solid ground plane, In2.Cu is a +3V3 plane.
   Every net class is confined to F.Cu/B.Cu (plus In2 for signals), so In1 is never routed through.
-- HV class (battery, ignition, e-stop loop) is 0.6 mm with 0.5 mm clearance, on the outer layers
-  only, and confined to the left edge of the board.
+- HV class (battery, ignition, e-stop loop, LOAD+) is 0.6 mm with 0.5 mm clearance, on the outer
+  layers only. Load class (OUT1-OUT3) is 1 mm for 2 A at a 10 C rise, also 0.5 mm clearance.
 - The buck's switch node is F.Cu only, 0.8 mm wide, with the input caps, U1, C4, L1 and the
   ripple network placed as one block in the top-left corner.
 
@@ -124,14 +177,24 @@ both distributors stock; a 10% one is TDK C1608X5R1A106K080AC at Mouser only.
 - Placed and routed by the layout engine (`agentee layout`, seed 2). Only the holes, the
   connectors, BZ1 and the buck block (F1, D1, D2, C1-C8, R1-R6, U1, L1) are locked. The engine
   has no switch-loop term yet, and every unlocked run stretched SW to 24-34 mm. Locked, it is 11 mm.
-- Connectors sit along the edges by job: 48 V on the left (J1 battery, J15 e-stop, J4 ESC lock),
-  then along the bottom the ESC plugs (J7, J5, J12), the rider inputs (J6, J13) and service
-  (J2 USB, J14 UART). Sonar is on the right, I2C on top. Each one carries a silk label with its
+- Connectors sit along the edges by job: battery voltage on the left (J1 battery, J15 e-stop,
+  J4 ESC lock), then along the bottom the ESC plugs (J7, J5, J12), the rider inputs (J6, J13) and
+  service (J2 USB, J14 UART). Sonar, CAN, ESC UART and lights are on the right, I2C on top. Each one carries a silk label with its
   ref and job instead of the bare ref. The `[place]` keepouts are the strips under those labels.
 - `agentee layout` drops every `[[graphics]]` item, so after a rerun put the connector and
   button labels back from git.
 - U10 and C28 were added after the engine run: placed with `agentee place --keep-placed`, their
   nets routed with `agentee route`. U7.3 ties to GND through a via beside the pad.
+- v0.3.0 widened the board by 20 mm to the right. J8 and J9 moved to the new right edge with
+  J16 CAN, J17 ESC UART and J18 LIGHTS below them; the CAN, UART and light circuits sit in the
+  new strip, placed by hand, and only their nets and the moved connectors' nets were routed
+  again with `agentee route`. The rest of the copper is the engine's v0.2.0 routing.
+- The right edge connectors are spaced so their courtyards just clear each other and H4's.
+- Q6-Q8's sources each go to two GND vias on their left; the HV clearance around the drains
+  keeps the pour from reaching them.
+- U12 and R25 sit where Q4 was, above J5. U13.7 joins U13.4 with a short track outside the pins,
+  as there is no room for a via beside it.
+- The refs of C33 and R49 are hidden, as the silk pass found no clear spot.
 - The refs of C20, R17, R18, R23 and U10 are hidden because the silk pass found no clear spot.
 - H1-H4 are plated M3 holes on no net, so board GND never bonds to the frame. They have no silk.
 - In2 is one +3V3 pour. The engine had cut 27 rail regions into it for the 48 V nets, +5V,
@@ -139,7 +202,7 @@ both distributors stock; a 10% one is TDK C1608X5R1A106K080AC at Mouser only.
 - The GND and +3V3 pours join through-hole pads by thermal relief (`relief_tht_only`), so the
   connector pins solder; SMD pads and the U1 and U3 thermal pads stay solid.
 - The thermal vias in the U1 and U3 pads are 0.3 mm drills on 0.6 mm pads, JLC's standard drill.
-- J2's shell front sits on the board edge (0.25 mm in), so an overmoulded USB-C plug seats fully.
+- J2's shell front sits on the board edge (0.23 mm in), so an overmoulded USB-C plug seats fully.
 - J1 is a right angle XT60 for a battery lead that has to stay plugged in under vibration. Its
   housing hangs 8 mm past the left edge so the plug mates outside the board; the two pins and
   both support legs are soldered on the board. Its STEP loads by URL from OpenDrone-hw's
@@ -153,13 +216,15 @@ both distributors stock; a 10% one is TDK C1608X5R1A106K080AC at Mouser only.
 - U3's u.FL socket is on the -x side of the module, so the antenna pigtail exits toward the left
   (inboard). Leave that space clear and keep the coax away from the buck and the ignition wiring.
 - The ESP32 STEP models load by URL from Espressif's `kicad-libraries` repository, pinned to a
-  commit, so they are not in git; agentee downloads them into its cache on first use. The HRO
-  USB-C STEP is a community model with no public copy found, so it stays in `3dmodels/`.
-  Neither exists in the KiCad library. Their `model_offset`
-  and `model_rotate` were derived from the measured bounding boxes, not by eye: the ESP sits at
-  z 0..3.2 with no offset in z, the USB-C needs `rotate = [90, 0, 0]` because it was exported
-  lying on its side. `agentee check` cannot catch a bad transform, so verify in the 3D view
-  or by walking the STEP vertices.
+  commit, so they are not in git; agentee downloads them into its cache on first use. The KiCad
+  library has none for them. Their `model_offset` and `model_rotate` were derived from the
+  measured bounding boxes, not by eye: the ESP sits at z 0..3.2 with no offset in z.
+  `agentee check` cannot catch a bad transform, so verify in the 3D view or by walking the STEP
+  vertices. The USB-C and the light FETs use KiCad's own models; Q6-Q8's footprint points at
+  `Diodes_PowerDI3333-8.step`, the name the library ships it under.
+- The USB-C sockets were the HRO TYPE-C-31-M-12 until v0.3.0. The GCT USB4105 has the same peg
+  and shell hole positions and shorter signal pads, so it went in at the same spot and only the
+  tracks onto its pads were redone.
 
 ## Connectors
 
@@ -169,36 +234,42 @@ layout, so rerun it after moving a connector.
 
 | ref | fits | pinout |
 |---|---|---|
-| J1 | XT60 female plug (board has an Amass XT60PW-M) | 1 GND (the chamfered side), 2 BATT+ |
+| J1 | XT60 female plug (board has an Amass XT60PW-M) | 1 GND (the chamfered side), 2 BATT+, 12-60 V |
 | J4 | JST XH 2 way | 1 IGN_OUT to ESC lock, 2 GND |
-| J15 | JST XH 2 way | 1 VIN, 2 e-stop return (NC button loop, 48 V) |
-| J6 | JST XH 3 way | 1 +5V, 2 GND, 3 pedal signal |
+| J15 | JST XH 2 way | 1 VIN, 2 e-stop return (NC button loop, battery voltage) |
+| J6 | JST XH 3 way | 1 +5V, 2 GND, 3 throttle signal (pedal or thumb throttle) |
 | J7 | JST XH 3 way | 1 +5V (unused, ESC supplies its own), 2 GND, 3 throttle out |
-| J5 | JST XH 2 way | 1 e-brake (active low), 2 GND |
+| J5 | JST XH 2 way | isolated brake contact, 1 and 2, closed while KILL is high |
 | J8..J11 | JST XH 4 way | 1 SENS_5V, 2 TRIG, 3 ECHO, 4 GND, one per ultrasonic sensor |
 | J12 | JST XH 3 way | 1 SENS_5V, 2 GND, 3 wheel hall signal (R53 4.7k pull-up, R54/R55 10k/20k divider: an open-collector high reads 2.9 V, above the ESP's 2.48 V VIH even on USB power) |
 | J13 | JST XH 3 way | 1 AUX1, 2 AUX2 (to +3V3, switch to ground), 3 GND |
 | J3 | JST SH 4 way | 1 GND, 2 +3V3, 3 SDA, 4 SCL |
 | J14 | JST XH 4 way | 1 GND, 2 +3V3, 3 RX (into the MCU), 4 TX (out of it). A console without USB |
+| J16 | JST XH 3 way | 1 CANH, 2 CANL, 3 GND |
+| J17 | JST XH 3 way | 1 GND, 2 RX (into the board), 3 TX (out of it), at VIO |
+| J18 | JST XH 4 way | 1 LOAD+, 2 OUT1, 3 OUT2, 4 OUT3 |
 
 Two ultrasonic ports, not four: J8 front, J9 rear. Four ports left no spare GPIO, and with
 ESP-NOW gating reverse there is nothing useful a rear pair of corners would add over one
-rear-centre sensor. That freed TXD0/RXD0 for the J14 console header and left IO42, IO47 and IO48
-still unused.
+rear-centre sensor. That freed TXD0/RXD0 for the J14 console header.
+
+v0.3.0 uses the last seven free GPIO: IO3, IO46 and IO45 (strapping pins, hence the pull-downs)
+for the light outputs, IO47 and IO48 for CAN, IO41 and IO42 for the ESC UART.
 
 ## Test access
 
-17 pads on the bottom side, all 1.0 mm, listed in `fab/testpoints.csv`: VBAT_ADC, PWR_LED, EN,
+23 pads on the bottom side, all 1.0 mm, listed in `fab/testpoints.csv`: VBAT_ADC, PWR_LED, EN,
 I2C_SDA, I2C_SCL, THR_FB_ADC, WDOK, WDI, BRK_REL, SAFE, KILL, US1/US2 trigger and echo,
-PEDAL_ADC, SPEED and IGN_PD. +3V3, +5V and GND are reached through their plane pads.
+PEDAL_ADC, SPEED, IGN_PD, CAN_TX, CAN_RX, ESC_TX, ESC_RX and VIO. +3V3, +5V and GND are
+reached through their plane pads.
 
 Not probed: VBAT_F, VBUS and IGN_G. The autorouter found no path for a bottom pad next to those
 three nets, and they are reachable from a probe on the top side or at the connector.
 
 ## Simulations
 
-Three, all in `*.sim.toml`. `agentee sim NAME` regenerates each; the result files are not in
-git because the DC one is 98 MB.
+All in `*.sim.toml`. `agentee sim NAME` regenerates each; the result files are not in git
+because the DC ones are over 100 MB. The numbers below are from the v0.3.0 layout.
 
 ### `buggy-guard-dc`, resistive DC drop
 
@@ -208,7 +279,7 @@ Inductor DCR is the SRR1260's 170 mohm, the reverse diode 400 mohm, the fuse 95 
 
 | reading | value |
 |---|---|
-| 3V3 at the ESP32 pad | 3.295 V from a 3.3 V rail, 5 mV drop |
+| 3V3 at the ESP32 pad | 3.294 V from a 3.3 V rail, 6 mV drop |
 | ignition lock line | 49.79 V at J4.1, 210 mV below the supply at 300 mA, 120 mV of it across D1 |
 | peak current density | 121 A/mm2 on the In2.Cu 3V3 plane under the ESP32 |
 
@@ -217,19 +288,22 @@ the ESP32's own pad current funnelling into the plane, which is what the thermal
 
 ### `buggy-guard-thermal`, steady state
 
-40 C ambient (a buggy in summer sun), 12 W/m2K on both faces, 0.9 W into the buck, 0.75 W into the
-ESP32, 0.15 W into the buzzer and 0.02 W into the ignition FET.
+40 C ambient (a vehicle in summer sun), 12 W/m2K on both faces, 0.9 W into the buck, 0.75 W into
+the ESP32, 0.15 W into the buzzer, 0.02 W into the ignition FET and 0.1 W into each light FET
+(2 A at 23.5 mohm). 0.9 W in U1 is about three times its loss at 67 V and 0.6 A out (0.13 W
+conduction, 0.12 W switching), so it covers the whole input range.
 
 | reading | value |
 |---|---|
-| board peak | 71.7 C, under U1 |
-| U1 junction | 112.2 C (0.9 W x 45 C/W onto the pad temperature) |
-| U3 junction | 94.2 C |
-| buzzer pads | 58.2 C |
+| board peak | 71.6 C, under U1 |
+| U1 junction | 112.1 C (0.9 W x 45 C/W onto the pad temperature) |
+| U3 junction | 95.0 C |
+| buzzer pads | 58.4 C |
 | ignition FET | 49.4 C |
+| light FETs | 62.4 C at Q7's pads, the middle one |
 
 Both junctions are the number to watch. The buck is the hot spot because it dissipates in a small
-area with only the ground pad to lose heat through, and 112.2 C leaves 37.8 C to the LM5164's
+area with only the ground pad to lose heat through, and 112.1 C leaves 37.9 C to the LM5164's
 150 C junction limit at 40 C ambient. That number is an estimate from a fitted theta-jc, not a
 measurement, and it assumes the pad ties into the ground plane well. If the real thing runs hot,
 the fix is copper under U1 rather than a bigger inductor.
@@ -241,11 +315,12 @@ seat with no air moving.
 
 | reading | value |
 |---|---|
-| board peak | 95.8 C, under U1 |
-| U1 junction | 136.3 C, 13.7 C under the 150 C limit |
-| U3 pads | 88.5 C |
-| U3 junction | 117.9 C |
-| buzzer pads | 81.4 C |
+| board peak | 95.4 C, under U1 |
+| U1 junction | 135.9 C, 14.1 C under the 150 C limit |
+| U3 pads | 88.4 C |
+| U3 junction | 118.4 C |
+| buzzer pads | 81.5 C |
+| light FETs | 85.4 C at Q7's pads |
 
 The buck still clears its limit, but with little margin, and 0.75 W of continuous WiFi into the
 ESP32 is pessimistic. A sealed box wants vent holes or a thermal pad from U1 to the lid.
@@ -253,17 +328,17 @@ ESP32 is pessimistic. A sealed box wants vent holes or a thermal pad from U1 to 
 ### `buggy-guard-dc-5v`, +5V rail
 
 5 V held at L1.2 and 0 V at C8.2, the output caps' ground. Loads: 520 mA into the LDO, 40 mA
-through the buzzer and Q1, 15 mA per sonar port, 10 mA hall, 20 mA pedal, and the op-amp and
-gates. F2 and F3 are linked at 50 mohm, so the readings are copper only and leave out the PTCs'
-own drop.
+through the buzzer and Q1, 15 mA per sonar port, 10 mA hall, 20 mA pedal, and the op-amp, the
+gates and U13. F2 and F3 are linked at 50 mohm, so the readings are copper only and leave out the
+PTCs' own drop.
 
 | reading | value |
 |---|---|
 | LDO input | 4.990 V, 10 mV drop at 520 mA |
-| worst sensor feed | 4.981 V at J8.1, 19 mV drop |
+| worst sensor feed | 4.980 V at J8.1, 20 mV drop |
 | peak current density | 72 A/mm2, F.Cu at (49.6, 27.7) |
 
-### `buggy-guard-dc-hv`, 48 V path at the fuse limit
+### `buggy-guard-dc-hv`, battery path at the fuse limit
 
 50 V at J1.2 and 0 V at J1.1, 1 A into U1's VIN pin (the fuse rating, far above the buck's
 real 0.1 A) and the 300 mA ignition line out of J4.1. F1 at 95 mohm, D1 at 400 mohm, Q3 and the
@@ -278,16 +353,29 @@ e-stop loop at 50 mohm each.
 The first run peaked at 163 A/mm2 in a single via: the engine had dropped VIN onto B.Cu for
 2 mm beside D2. That jog is now on F.Cu, so the full input current never passes through a via.
 
+### `buggy-guard-dc-lights`, light outputs at full load
+
+2 A into each of J18.2-J18.4, out of J1.1, with Q6-Q8 linked drain to source at 23.5 mohm.
+The load current crosses the whole board in the ground planes.
+
+| reading | value |
+|---|---|
+| OUT1-OUT3 to J1.1 | 68-69 mV at 2 A each, 47 mV of it in the FETs |
+| peak current density | 225 A/mm2 on In1.Cu where the 6 A enters J1.1's barrel |
+
+The copper adds about 21 mV between an output and the battery negative. The peak is the
+current crowding into one plated hole and falls off within a millimetre.
+
 ### `buggy-guard-sw-xtalk`, switch node coupling
 
 FDTD of the buck corner (x 30-52, y 3-26 mm) at 0.1 mm cells, 10 MHz to 1 GHz, driving U1.8
 (SW) and listening on R21.2 (I2C_SCL, which runs on In2 straight under the SW copper) and R7.2
 (VBAT_ADC, on B.Cu under it). Two minutes on the GPU.
 
-| path | worst | 48 V edge |
+| path | worst | 67 V edge |
 |---|---|---|
-| SW to I2C_SCL | -73 dB at 1 GHz | 1.7 mV step |
-| SW to VBAT_ADC | -90 dB at 1 GHz | 0.3 mV step |
+| SW to I2C_SCL | -73 dB at 1 GHz | 2.4 mV step |
+| SW to VBAT_ADC | -91 dB at 1 GHz | 0.4 mV step |
 
 The solid In1 ground between F.Cu and the inner signals shields them. Both are far under any
 logic or ADC threshold. Check warns that the R7 and R21 models are dropped: the ports sit on
@@ -326,6 +414,12 @@ The hardware is the safety net; the firmware only ever removes throttle. It must
 8. Keep BRK_REL low for a while after raising ARM. Arming is what powers the ESC through the lock
    wire, and it has to boot before it sees throttle. Start at 2 s; the ND72240's boot time is
    not measured.
+9. Set the low battery cut for the pack in use from VBAT_ADC (x23): the hardware only stops the
+   buck at 8.4 V, which is no protection for anything above 3S.
+10. Drive the light outputs on IO3 (OUT1), IO46 (OUT2) and IO45 (OUT3). LEDC PWM can dim a lamp;
+    switch a horn on and off. Never enable the internal pull-up on IO45 or IO46.
+11. CAN is the TWAI controller on IO47 (TX) and IO48 (RX). The ESC UART is on IO41 (TX) and IO42
+    (RX), idle high.
 
 ## Pendant
 
@@ -333,7 +427,7 @@ The handheld remote is a separate board in the same project: `pendant.board.toml
 `pendant.sch.toml` and `pendant.pcb.toml`, fab package in `fab-pendant/`. It is a 60 x 66 mm
 4 layer JLC board (JLC04161H-7628, like the main board): In1 is solid GND, F, In2 and B carry
 signals with GND poured around them. 2 layers did not leave room for every ground pad around
-the ESP32-C3 to reach the pour. It talks ESP-NOW to the buggy and is the "fob" in the firmware
+the ESP32-C3 to reach the pour. It talks ESP-NOW to the main board and is the "fob" in the firmware
 contract above.
 
 | block | parts | notes |
@@ -406,7 +500,7 @@ Life; the Same Sky CPT-1203-78 has the same 12 x 12 x 3 mm body and side termina
 Vp-p and good to 25 Vp-p. Its footprint uses Same Sky's recommended pads, 1.45 x 4.0 mm with a 9.5
 mm gap. D1 and Q1 started as the LCSC generics B5819W and AO3401A; Diodes 1N5819HW-7-F and
 DMP2035U-7 are the same SOD-123 and SOT-23 parts with the same pinout, from a maker Mouser and
-Farnell carry. J1 is LCSC only, like the main board's J2. J3 is Waveshare SKU 18179.
+Farnell carry. J1 is the GCT USB4105-GF-A, as on the main board. J3 is Waveshare SKU 18179.
 
 The ESP32-C3 model is Espressif's STEP from their KiCad library, loaded by URL. The 12 mm switch, piezo and OLED
 module models are boxes drawn by `python3 3dmodels/make_models.py`.
@@ -472,15 +566,15 @@ charged like that for long, for example in a hot car.
 
 - Print the pendant case and fit a populated board: check the SW1 knob can be reached through its
   slot and the cap travel on SW2/SW3, `enclosure/pendant-case.gcad`.
+
 - Pendant: check the 7 pin order (VCC GND DIN CLK CS DC RST) on an actual Waveshare module before
   soldering it down, `footprints/OLED_Waveshare_1.3in_C.fp.toml`.
 - Pendant: J2 pin 1 is battery +. JST PH LiPo leads come wired both ways round; check before
   plugging in, a reversed cell destroys U2 and U3.
 - Firmware has not been written. The board is the safety layer; the behaviour above is the
   contract the firmware must meet.
-- The e-brake output is an open-drain pull-down, correct for the low-active brake input on most
-  e-bike controllers. A controller with a 12 V high-level brake input needs a high-side driver
-  instead of Q4.
+- Bring up the CAN port against a real VESC or Fardriver and the ESC UART at both JP2 settings;
+  neither has been on a bench.
 - Check the ESC's power-lock input draws no more than about 0.3 A (some controllers charge a
   capacitor through it); Q3 is rated for 6 A so there is margin, but the value is unverified.
 - The IMU impact threshold is a firmware number (start around 2.5 g, measure on the real chassis).

@@ -1,0 +1,229 @@
+# imported from KiCad Connector_USB:USB_C_Receptacle_GCT_USB4105-xx-A_16P_TopMnt_Horizontal
+name = "USB_C_Receptacle_GCT_USB4105-xx-A_16P_TopMnt_Horizontal"
+description = "USB 2.0 Type C Receptacle, GCT, 16P, top mounted, horizontal, 5A: https://gct.co/files/drawings/usb4105.pdf"
+tags = ["USB", "C", "Type-C", "Receptacle", "SMD", "USB", "2.0", "16P", "16C", "USB4105-15-A", "USB4105-15-A-060", "USB4105-15-A-120", "USB4105-GF-A", "USB4105-GF-A-060", "USB4105-GF-A-120"]
+mount = "smd"
+model = "${KICAD9_3DMODEL_DIR}/Connector_USB.3dshapes/USB_C_Receptacle_GCT_USB4105-xx-A_16P_TopMnt_Horizontal.step"
+
+[[pads]]
+kind = "npth"
+shape = "circle"
+at = [-2.89, -2.605]
+size = [0.65, 0.65]
+drill = 0.65
+layers = ["*.Cu", "*.Mask"]
+
+[[pads]]
+kind = "npth"
+shape = "circle"
+at = [2.89, -2.605]
+size = [0.65, 0.65]
+drill = 0.65
+layers = ["*.Cu", "*.Mask"]
+
+[[pads]]
+number = "A1"
+kind = "smd"
+shape = "roundrect"
+at = [-3.2, -3.69]
+size = [0.6, 1.13]
+roundrect_ratio = 0.25
+layers = ["F.Cu", "F.Mask", "F.Paste"]
+
+[[pads]]
+number = "A4"
+kind = "smd"
+shape = "roundrect"
+at = [-2.4, -3.68]
+size = [0.6, 1.15]
+roundrect_ratio = 0.25
+layers = ["F.Cu", "F.Mask", "F.Paste"]
+
+[[pads]]
+number = "A5"
+kind = "smd"
+shape = "roundrect"
+at = [-1.25, -3.68]
+size = [0.3, 1.15]
+roundrect_ratio = 0.25
+layers = ["F.Cu", "F.Mask", "F.Paste"]
+
+[[pads]]
+number = "A6"
+kind = "smd"
+shape = "roundrect"
+at = [-0.25, -3.68]
+size = [0.3, 1.15]
+roundrect_ratio = 0.25
+layers = ["F.Cu", "F.Mask", "F.Paste"]
+
+[[pads]]
+number = "A7"
+kind = "smd"
+shape = "roundrect"
+at = [0.25, -3.68]
+size = [0.3, 1.15]
+roundrect_ratio = 0.25
+layers = ["F.Cu", "F.Mask", "F.Paste"]
+
+[[pads]]
+number = "A8"
+kind = "smd"
+shape = "roundrect"
+at = [1.25, -3.68]
+size = [0.3, 1.15]
+roundrect_ratio = 0.25
+layers = ["F.Cu", "F.Mask", "F.Paste"]
+
+[[pads]]
+number = "A9"
+kind = "smd"
+shape = "roundrect"
+at = [2.4, -3.68]
+size = [0.6, 1.15]
+roundrect_ratio = 0.25
+layers = ["F.Cu", "F.Mask", "F.Paste"]
+
+[[pads]]
+number = "A12"
+kind = "smd"
+shape = "roundrect"
+at = [3.2, -3.69]
+size = [0.6, 1.13]
+roundrect_ratio = 0.25
+layers = ["F.Cu", "F.Mask", "F.Paste"]
+
+[[pads]]
+number = "B5"
+kind = "smd"
+shape = "roundrect"
+at = [1.75, -3.68]
+size = [0.3, 1.15]
+roundrect_ratio = 0.25
+layers = ["F.Cu", "F.Mask", "F.Paste"]
+
+[[pads]]
+number = "B6"
+kind = "smd"
+shape = "roundrect"
+at = [0.75, -3.68]
+size = [0.3, 1.15]
+roundrect_ratio = 0.25
+layers = ["F.Cu", "F.Mask", "F.Paste"]
+
+[[pads]]
+number = "B7"
+kind = "smd"
+shape = "roundrect"
+at = [-0.75, -3.68]
+size = [0.3, 1.15]
+roundrect_ratio = 0.25
+layers = ["F.Cu", "F.Mask", "F.Paste"]
+
+[[pads]]
+number = "B8"
+kind = "smd"
+shape = "roundrect"
+at = [-1.75, -3.68]
+size = [0.3, 1.15]
+roundrect_ratio = 0.25
+layers = ["F.Cu", "F.Mask", "F.Paste"]
+
+[[pads]]
+number = "S1"
+kind = "tht"
+shape = "oval"
+at = [-4.32, -3.105]
+size = [1.0, 2.1]
+drill = [0.6, 1.7]
+layers = ["*.Cu", "*.Mask", "F.Paste"]
+
+[[pads]]
+number = "S1"
+kind = "tht"
+shape = "oval"
+at = [-4.32, 1.075]
+size = [1.0, 1.8]
+drill = [0.6, 1.4]
+layers = ["*.Cu", "*.Mask", "F.Paste"]
+
+[[pads]]
+number = "S1"
+kind = "tht"
+shape = "oval"
+at = [4.32, -3.105]
+size = [1.0, 2.1]
+drill = [0.6, 1.7]
+layers = ["*.Cu", "*.Mask", "F.Paste"]
+
+[[pads]]
+number = "S1"
+kind = "tht"
+shape = "oval"
+at = [4.32, 1.075]
+size = [1.0, 1.8]
+drill = [0.6, 1.4]
+layers = ["*.Cu", "*.Mask", "F.Paste"]
+
+[[graphics]]
+kind = "text"
+layer = "F.SilkS"
+at = [0.0, -5.5]
+text = "${REFERENCE}"
+size = 1.0
+
+[[graphics]]
+kind = "text"
+layer = "F.Fab"
+at = [0.0, 5.0]
+text = "${VALUE}"
+size = 1.0
+
+[[graphics]]
+kind = "line"
+layer = "F.SilkS"
+start = [-4.67, -0.1]
+end = [-4.67, -1.8]
+width = 0.15
+
+[[graphics]]
+kind = "line"
+layer = "F.SilkS"
+start = [4.67, -0.1]
+end = [4.67, -1.8]
+width = 0.15
+
+[[graphics]]
+kind = "line"
+layer = "Dwgs.User"
+start = [5.0, 3.675]
+end = [-5.0, 3.675]
+width = 0.1
+
+[[graphics]]
+kind = "rect"
+layer = "F.CrtYd"
+start = [-5.32, -4.76]
+end = [5.32, 4.18]
+width = 0.05
+
+[[graphics]]
+kind = "rect"
+layer = "F.Fab"
+start = [-4.47, -3.675]
+end = [4.47, 3.675]
+width = 0.1
+
+[[graphics]]
+kind = "text"
+layer = "Dwgs.User"
+at = [0.0, 3.1]
+text = "PCB Edge"
+size = 0.5
+
+[[graphics]]
+kind = "text"
+layer = "F.Fab"
+at = [0.0, 0.0]
+text = "${REFERENCE}"
+size = 1.0

@@ -29,3 +29,21 @@ ref = "BZ1"
 power = "0.15W"
 theta_jc = 0.0
 pads = ["1", "2"]
+
+[[sources]]
+ref = "Q6"
+power = "0.1W"
+theta_jc = 3.5
+pads = ["5", "7"]
+
+[[sources]]
+ref = "Q7"
+power = "0.1W"
+theta_jc = 3.5
+pads = ["5", "7"]
+
+[[sources]]
+ref = "Q8"
+power = "0.1W"
+theta_jc = 3.5
+pads = ["5", "7"]

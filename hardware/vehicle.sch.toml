@@ -1,0 +1,414 @@
+name = "vehicle"
+board = "buggy-guard"
+no_connect = ["U11.5", "U13.11"]
+
+[[parts]]
+ref = "U11"
+symbol = "SN65HVD230"
+at = [40.64, 40.64]
+value = "SN65HVD230"
+footprint = "SOIC-8_3.9x4.9mm_P1.27mm"
+fields = { mfr = "Texas Instruments", mpn = "SN65HVD230DR" }
+
+[[parts]]
+ref = "C29"
+symbol = "C"
+at = [20.32, 30.48]
+value = "100n"
+footprint = "C_0603_1608Metric"
+fields = { mfr = "Kemet", mpn = "C0603C104K5RACTU" }
+
+[[parts]]
+ref = "R47"
+symbol = "R"
+at = [20.32, 45.72]
+value = "10k"
+footprint = "R_0603_1608Metric"
+fields = { mfr = "Yageo", mpn = "RC0603FR-0710KL" }
+
+[[parts]]
+ref = "R62"
+symbol = "R"
+at = [63.5, 33.02]
+value = "120"
+footprint = "R_0603_1608Metric"
+fields = { mfr = "Yageo", mpn = "RC0603FR-07120RL" }
+
+[[parts]]
+ref = "JP1"
+symbol = "SolderJumper_2_Open"
+at = [71.12, 40.64]
+value = "TERM"
+fields = { assembly = "no" }
+
+[[parts]]
+ref = "D10"
+symbol = "NUP2105L"
+at = [63.5, 53.34]
+value = "NUP2105L"
+footprint = "SOT-23"
+fields = { mfr = "onsemi", mpn = "NUP2105LT1G" }
+
+[[parts]]
+ref = "J16"
+symbol = "Conn_01x03"
+at = [86.36, 40.64]
+value = "CAN"
+footprint = "JST_XH_B3B-XH-A_1x03_P2.50mm_Vertical"
+mirror = true
+fields = { mfr = "JST", mpn = "B3B-XH-A(LF)(SN)", desc = "CAN: 1 CANH, 2 CANL, 3 GND", buy_with = "XHP-3, SXH-001T-P0.6 x3" }
+
+[[parts]]
+ref = "U14"
+symbol = "SN74LVC1T45DBV"
+at = [40.64, 93.98]
+value = "SN74LVC1T45"
+footprint = "SOT-23-6"
+fields = { mfr = "Texas Instruments", mpn = "SN74LVC1T45DBVR" }
+
+[[parts]]
+ref = "U15"
+symbol = "SN74LVC1T45DBV"
+at = [40.64, 124.46000000000001]
+value = "SN74LVC1T45"
+footprint = "SOT-23-6"
+fields = { mfr = "Texas Instruments", mpn = "SN74LVC1T45DBVR" }
+
+[[parts]]
+ref = "C30"
+symbol = "C"
+at = [20.32, 86.36]
+value = "100n"
+footprint = "C_0603_1608Metric"
+fields = { mfr = "Kemet", mpn = "C0603C104K5RACTU" }
+
+[[parts]]
+ref = "C31"
+symbol = "C"
+at = [60.96, 86.36]
+value = "100n"
+footprint = "C_0603_1608Metric"
+fields = { mfr = "Kemet", mpn = "C0603C104K5RACTU" }
+
+[[parts]]
+ref = "C32"
+symbol = "C"
+at = [20.32, 116.84]
+value = "100n"
+footprint = "C_0603_1608Metric"
+fields = { mfr = "Kemet", mpn = "C0603C104K5RACTU" }
+
+[[parts]]
+ref = "C33"
+symbol = "C"
+at = [60.96, 116.84]
+value = "100n"
+footprint = "C_0603_1608Metric"
+fields = { mfr = "Kemet", mpn = "C0603C104K5RACTU" }
+
+[[parts]]
+ref = "R51"
+symbol = "R"
+at = [20.32, 101.6]
+value = "10k"
+footprint = "R_0603_1608Metric"
+fields = { mfr = "Yageo", mpn = "RC0603FR-0710KL" }
+
+[[parts]]
+ref = "R48"
+symbol = "R"
+at = [68.58, 93.98]
+value = "100"
+footprint = "R_0603_1608Metric"
+rotation = 90.0
+fields = { mfr = "Yageo", mpn = "RC0603FR-07100RL" }
+
+[[parts]]
+ref = "R49"
+symbol = "R"
+at = [68.58, 124.46000000000001]
+value = "100"
+footprint = "R_0603_1608Metric"
+rotation = 90.0
+fields = { mfr = "Yageo", mpn = "RC0603FR-07100RL" }
+
+[[parts]]
+ref = "R50"
+symbol = "R"
+at = [58.42, 132.08]
+value = "10k"
+footprint = "R_0603_1608Metric"
+fields = { mfr = "Yageo", mpn = "RC0603FR-0710KL" }
+
+[[parts]]
+ref = "JP2"
+symbol = "SolderJumper_3_Bridged12"
+at = [86.36, 76.2]
+value = "VIO"
+fields = { assembly = "no" }
+
+[[parts]]
+ref = "J17"
+symbol = "Conn_01x03"
+at = [93.98, 111.76]
+value = "ESC_UART"
+footprint = "JST_XH_B3B-XH-A_1x03_P2.50mm_Vertical"
+mirror = true
+fields = { mfr = "JST", mpn = "B3B-XH-A(LF)(SN)", desc = "ESC UART: 1 GND, 2 RX (into the board), 3 TX (out of it), at VIO", buy_with = "XHP-3, SXH-001T-P0.6 x3" }
+
+[[parts]]
+ref = "U13"
+symbol = "74AHCT125"
+at = [152.4, 40.64]
+value = "74AHCT125"
+footprint = "TSSOP-14_4.4x5mm_P0.65mm"
+fields = { mfr = "Texas Instruments", mpn = "SN74AHCT125PWR" }
+
+[[parts]]
+ref = "U13"
+symbol = "74AHCT125"
+unit = 2
+at = [152.4, 63.5]
+value = "74AHCT125"
+
+[[parts]]
+ref = "U13"
+symbol = "74AHCT125"
+unit = 3
+at = [152.4, 86.36]
+value = "74AHCT125"
+
+[[parts]]
+ref = "U13"
+symbol = "74AHCT125"
+unit = 4
+at = [152.4, 109.22]
+value = "74AHCT125"
+
+[[parts]]
+ref = "U13"
+symbol = "74AHCT125"
+unit = 5
+at = [127.0, 124.46]
+value = "74AHCT125"
+
+[[parts]]
+ref = "C34"
+symbol = "C"
+at = [114.3, 124.46000000000001]
+value = "100n"
+footprint = "C_0603_1608Metric"
+fields = { mfr = "Kemet", mpn = "C0603C104K5RACTU" }
+
+[[parts]]
+ref = "R52"
+symbol = "R"
+at = [132.08, 48.26]
+value = "100k"
+footprint = "R_0603_1608Metric"
+fields = { mfr = "Yageo", mpn = "RC0603FR-07100KL" }
+
+[[parts]]
+ref = "R60"
+symbol = "R"
+at = [132.08, 71.12]
+value = "100k"
+footprint = "R_0603_1608Metric"
+fields = { mfr = "Yageo", mpn = "RC0603FR-07100KL" }
+
+[[parts]]
+ref = "R61"
+symbol = "R"
+at = [132.08, 93.98]
+value = "100k"
+footprint = "R_0603_1608Metric"
+fields = { mfr = "Yageo", mpn = "RC0603FR-07100KL" }
+
+[[parts]]
+ref = "Q6"
+symbol = "DMT10H015LFG"
+at = [177.8, 40.64]
+value = "DMT10H015LFG"
+fields = { mfr = "Diodes Inc", mpn = "DMT10H015LFG-7" }
+
+[[parts]]
+ref = "Q7"
+symbol = "DMT10H015LFG"
+at = [177.8, 63.5]
+value = "DMT10H015LFG"
+fields = { mfr = "Diodes Inc", mpn = "DMT10H015LFG-7" }
+
+[[parts]]
+ref = "Q8"
+symbol = "DMT10H015LFG"
+at = [177.8, 86.36]
+value = "DMT10H015LFG"
+fields = { mfr = "Diodes Inc", mpn = "DMT10H015LFG-7" }
+
+[[parts]]
+ref = "D11"
+symbol = "D"
+at = [190.5, 27.94]
+value = "MBR1H100SF"
+footprint = "D_SOD-123F"
+rotation = 90.0
+fields = { mfr = "onsemi", mpn = "MBR1H100SFT3G" }
+
+[[parts]]
+ref = "D12"
+symbol = "D"
+at = [198.12, 50.8]
+value = "MBR1H100SF"
+footprint = "D_SOD-123F"
+rotation = 90.0
+fields = { mfr = "onsemi", mpn = "MBR1H100SFT3G" }
+
+[[parts]]
+ref = "D13"
+symbol = "D"
+at = [205.74, 73.66]
+value = "MBR1H100SF"
+footprint = "D_SOD-123F"
+rotation = 90.0
+fields = { mfr = "onsemi", mpn = "MBR1H100SFT3G" }
+
+[[parts]]
+ref = "J18"
+symbol = "Conn_01x04"
+at = [226.06, 58.42]
+value = "LIGHTS"
+footprint = "JST_XH_B4B-XH-A_1x04_P2.50mm_Vertical"
+mirror = true
+fields = { mfr = "JST", mpn = "B4B-XH-A(LF)(SN)", desc = "Low-side outputs: 1 LOAD+, 2 OUT1, 3 OUT2, 4 OUT3", buy_with = "XHP-4, SXH-001T-P0.6 x4" }
+
+[[parts]]
+ref = "TP28"
+symbol = "TestPoint"
+value = "TP"
+footprint = "TestPoint_Pad_D1.0mm"
+at = [238.76, 27.94]
+
+[[nets]]
+name = "CAN_TX"
+class = "Signal"
+pins = ["U11.1", "R47.2"]
+
+[[nets]]
+name = "CAN_RX"
+class = "Signal"
+pins = ["U11.4"]
+
+[[nets]]
+name = "CANH"
+class = "Signal"
+pins = ["U11.7", "R62.1", "D10.1", "J16.1"]
+
+[[nets]]
+name = "CANL"
+class = "Signal"
+pins = ["U11.6", "JP1.2", "D10.2", "J16.2"]
+
+[[nets]]
+name = "CAN_TERM"
+class = "Signal"
+pins = ["R62.2", "JP1.1"]
+
+[[nets]]
+name = "ESC_TX"
+class = "Signal"
+pins = ["U14.3", "R51.2"]
+
+[[nets]]
+name = "ESC_TX_B"
+class = "Signal"
+pins = ["U14.4", "R48.1"]
+
+[[nets]]
+name = "ESC_TX_C"
+class = "Signal"
+pins = ["R48.2", "J17.3"]
+
+[[nets]]
+name = "ESC_RX"
+class = "Signal"
+pins = ["U15.3"]
+
+[[nets]]
+name = "ESC_RX_B"
+class = "Signal"
+pins = ["U15.4", "R49.1", "R50.2"]
+
+[[nets]]
+name = "ESC_RX_C"
+class = "Signal"
+pins = ["R49.2", "J17.2"]
+
+[[nets]]
+name = "VIO"
+class = "Supply"
+pins = ["JP2.2", "U14.6", "U15.6", "C31.1", "C33.1", "R50.1", "TP28.1"]
+
+[[nets]]
+name = "OUT1"
+class = "Load"
+pins = ["Q6.5", "Q6.7", "D11.2", "J18.2"]
+
+[[nets]]
+name = "OUT2"
+class = "Load"
+pins = ["Q7.5", "Q7.7", "D12.2", "J18.3"]
+
+[[nets]]
+name = "OUT3"
+class = "Load"
+pins = ["Q8.5", "Q8.7", "D13.2", "J18.4"]
+
+[[nets]]
+name = "LOAD+"
+class = "HV"
+pins = ["D11.1", "D12.1", "D13.1", "J18.1"]
+
+[[nets]]
+name = "+3V3"
+class = "Supply"
+pins = ["U11.3", "C29.1", "R47.1", "U14.1", "U14.5", "U15.1", "C30.1", "C32.1", "R51.1", "JP2.1"]
+
+[[nets]]
+name = "LIGHT1"
+class = "Signal"
+pins = ["U13.2", "R52.1"]
+
+[[nets]]
+name = "LIGHT2"
+class = "Signal"
+pins = ["U13.5", "R60.1"]
+
+[[nets]]
+name = "LIGHT3"
+class = "Signal"
+pins = ["U13.9", "R61.1"]
+
+[[nets]]
+name = "LIGHT1_G"
+class = "Signal"
+pins = ["U13.3", "Q6.4"]
+
+[[nets]]
+name = "LIGHT2_G"
+class = "Signal"
+pins = ["U13.6", "Q7.4"]
+
+[[nets]]
+name = "LIGHT3_G"
+class = "Signal"
+pins = ["U13.8", "Q8.4"]
+
+[[nets]]
+name = "+5V"
+class = "Power"
+pins = ["JP2.3", "U13.14", "C34.1"]
+
+[[nets]]
+name = "GND"
+class = "Ground"
+pins = ["U11.2", "U11.8", "C29.2", "D10.3", "J16.3", "U14.2", "U15.2", "U15.5", "C30.2", "C31.2", "C32.2", "C33.2", "J17.1", "U13.7", "U13.1", "U13.4", "U13.10", "U13.12", "U13.13", "C34.2", "R52.2", "R60.2", "R61.2", "Q6.1", "Q6.2", "Q6.3", "Q7.1", "Q7.2", "Q7.3", "Q8.1", "Q8.2", "Q8.3"]

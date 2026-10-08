@@ -13,3 +13,4 @@ fab-*/
 /hardware/enclosure/*.stl
 /hardware/enclosure/*.step
 /hardware/enclosure/*.3mf
+/hardware/enclosure/*.gcode

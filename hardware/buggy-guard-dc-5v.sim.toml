@@ -56,6 +56,11 @@ pad = "U8.5"
 current = "1mA"
 return = "U8.3"
 
+[[loads]]
+pad = "U13.14"
+current = "2mA"
+return = "U13.7"
+
 [[links]]
 ref = "Q1"
 resistance = "50mohm"

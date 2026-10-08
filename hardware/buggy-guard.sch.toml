@@ -1,4 +1,4 @@
 name = "buggy-guard"
 board = "buggy-guard"
-sheets = ["power", "mcu", "safety", "io"]
-rails = { GND = 0, "+3V3" = [3.25, 3.35], "+5V" = [4.85, 5.15] }
+sheets = ["power", "mcu", "safety", "io", "vehicle"]
+rails = { GND = 0, "+3V3" = [3.25, 3.35], "+5V" = [4.85, 5.15], VIO = [3.25, 5.15] }

@@ -4,7 +4,7 @@ reference = "J"
 description = "USB 2.0-only 16P Type-C Receptacle connector"
 datasheet = "https://www.usb.org/sites/default/files/documents/usb_type-c.zip"
 keywords = ["usb", "universal", "serial", "bus", "type-C", "USB2.0"]
-footprint = "USB_C_Receptacle_HRO_TYPE-C-31-M-12"
+footprint = "USB_C_Receptacle_GCT_USB4105-xx-A_16P_TopMnt_Horizontal"
 footprint_filters = ["USB*C*Receptacle*"]
 pin_name_offset = 1.016
 

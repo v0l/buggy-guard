@@ -32,8 +32,8 @@ plane XY offset=0.000
 rect 39.750 30.200 at=30.005,-33.500
 extrude -1.483
 plane XY offset=1.620
-rect 8.100 9.140 at=55.300,-27.200
-extrude 3.307
+rect 7.980 9.140 at=55.385,-27.200
+extrude 3.407
 plane XY offset=1.620
 rect 5.200 7.900 at=1.720,-30.000
 extrude 1.597

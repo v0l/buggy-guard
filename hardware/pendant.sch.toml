@@ -10,7 +10,8 @@ symbol = "USB_C_Receptacle_USB2.0_16P"
 value = "USB-C"
 at = [25.4, 49.53]
 mirror = true
-fields = { mfr = "Korean Hroparts", mpn = "TYPE-C-31-M-12", lcsc = "C165948" }
+fields = { mfr = "GCT", mpn = "USB4105-GF-A" }
+footprint = "USB_C_Receptacle_GCT_USB4105-xx-A_16P_TopMnt_Horizontal"
 
 [[parts]]
 ref = "R1"

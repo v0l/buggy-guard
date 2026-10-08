@@ -1,0 +1,102 @@
+# imported from KiCad Logic_LevelTranslator:SN74LVC1T45DBV
+name = "SN74LVC1T45DBV"
+reference = "U"
+description = "Single-Bit Dual-Supply Bus Transceiver With Configurable Voltage Translation and 3-State Outputs, SOT-23-6"
+datasheet = "http://www.ti.com/lit/ds/symlink/sn74lvc1t45.pdf"
+keywords = ["Level-Shifter", "CMOS-TTL-Translation"]
+footprint = "SOT-23-6"
+footprint_filters = ["SOT?23*"]
+
+[[graphics]]
+kind = "rect"
+start = [-7.62, -7.62]
+end = [7.62, 7.62]
+width = 0.254
+fill = "background"
+
+[[graphics]]
+kind = "polyline"
+points = [[-2.54, 0.0], [-2.54, -1.016], [-0.762, -1.016]]
+
+[[graphics]]
+kind = "polygon"
+points = [[-0.762, 0.0], [-0.762, -2.032], [1.016, -1.016]]
+
+[[graphics]]
+kind = "polyline"
+points = [[-0.762, 1.016], [-2.54, 1.016], [-2.54, 0.0], [-4.572, 0.0]]
+
+[[graphics]]
+kind = "polyline"
+points = [[1.016, -1.016], [2.794, -1.016], [2.794, 0.0], [4.064, 0.0]]
+
+[[graphics]]
+kind = "polygon"
+points = [[1.016, 0.0], [1.016, 1.778], [1.016, 2.032], [-0.762, 1.016]]
+
+[[graphics]]
+kind = "polyline"
+points = [[2.794, 0.0], [2.794, 1.016], [1.016, 1.016]]
+
+[[pins]]
+number = "3"
+name = "A"
+type = "bidirectional"
+at = [-10.16, 0.0]
+side = "left"
+length = 2.54
+unit = 1
+
+[[pins]]
+number = "5"
+name = "DIR"
+type = "input"
+at = [-10.16, 5.08]
+side = "left"
+length = 2.54
+unit = 1
+
+[[pins]]
+number = "1"
+name = "VCCA"
+type = "power_in"
+at = [-2.54, -10.16]
+side = "top"
+length = 2.54
+unit = 1
+
+[[pins]]
+number = "2"
+name = "GND"
+type = "power_in"
+at = [0.0, 10.16]
+side = "bottom"
+length = 2.54
+unit = 1
+
+[[pins]]
+number = "6"
+name = "VCCB"
+type = "power_in"
+at = [2.54, -10.16]
+side = "top"
+length = 2.54
+unit = 1
+
+[[pins]]
+number = "4"
+name = "B"
+type = "bidirectional"
+levels = { supply = "VCCB", vih = "70%", vil = "30%" }
+at = [10.16, 0.0]
+side = "right"
+length = 2.54
+unit = 1
+
+[levels]
+supply = "VCCA"
+vih = "2V"
+vil = "0.8V"
+min = "-0.5V"
+max = "6.5V"
+leakage = "4uA"

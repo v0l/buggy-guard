@@ -1,0 +1,143 @@
+# imported from KiCad Package_SO:MFSOP6-4_4.4x3.6mm_P1.27mm
+name = "MFSOP6-4_4.4x3.6mm_P1.27mm"
+description = "https://toshiba.semicon-storage.com/ap-en/design-support/package/detail.4pin%20MFSOP6.html"
+tags = ["MFSOP", "4", "pin", "SMD"]
+mount = "smd"
+model = "${KICAD9_3DMODEL_DIR}/Package_SO.3dshapes/MFSOP6-4_4.4x3.6mm_P1.27mm.step"
+
+[[pads]]
+number = "1"
+kind = "smd"
+shape = "rect"
+at = [-3.15, -1.27]
+size = [1.2, 0.8]
+layers = ["F.Cu", "F.Mask", "F.Paste"]
+
+[[pads]]
+number = "3"
+kind = "smd"
+shape = "rect"
+at = [-3.15, 1.27]
+size = [1.2, 0.8]
+layers = ["F.Cu", "F.Mask", "F.Paste"]
+
+[[pads]]
+number = "4"
+kind = "smd"
+shape = "rect"
+at = [3.15, 1.27]
+size = [1.2, 0.8]
+layers = ["F.Cu", "F.Mask", "F.Paste"]
+
+[[pads]]
+number = "6"
+kind = "smd"
+shape = "rect"
+at = [3.15, -1.27]
+size = [1.2, 0.8]
+layers = ["F.Cu", "F.Mask", "F.Paste"]
+
+[[graphics]]
+kind = "text"
+layer = "F.SilkS"
+at = [0.0, -2.85]
+text = "${REFERENCE}"
+size = 1.0
+
+[[graphics]]
+kind = "text"
+layer = "F.Fab"
+at = [0.0, 2.921]
+text = "${VALUE}"
+size = 1.0
+
+[[graphics]]
+kind = "line"
+layer = "F.SilkS"
+start = [1.5, -1.92]
+end = [-1.5, -1.92]
+width = 0.15
+
+[[graphics]]
+kind = "line"
+layer = "F.SilkS"
+start = [1.5, 1.92]
+end = [-1.5, 1.92]
+width = 0.15
+
+[[graphics]]
+kind = "polygon"
+layer = "F.SilkS"
+points = [[-3.125, -1.95], [-3.365, -2.28], [-2.885, -2.28], [-3.125, -1.95]]
+width = 0.15
+fill = "solid"
+
+[[graphics]]
+kind = "line"
+layer = "F.CrtYd"
+start = [-4.0, -2.05]
+end = [-4.0, 2.05]
+width = 0.05
+
+[[graphics]]
+kind = "line"
+layer = "F.CrtYd"
+start = [-4.0, -2.05]
+end = [4.0, -2.05]
+width = 0.05
+
+[[graphics]]
+kind = "line"
+layer = "F.CrtYd"
+start = [4.0, 2.05]
+end = [-4.0, 2.05]
+width = 0.05
+
+[[graphics]]
+kind = "line"
+layer = "F.CrtYd"
+start = [4.0, 2.05]
+end = [4.0, -2.05]
+width = 0.05
+
+[[graphics]]
+kind = "line"
+layer = "F.Fab"
+start = [-2.2, -0.8]
+end = [-2.2, 1.8]
+width = 0.15
+
+[[graphics]]
+kind = "line"
+layer = "F.Fab"
+start = [-2.2, 1.8]
+end = [2.2, 1.8]
+width = 0.15
+
+[[graphics]]
+kind = "line"
+layer = "F.Fab"
+start = [-1.2, -1.8]
+end = [-2.2, -0.8]
+width = 0.15
+
+[[graphics]]
+kind = "line"
+layer = "F.Fab"
+start = [2.2, -1.8]
+end = [-1.2, -1.8]
+width = 0.15
+
+[[graphics]]
+kind = "line"
+layer = "F.Fab"
+start = [2.2, 1.8]
+end = [2.2, -1.8]
+width = 0.15
+
+[[graphics]]
+kind = "text"
+layer = "F.Fab"
+at = [0.0, 0.0]
+text = "${REFERENCE}"
+size = 0.75
