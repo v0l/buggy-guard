@@ -1,0 +1,30 @@
+part bottom pendant-case.gcad body=bottom
+part board pendant-board.gcad
+part top pendant-case.gcad body=top
+part startcap pendant-case.gcad body=cap
+part speedcap pendant-case.gcad body=cap
+part screw pendant-screw.gcad
+flush board:pcb.start bottom:posts.end
+concentric board:mount1.side bottom:screws.side near=4,-62,0
+concentric board:mount2.side bottom:screws.side near=56,-62,0
+flush top:lid.start bottom:step.end
+concentric top:pilot1.side bottom:screws.side near=4,-62,5
+concentric top:pilot2.side bottom:screws.side near=56,-62,5
+concentric startcap:cap.side top:buttons.side near=21,-57.5,10
+flush startcap:pocket.end board:plunger1.end
+concentric speedcap:cap.side top:buttons.side near=39,-57.5,10
+flush speedcap:pocket.end board:plunger2.end
+move screw 4,-62,-11.35
+concentric screw:shank.side bottom:screws.side near=4,-62,-5
+distance screw:head.start bottom:shell.start 0.25
+pattern screw holes=bottom:screws.side
+aligned top:pilot1.side,pilot2.side,pilot3.side bottom:screws.side
+color board #1f6f3f
+explode top 0,0,30
+explode startcap 0,0,45
+explode speedcap 0,0,45
+explode board 0,0,15
+explode screw 0,0,-25
+explode screw_2 0,0,-25
+explode screw_3 0,0,-25
+interference none

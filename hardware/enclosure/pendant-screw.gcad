@@ -1,0 +1,8 @@
+let len=20 headd=4.6 shank=2.1
+circle headd
+head: extrude (headd-shank)/2 draft=45
+plane head.end
+circle shank
+shank: extrude len-(headd-shank)/2
+color #c0c0c0
+material stainless

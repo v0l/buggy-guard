@@ -1,0 +1,8 @@
+plane YZ offset=bw+clear+wall+1
+rect 13 7 r=3 at=-27.2,3.22
+usb: cut 4
+plane YZ offset=-clear-wall-1
+rect 14 6.5 r=2 at=-30,2.42
+recess: extrude 2.4 mode=cut
+rect 8 2.8 at=-30,2.42
+slot: extrude 3.5 mode=cut

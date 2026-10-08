@@ -10,3 +10,6 @@ fab-*/
 
 # 3D exports: regenerate with agentee export
 /hardware/*.step
+/hardware/enclosure/*.stl
+/hardware/enclosure/*.step
+/hardware/enclosure/*.3mf

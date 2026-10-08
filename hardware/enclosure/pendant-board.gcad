@@ -1,0 +1,136 @@
+plane XY
+rect 60.000 66.000 r=3 at=30.000,-33.000
+pcb: extrude 1.62
+plane pcb.end
+mount1: hole 2.7 4.0,-62.0
+mount2: hole 2.7 56.0,-62.0
+plane XY offset=1.62
+rect 12.2 12.2 at=21.000,-57.500
+sw1: extrude 3.6
+plane sw1.end
+rect 11.5 11.5 at=21.000,-57.500
+top1: extrude 0.3
+plane top1.end
+circle 7.4 at=21.000,-57.500
+plunger1: extrude 3.4
+plane XY offset=1.62
+rect 12.2 12.2 at=39.000,-57.500
+sw2: extrude 3.6
+plane sw2.end
+rect 11.5 11.5 at=39.000,-57.500
+top2: extrude 0.3
+plane top2.end
+circle 7.4 at=39.000,-57.500
+plunger2: extrude 3.4
+plane XY offset=1.620
+rect 13.400 16.800 at=49.800,-8.870
+extrude 2.496
+plane XY offset=1.620
+rect 39.750 30.200 at=30.005,-33.500
+extrude 5.797
+plane XY offset=0.000
+rect 39.750 30.200 at=30.005,-33.500
+extrude -1.483
+plane XY offset=1.620
+rect 8.100 9.140 at=55.300,-27.200
+extrude 3.307
+plane XY offset=1.620
+rect 5.200 7.900 at=1.720,-30.000
+extrude 1.597
+plane XY offset=1.620
+rect 1.000 1.800 at=57.600,-34.400
+extrude 0.817
+plane XY offset=1.620
+rect 1.025 1.800 at=55.400,-34.400
+extrude 0.647
+plane XY offset=1.620
+rect 12.200 12.200 at=8.000,-8.000
+extrude 3.117
+plane XY offset=1.620
+rect 3.100 3.800 at=55.200,-19.600
+extrude 1.207
+plane XY offset=0.000
+rect 1.800 1.025 at=52.600,-25.450
+extrude -0.650
+plane XY offset=0.000
+rect 1.800 1.025 at=52.600,-28.450
+extrude -0.650
+plane XY offset=1.620
+rect 3.100 3.800 at=56.450,-37.950
+extrude 1.207
+plane XY offset=1.620
+rect 1.000 1.800 at=54.050,-41.250
+extrude 0.897
+plane XY offset=1.620
+rect 1.000 1.800 at=52.500,-38.150
+extrude 0.897
+plane XY offset=1.620
+rect 1.025 1.800 at=57.550,-41.650
+extrude 0.647
+plane XY offset=1.620
+rect 2.000 4.190 at=35.150,-14.050
+extrude 1.207
+plane XY offset=1.620
+rect 3.363 5.175 at=31.669,-15.088
+extrude 1.207
+plane XY offset=1.620
+rect 1.025 1.800 at=27.500,-16.700
+extrude 0.647
+plane XY offset=1.620
+rect 1.000 1.800 at=3.050,-20.900
+extrude 0.897
+plane XY offset=1.620
+rect 3.800 3.100 at=4.900,-23.900
+extrude 1.207
+plane XY offset=1.620
+rect 1.000 1.800 at=7.700,-23.450
+extrude 0.897
+plane XY offset=1.620
+rect 1.800 1.025 at=51.550,-19.550
+extrude 0.647
+plane XY offset=1.620
+rect 1.800 1.000 at=41.500,-13.500
+extrude 0.897
+plane XY offset=1.620
+rect 1.025 1.800 at=27.500,-13.700
+extrude 0.647
+plane XY offset=1.620
+rect 1.800 1.025 at=41.400,-16.450
+extrude 0.647
+plane XY offset=1.620
+rect 1.800 1.000 at=39.000,-3.800
+extrude 0.897
+plane XY offset=1.620
+rect 1.800 1.000 at=41.500,-8.300
+extrude 0.897
+plane XY offset=1.620
+rect 1.800 1.025 at=38.900,-9.800
+extrude 0.647
+plane XY offset=1.620
+rect 1.800 1.000 at=38.900,-6.750
+extrude 0.897
+plane XY offset=1.620
+rect 1.800 1.025 at=32.500,-11.150
+extrude 0.647
+plane XY offset=1.620
+rect 1.025 1.800 at=52.600,-34.100
+extrude 0.647
+plane XY offset=1.620
+rect 1.800 1.025 at=38.350,-14.300
+extrude 0.647
+plane XY offset=1.620
+rect 1.800 1.025 at=35.750,-6.450
+extrude 0.647
+plane XY offset=1.620
+rect 1.800 1.025 at=35.700,-7.950
+extrude 0.647
+plane XY offset=1.620
+rect 1.800 1.025 at=38.300,-15.800
+extrude 0.647
+plane XY offset=1.620
+rect 1.800 1.025 at=23.700,-16.750
+extrude 0.647
+plane XY offset=1.620
+rect 1.800 1.025 at=29.300,-11.100
+extrude 0.647
+color #1f6f3f

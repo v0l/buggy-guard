@@ -1,0 +1,98 @@
+let bw=60 bh=66 br=3 pcb=1.62 clear=0.3 wall=2 floor=1.6 lid=2 under=10 ceil=7.8 ext=7 edge=1.2
+let iw=bw+2*clear ih=bh+clear+ext ir=br+clear cx=bw/2 cy=-(bh+clear-ext)/2
+let ow=iw+2*wall oh=ih+2*wall orad=ir+wall
+let lip=1.5 tongue=0.9 gap=0.15 fit=0.1
+let zb=-(under+floor) zt=ceil+lid zl=pcb+lip
+let clr=2.9 pilot=2.2 head=5.2 sx=30 sy=3.25 boss=5.5 thread=ceil+1
+let print=0
+body bottom
+plane XY offset=zb
+rect ow oh r=orad at=cx,cy
+shell: extrude zl-zb
+chamfer edge shell.start&shell.side
+plane shell.end
+rect iw ih r=ir at=cx,cy
+cavity: cut under+zl
+rect ow+2 oh+2 at=cx,cy
+rect iw+2*tongue ih+2*tongue r=ir+tongue at=cx,cy
+step: cut lip
+plane XY offset=-under
+circle 6 at=4,-62
+circle 6 at=56,-62
+circle 2.6 at=26,-1.8
+circle 2.6 at=1.8,-16
+circle 2.6 at=58.4,-14
+circle 2.6 at=58.4,-48
+circle 2.6 at=1.8,-52
+circle 2.6 at=30,-57.5
+posts: extrude under
+circle boss at=sx,sy
+extboss: extrude under+zl
+plane shell.start
+screws: hole clr 4,62 56,62 sx,-sy csink=head,90
+include pendant-sides.gcad
+color #6b7280
+material pla
+if print move 0,0,-zb
+body top
+plane XY offset=pcb
+rect ow oh r=orad at=cx,cy
+lid: extrude zt-pcb
+chamfer edge lid.end&lid.side
+rect iw ih r=ir at=cx,cy
+inside: extrude ceil-pcb mode=cut
+rect iw+2*(tongue+gap) ih+2*(tongue+gap) r=ir+tongue+gap at=cx,cy
+skirt: extrude lip+0.2 mode=cut
+plane XY offset=ceil
+circle 5.5 at=4,-62
+circle 5.5 at=56,-62
+circle 2.6 at=26,-1.8
+circle 2.6 at=1.8,-16
+circle 2.6 at=58.4,-14
+circle 2.6 at=58.4,-48
+circle 2.6 at=1.8,-52
+circle 2.6 at=30,-57.5
+pillars: extrude pcb-ceil
+circle boss at=sx,sy
+extpillar: extrude zl+fit-ceil
+circle 3.6 at=57.6,-34.4
+ledtube: extrude pcb+0.72+0.6-ceil
+plane XY offset=pcb
+circle pilot at=4,-62
+pilot1: extrude thread-pcb mode=cut
+circle pilot at=56,-62
+pilot2: extrude thread-pcb mode=cut
+circle pilot at=sx,sy
+pilot3: extrude thread-pcb mode=cut
+plane lid.end
+led: hole 2 57.6,-34.4
+buttons: hole 10.4 21,-57.5 39,-57.5
+let bx=8 by=-8 sr=2.6
+buzzer: hole 1.4 bx,by bx+sr,by bx+sr/2,by+sr*0.866 bx-sr/2,by+sr*0.866 bx-sr,by bx-sr/2,by-sr*0.866 bx+sr/2,by-sr*0.866
+rect 35 20.3 at=30.48,-34.26
+window: cut lid draft=45
+text "START" size=3.2 at=21-5.2,-48.5-1.6
+text "SPEED" size=3.2 at=39-5.2,-48.5-1.6
+labels: cut 0.5
+include pendant-sides.gcad
+color #6b7280
+material pla
+if print rotate 180 axis=x
+if print move 70,-59.3,zt
+body cap
+let kx=21 ky=-57.5
+let fz=ceil-0.4-1 ptop=pcb+7.3
+plane XY offset=fz
+circle 13 at=kx,ky
+flange: extrude 1
+plane flange.end
+circle 10 at=kx,ky
+cap: extrude zt+1.5-fz-1
+fillet 0.8 cap.end&cap.side
+plane XY offset=fz
+circle 7.8 at=kx,ky
+pocket: extrude ptop-fz mode=cut
+color #d97706
+material pla
+if print move 125,0,-(ceil-1.4)
+if print move 18,0,0 copy

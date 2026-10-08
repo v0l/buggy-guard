@@ -411,8 +411,67 @@ Farnell carry. J1 is LCSC only, like the main board's J2. J3 is Waveshare SKU 18
 The ESP32-C3 model is Espressif's STEP from their KiCad library, loaded by URL. The 12 mm switch, piezo and OLED
 module models are boxes drawn by `python3 3dmodels/make_models.py`.
 
+### Pendant enclosure
+
+The case is modelled in [gcad](https://github.com/v0l/gcad) under `enclosure/`, for PLA printed
+without supports:
+
+| file | holds |
+|---|---|
+| `pendant-case.gcad` | the `bottom`, `top` and `cap` bodies, built where they sit on the board |
+| `pendant-sides.gcad` | the USB and SW1 openings, included by both shells |
+| `pendant-screw.gcad` | M2.5 x 20 countersunk screw, shank drawn at 2.1 mm so it clears the pilot |
+| `pendant-board.gcad` | the board stand-in, written by `board_standin.py` from `../pendant.step` |
+| `pendant.gasm` | the assembly: board, shells, caps and screws mated together, `interference none` |
+
+```sh
+cd hardware/enclosure
+agentee export pendant -o ../pendant.step
+uv run --with build123d python board_standin.py           # refresh pendant-board.gcad
+gcad check pendant.gasm                                   # mates and interference
+gcad export pendant.gasm pendant.step
+gcad export pendant-case.gcad pendant-print.3mf --set print=1
+gcad pendant.gasm                                         # viewer, explode slider
+```
+
+gcad cannot read `pendant.step` directly (closed circle edges, parts stored as open shells), so the
+stand-in is the PCB with its H1/H2 holes, the 12 mm switches drawn from their model, and every
+other part as its bounding box grown 0.1 mm sideways and on top. Interference against it therefore
+means less than 0.1 mm of clearance. J2 is assumed not fitted: the cell is soldered to its pads.
+
+`print=1` lays out one plate, 173 x 77 mm: the bottom floor down, the top flipped lid down, and two
+caps flange down. Every outside edge on the bed is a 45 degree chamfer, the screw seats are
+countersinks and the OLED window narrows at 45 degrees, so the only unsupported spans are bridges:
+the 7.8 mm pocket roof in each cap and the 0.5 mm deep engraved labels. Outside it is
+64.6 x 77.3 x 21.4 mm.
+
+The board drops into the bottom shell and sits on two bosses at H1 and H2 and six pillars. Pillars
+in the lid press down on the same spots, so the board is clamped between them. Three M2.5 x 20
+countersunk screws go in from the bottom, through H1, H2 and a boss in a 7 mm extension above the
+top edge of the board, and cut their own thread in 2.2 mm pilot holes that run 1 mm into the lid.
+The extension boss stands 1 mm clear of the wall (the kernel cannot union a boss into the wall)
+and its lid pillar stops 0.1 mm above it, so the lid seats on its rim. The extension screw is
+10 mm left of the antenna keepout. Nothing metal sits near the antenna. A 1.5 mm tongue on the
+bottom shell locates the lid, with 0.15 mm side clearance and 0.2 mm above it.
+
+| feature | detail |
+|---|---|
+| OLED | window over the 30 x 15.3 mm active area plus 0.5 mm, chamfered 45 degrees outward |
+| SW2, SW3 | floating caps. The flange sits 0.4 mm under the lid and the cap rests on the plunger top, 7.3 mm above the board. The caps stand 1.5 mm proud of the lid, 0.2 mm clear of their holes |
+| BZ1 | seven 1.4 mm sound holes over the piezo |
+| D2 | 2 mm hole in a tube that stops 0.6 mm above the LED |
+| J1 | 13 x 7 mm opening for the cable overmold |
+| SW1 | slot through a 0.6 mm wall in an outside recess. The knob ends 0.1 mm short of the recess floor, so it is worked with a fingernail |
+| cell | 10 mm under the board, 7.8 mm below the OLED nuts. A cell up to 6 mm thick and 34 x 52 mm fits between the pillars, held with foam tape |
+
+PLA softens from about 55 C. In `pendant-thermal-enclosed` (35 C ambient, charging a flat cell
+with the radio on) the board reads 57 to 69 C under the pillars, so the clamp can creep if it is
+charged like that for long, for example in a hot car.
+
 ## Still to do
 
+- Print the pendant case and fit a populated board: check the SW1 knob can be reached through its
+  slot and the cap travel on SW2/SW3, `enclosure/pendant-case.gcad`.
 - Pendant: check the 7 pin order (VCC GND DIN CLK CS DC RST) on an actual Waveshare module before
   soldering it down, `footprints/OLED_Waveshare_1.3in_C.fp.toml`.
 - Pendant: J2 pin 1 is battery +. JST PH LiPo leads come wired both ways round; check before
